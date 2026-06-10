@@ -311,19 +311,59 @@ function Services() {
 
 /* ── WHY US ──────────────────────────────────────── */
 const WHY_CARDS = [
-  { icon: "💬", title: "Plain Language Reporting",  desc: "No jargon, no vanity metrics. You always know exactly what's working." },
-  { icon: "🏠", title: "Everything Under One Roof", desc: "SEO, PPC, social, web, content — one team handles it all seamlessly." },
-  { icon: "🎯", title: "Built Around Your Goals",   desc: "We learn your business before touching a single ad or keyword." },
-  { icon: "📅", title: "Long-Term Growth Focus",    desc: "Strategies built to keep delivering months and years down the line." },
-  { icon: "🌍", title: "Brand-First Approach",      desc: "We make your brand look credible, feel trustworthy, and convert." },
-  { icon: "🤝", title: "A Team That Cares",         desc: "Reachable, responsive — whether you're in Chandigarh or Dubai." },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>,
+    title: "Plain Language Reporting",
+    desc: "No jargon, no vanity metrics. You always know exactly what's working.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>,
+    title: "Everything Under One Roof",
+    desc: "SEO, PPC, social, web, content — one team handles it all seamlessly.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>,
+    title: "Built Around Your Goals",
+    desc: "We learn your business before touching a single ad or keyword.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
+    title: "Long-Term Growth Focus",
+    desc: "Strategies built to keep delivering months and years down the line.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
+    title: "Brand-First Approach",
+    desc: "We make your brand look credible, feel trustworthy, and convert.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>,
+    title: "A Team That Cares",
+    desc: "Reachable, responsive — whether you're in Chandigarh or Dubai.",
+  },
 ];
 
 const WHY_DIFF = [
-  { icon: "📊", title: "Results, Not Jargon",        desc: "No confusing reports. Our SEO and PPC campaigns are tracked and reported in plain language — what's working, what's not, and what we're doing about it." },
-  { icon: "🏗️", title: "Full-Stack Under One Roof",  desc: "SEO, social media, web development, PPC — you don't need five vendors. We handle it all, and everything works together to maximize your ROI." },
-  { icon: "⏳", title: "In It For The Long Game",    desc: "Quick wins are great, but sustainable growth is the goal. Our strategies are built to keep delivering months and years down the line." },
-  { icon: "🏷️", title: "We Build Brands",            desc: "From web development to brand awareness campaigns — we make sure your brand looks credible, feels trustworthy, and converts visitors into customers." },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
+    title: "Results, Not Jargon",
+    desc: "No confusing reports. Our SEO and PPC campaigns are tracked and reported in plain language — what's working, what's not, and what we're doing about it.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>,
+    title: "Full-Stack Under One Roof",
+    desc: "SEO, social media, web development, PPC — you don't need five vendors. We handle it all, and everything works together to maximize your ROI.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
+    title: "In It For The Long Game",
+    desc: "Quick wins are great, but sustainable growth is the goal. Our strategies are built to keep delivering months and years down the line.",
+  },
+  {
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>,
+    title: "We Build Brands",
+    desc: "From web development to brand awareness campaigns — we make sure your brand looks credible, feels trustworthy, and converts visitors into customers.",
+  },
 ];
 
 function WhyUs() {
