@@ -3,6 +3,7 @@ import logo from "../assets/SocialThekaLogo.png";
 import Navbar from "./Navbar";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
+import Pricing from './Pricing';
 
 
 /* ── SHARED COMPONENTS ───────────────────────────── */
@@ -655,6 +656,7 @@ export default function SocialTheka() {
       <Navbar />
       <Hero />
        <RegionalPresence />
+       <Pricing />
       <Stats />
       <TrustMarquee />
       <Services />
