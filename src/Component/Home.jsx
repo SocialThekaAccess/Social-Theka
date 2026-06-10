@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import logo from "../assets/SocialThekaLogo.png";
+import footerLogo from "../assets/FooterLogo.png";
 import Navbar from "./Navbar";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
@@ -663,7 +664,7 @@ function Footer() {
       <div className="footer__top">
         <div>
           <div className="footer__logo-wrap">
-            <img src={logo} alt="Social Theka" className="footer__logo-img" />
+            <img src={footerLogo} alt="Social Theka" className="footer__logo-img" />
           </div>
           <p className="footer__tagline">
             Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.

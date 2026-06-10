@@ -897,7 +897,7 @@ display: grid;
 /* ── FAQ ────────────────────────────────────────── */
 .faq {
   background: #fff;
-  padding: 96px 24px;
+  padding: 56px 24px 48px;
 }
 .faq__inner {
   max-width: var(--max);
@@ -1011,7 +1011,7 @@ display: grid;
 /* ── CTA ────────────────────────────────────────── */
 .cta {
   background: #F9FAFB;
-  padding: 96px 24px;
+  padding: 56px 24px;
   position: relative;
   overflow: hidden;
   border-top: 1px solid var(--border);
@@ -1058,7 +1058,7 @@ display: grid;
   margin-bottom: 24px;
 }
 .footer__logo-wrap { margin-bottom: 16px; }
-.footer__logo-img { height: 40px; width: auto; max-width: 160px; object-fit: contain; display: block; }
+.footer__logo-img { height: 70px; width: auto; max-width: 160px; object-fit: contain; display: block; }
 .footer__tagline { font-size: 13px; color: rgba(255,255,255,.35); line-height: 1.7; max-width: 280px; margin-bottom: 20px; }
 .footer__socials { display: flex; gap: 8px; }
 .footer__soc {
