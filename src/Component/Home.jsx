@@ -18,7 +18,7 @@ function Divider({ center }) {
 
 /* ── HERO ────────────────────────────────────────── */
 function Hero() {
-  const logos = ["Google", "Meta", "ISO-Certified" ];
+  const logos = ["Google", "Meta", "ISO-Certified"];
 
   return (
     <section id="home" className="hero">
@@ -215,7 +215,7 @@ const SERVICE_CARDS = [
       </svg>
     ),
     title: "Website Design",
-    desc: "We put your business at the top of search results on Google when people are looking for what you have to offer. We don’t just get you any old traffic, we target the right audience that are truly interested in what you do.This means you have a chance of turning them into customers. You do not have to rely on paid advertisements. We will even simplify the process for you by starting or improving your site. No more worrying about technical aspects or website performance.",
+    desc: "We put your business at the top of search results on Google when people are looking for what you have to offer. We don't just get you any old traffic, we target the right audience that are truly interested in what you do. This means you have a chance of turning them into customers. You do not have to rely on paid advertisements. We will even simplify the process for you by starting or improving your site. No more worrying about technical aspects or website performance.",
   },
   {
     icon: (
@@ -224,8 +224,8 @@ const SERVICE_CARDS = [
         <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
       </svg>
     ),
-    title: "SEO ",
-    desc: "If your website does not appear on Google, then so do your competitors - and unfortunately for you, that's where the customers are heading for. Social Theka provides result-oriented SEO services that improve Google rankings, attract quality & organic traffic, and help businesses grow sales without covering hundreds on a paid ads budget.So, if you are a startup from Chandigarh, a small business from Punjab or any big brand from anywhere in the world, we create an SEO strategy specifically built around your goals.",
+    title: "SEO",
+    desc: "If your website does not appear on Google, then so do your competitors - and unfortunately for you, that's where the customers are heading for. Social Theka provides result-oriented SEO services that improve Google rankings, attract quality & organic traffic, and help businesses grow sales without covering hundreds on a paid ads budget. So, if you are a startup from Chandigarh, a small business from Punjab or any big brand from anywhere in the world, we create an SEO strategy specifically built around your goals.",
   },
   {
     icon: (
@@ -234,8 +234,8 @@ const SERVICE_CARDS = [
         <line x1="6" y1="20" x2="6" y2="14"/><polyline points="22 20 2 20"/>
       </svg>
     ),
-    title: "Paid Advertising (PPC) ",
-    desc: "Running PPC ads is not a gamble, we create targeted campaigns towards the proper audience to use your budget effectively and allow you to track your spend and results.At Social Theka, we offer PPC services in Chandigarh that are focused on real business growth. As a trusted PPC agency in Chandigarh, we don’t just aim for traffic-we focus on bringing the right audience, generating quality leads, and helping you get better returns on your ad spend.",
+    title: "Paid Advertising (PPC)",
+    desc: "Running PPC ads is not a gamble, we create targeted campaigns towards the proper audience to use your budget effectively and allow you to track your spend and results. At Social Theka, we offer PPC services in Chandigarh that are focused on real business growth. As a trusted PPC agency in Chandigarh, we don't just aim for traffic — we focus on bringing the right audience, generating quality leads, and helping you get better returns on your ad spend.",
   },
   {
     icon: (
@@ -245,7 +245,7 @@ const SERVICE_CARDS = [
       </svg>
     ),
     title: "Website Development",
-    desc: "Website design is not just about colors and layout; we are more concerned with how your users will be able to easily navigate what we present to them. We create clean and modern designs which personify your brand and at the same time we put in place a simple path for visitors to find what they are looking for. If a website is easy to use and is seen as a trusted source, users will be more likely to get involved in what you are putting out there. SEO Services.",
+    desc: "Website design is not just about colors and layout; we are more concerned with how your users will be able to easily navigate what we present to them. We create clean and modern designs which personify your brand and at the same time we put in place a simple path for visitors to find what they are looking for. If a website is easy to use and is seen as a trusted source, users will be more likely to get involved in what you are putting out there.",
   },
   {
     icon: (
@@ -264,26 +264,22 @@ const SERVICE_CARDS = [
       </svg>
     ),
     title: "Social Media Marketing",
-    desc: "Let us be real for a second. Social media today is not about posting nice designs or writing captions. People actually check your profile before they decide to trust you. They scroll, they judge, they compare… and then they decide. If your page looks inactive or random, they just move on. No second thought. That’s why social media marketing is no longer optional. It’s a big part of how your business is seen online. At Social Theka, we handle social media marketing in Chandigarh in a way that actually makes sense for real businesses.",
+    desc: "Let us be real for a second. Social media today is not about posting nice designs or writing captions. People actually check your profile before they decide to trust you. They scroll, they judge, they compare and then they decide. If your page looks inactive or random, they just move on. No second thought. That's why social media marketing is no longer optional. It's a big part of how your business is seen online. At Social Theka, we handle social media marketing in Chandigarh in a way that actually makes sense for real businesses.",
   },
-  
 ];
 
 function Services() {
   return (
     <section id="services" className="svc-section">
-      {/* Subtle background shapes */}
       <div className="svc-bg-shape svc-bg-shape--1" />
       <div className="svc-bg-shape svc-bg-shape--2" />
 
       <div className="container svc-inner">
-        {/* Header */}
         <div className="svc-head">
           OUR EXPERTISE
           <h2 className="svc-h2">
             Digital Solutions That Drive<br />
             Real Business Forward
-
           </h2>
           <p className="svc-sub">
             One strategic partner for SEO, paid media, content, web development,
@@ -291,7 +287,6 @@ function Services() {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="svc-grid">
           {SERVICE_CARDS.map((c, i) => (
             <div key={i} className="svc-card">
@@ -324,11 +319,20 @@ const WHY_CARDS = [
   { icon: "🤝", title: "A Team That Cares",         desc: "Reachable, responsive — whether you're in Chandigarh or Dubai." },
 ];
 
+const WHY_DIFF = [
+  { icon: "📊", title: "Results, Not Jargon",        desc: "No confusing reports. Our SEO and PPC campaigns are tracked and reported in plain language — what's working, what's not, and what we're doing about it." },
+  { icon: "🏗️", title: "Full-Stack Under One Roof",  desc: "SEO, social media, web development, PPC — you don't need five vendors. We handle it all, and everything works together to maximize your ROI." },
+  { icon: "⏳", title: "In It For The Long Game",    desc: "Quick wins are great, but sustainable growth is the goal. Our strategies are built to keep delivering months and years down the line." },
+  { icon: "🏷️", title: "We Build Brands",            desc: "From web development to brand awareness campaigns — we make sure your brand looks credible, feels trustworthy, and converts visitors into customers." },
+];
+
 function WhyUs() {
   return (
     <section id="why" className="why section">
       <div className="container">
         <div className="why__inner">
+
+          {/* LEFT — image + why diff cards neeche */}
           <div className="why__left">
             <div className="why__img-wrap">
               <img
@@ -336,21 +340,35 @@ function WhyUs() {
                 alt="Social Theka Team"
               />
             </div>
-            <div className="why__achievement">
+            {/* <div className="why__achievement">
               <div className="why__ach-num">98%</div>
               <div className="why__ach-text">Client Retention Rate</div>
+            </div> */}
+
+            {/* Why Different Strip — image ke neeche */}
+            <div className="why__diff">
+              {WHY_DIFF.map((item, i) => (
+                <div key={i} className="why__diff-item">
+                  <span className="why__diff-icon">{item.icon}</span>
+                  <div>
+                    <div className="why__diff-title">{item.title}</div>
+                    <p className="why__diff-desc">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+
+          {/* RIGHT */}
           <div className="why__right">
             <div className="why__right-head">
-                 Why Social Theka
+              Why Social Theka
               <h2 className="section-title">
-                Why Brands Choose Social Theka
+                Why Businesses Choose Social Theka
               </h2>
               <Divider />
               <p className="section-sub" style={{ maxWidth: "none" }}>
-                There are dozens of agencies. Businesses from Chandigarh to London keep coming
-                back because we don't just run campaigns — we actually care about your growth.
+                Honestly, there are dozens of digital marketing agencies in India out there. So why do businesses - from local startups in Chandigarh to growing brands across the USA and UK - keep coming back to us? Because we don't just run campaigns. We actually care about your growth.
               </p>
             </div>
             <div className="why__grid">
@@ -363,6 +381,7 @@ function WhyUs() {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -371,10 +390,10 @@ function WhyUs() {
 
 /* ── PROCESS ─────────────────────────────────────── */
 const PROCESS_STEPS = [
-  { num: "01", title: "Defined Objectives",     desc: "We start by understanding your goals — visibility, leads, or sales. Everything begins with a clear plan, not assumptions." },
-  { num: "02", title: "Strategic Planning",     desc: "A tailored strategy around your business, your audience, and your market. No generic playbooks copied from someone else." },
-  { num: "03", title: "Smart Execution",        desc: "The right mix of tools and expertise applied carefully across campaigns, content, and web — with intent." },
-  { num: "04", title: "Continuous Optimisation",desc: "We monitor, analyse, and keep improving so your growth compounds over time — never set-and-forget." },
+  { num: "01", title: "Defined Objectives",      desc: "We start by understanding your goals — visibility, leads, or sales. Everything begins with a clear plan, not assumptions." },
+  { num: "02", title: "Strategic Planning",      desc: "A tailored strategy around your business, your audience, and your market. No generic playbooks copied from someone else." },
+  { num: "03", title: "Smart Execution",         desc: "The right mix of tools and expertise applied carefully across campaigns, content, and web — with intent." },
+  { num: "04", title: "Continuous Optimisation", desc: "We monitor, analyse, and keep improving so your growth compounds over time — never set-and-forget." },
 ];
 
 function Process() {
@@ -409,18 +428,18 @@ function Process() {
 /* ── RESULTS ─────────────────────────────────────── */
 const RESULT_CARDS = [
   {
-    logoClass: "",   initials: "TN", name: "TechNova India",  type: "B2B SaaS · Pune",
+    logoClass: "",       initials: "TN", name: "TechNova India",   type: "B2B SaaS · Pune",
     m1: "3.2x", l1: "Organic traffic growth", m2: "4 mo", l2: "Time to results",
     desc: "SEO + content strategy tripled organic reach. 48 new keywords ranking on page 1 within 4 months of engagement.",
   },
   {
-    logoClass: "--dark", initials: "GH", name: "GrowthHub", type: "E-Commerce · Delhi",
-    m1: "4.2x", l1: "ROAS improvement", m2: "62%", l2: "CPA reduction",
-    desc: "PPC campaign restructure took ROAS from 1.6x to 4.2x. Reporting clarity revealed where ₹12L/month was being wasted.",
+    logoClass: "--dark", initials: "GH", name: "GrowthHub",        type: "E-Commerce · Delhi",
+    m1: "4.2x", l1: "ROAS improvement",       m2: "62%",  l2: "CPA reduction",
+    desc: "PPC campaign restructure took ROAS from 1.6x to 4.2x. Reporting clarity revealed where 12L/month was being wasted.",
   },
   {
-    logoClass: "--grey", initials: "SD", name: "ScaleUp Digital", type: "Agency · London, UK",
-    m1: "280%", l1: "Lead increase", m2: "9mo", l2: "Partnership duration",
+    logoClass: "--grey", initials: "SD", name: "ScaleUp Digital",  type: "Agency · London, UK",
+    m1: "280%", l1: "Lead increase",           m2: "9mo",  l2: "Partnership duration",
     desc: "UK-based agency scaled white-label SEO delivery. Full-funnel strategy drove 280% more qualified inbound leads in 6 months.",
   },
 ];
@@ -470,9 +489,9 @@ function Results() {
 
 /* ── TESTIMONIALS ────────────────────────────────── */
 const TESTIS = [
-  { avatarMod: "",       initials: "AM", name: "Arjun Mehta",   role: "Founder, TechNova India",          quote: '"Social Theka tripled our organic traffic in 4 months. Straight talk, real results, zero fluff. Best agency decision we\'ve made."' },
-  { avatarMod: "--dark", initials: "PS", name: "Priya Sharma",  role: "Marketing Head, GrowthHub",        quote: '"Our PPC ROAS went from 1.6x to 4.2x. The reporting is always clear and they actually explain the reasoning — not just the numbers."' },
-  { avatarMod: "--grey", initials: "JC", name: "James Caldwell",role: "CEO, ScaleUp Digital — London",   quote: '"We\'re UK-based and were genuinely sceptical. Social Theka removed every doubt within the first 60 days — the results speak for themselves."' },
+  { avatarMod: "",       initials: "AM", name: "Arjun Mehta",    role: "Founder, TechNova India",       quote: '"Social Theka tripled our organic traffic in 4 months. Straight talk, real results, zero fluff. Best agency decision we\'ve made."' },
+  { avatarMod: "--dark", initials: "PS", name: "Priya Sharma",   role: "Marketing Head, GrowthHub",     quote: '"Our PPC ROAS went from 1.6x to 4.2x. The reporting is always clear and they actually explain the reasoning — not just the numbers."' },
+  { avatarMod: "--grey", initials: "JC", name: "James Caldwell", role: "CEO, ScaleUp Digital — London", quote: '"We\'re UK-based and were genuinely sceptical. Social Theka removed every doubt within the first 60 days — the results speak for themselves."' },
 ];
 
 function Testimonials() {
@@ -480,7 +499,7 @@ function Testimonials() {
     <section id="testimonials" className="testimonials section">
       <div className="container">
         <div className="testimonials__head">
-         Client Stories
+          Client Stories
           <h2 className="section-title">
             What Our Clients Actually Say
           </h2>
@@ -510,18 +529,17 @@ function Testimonials() {
 
 /* ── FAQ ─────────────────────────────────────────── */
 const FAQ_ITEMS = [
-  { q: "What exactly do you do?",                               a: "SEO, social media, paid ads, website design & development, content writing, and lead generation — all under one roof. No chaos, no handoffs between three different agencies." },
-  { q: "How long before I see results?",                        a: "SEO typically takes 3–6 months for meaningful movement. Paid ads and social can move faster — often within weeks. Either way, you're always updated on where things stand." },
-  { q: "We're a small business on a tight budget. Can you help?",a: "Yes. Some of our best work has come from exactly that scenario. We figure out the highest-impact moves for your specific budget and start there — no bloated retainers." },
+  { q: "What exactly do you do?",                                       a: "SEO, social media, paid ads, website design & development, content writing, and lead generation — all under one roof. No chaos, no handoffs between three different agencies." },
+  { q: "How long before I see results?",                                a: "SEO typically takes 3–6 months for meaningful movement. Paid ads and social can move faster — often within weeks. Either way, you're always updated on where things stand." },
+  { q: "We're a small business on a tight budget. Can you help?",       a: "Yes. Some of our best work has come from exactly that scenario. We figure out the highest-impact moves for your specific budget and start there — no bloated retainers." },
   { q: "We tried another agency and it didn't work. What's different?", a: "We don't overpromise. You'll know what we're working on, why, and what to expect — straight talk from day one. If something isn't working, we tell you and fix it." },
-  { q: "Do you work with international clients?",               a: "All the time. We have active clients in USA, UK, Dubai, Singapore, and Australia. Location has never been a barrier — we've built the workflows to make it seamless." },
-  { q: "How do we get started?",                                a: "Drop us a message or book a free strategy call. We understand your business first, then figure out the best way forward — no pressure, no sales script." },
+  { q: "Do you work with international clients?",                       a: "All the time. We have active clients in USA, UK, Dubai, Singapore, and Australia. Location has never been a barrier — we've built the workflows to make it seamless." },
+  { q: "How do we get started?",                                        a: "Drop us a message or book a free strategy call. We understand your business first, then figure out the best way forward — no pressure, no sales script." },
 ];
 
 function FAQ() {
   return (
     <section id="faq" className="faq">
-      {/* Header */}
       <div className="faq__head">
         FAQs
         <h2 className="faq__head-h2">
@@ -530,7 +548,6 @@ function FAQ() {
         <div className="faq__head-bar" />
       </div>
 
-      {/* 2-col always-visible grid */}
       <div className="faq__grid">
         {FAQ_ITEMS.map((item, i) => (
           <div key={i} className="faq__item">
@@ -540,7 +557,6 @@ function FAQ() {
         ))}
       </div>
 
-      {/* Bottom CTA */}
       <div className="faq__cta">
         <p>Still have questions? We're happy to help.</p>
         <a href="#contact" className="btn btn-primary">
@@ -557,7 +573,7 @@ function CTA() {
     <section id="contact" className="cta">
       <div className="cta__inner">
         <div>
-          <div className="cta__eyebrow">✦ &nbsp;500+ Businesses Trust Us. Yours Could Be Next.</div>
+          <div className="cta__eyebrow">✦  500+ Businesses Trust Us. Yours Could Be Next.</div>
           <h2 className="cta__h2">
             Ready to Grow Your Business<br />With Social Theka?
           </h2>
@@ -629,7 +645,7 @@ function Footer() {
   );
 }
 
-/* ── APP ─────────────────────────────────────────── */
+/* ── SCROLL TO TOP ───────────────────────────────── */
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
 
@@ -650,20 +666,20 @@ function ScrollToTop() {
   ) : null;
 }
 
+/* ── APP ─────────────────────────────────────────── */
 export default function SocialTheka() {
   return (
     <>
       <Navbar />
       <Hero />
-       <RegionalPresence />
-       <Pricing />
+      <RegionalPresence />
+      <Pricing />
       {/* <Stats /> */}
       <TrustMarquee />
       <Services />
       <WhyUs />
       <Process />
       <Results />
-       {/* <RegionalPresence /> */}
       <Testimonials />
       <FAQ />
       <CTA />
