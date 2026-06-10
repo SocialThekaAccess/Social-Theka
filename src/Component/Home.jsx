@@ -67,7 +67,7 @@ function Hero() {
               <div className="hero__form-row">
                 <div className="hero__form-group">
                   <label>PHONE NUMBER *</label>
-                  <input type="tel" placeholder="+91 98765 43210" required />
+                  <input type="tel" placeholder="+91 78887-35337" required />
                 </div>
                 <div className="hero__form-group">
                   <label>SERVICE NEEDED</label>
