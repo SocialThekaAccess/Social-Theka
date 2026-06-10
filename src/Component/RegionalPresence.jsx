@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./RegionalPresence.css";
-import ChandigarhImg from "../Assets/ChandigarhIT.png";
-import DelhiImg from "../Assets/DelhiIT.png";
+import ChandigarhImg from "../assets/ChandigarhIT.png";
+import DelhiImg from "../assets/DelhiIT.png";
 
 const regions = [
   {
