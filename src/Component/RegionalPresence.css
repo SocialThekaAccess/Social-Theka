@@ -1,0 +1,387 @@
+/* ── RegionalPresence.css ── */
+
+.rp-section {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 80px 24px;
+  background: #ffffff;
+  color: #111111;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Eyebrow */
+.rp-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #888888;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Main Heading */
+.rp-heading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  color: #111111;
+}
+
+.rp-heading em {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+}
+
+/* Subtext */
+.rp-subtext {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  color: #555555;
+  max-width: 420px;
+  line-height: 1.65;
+  margin: 0 0 24px 0;
+}
+
+/* Stats Row */
+.rp-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #999999;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  justify-content: flex-end;
+}
+
+.rp-divider {
+  color: #cccccc;
+}
+
+/* Body Layout */
+.rp-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rp-list {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e5e5e5;
+}
+
+.rp-list-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 24px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+.rp-list-item:last-child {
+  border-bottom: none;
+}
+
+.rp-list-item:hover {
+  background: #f7f7f7;
+}
+
+.rp-list-item--active {
+  background: #111111 !important;
+}
+
+.rp-list-item--active .rp-list-name {
+  color: #ffffff;
+}
+
+.rp-list-item--active .rp-list-tag {
+  color: #aaaaaa;
+}
+
+.rp-list-item--active .rp-list-arrow {
+  color: #ffffff;
+}
+
+.rp-list-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.rp-list-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #888888;
+}
+
+.rp-list-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #bbbbbb;
+}
+
+/* ── Right Detail Panel ── */
+.rp-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px;
+  gap: 24px;
+}
+
+.rp-detail-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* Badge */
+.rp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #555555;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.rp-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #111111;
+  display: inline-block;
+}
+
+.rp-detail-heading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 14px 0;
+}
+
+.rp-detail-desc {
+   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.75;
+  margin: 0 0 20px 0;
+  max-width: 460px;
+}
+
+/* Centers */
+.rp-centers-label,
+.rp-highlights-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #999999;
+   margin-top: 0;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.rp-centers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.rp-center-tag {
+ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  /* margin-bottom: 32px; */
+  padding: 5px 12px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  color: #333333;
+  background: #fafafa;
+}
+
+/* Highlights */
+.rp-highlights-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 1.75;
+  /* max-width: 460px; */
+  margin-bottom: 32px;
+}
+
+.rp-highlights {
+  list-style: disc;
+  padding-left: 18px;
+  margin: -20px 0 0 0;
+}
+
+.rp-highlights li {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  color: #444444;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* Right column — Image + Transit */
+.rp-detail-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rp-image-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.rp-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.rp-image-wrap:hover .rp-image {
+  transform: scale(1.03);
+}
+
+/* Transit Box */
+.rp-transit {
+  border: 1px solid #e5e5e5;
+  padding: 16px;
+  border-radius: 2px;
+  background: #fafafa;
+}
+
+.rp-transit-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #777777;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rp-transit-icon {
+  font-size: 13px;
+  color: #555555;
+}
+
+.rp-transit-text {
+ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  color: #555555;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Footer */
+.rp-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #eeeeee;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.rp-config {
+  font-size: 11px;
+  color: #aaaaaa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rp-cta {
+  background: #C1121F;
+  color: #ffffff;
+  border: none;
+  padding: 12px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.rp-cta:hover {
+  background: #C1121F;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .rp-section {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 48px 24px;
+  }
+
+  .rp-body {
+    display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  border: none;
+  }
+
+  .rp-list {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .rp-list-item {
+    min-width: 140px;
+    border-bottom: none;
+    border-right: 1px solid #e5e5e5;
+  }
+
+  .rp-list-arrow {
+    display: none;
+  }
+
+  .rp-detail-top {
+    grid-template-columns: 1fr;
+  }
+
+  .rp-stats {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
