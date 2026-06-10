@@ -789,7 +789,7 @@ display: grid;
   box-shadow: var(--s1);
 }
 .why-card:hover { transform: translateY(-3px); box-shadow: var(--s3); border-color: rgba(193,18,31,.15); }
-.why-card__icon { font-size: 24px; }
+.why-card__icon { color: #888; display: flex; margin-bottom: 2px; }
 .why-card__title { font-size: 14px; font-weight: 700; color: var(--dark); }
 .why-card__desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
 
