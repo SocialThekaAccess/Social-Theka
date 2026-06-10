@@ -362,7 +362,7 @@ function WhyUs() {
           {/* RIGHT */}
           <div className="why__right">
             <div className="why__right-head">
-              Why Social Theka
+              {/* Why Social Theka */}
               <h2 className="section-title">
                 Why Businesses Choose Social Theka
               </h2>
@@ -494,7 +494,7 @@ const TESTIS = [
   { avatarMod: "--grey", initials: "JC", name: "James Caldwell", role: "CEO, ScaleUp Digital — London", quote: '"We\'re UK-based and were genuinely sceptical. Social Theka removed every doubt within the first 60 days — the results speak for themselves."' },
 ];
 
-function Testimonials() {
+function Testimonials() {  
   return (
     <section id="testimonials" className="testimonials section">
       <div className="container">
@@ -538,30 +538,42 @@ const FAQ_ITEMS = [
 ];
 
 function FAQ() {
+  const [open, setOpen] = useState(null);
   return (
     <section id="faq" className="faq">
-      <div className="faq__head">
-        FAQs
-        <h2 className="faq__head-h2">
-          Frequently Asked Questions
-        </h2>
-        <div className="faq__head-bar" />
-      </div>
+      <div className="faq__inner">
 
-      <div className="faq__grid">
-        {FAQ_ITEMS.map((item, i) => (
-          <div key={i} className="faq__item">
-            <div className="faq__q">{item.q}</div>
-            <p className="faq__a">{item.a}</p>
-          </div>
-        ))}
-      </div>
+        {/* Left */}
+        <div className="faq__left">
+          <span className="faq__eyebrow">GOT QUESTIONS?</span>
+          <h2 className="faq__left-h2">
+            Frequently<br />Asked<br />Questions
+          </h2>
+          <p className="faq__left-p">
+            More questions about Social Theka or our services?
+          </p>
+          <a href="#contact" className="faq__chat-btn">
+            CHAT WITH US →
+          </a>
+        </div>
 
-      <div className="faq__cta">
-        <p>Still have questions? We're happy to help.</p>
-        <a href="#contact" className="btn btn-primary">
-          Ask Us Directly <span className="btn-arrow">→</span>
-        </a>
+        {/* Right — accordion */}
+        <div className="faq__list">
+          {FAQ_ITEMS.map((item, i) => (
+            <div
+              key={i}
+              className={`faq__item ${open === i ? "faq__item--open" : ""}`}
+              onClick={() => setOpen(open === i ? null : i)}
+            >
+              <div className="faq__item-row">
+                <span className="faq__item-q">{item.q}</span>
+                <span className="faq__item-icon">{open === i ? "×" : "+"}</span>
+              </div>
+              {open === i && <p className="faq__item-a">{item.a}</p>}
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
@@ -617,9 +629,22 @@ function Footer() {
             Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.
           </p>
           <div className="footer__socials">
-            {["IN", "IG", "FB", "TW"].map((s) => (
-              <a key={s} href="#" className="footer__soc">{s}</a>
-            ))}
+            {/* LinkedIn */}
+            <a href="https://linkedin.com/company/socialtheka" target="_blank" rel="noreferrer" className="footer__soc footer__soc--li" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            {/* Instagram */}
+            <a href="https://instagram.com/socialtheka" target="_blank" rel="noreferrer" className="footer__soc footer__soc--ig" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            {/* Facebook */}
+            <a href="https://facebook.com/socialtheka" target="_blank" rel="noreferrer" className="footer__soc footer__soc--fb" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            {/* Twitter/X */}
+            <a href="https://twitter.com/socialtheka" target="_blank" rel="noreferrer" className="footer__soc footer__soc--tw" aria-label="Twitter / X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
           </div>
         </div>
         {FOOTER_COLS.map((col) => (
