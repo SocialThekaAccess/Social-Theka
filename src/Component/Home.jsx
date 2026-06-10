@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import logo from "../assets/SocialThekaLogo.png";
 import Navbar from "./Navbar";
 import "./Home.css";
+import RegionalPresence from './RegionalPresence';
+
 
 /* ── SHARED COMPONENTS ───────────────────────────── */
 function Tag({ children }) {
@@ -15,7 +17,7 @@ function Divider({ center }) {
 
 /* ── HERO ────────────────────────────────────────── */
 function Hero() {
-  const logos = ["Google", "HubSpot", "Meta", ];
+  const logos = ["Google", "Meta", "ISO-Certified" ];
 
   return (
     <section id="home" className="hero">
@@ -652,12 +654,14 @@ export default function SocialTheka() {
     <>
       <Navbar />
       <Hero />
+       <RegionalPresence />
       <Stats />
       <TrustMarquee />
       <Services />
       <WhyUs />
       <Process />
       <Results />
+       {/* <RegionalPresence /> */}
       <Testimonials />
       <FAQ />
       <CTA />
