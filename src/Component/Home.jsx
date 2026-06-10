@@ -279,11 +279,11 @@ function Services() {
       <div className="container svc-inner">
         {/* Header */}
         <div className="svc-head">
-          <span className="svc-label">OUR EXPERTISE</span>
+          OUR EXPERTISE
           <h2 className="svc-h2">
             Digital Solutions That Drive<br />
-            <span className="svc-h2-accent">Real Business Forward
-</span>
+            Real Business Forward
+
           </h2>
           <p className="svc-sub">
             One strategic partner for SEO, paid media, content, web development,
@@ -343,9 +343,9 @@ function WhyUs() {
           </div>
           <div className="why__right">
             <div className="why__right-head">
-              <Tag>Why Social Theka</Tag>
+                 Why Social Theka
               <h2 className="section-title">
-                Why Brands Choose <span className="cherry">Social Theka</span>
+                Why Brands Choose Social Theka
               </h2>
               <Divider />
               <p className="section-sub" style={{ maxWidth: "none" }}>
@@ -382,9 +382,9 @@ function Process() {
     <section className="process section">
       <div className="container">
         <div className="process__head">
-          <Tag>How We Work</Tag>
+          How We Work
           <h2 className="section-title">
-            Our Approach to <span className="cherry">Scalable Growth</span>
+            Our Approach to Scalable Growth
           </h2>
           <Divider center />
           <p className="section-sub">
@@ -430,9 +430,9 @@ function Results() {
     <section id="results" className="results section">
       <div className="container">
         <div className="results__head">
-          <Tag>Case Studies</Tag>
+          Case Studies
           <h2 className="section-title">
-            Results That <span className="cherry">Speak Louder</span>
+            Results That Speak Louder
           </h2>
           <Divider />
           <p className="section-sub">Real numbers. Real businesses. Real growth.</p>
@@ -480,9 +480,9 @@ function Testimonials() {
     <section id="testimonials" className="testimonials section">
       <div className="container">
         <div className="testimonials__head">
-          <Tag>Client Stories</Tag>
+         Client Stories
           <h2 className="section-title">
-            What Our Clients <span className="cherry">Actually Say</span>
+            What Our Clients Actually Say
           </h2>
           <Divider center />
         </div>
@@ -523,9 +523,9 @@ function FAQ() {
     <section id="faq" className="faq">
       {/* Header */}
       <div className="faq__head">
-        <span className="faq__head-label">FAQs</span>
+        FAQs
         <h2 className="faq__head-h2">
-          Frequently Asked <span>Questions</span>
+          Frequently Asked Questions
         </h2>
         <div className="faq__head-bar" />
       </div>
@@ -657,7 +657,7 @@ export default function SocialTheka() {
       <Hero />
        <RegionalPresence />
        <Pricing />
-      <Stats />
+      {/* <Stats /> */}
       <TrustMarquee />
       <Services />
       <WhyUs />

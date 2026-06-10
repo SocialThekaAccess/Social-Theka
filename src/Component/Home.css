@@ -711,12 +711,13 @@ display: grid;
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 3px;
-  background: var(--cherry);
+  background: #111111;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--t);
   border-radius: 0 0 var(--r-lg) var(--r-lg);
 }
+ 
 .svc-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--s4), 0 0 0 1px rgba(193,18,31,.1);
@@ -752,9 +753,15 @@ display: grid;
   box-shadow: var(--s4);
   transform: perspective(900px) rotateY(4deg) rotateX(1deg);
   transition: transform .5s ease;
+  height: 100%;
 }
 .why__img-wrap:hover { transform: perspective(900px) rotateY(0deg) rotateX(0deg); }
-.why__img-wrap img { width: 100%; height: 400px; object-fit: cover; display: block; }
+.why__img-wrap img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block;  }
+
 .why__achievement {
   position: absolute;
   bottom: -20px; right: -20px;
