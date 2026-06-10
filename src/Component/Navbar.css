@@ -1,0 +1,389 @@
+/* ══════════════════════════════════════════
+   Navbar.css  —  SEODiscovery-style
+   ══════════════════════════════════════════ */
+
+/* ── TOP ANNOUNCEMENT BAR ────────────────── */
+.nb-top {
+  background: #0f172a;
+  color: rgba(255,255,255,.65);
+  font-size: 12px;
+  padding: 7px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.nb-top__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+}
+.nb-top__dot {
+  width: 8px; height: 8px;
+  background: #f59e0b;
+  border-radius: 50%;
+  animation: nbPulse 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes nbPulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.5; transform:scale(1.5); }
+}
+.nb-top__right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.nb-top__right a { color: rgba(255,255,255,.65); transition: color .2s; }
+.nb-top__right a:hover { color: #fff; }
+.nb-top__right span { color: rgba(255,255,255,.65); }
+.nb-top__right strong { color: #fff; font-weight: 600; }
+.nb-top__sep { color: rgba(255,255,255,.25) !important; }
+
+/* Highlighted phone number */
+.nb-top__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(37,211,102,.12);
+  border: 1.5px solid rgba(37,211,102,.5);
+  border-radius: 100px;
+  padding: 4px 14px 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff !important;
+  transition: all .22s ease;
+  text-decoration: none;
+  animation: pillPulse 2s infinite;
+}
+@keyframes pillPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,.4); border-color: rgba(37,211,102,.5); }
+  50%       { box-shadow: 0 0 0 5px rgba(37,211,102,0); border-color: rgba(37,211,102,.9); }
+}
+.nb-top__phone:hover {
+  background: rgba(37,211,102,.22);
+  border-color: #25D366;
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(37,211,102,.35);
+  animation: none;
+}
+
+/* Phone icon inside pill */
+.nb-top__phone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #25D366;
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: #fff;
+  transition: transform .25s ease;
+}
+.nb-top__phone:hover .nb-top__phone-icon {
+  transform: rotate(12deg) scale(1.15);
+}
+
+/* ── MAIN NAVBAR ─────────────────────────── */
+.nb {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  transition: box-shadow .3s ease;
+}
+.nb--scrolled { box-shadow: 0 4px 24px rgba(0,0,0,.09); }
+
+.nb__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* ── LOGO ────────────────────────────────── */
+.nb__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  z-index: 1;
+}
+.nb__logo-img {
+  height: 56px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+  transition: opacity .2s;
+}
+.nb__logo:hover .nb__logo-img { opacity: .85; }
+
+/* ── NAV LINKS — truly centered ──────────── */
+/* ── NAV LINKS — truly centered ──────────── */
+.nb__links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;              /* 2px → 4px */
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 100px;
+  padding: 5px 10px;     /* 5px 6px → 5px 10px */
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.07),
+    0 6px 20px rgba(0,0,0,.07),
+    inset 0 1px 0 rgba(255,255,255,.9);
+  white-space: nowrap;
+}
+
+.nb__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 20px;     /* 7px 16px → 8px 20px */
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  transition: all .22s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.nb__link:hover {
+  background: rgba(190,18,60,.07);
+  color: #BE123C;
+}
+.nb__link--active {
+  background: #BE123C !important;
+  color: #fff !important;
+  font-weight: 600;
+  padding: 8px 22px;
+}
+.nb__link--active:hover {
+  background: #9f0f33 !important;
+  color: #fff !important;
+}
+.nb__chevron {
+  font-size: 12px;
+  opacity: .55;
+  margin-top: 1px;
+  transform: rotate(90deg);
+  display: inline-block;
+}
+
+/* ── CTA BUTTONS ─────────────────────────── */
+.nb__ctas {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-left: auto;
+  z-index: 1;
+}
+
+/* Outline — "Contact Us" */
+.nb__btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 100px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+  background: #fff;
+  transition: all .22s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nb__btn-outline:hover {
+  border-color: #111;
+  color: #111;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+}
+
+/* Solid orange — "Book a Meeting" */
+.nb__btn-solid {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border: 2px  #BE123C;
+  border-radius: 100px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+  background: rgb(22, 22, 22);
+  transition: all .22s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(249,115,22,.28);
+}
+.nb__btn-solid:hover {
+  background:  #BE123C;
+  border-color:  #BE123C;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(249,115,22,.38);
+}
+
+/* ── HAMBURGER ───────────────────────────── */
+.nb__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nb__burger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: #111;
+  border-radius: 2px;
+  transition: all .3s;
+}
+.nb__burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nb__burger--open span:nth-child(2) { opacity: 0; }
+.nb__burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE MENU ─────────────────────────── */
+.nb__mobile {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 20px 20px;
+  border-top: 1px solid #f3f4f6;
+  background: #fff;
+  gap: 2px;
+}
+.nb__mobile-link {
+  padding: 11px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  border-radius: 10px;
+  transition: background .2s;
+  text-decoration: none;
+  display: block;
+}
+.nb__mobile-link:hover { background: #f9fafb; color: #111; }
+.nb__mobile-link--active { background: #111; color: #fff; font-weight: 600; border-radius: 10px; }
+.nb__mobile-link--active:hover { background: #222; color: #fff; }
+.nb__mobile-ctas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 960px) {
+  .nb__links { display: none; }
+  .nb__ctas  { display: none; }
+  .nb__burger { display: flex; }
+  .nb-top__wa { display: none; }
+}
+@media (max-width: 640px) {
+  .nb-top { flex-direction: column; text-align: center; gap: 6px; padding: 8px 16px; }
+  .nb-top__right { justify-content: center; flex-wrap: wrap; }
+  .nb__google-badge { display: none; }
+  .nb__logo-brand { font-size: 17px; }
+}
+
+/* ── WHATSAPP HOVER BUTTON ───────────────── */
+.nb__btn-wa {
+  position: relative;
+  overflow: hidden;
+}
+.nb__wa-default,
+.nb__wa-hover {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+.nb__wa-hover {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  white-space: nowrap;
+  color: #fff;
+}
+.nb__btn-wa:hover .nb__wa-default {
+  opacity: 0;
+  transform: translateY(-120%);
+}
+.nb__btn-wa:hover .nb__wa-hover {
+  transform: translateX(-50%) translateY(0%);
+  opacity: 1;
+}
+
+/* ── WHATSAPP ICON BUTTON ────────────────── */
+.nb__wa-icon {
+  width: 40px;
+  height: 40px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(37,211,102,.35);
+  position: relative;
+}
+.nb__wa-icon:hover {
+  background: #20b858;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 8px 24px rgba(37,211,102,.45);
+}
+.nb__wa-icon::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37,211,102,.4);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.nb__wa-icon:hover::before { opacity: 1; }
+
+/* Tooltip */
+.nb__wa-icon::after {
+  content: 'Chat with us';
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #111;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+.nb__wa-icon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
