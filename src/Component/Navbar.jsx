@@ -1,25 +1,92 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../assets/SocialThekaLogo.png";
 import "./Navbar.css";
 
+const SVG_ICONS = {
+  seo: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      <path d="M11 8v6M8 11h6"/>
+    </svg>
+  ),
+  ppc: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+      <path d="m7 10 3 3 4-5 3 2"/>
+    </svg>
+  ),
+  webdev: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      <line x1="15" y1="9" x2="9" y2="15"/>
+    </svg>
+  ),
+  webdesign: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+      <path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>
+    </svg>
+  ),
+  social: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+    </svg>
+  ),
+  video: (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/>
+    </svg>
+  ),
+};
+
+const DELHI_SERVICES = [
+  { icon: SVG_ICONS.seo,       label: "SEO Services Delhi",               to: "home" },
+  { icon: SVG_ICONS.ppc,       label: "PPC Advertising Delhi",            to: "ppc-delhi" },
+  { icon: SVG_ICONS.webdev,    label: "Web Development Delhi",            to: "webdev-delhi" },
+  { icon: SVG_ICONS.webdesign, label: "Web Design Delhi",                 to: "home" },
+  { icon: SVG_ICONS.social,    label: "Social Media Marketing Delhi",     to: "home" },
+  { icon: SVG_ICONS.video,     label: "Video Editing Delhi",              to: "home" },
+];
+
+const CHANDIGARH_SERVICES = [
+  { icon: SVG_ICONS.seo,       label: "SEO Services Chandigarh",          to: "home" },
+  { icon: SVG_ICONS.ppc,       label: "PPC Advertising Chandigarh",       to: "ppc" },
+  { icon: SVG_ICONS.webdev,    label: "Web Development Chandigarh",       to: "webdev-chandigarh" },
+  { icon: SVG_ICONS.webdesign, label: "Web Design Chandigarh",            to: "home" },
+  { icon: SVG_ICONS.social,    label: "Social Media Marketing Chandigarh",to: "home" },
+  { icon: SVG_ICONS.video,     label: "Video Editing Chandigarh",         to: "home" },
+];
+
 const NAV_LINKS = [
   { label: "Home",         href: "#home",     active: true  },
-  { label: "Our Services", href: "#services", dropdown: true },
+  { label: "Our Services", href: "#services", dropdown: "services" },
   { label: "Theka Story",  href: "#why",      dropdown: true },
   { label: "Blogs",        href: "#blog",     dropdown: true },
   { label: "Contact Us",   href: "#contact"                  },
 ];
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [active, setActive]     = useState("Home");
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function Navbar({ onNavigate, currentPage }) {
+  const [scrolled, setScrolled]         = useState(false);
+  const [active, setActive]             = useState("Home");
+  const [menuOpen, setMenuOpen]         = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const dropdownRef                     = useRef(null);
+  const timeoutRef                      = useRef(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutRef.current);
+    setServicesOpen(true);
+  };
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setServicesOpen(false), 120);
+  };
 
   return (
     <>
@@ -47,24 +114,110 @@ export default function Navbar() {
       <header className={`nb ${scrolled ? "nb--scrolled" : ""}`}>
         <div className="nb__inner">
 
-          {/* Logo — actual image */}
-          <a href="#home" className="nb__logo">
+          {/* Logo */}
+          <a href="#home" className="nb__logo" onClick={() => { setActive("Home"); onNavigate && onNavigate("home"); }}>
             <img src={logo} alt="Social Theka" className="nb__logo-img" />
           </a>
 
           {/* Nav links */}
           <nav className="nb__links">
-            {NAV_LINKS.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className={`nb__link ${active === l.label ? "nb__link--active" : ""}`}
-                onClick={() => { setActive(l.label); setMenuOpen(false); }}
-              >
-                {l.label}
-                {l.dropdown && <span className="nb__chevron">›</span>}
-              </a>
-            ))}
+            {NAV_LINKS.map((l) =>
+              l.dropdown === "services" ? (
+                <div
+                  key={l.label}
+                  className="nb__link-wrapper"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  ref={dropdownRef}
+                >
+                  <a
+                    href={l.href}
+                    className={`nb__link ${active === l.label ? "nb__link--active" : ""}`}
+                    onClick={() => { setActive(l.label); setMenuOpen(false); }}
+                  >
+                    {l.label}
+                    <span className={`nb__chevron ${servicesOpen ? "nb__chevron--open" : ""}`}>›</span>
+                  </a>
+
+                  {/* ── Mega Dropdown ── */}
+                  {servicesOpen && (
+                    <div className="nb__mega">
+                      <div className="nb__mega-inner">
+
+                        {/* Delhi Column */}
+                        <div className="nb__mega-col">
+                          <div className="nb__mega-city">
+                            <span className="nb__mega-city-flag">🏙️</span>
+                            Delhi
+                          </div>
+                          <ul className="nb__mega-list">
+                            {DELHI_SERVICES.map((s) => (
+                              <li key={s.label}>
+                                <button className="nb__mega-item" onClick={() => { setServicesOpen(false); setActive("Our Services"); onNavigate && onNavigate(s.to); }}>
+                                  <span className="nb__mega-item-icon">{s.icon}</span>
+                                  {s.label}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                          <button className="nb__mega-viewall" onClick={() => setServicesOpen(false)}>
+                            View all Delhi services →
+                          </button>
+                        </div>
+
+                        {/* Divider */}
+                        <div className="nb__mega-divider" />
+
+                        {/* Chandigarh Column */}
+                        <div className="nb__mega-col">
+                          <div className="nb__mega-city">
+                            <span className="nb__mega-city-flag">🏙️</span>
+                            Chandigarh
+                          </div>
+                          <ul className="nb__mega-list">
+                            {CHANDIGARH_SERVICES.map((s) => (
+                              <li key={s.label}>
+                                <button className="nb__mega-item" onClick={() => { setServicesOpen(false); setActive("Our Services"); onNavigate && onNavigate(s.to); }}>
+                                  <span className="nb__mega-item-icon">{s.icon}</span>
+                                  {s.label}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                          <button className="nb__mega-viewall" onClick={() => setServicesOpen(false)}>
+                            View all Chandigarh services →
+                          </button>
+                        </div>
+
+                      </div>
+
+                      {/* Bottom stats bar */}
+                      <div className="nb__mega-stats">
+                        <span><strong>5M+</strong> keywords ranked</span>
+                        <span><strong>1M+</strong> leads generated</span>
+                        <span><strong>25K+</strong> happy clients</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  className={`nb__link ${active === l.label ? "nb__link--active" : ""}`}
+                  onClick={() => {
+                    setActive(l.label);
+                    setMenuOpen(false);
+                    if (l.label === "Home") onNavigate && onNavigate("home");
+                  }}
+                >
+                  {l.label}
+                  {l.dropdown && l.dropdown !== "services" && (
+                    <span className="nb__chevron">›</span>
+                  )}
+                </a>
+              )
+            )}
           </nav>
 
           {/* CTA buttons */}
@@ -105,14 +258,36 @@ export default function Navbar() {
                 key={l.label}
                 href={l.href}
                 className={`nb__mobile-link ${active === l.label ? "nb__mobile-link--active" : ""}`}
-                onClick={() => { setActive(l.label); setMenuOpen(false); }}
+                onClick={() => {
+                  setActive(l.label);
+                  setMenuOpen(false);
+                  if (l.label === "Home") onNavigate && onNavigate("home");
+                }}
               >
                 {l.label}
               </a>
             ))}
+            {/* Mobile Services expanded */}
+            <div className="nb__mobile-cities">
+              <div className="nb__mobile-city-group">
+                <div className="nb__mobile-city-label">🏙️ Delhi</div>
+                {DELHI_SERVICES.map((s) => (
+                  <button key={s.label} className="nb__mobile-service-link" onClick={() => { setMenuOpen(false); onNavigate && onNavigate(s.to); }}>
+                    {s.icon} {s.label}
+                  </button>
+                ))}
+              </div>
+              <div className="nb__mobile-city-group">
+                <div className="nb__mobile-city-label">🏙️ Chandigarh</div>
+                {CHANDIGARH_SERVICES.map((s) => (
+                  <button key={s.label} className="nb__mobile-service-link" onClick={() => { setMenuOpen(false); onNavigate && onNavigate(s.to); }}>
+                    {s.icon} {s.label}
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="nb__mobile-ctas">
-              {/* <a href="#contact" className="nb__btn-outline" onClick={() => setMenuOpen(false)}>Contact Us</a> */}
-              <a href="#contact" className="nb__btn-solid"   onClick={() => setMenuOpen(false)}>Book a Meeting</a>
+              <a href="#contact" className="nb__btn-solid" onClick={() => setMenuOpen(false)}>Book a Meeting</a>
             </div>
           </div>
         )}
