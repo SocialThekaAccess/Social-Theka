@@ -630,8 +630,7 @@ function CTA() {
             Ready to Grow Your Business<br />With Social Theka?
           </h2>
           <p className="cta__p">
-            From Chandigarh to New York — brands across India, USA, UK and Dubai have scaled with
-            us. Book a free call. No pressure, no hard sell, just clarity.
+            From Chandigarh to New York - brands across the globe have grown with Social Theka. Ready to see what we can do for you?  
           </p>
         </div>
         <div className="cta__actions">
