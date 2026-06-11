@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import logo from "../assets/SocialThekaLogo.png";
 import footerLogo from "../assets/FooterLogo.png";
-import Navbar from "./Navbar";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
 import Pricing from './Pricing';
@@ -736,7 +735,6 @@ function ScrollToTop() {
 export default function SocialTheka() {
   return (
     <>
-      <Navbar />
       <Hero />
       <RegionalPresence />
       <Pricing />
