@@ -61,9 +61,9 @@ const CHANDIGARH_SERVICES = [
 const NAV_LINKS = [
   { label: "Home",         href: "#home",     active: true  },
   { label: "Our Services", href: "#services", dropdown: "services" },
-  { label: "Theka Story",  href: "#why",      dropdown: true },
+  { label: "Theka Story",  href: "#story",    to: "theka-story" },
   { label: "Blogs",        href: "#blog",     dropdown: true },
-  { label: "Contact Us",   href: "#contact"                  },
+  { label: "Contact Us",   href: "#contact",  to: "contact"         },
 ];
 
 export default function Navbar({ onNavigate, currentPage }) {
@@ -209,6 +209,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                     setActive(l.label);
                     setMenuOpen(false);
                     if (l.label === "Home") onNavigate && onNavigate("home");
+                    if (l.to) onNavigate && onNavigate(l.to);
                   }}
                 >
                   {l.label}
@@ -262,6 +263,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                   setActive(l.label);
                   setMenuOpen(false);
                   if (l.label === "Home") onNavigate && onNavigate("home");
+                  if (l.to) onNavigate && onNavigate(l.to);
                 }}
               >
                 {l.label}
