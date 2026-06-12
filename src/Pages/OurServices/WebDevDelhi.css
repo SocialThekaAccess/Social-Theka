@@ -4,7 +4,7 @@
    ══════════════════════════════════════════ */
 
 .wdd-page {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'DM Sans', 'Inter', sans-serif;
   color: #111827;
   background: #fff;
   line-height: 1.6;
@@ -57,9 +57,14 @@
   0%,100% { opacity:1; transform:scale(1); }
   50%      { opacity:.4; transform:scale(1.5); }
 }
-.wdd-hero__title {
-  font-size: clamp(28px, 3.5vw, 46px);
-  font-weight: 800;
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ;
   color: #111827;
   line-height: 1.15;
   margin: 0 0 18px;
@@ -96,6 +101,7 @@
 }
 .wdd-hero__stat-val {
   font-size: 22px;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 800;
   color: #111827;
   line-height: 1;
@@ -190,9 +196,14 @@
   letter-spacing: 0.1em; text-transform: uppercase;
   color: #6b7280; margin: 0 0 12px;
 }
-.wdd-section__title {
-  font-size: clamp(24px, 3.5vw, 38px);
-  font-weight: 800; color: #111827;
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827;
   margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2;
 }
 .wdd-section__sub {
@@ -305,8 +316,14 @@
   text-align: center; border-top: 1px solid #e5e7eb;
 }
 .wdd-cta-banner__inner { max-width: 680px; margin: 0 auto; }
-.wdd-cta-banner__title {
-  font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #111827;
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827;
   margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2;
 }
 .wdd-cta-banner__sub { font-size: 15px; color: #6b7280; margin: 0 0 32px; line-height: 1.75; }
@@ -326,3 +343,5 @@
   .wdd-section { padding: 40px 20px; }
   .wdd-cta-banner { padding: 48px 20px; }
 }
+
+

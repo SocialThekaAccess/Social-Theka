@@ -3,18 +3,13 @@
    Red (#BE123C) ONLY on CTA buttons
    ══════════════════════════════════════════ */
 
-.seod-page {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  color: #111827;
-  background: #fff;
-  line-height: 1.6;
-}
+.seod-page { font-family: 'DM Sans', 'Inter', sans-serif; color: #111827; background: #fff; line-height: 1.6; }
 
 /* ── HERO ──────────────────────────────── */
 .seod-hero { background: #fff; padding: 70px 40px 80px; border-bottom: 1px solid #e5e7eb; }
 .seod-hero__inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .seod-hero__left { display: flex; flex-direction: column; align-items: flex-start; }
-.seod-hero__title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 800; color: #111827; line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; text-align: left; }
+.seod-hero__title { font-family: 'DM Sans', sans-serif; font-size: clamp(28px, 3.5vw, 46px); font-weight: 800; color: #111827; line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; text-align: left; }
 .seod-hero__tagline { font-size: 18px; font-weight: 600; color: #BE123C; font-style: italic; margin: 0 0 20px; }
 .seod-hero__sub { font-size: 15px; color: #6b7280; line-height: 1.75; margin: 0 0 14px; text-align: left; }
 .seod-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin: 18px 0 36px; }
@@ -47,9 +42,9 @@
 .seod-section__inner { max-width: 1280px; margin: 0 auto; }
 .seod-section__inner--narrow { max-width: 860px; margin: 0 auto; }
 .seod-section__head { text-align: center; margin-bottom: 36px; }
-.seod-section__title { font-size: clamp(24px, 3.5vw, 38px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+.seod-section__title { font-family: 'DM Sans', sans-serif; font-size: clamp(24px, 3.5vw, 38px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
 .seod-section__sub { font-size: 16px; color: #6b7280; max-width: 650px; margin: 0 auto 14px; line-height: 1.7; }
-.seod-section__note { font-size: 15px; color: #374151; font-style: italic; text-align: center; margin-top: 28px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.seod-section__note { font-size: 15px; color: #374151; text-align: center; margin-top: 28px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7; }
 
 /* ── ADS vs SEO COMPARISON ─────────────── */
 .seod-comparison { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
@@ -58,15 +53,34 @@
 .seod-comparison__label { font-weight: 800; color: #111827; }
 .seod-comparison__value { color: #6b7280; }
 
-/* ── WHY CARDS ─────────────────────────── */
-.seod-why__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-.seod-why-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px 24px; transition: box-shadow .22s ease, transform .22s ease; }
-.seod-why-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
-.seod-why-card__icon { width: 48px; height: 48px; border-radius: 12px; background: #f3f4f6; color: #111827; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-.seod-why-card__title { font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 10px; }
-.seod-why-card__desc  { font-size: 13.5px; color: #6b7280; line-height: 1.75; margin: 0; }
+/* ── TYPES GRID — 3-col auto-fill ──────── */
+.seod-types__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
 
-/* ── SERVICE CARDS ─────────────────────── */
+/* ── WHY GRID — Marquee (right to left) ─ */
+.seod-why-marquee-wrap {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.seod-why-marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: seodWhyScroll 30s linear infinite;
+}
+.seod-why-marquee-track:hover { animation-play-state: paused; }
+@keyframes seodWhyScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+/* keep same card design, just remove fixed width constraints */
+.seod-why__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.seod-why-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 24px 20px; min-width: 240px; max-width: 240px; flex-shrink: 0; transition: box-shadow .22s ease, transform .22s ease; }
+.seod-why-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.seod-why-card__icon { width: 44px; height: 44px; border-radius: 12px; background: #f3f4f6; color: #111827; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.seod-why-card__title { font-size: 15px; font-weight: 700; color: #111827; margin: 0 0 8px; }
+.seod-why-card__desc  { font-size: 13px; color: #6b7280; line-height: 1.7; margin: 0; }
 .seod-services__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
 .seod-service-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px 24px; transition: box-shadow .22s ease, transform .22s ease; }
 .seod-service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.09); transform: translateY(-3px); }
@@ -74,12 +88,26 @@
 .seod-service-card__name { font-size: 17px; font-weight: 700; color: #111827; margin: 0 0 10px; }
 .seod-service-card__desc { font-size: 13.5px; color: #6b7280; line-height: 1.75; margin: 0; }
 
-/* ── PAIN / CHECK CARDS ────────────────── */
-.seod-pain__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; }
-.seod-pain-card { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 18px; }
-.seod-pain-card__icon { width: 28px; height: 28px; border-radius: 50%; background: #111827; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-.seod-pain-card__title { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 5px; }
-.seod-pain-card__desc  { font-size: 13.5px; color: #6b7280; line-height: 1.7; }
+/* ── CHOOSE GRID — 3-col for WHY CHOOSE ─ */
+.seod-choose__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+/* ── PAIN / CHECK CARDS — 5 col ─────────*/
+.seod-pain__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.seod-pain-card { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 16px; min-width: 0; }
+.seod-pain-card__icon { width: 26px; height: 26px; border-radius: 50%; background: #111827; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.seod-pain-card__title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 5px; }
+.seod-pain-card__desc  { font-size: 12.5px; color: #6b7280; line-height: 1.65; }
+
+/* ── GET GRID — "What You Get" auto-fill ─ */
+.seod-get__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+
+/* ── WHY GRID — Types of SEO etc ──────── */
+.seod-why__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.seod-why-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px 24px; min-width: 0; max-width: none; flex-shrink: unset; transition: box-shadow .22s ease, transform .22s ease; }
+.seod-why-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.seod-why-card__icon { width: 48px; height: 48px; border-radius: 12px; background: #f3f4f6; color: #111827; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.seod-why-card__title { font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 10px; }
+.seod-why-card__desc  { font-size: 13.5px; color: #6b7280; line-height: 1.75; margin: 0; }
 
 /* ── PROCESS ───────────────────────────── */
 .seod-process__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
@@ -88,7 +116,7 @@
 .seod-process-card__title { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 6px; }
 .seod-process-card__desc  { font-size: 13.5px; color: #6b7280; line-height: 1.7; }
 
-/* ── LIST (Who this is for / Simple) ───── */
+/* ── LIST ───────────────────────────────── */
 .seod-list { display: flex; flex-direction: column; gap: 12px; max-width: 600px; margin: 0 auto; }
 .seod-list-item { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; font-size: 15px; font-weight: 500; color: #111827; }
 .seod-list-item__icon { width: 28px; height: 28px; border-radius: 50%; background: #111827; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -97,8 +125,6 @@
 .seod-honest { max-width: 560px; margin: 0 auto; background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 32px 36px; }
 .seod-honest p { font-size: 16px; color: #374151; line-height: 1.8; margin: 0 0 10px; }
 .seod-honest p:last-child { margin: 0; color: #111827; font-weight: 600; }
-
-/* ── HONEST GRID ───────────────────────── */
 .seod-honest__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .seod-honest-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px 24px; display: flex; gap: 18px; align-items: flex-start; }
 .seod-honest-card__num { font-size: 13px; font-weight: 800; color: #fff; background: #111827; border-radius: 8px; padding: 7px 11px; flex-shrink: 0; line-height: 1; }
@@ -112,13 +138,10 @@
 .seod-simple-card__title { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 6px; }
 .seod-simple-card__desc { font-size: 13.5px; color: #6b7280; line-height: 1.7; }
 
-/* ── WHO THIS IS FOR GRID ──────────────── */
+/* ── WHO THIS IS FOR ───────────────────── */
 .seod-whois__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .seod-whois-card { display: flex; align-items: center; gap: 14px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 18px; font-size: 15px; font-weight: 600; color: #111827; }
 .seod-whois-card__icon { width: 26px; height: 26px; border-radius: 50%; background: #111827; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-
-/* ── PAIN GRID (override for 3 col) ───── */
-.seod-pain__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
 /* ── FAQ ───────────────────────────────── */
 .seod-faq__list { display: flex; flex-direction: column; gap: 12px; }
@@ -132,7 +155,7 @@
 /* ── CTA ───────────────────────────────── */
 .seod-cta-banner { background: #f9fafb; padding: 64px 40px; text-align: center; border-top: 1px solid #e5e7eb; }
 .seod-cta-banner__inner { max-width: 680px; margin: 0 auto; }
-.seod-cta-banner__title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+.seod-cta-banner__title { font-family: 'DM Sans', sans-serif; font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
 .seod-cta-banner__sub { font-size: 15px; color: #6b7280; margin: 0 0 32px; line-height: 1.75; }
 
 /* ── RESPONSIVE ────────────────────────── */
@@ -144,11 +167,14 @@
   .seod-hero__right { position: static; }
 }
 @media (max-width: 768px) {
-  .seod-pain__grid, .seod-process__grid { grid-template-columns: 1fr; }
+  .seod-pain__grid { grid-template-columns: repeat(2, 1fr); }
+  .seod-process__grid { grid-template-columns: 1fr; }
+  .seod-honest__grid, .seod-whois__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .seod-hero { padding: 48px 20px 56px; }
   .seod-section { padding: 40px 20px; }
   .seod-cta-banner { padding: 48px 20px; }
   .seod-honest { padding: 24px 20px; }
+  .seod-pain__grid { grid-template-columns: 1fr; }
 }

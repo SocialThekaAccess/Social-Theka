@@ -374,7 +374,8 @@ ul { list-style: none; }
 
 /* ── LOCATION CARDS ─────────────────────────────── */
 .hero__locations {
-display: grid;
+  display: grid;
+  font-family: 'DM Sans', sans-serif;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   padding: 10px;

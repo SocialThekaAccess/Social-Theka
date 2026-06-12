@@ -4,7 +4,7 @@
    ══════════════════════════════════════════ */
 
 .wdsc-page {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'DM Sans', 'Inter', sans-serif;
   color: #111827;
   background: #fff;
   line-height: 1.6;
@@ -17,7 +17,14 @@
 .wdsc-hero__badge { display: inline-flex; align-items: center; gap: 8px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 100px; padding: 6px 18px; margin-bottom: 24px; font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #111827; }
 .wdsc-hero__badge-dot { width: 7px; height: 7px; background: #BE123C; border-radius: 50%; display: inline-block; flex-shrink: 0; animation: wdscdot 2s infinite; }
 @keyframes wdscdot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(1.5); } }
-.wdsc-hero__title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 800; color: #111827; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.02em; text-align: left; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.02em; text-align: left; }
 .wdsc-hero__sub { font-size: 16px; color: #6b7280; line-height: 1.75; margin: 0 0 32px; text-align: left; }
 .wdsc-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
 .wdsc-hero__stats { display: flex; align-items: center; border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; width: 100%; }
@@ -50,7 +57,14 @@
 .wdsc-section__inner--narrow { max-width: 860px; }
 .wdsc-section__head { text-align: center; margin-bottom: 36px; }
 .wdsc-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6b7280; margin: 0 0 12px; }
-.wdsc-section__title { font-size: clamp(24px, 3.5vw, 38px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
 .wdsc-section__subtitle { font-size: 18px; font-weight: 700; color: #111827; margin: 18px 0 0; }
 .wdsc-section__sub { font-size: 16px; color: #6b7280; max-width: 600px; margin: 0 auto; line-height: 1.7; }
 
@@ -96,13 +110,27 @@
 /* ── CTA ───────────────────────────────── */
 .wdsc-cta-banner { background: #f9fafb; padding: 64px 40px; text-align: center; border-top: 1px solid #e5e7eb; }
 .wdsc-cta-banner__inner { max-width: 680px; margin: 0 auto; }
-.wdsc-cta-banner__title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
 .wdsc-cta-banner__sub { font-size: 15px; color: #6b7280; margin: 0 0 32px; line-height: 1.75; }
 
 /* ── SPLIT LAYOUT ──────────────────────── */
 .wdsc-split__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .wdsc-split__left { display: flex; flex-direction: column; gap: 16px; }
-.wdsc-split__title { font-size: clamp(22px, 2.8vw, 34px); font-weight: 800; color: #111827; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
 .wdsc-split__sub { font-size: 15px; color: #6b7280; line-height: 1.8; margin: 0; }
 .wdsc-split__right { display: flex; flex-direction: column; gap: 14px; }
 .wdsc-split-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px 20px; }
@@ -125,3 +153,5 @@
   .wdsc-section { padding: 40px 20px; }
   .wdsc-cta-banner { padding: 48px 20px; }
 }
+
+
