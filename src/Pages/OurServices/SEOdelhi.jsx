@@ -243,14 +243,24 @@ export default function SEODelhi() {
             </div>
             <p className="seod-section__sub">And most strong brands use both — but SEO is what gives stability. With the right search engine optimization in Delhi, your business can:</p>
           </div>
-          <div className="seod-why__grid">
-            {WHY_SEO.map((item, i) => (
-              <div key={i} className="seod-why-card">
-                <div className="seod-why-card__icon">{item.icon}</div>
-                <h3 className="seod-why-card__title">{item.title}</h3>
-                <p className="seod-why-card__desc">{item.desc}</p>
-              </div>
-            ))}
+          <div className="seod-why-marquee-wrap">
+            <div className="seod-why-marquee-track">
+              {WHY_SEO.map((item, i) => (
+                <div key={i} className="seod-why-card">
+                  <div className="seod-why-card__icon">{item.icon}</div>
+                  <h3 className="seod-why-card__title">{item.title}</h3>
+                  <p className="seod-why-card__desc">{item.desc}</p>
+                </div>
+              ))}
+              {/* duplicate for seamless loop */}
+              {WHY_SEO.map((item, i) => (
+                <div key={`d-${i}`} className="seod-why-card" aria-hidden="true">
+                  <div className="seod-why-card__icon">{item.icon}</div>
+                  <h3 className="seod-why-card__title">{item.title}</h3>
+                  <p className="seod-why-card__desc">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <p className="seod-section__note">At Social Theka, we don't treat SEO like a one-time task. It's something that builds over time — and when done right, it compounds.</p>
         </div>
@@ -258,7 +268,7 @@ export default function SEODelhi() {
 
       {/* ── WHAT'S HOLDING WEBSITES BACK ── */}
       <section className="seod-section seod-section--white">
-        <div className="seod-section__inner seod-section__inner--narrow">
+        <div className="seod-section__inner">
           <div className="seod-section__head">
             <h2 className="seod-section__title">What's Usually Holding Websites Back</h2>
             <p className="seod-section__sub">Most websites don't rank — not because the business is bad, but because SEO is either missing or done incorrectly. Common issues we see:</p>
@@ -300,12 +310,12 @@ export default function SEODelhi() {
 
       {/* ── WHAT YOU GET ── */}
       <section className="seod-section seod-section--white">
-        <div className="seod-section__inner seod-section__inner--narrow">
+        <div className="seod-section__inner">
           <div className="seod-section__head">
             <h2 className="seod-section__title">What You Get When You Work With Social Theka</h2>
             <p className="seod-section__sub">Working with Social Theka doesn't feel complicated. You don't have to decode reports or chase updates. Here's what you actually get:</p>
           </div>
-          <div className="seod-pain__grid">
+          <div className="seod-get__grid">
             {WHAT_YOU_GET.map(([title, desc], i) => (
               <div key={i} className="seod-pain-card">
                 <div className="seod-pain-card__icon"><IconCheck /></div>
@@ -327,7 +337,7 @@ export default function SEODelhi() {
             <h2 className="seod-section__title">Types of SEO We Cover</h2>
             <p className="seod-section__sub">Different businesses need different SEO approaches. Here's how we handle it:</p>
           </div>
-          <div className="seod-why__grid">
+          <div className="seod-types__grid">
             {SEO_TYPES.map((item, i) => (
               <div key={i} className="seod-why-card">
                 <div className="seod-why-card__icon">{item.icon}</div>
@@ -363,12 +373,12 @@ export default function SEODelhi() {
 
       {/* ── WHY CHOOSE ── */}
       <section className="seod-section seod-section--gray">
-        <div className="seod-section__inner seod-section__inner--narrow">
+        <div className="seod-section__inner">
           <div className="seod-section__head">
             <h2 className="seod-section__title">Why Businesses Choose Social Theka for SEO</h2>
             <p className="seod-section__sub">There's no shortage of agencies offering SEO. But many businesses struggle because things feel unclear. Here's what we do differently:</p>
           </div>
-          <div className="seod-pain__grid">
+          <div className="seod-choose__grid">
             {WHY_CHOOSE.map(([title, desc], i) => (
               <div key={i} className="seod-pain-card">
                 <div className="seod-pain-card__icon"><IconCheck /></div>

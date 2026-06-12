@@ -4,7 +4,7 @@
    ══════════════════════════════════════════ */
 
 .wdsd-page {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'DM Sans', 'Inter', sans-serif;
   color: #111827;
   background: #fff;
   line-height: 1.6;
@@ -14,7 +14,14 @@
 .wdsd-hero { background: #fff; padding: 70px 40px 80px; border-bottom: 1px solid #e5e7eb; }
 .wdsd-hero__inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .wdsd-hero__left { display: flex; flex-direction: column; align-items: flex-start; }
-.wdsd-hero__title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 800; color: #111827; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.02em; text-align: left; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.02em; text-align: left; }
 .wdsd-hero__sub { font-size: 16px; color: #6b7280; line-height: 1.75; margin: 0 0 18px; text-align: left; }
 .wdsd-hero__sub:last-of-type { margin-bottom: 32px; }
 .wdsd-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
@@ -47,7 +54,14 @@
 .wdsd-section__inner { max-width: 1280px; margin: 0 auto; }
 .wdsd-section__inner--narrow { max-width: 860px; }
 .wdsd-section__head { text-align: center; margin-bottom: 36px; }
-.wdsd-section__title { font-size: clamp(24px, 3.5vw, 38px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
 .wdsd-section__sub { font-size: 16px; color: #6b7280; max-width: 700px; margin: 0 auto 14px; line-height: 1.7; }
 
 /* ── SERVICE CARDS ─────────────────────── */
@@ -75,7 +89,14 @@
 /* ── SPLIT GRID ────────────────────────── */
 .wdsd-split__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .wdsd-split__left { display: flex; flex-direction: column; gap: 16px; }
-.wdsd-split__title { font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: #111827; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
 .wdsd-split__sub { font-size: 15px; color: #6b7280; line-height: 1.8; margin: 0; }
 .wdsd-split__right { display: flex; flex-direction: column; gap: 16px; }
 .wdsd-stat-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px 24px; }
@@ -106,7 +127,14 @@
 /* ── CTA ───────────────────────────────── */
 .wdsd-cta-banner { background: #f9fafb; padding: 64px 40px; text-align: center; border-top: 1px solid #e5e7eb; }
 .wdsd-cta-banner__inner { max-width: 680px; margin: 0 auto; }
-.wdsd-cta-banner__title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
 .wdsd-cta-banner__sub { font-size: 15px; color: #6b7280; margin: 0 0 32px; line-height: 1.75; }
 
 /* ── RESPONSIVE ────────────────────────── */
@@ -124,3 +152,5 @@
   .wdsd-section { padding: 40px 20px; }
   .wdsd-cta-banner { padding: 48px 20px; }
 }
+
+

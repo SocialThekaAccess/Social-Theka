@@ -4,7 +4,7 @@
    ══════════════════════════════════════════ */
 
 .vec-page {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-family: 'DM Sans', 'Inter', sans-serif;
   color: #111827;
   background: #fff;
   line-height: 1.6;
@@ -14,7 +14,14 @@
 .vec-hero { background: #fff; padding: 70px 40px 80px; border-bottom: 1px solid #e5e7eb; }
 .vec-hero__inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .vec-hero__left { display: flex; flex-direction: column; align-items: flex-start; }
-.vec-hero__title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 800; color: #111827; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.02em; text-align: left; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.02em; text-align: left; }
 .vec-hero__sub { font-size: 15px; color: #6b7280; line-height: 1.75; margin: 0 0 14px; text-align: left; }
 .vec-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin: 18px 0 28px; }
 .vec-hero__stats { display: flex; align-items: center; border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; width: 100%; }
@@ -47,7 +54,14 @@
 .vec-section__inner--narrow { max-width: 860px; margin: 0 auto; }
 .vec-section__head { text-align: center; margin-bottom: 36px; }
 .vec-section__head--left { text-align: left; }
-.vec-section__title { font-size: clamp(24px, 3.5vw, 38px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
 .vec-section__sub { font-size: 16px; color: #6b7280; max-width: 700px; margin: 0 auto 12px; line-height: 1.7; }
 .vec-section__sub--left { margin-left: 0; margin-right: 0; max-width: 800px; }
 .vec-section__note { font-size: 15px; color: #374151; font-style: italic; text-align: center; margin-top: 24px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
@@ -56,7 +70,14 @@
 .vec-trust-section { background: #111827; padding: 72px 40px; }
 .vec-trust__inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
 .vec-trust__left { display: flex; flex-direction: column; gap: 16px; }
-.vec-trust__title { font-size: clamp(26px, 3vw, 40px); font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #fff; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
 .vec-trust__sub { font-size: 15px; color: #9ca3af; line-height: 1.8; margin: 0; }
 .vec-trust__right { display: flex; flex-direction: column; gap: 20px; }
 .vec-trust-card { background: #1f2937; border: 1px solid #374151; border-radius: 16px; padding: 28px 24px; }
@@ -73,7 +94,14 @@
 /* ── BEST AGENCY SPLIT ─────────────────── */
 .vec-best__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .vec-best__left { display: flex; flex-direction: column; gap: 14px; }
-.vec-best__title { font-size: clamp(22px, 2.8vw, 34px); font-weight: 800; color: #111827; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
 .vec-best__sub { font-size: 15px; color: #6b7280; line-height: 1.75; margin: 0; }
 .vec-best__right { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-self: start; }
 .vec-best-tag { font-size: 14px; font-weight: 600; color: #374151; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 18px; text-align: center; transition: box-shadow .2s ease, transform .2s ease; line-height: 1.4; }
@@ -144,7 +172,14 @@
 .vec-final-section { background: #111827; padding: 72px 40px; }
 .vec-final__inner { max-width: 1000px; margin: 0 auto; text-align: center; }
 .vec-final__badge { display: inline-block; background: #1f2937; color: #9ca3af; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 100px; padding: 6px 18px; margin-bottom: 20px; border: 1px solid #374151; }
-.vec-final__title { font-size: clamp(26px, 3vw, 40px); font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 16px; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #fff; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 16px; }
 .vec-final__sub { font-size: 16px; color: #9ca3af; line-height: 1.8; margin: 0 0 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
 .vec-final__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
 .vec-final__card { background: #1f2937; border: 1px solid #374151; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; }
@@ -163,7 +198,14 @@
 /* ── CTA ───────────────────────────────── */
 .vec-cta-banner { background: #f9fafb; padding: 64px 40px; text-align: center; border-top: 1px solid #e5e7eb; }
 .vec-cta-banner__inner { max-width: 680px; margin: 0 auto; }
-.vec-cta-banner__title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+ 
+        $m = $args[0]
+        if ($m.Value -notmatch "font-family") {
+            $m.Groups[1].Value + "font-family: 'DM Sans', sans-serif;`n  " + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    ; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
 .vec-cta-banner__sub { font-size: 15px; color: #6b7280; margin: 0 0 32px; line-height: 1.75; }
 
 /* ── RESPONSIVE ────────────────────────── */
@@ -187,3 +229,5 @@
   .vec-cta-banner { padding: 48px 20px; }
   .vec-formats__grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+
