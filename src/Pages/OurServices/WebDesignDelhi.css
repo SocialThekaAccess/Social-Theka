@@ -1,0 +1,126 @@
+/* ══════════════════════════════════════════
+   WebDesignDelhi.css  —  wdsd- prefix
+   Red (#BE123C) ONLY on CTA buttons
+   ══════════════════════════════════════════ */
+
+.wdsd-page {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #111827;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* ── HERO ──────────────────────────────── */
+.wdsd-hero { background: #fff; padding: 70px 40px 80px; border-bottom: 1px solid #e5e7eb; }
+.wdsd-hero__inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.wdsd-hero__left { display: flex; flex-direction: column; align-items: flex-start; }
+.wdsd-hero__title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 800; color: #111827; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.02em; text-align: left; }
+.wdsd-hero__sub { font-size: 16px; color: #6b7280; line-height: 1.75; margin: 0 0 18px; text-align: left; }
+.wdsd-hero__sub:last-of-type { margin-bottom: 32px; }
+.wdsd-hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.wdsd-hero__stats { display: flex; align-items: center; border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; width: 100%; }
+.wdsd-hero__stat { flex: 1; padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
+.wdsd-hero__stat-val { font-size: 22px; font-weight: 800; color: #111827; line-height: 1; }
+.wdsd-hero__stat-label { font-size: 12px; color: #6b7280; font-weight: 500; }
+.wdsd-hero__stat-divider { width: 1px; height: 40px; background: #e5e7eb; flex-shrink: 0; }
+.wdsd-hero__right { display: flex; flex-direction: column; align-self: start; }
+.wdsd-hero__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wdsd-hero__card { display: flex; align-items: center; gap: 14px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px 16px; transition: box-shadow .2s ease, transform .2s ease; }
+.wdsd-hero__card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.wdsd-hero__card--highlight { background: #fff7f8; border-color: rgba(190,18,60,0.2); }
+.wdsd-hero__card-icon { width: 42px; height: 42px; border-radius: 10px; background: #fff; border: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: center; color: #111827; flex-shrink: 0; }
+.wdsd-hero__card--highlight .wdsd-hero__card-icon { background: #fff7f8; border-color: rgba(190,18,60,0.2); color: #BE123C; }
+.wdsd-hero__card-name { font-size: 14px; font-weight: 700; color: #111827; }
+.wdsd-hero__card-desc { font-size: 12px; color: #6b7280; margin-top: 2px; }
+
+/* ── BUTTONS ───────────────────────────── */
+.wdsd-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #BE123C; color: #fff; padding: 13px 28px; border-radius: 100px; font-weight: 700; font-size: 14.5px; text-decoration: none; border: 2px solid #BE123C; transition: all .22s ease; box-shadow: 0 4px 18px rgba(190,18,60,0.25); }
+.wdsd-btn-primary:hover { background: #9f0f33; border-color: #9f0f33; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(190,18,60,0.35); }
+.wdsd-btn-primary--lg { padding: 15px 36px; font-size: 15.5px; }
+.wdsd-btn-outline { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #374151; padding: 13px 28px; border-radius: 100px; font-weight: 600; font-size: 14.5px; text-decoration: none; border: 1.5px solid #d1d5db; transition: all .22s ease; }
+.wdsd-btn-outline:hover { border-color: #111827; color: #111827; transform: translateY(-1px); }
+
+/* ── SECTIONS ──────────────────────────── */
+.wdsd-section { padding: 56px 40px; }
+.wdsd-section--white { background: #fff; }
+.wdsd-section--gray  { background: #f9fafb; }
+.wdsd-section__inner { max-width: 1280px; margin: 0 auto; }
+.wdsd-section__inner--narrow { max-width: 860px; }
+.wdsd-section__head { text-align: center; margin-bottom: 36px; }
+.wdsd-section__title { font-size: clamp(24px, 3.5vw, 38px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+.wdsd-section__sub { font-size: 16px; color: #6b7280; max-width: 700px; margin: 0 auto 14px; line-height: 1.7; }
+
+/* ── SERVICE CARDS ─────────────────────── */
+.wdsd-services__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+.wdsd-service-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px 24px; transition: box-shadow .22s ease, transform .22s ease; }
+.wdsd-service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.09); transform: translateY(-3px); }
+.wdsd-service-card__icon { width: 50px; height: 50px; border-radius: 12px; background: #f3f4f6; color: #111827; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+.wdsd-service-card__name { font-size: 17px; font-weight: 700; color: #111827; margin: 0 0 10px; }
+.wdsd-service-card__desc { font-size: 13.5px; color: #6b7280; line-height: 1.75; margin: 0; }
+
+/* ── PROCESS ───────────────────────────── */
+.wdsd-process__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 16px; }
+.wdsd-process-card { display: flex; gap: 18px; align-items: flex-start; background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px 20px; }
+.wdsd-process-card__step { font-size: 13px; font-weight: 800; color: #111827; background: #f3f4f6; border-radius: 10px; padding: 8px 12px; flex-shrink: 0; line-height: 1; }
+.wdsd-process-card__title { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 6px; }
+.wdsd-process-card__desc  { font-size: 13.5px; color: #6b7280; line-height: 1.7; }
+
+/* ── PAIN / CHECK CARDS ────────────────── */
+.wdsd-pain__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 16px; }
+.wdsd-pain-card { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px 18px; }
+.wdsd-pain-card__icon { width: 28px; height: 28px; border-radius: 50%; background: #111827; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.wdsd-pain-card__title { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 5px; }
+.wdsd-pain-card__desc  { font-size: 13.5px; color: #6b7280; line-height: 1.7; }
+
+/* ── SPLIT GRID ────────────────────────── */
+.wdsd-split__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.wdsd-split__left { display: flex; flex-direction: column; gap: 16px; }
+.wdsd-split__title { font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: #111827; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+.wdsd-split__sub { font-size: 15px; color: #6b7280; line-height: 1.8; margin: 0; }
+.wdsd-split__right { display: flex; flex-direction: column; gap: 16px; }
+.wdsd-stat-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px 24px; }
+.wdsd-stat-card__icon { width: 44px; height: 44px; border-radius: 12px; background: #fff; border: 1px solid #e5e7eb; color: #111827; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.wdsd-stat-card__title { font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 8px; }
+.wdsd-stat-card__desc { font-size: 13.5px; color: #6b7280; line-height: 1.75; margin: 0; }
+
+/* ── PRICING CARDS ─────────────────────── */
+.wdsd-pricing__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+.wdsd-pricing-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 36px 28px; display: flex; flex-direction: column; gap: 12px; }
+.wdsd-pricing-card--highlight { border: 2px solid #111827; box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+.wdsd-pricing-card__icon { width: 48px; height: 48px; border-radius: 12px; background: #f3f4f6; color: #111827; display: flex; align-items: center; justify-content: center; }
+.wdsd-pricing-card__title { font-size: 18px; font-weight: 700; color: #111827; margin: 0; }
+.wdsd-pricing-card__price { font-size: 22px; font-weight: 800; color: #111827; }
+.wdsd-pricing-card--highlight .wdsd-pricing-card__price { color: #BE123C; }
+.wdsd-pricing-card__desc { font-size: 13.5px; color: #6b7280; line-height: 1.7; margin: 0; }
+.wdsd-section__note { font-size: 15px; color: #374151; font-style: italic; text-align: center; margin-top: 8px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+/* ── FAQ ───────────────────────────────── */
+.wdsd-faq__list { display: flex; flex-direction: column; gap: 12px; }
+.wdsd-faq__item { border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; background: #fff; }
+.wdsd-faq__item--open { border-color: #9ca3af; }
+.wdsd-faq__q { width: 100%; text-align: left; background: none; border: none; padding: 18px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: inherit; }
+.wdsd-faq__q span:first-child { font-size: 15px; font-weight: 600; color: #111827; }
+.wdsd-faq__icon { font-size: 22px; color: #111827; flex-shrink: 0; line-height: 1; }
+.wdsd-faq__a { padding: 14px 20px 18px; font-size: 14px; color: #6b7280; line-height: 1.75; border-top: 1px solid #f3f4f6; }
+
+/* ── CTA ───────────────────────────────── */
+.wdsd-cta-banner { background: #f9fafb; padding: 64px 40px; text-align: center; border-top: 1px solid #e5e7eb; }
+.wdsd-cta-banner__inner { max-width: 680px; margin: 0 auto; }
+.wdsd-cta-banner__title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #111827; margin: 0 0 14px; letter-spacing: -0.02em; line-height: 1.2; }
+.wdsd-cta-banner__sub { font-size: 15px; color: #6b7280; margin: 0 0 32px; line-height: 1.75; }
+
+/* ── RESPONSIVE ────────────────────────── */
+@media (max-width: 900px) {
+  .wdsd-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+  .wdsd-hero__left { align-items: center; }
+  .wdsd-hero__title, .wdsd-hero__sub { text-align: center; }
+  .wdsd-hero__ctas { justify-content: center; }
+}
+@media (max-width: 768px) {
+  .wdsd-process__grid, .wdsd-pain__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .wdsd-hero { padding: 48px 20px 56px; }
+  .wdsd-section { padding: 40px 20px; }
+  .wdsd-cta-banner { padding: 48px 20px; }
+}

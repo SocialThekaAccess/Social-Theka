@@ -22,7 +22,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
 .wdd-hero__left {
   display: flex;
@@ -111,7 +111,7 @@
   background: #e5e7eb;
   flex-shrink: 0;
 }
-.wdd-hero__right { display: flex; flex-direction: column; }
+.wdd-hero__right { display: flex; flex-direction: column; align-self: start; }
 .wdd-hero__cards {
   display: grid;
   grid-template-columns: 1fr 1fr;

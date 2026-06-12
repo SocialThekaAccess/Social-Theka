@@ -59,57 +59,58 @@ const IconArrow = () => (
     <path d="M5 12h14M12 5l7 7-7 7"/></svg>
 );
 
-const SERVICES = [
-  { icon: <IconCode />,    name: "Custom Website Development",  desc: "We build every website from scratch based on your actual needs and brand identity. No random templates, no copy-paste solutions — just a website that is entirely yours." },
-  { icon: <IconMobile />,  name: "Responsive Web Design",       desc: "Most people in Delhi browse on their phones. Every website we build works flawlessly across all devices — phones, tablets, and desktops." },
-  { icon: <IconShield />,  name: "PHP Development",             desc: "For businesses that need advanced functionality like custom portals, booking systems, or web applications — powerful, secure, and scalable solutions that grow with you." },
-  { icon: <IconShop />,    name: "E-Commerce Website Development", desc: "We build e-commerce websites that are easy for you to manage and simple for your customers to use — from browsing products all the way through to secure payment." },
-  { icon: <IconRefresh />, name: "Website Redesign Services",   desc: "Already have a website that is not performing? We redesign it with better visuals, faster speed, and stronger performance — without starting everything from scratch." },
-  { icon: <IconLayout />,  name: "Landing Page Development",    desc: "Running ads on Google or social media? We build focused landing pages with one clear goal — turning your visitors into leads and customers." },
+const WHAT_MAKES_GOOD = [
+  { icon: <IconZap />,    title: "Loading Speed",        desc: "Google considers this, but more importantly, users experience it. A website that takes more than 3 seconds to load can lose almost half of its visitors before showing the first element. We develop lightweight, fast websites." },
+  { icon: <IconMobile />, title: "Mobile-First Design",  desc: "More than 75% of Delhi's internet traffic is through mobile phones. Your site has to behave and look perfect on a 5-inch screen as well as on a laptop." },
+  { icon: <IconSearch />, title: "On-Page SEO",          desc: "The organization of the site impacts search engines. Meta tags, header hierarchy, image alt tags, internal linking — these are only the basics that we incorporate into every web page we build." },
+  { icon: <IconTarget />, title: "Clear Calls to Action", desc: "A visitor who has no idea what to do next is a potential lead lost. We craft each page with a definite sequence - what you want the visitor to do and how to make it easy for them." },
+  { icon: <IconShield />, title: "Security",             desc: "SSL, safe hosting, regular backups - these will not be options in 2026 - if you are a business that is not online (yet), you will be." },
 ];
 
-const WEBSITE_TYPES = [
-  { icon: <IconUsers />,  title: "Business Websites",  desc: "For service providers and consultants who want to establish credibility online. Simple, professional, and focused on building trust." },
-  { icon: <IconShop />,   title: "E-Commerce Stores",  desc: "For businesses that want to sell their products smoothly and professionally — from product pages to secure checkout." },
-  { icon: <IconStar />,   title: "Portfolio Websites", desc: "For people who want to show off their work in a compelling way. Present your projects professionally and make a strong impression." },
-  { icon: <IconLayout />, title: "Landing Pages",      desc: "For campaigns that need to get people to take action — buy something, sign up, or get in touch. Focused and conversion-driven." },
-  { icon: <IconCode />,   title: "Custom Solutions",   desc: "For anything more specific — fully custom solutions tailored to your exact requirements. This is also where our PHP development expertise delivers the most value." },
+const SERVICES = [
+  { icon: <IconUsers />,  name: "Business Websites & Corporate Sites", desc: "Most often your website is the first impression that a potential client gets about your company. It must gain trust rapidly. We create sleek, professional business websites that show reliability and change the visitors into contacts. Be it a consulting firm, a manufacturer, or a service provider - we have worked with all and we are aware of what really works in Delhi's B2B environment." },
+  { icon: <IconShop />,   name: "E-Commerce Stores",                   desc: "Our WooCommerce and Shopify stores are not just a platform to showcase products but are designed for sales. We set up and test product pages, checkout flow, payment gateway integration (Razorpay, PayU, CCAvenue), GST invoicing all, before launch. Also, we have worked with brands who started with 20 SKUs and scaled to thousands, so we understand how to build for growth." },
+  { icon: <IconLayout />, name: "Landing Pages",                       desc: "Are you using Google Ads or Meta campaigns? A landing page that is consistent with your ad copy and opens within 2 seconds can even increase your conversion rate by two times. We create landing pages that are not only visually appealing but also capable of converting visitors into leads, and product launches thoroughly checked on both desktop and mobile devices." },
+  { icon: <IconStar />,   name: "Portfolio & Personal Branding Sites", desc: "Photographers, architects, designers, coaches, consultants — your craft deserves a platform that truly represents it. We create portfolio websites that are not only visually appealing and fast but also crafted to help you stand out. No heavy templates. Simply clear, stylish presentation." },
 ];
 
 const WHY_US = [
-  { icon: <IconLayout />, title: "Professional & User-Friendly Designs", desc: "We don't make things confusing. Users should feel comfortable using your website from the moment they land on it." },
-  { icon: <IconMobile />, title: "Mobile-First Development",              desc: "We design keeping mobile users in mind from the start — because most people in Delhi are browsing on their phones." },
-  { icon: <IconZap />,    title: "Performance-Focused Builds",            desc: "A website should load fast and run smoothly. That is non-negotiable for us on every project we take." },
-  { icon: <IconShield />, title: "Clear Communication at Every Stage",    desc: "You will always know where your project stands. No surprises, no confusion — just regular updates throughout." },
-  { icon: <IconSearch />, title: "SEO Built Into Every Website",          desc: "We structure your website so Google can read it clearly, write clean code, ensure mobile optimisation, and build logical page architecture." },
-  { icon: <IconTarget />, title: "Reliable Support After Launch",         desc: "We do not just deliver a finished product and disappear. We stay available for updates and support long after your website goes live." },
+  { icon: <IconUsers />,  title: "We Speak Your Language",                   desc: "No confusing terms. No ghosts after the down payment. You will always be informed about the status of the project, the next steps, and the contact person." },
+  { icon: <IconTarget />, title: "We Meet Our Deadlines",                    desc: "Timelines are important. We set realistic goals for projects and keep to schedules. If there's a change, we let you know first - not only after the deadline is missed." },
+  { icon: <IconCode />,   title: "We Know Local Business Requirements",      desc: "Price points for Indian markets, adherence to GST rules, Hindi language support, WhatsApp chat integration, Just Dial and IndiaMART lead tracking — we include these in every project as they are real necessities of businesses in Delhi." },
+  { icon: <IconShield />, title: "We Don't Disappear After Launch",          desc: "Continuing support after the launch is one of our services. Bug? We fix it. Content update? We're there. Six months down the line, adding a new service page? You bet." },
 ];
 
 const PROCESS = [
-  { step: "01", title: "Consultation",          desc: "We begin by understanding your business, your goals, and what you need from your website." },
-  { step: "02", title: "Requirement Analysis",  desc: "We document every feature and page you need — planned carefully to match your business and future growth." },
-  { step: "03", title: "Concept & Planning",    desc: "A structured roadmap with timelines and approach so the project stays organised and on track." },
-  { step: "04", title: "UI/UX Design",          desc: "We create a clean, easy-to-use layout built around your visitors so they never feel confused." },
-  { step: "05", title: "Development",           desc: "Our web developers in Delhi code every feature carefully across all devices — desktop, phone, and tablet." },
-  { step: "06", title: "Implementation",        desc: "All tools, forms, and backend setup are handled so your website functions properly for real customers." },
-  { step: "07", title: "Testing",               desc: "Before launch, everything goes through thorough testing — speed, mobile, links, and performance." },
-  { step: "08", title: "Deployment & Support",  desc: "We handle deployment and remain available for ongoing support long after your website goes live." },
-];
-
-const PROBLEMS = [
-  ["Website Takes Forever to Load",   "We optimise speed so your site loads fast and keeps visitors from bouncing."],
-  ["Design Looks Really Old",         "We redesign your site to look modern, clean, and professional — matching today's standards."],
-  ["Does Not Work on Mobile",         "We make sure your site works perfectly on every device — phones, tablets, and desktops."],
-  ["No Clear Next Step for Visitors", "We improve UX and CTAs so visitors know exactly what to do and where to go next."],
-  ["Getting Visits but No Inquiries", "We build your site to convert — with clear messaging, focused user journeys, and strategic layout."],
+  { step: "01", title: "Discovery Call",       desc: "We discuss your business, audience, goals, and what you have done so far. The proposal is not sent until we have understood the brief." },
+  { step: "02", title: "Proposal & Scope",     desc: "We give you a detailed document — pages, features, timeline, cost. Nothing will be added to the bill after you have signed." },
+  { step: "03", title: "Design Mockup",        desc: "We don't write a single line of code until you can see what the website will look like. We keep going over it until you are satisfied." },
+  { step: "04", title: "Development & Content", desc: "We create the website, integrate all the software, and fill the pages with content — yours or our copywriting team's." },
+  { step: "05", title: "Testing",              desc: "Various tests considering different devices. Speed, form, and payment test (for e-commerce). We test first." },
+  { step: "06", title: "Launch & Handover",    desc: "We do the launch and show you how to update. You have all the rights, no lock-in, no reliance on us unless you want it." },
 ];
 
 const FAQS = [
-  { q: "How much does website development cost in Delhi?", a: "It depends on the scope of the project. We are always transparent about pricing before any work begins." },
-  { q: "How long does it take?",                           a: "A standard website takes a few weeks. Complex projects may take longer. We give you a clear timeline from day one." },
-  { q: "Will my website work on mobile?",                  a: "Yes. Every website we build is fully responsive across all devices." },
-  { q: "Do you offer post-launch support?",                a: "Yes. Our web developers in Delhi are always available for updates and assistance after launch." },
-  { q: "Can you improve my existing website?",             a: "Absolutely. We can redesign and improve your current website without starting from scratch." },
+  {
+    q: "What makes Social Theka the best website designing company in Delhi for small businesses?",
+    a: "Small businesses face quite a few limitations, budgeting being one, the desire for quick results, and it is even common that they don't have a marketing team to keep things going after the launch. We craft our websites in such a way that owners of small businesses can handle the management of their site, we price reasonably concerning the delivery, and firsthand we think about conversions when we design. Besides that, we are familiar with Delhi's local market: what buyers expect, what competitors are doing, and how to position your business online in a way that stands out. Most of our small business clients start ranking for local search terms within 3–4 months of launch.",
+  },
+  {
+    q: "How long does it take to design a website?",
+    a: "In general, a normal 5–7 page business website requires 2–3 weeks from the start of work to going live. Online store projects are subject to 4–6 weeks, depending on the number of products and the desired level of integration. Single sales pages (landing pages), in most cases, can be ready in about 5–7 days. When the client-side content collection happens to take longer (which is quite common), the timeline may change. We provide you with a content brief very early in the process to help you avoid any delays. Fast delivery can be done at an extra cost, though we'd rather get it right than quickly.",
+  },
+  {
+    q: "Do you provide website maintenance after launch?",
+    a: "Of course! We have monthly maintenance packages that include security updates, plugin/theme updates (for WordPress sites), regular backups, uptime monitoring, and minor content modifications. However, it's totally optional. Some clients are happy to manage their sites themselves and we're always willing to give them full control. But if you don't want to think about it at all, a maintenance plan will keep your site updated and safe with no work on your side. Pricing varies with the size and the complexity of your site.",
+  },
+  {
+    q: "Will my website rank on Google after Social Theka designs it?",
+    a: "We make sure each of our new websites is optimized for SEO right from the start using the right URL structure, meta tags, proper header levels, image optimization, schema markup where relevant, and quick page loading times. This is the baseline. Your ability to rank for highly competitive keywords will depend on your niche, your local competitors, and if you keep doing SEO after your site goes live. We are very transparent about this — creating a website just gets you started, doing SEO keeps you going strong. We do both, and we can prepare a plan for you according to your keyword objectives and competition in Delhi.",
+  },
+  {
+    q: "Can you redesign my existing website instead of building from scratch?",
+    a: "Definitely. Redesigns really are a major part of what we do. If your website feels outdated, running slow, or simply not turning visitors into customers, first of all, we carry out a thorough site audit — identifying the existing strengths (after all, if something's already ranking well, let's not break it) that can be continued, parts which should be eliminated, and those which require re-building. We transfer all your content, set up redirects from old URLs to preserve your SEO legacy, and go live with your revamped site without the kind of search engine issues that poorly done redesigns can cause.",
+  },
 ];
 
 export default function WebDevDelhi() {
@@ -122,17 +123,17 @@ export default function WebDevDelhi() {
       {/* ── HERO ── */}
       <section className="wdd-hero">
         <div className="wdd-hero__inner">
-          {/* LEFT */}
           <div className="wdd-hero__left">
             <div className="wdd-hero__badge">
               <span className="wdd-hero__badge-dot" />
-              Web Development — Delhi
+              Website Designing — Delhi
             </div>
             <h1 className="wdd-hero__title">
-              Your Website Isn't Working Hard Enough – Let Social Theka Fix That
+              Best Website Designing Company in Delhi
             </h1>
             <p className="wdd-hero__sub">
-              Delhi is competitive. The market moves fast. A weak website is not just a missed opportunity — it is actively costing you business every single day. We build websites that convert visitors into real clients.
+              Are you looking for a website designer in Delhi? A lot of choices might be a good thing but ironically, most of the time it just ends up stressing you more. Really, there are thousands of them who say all these superb things: quick delivery, super low price, high rankings, with money-back guarantee. Actually, most of them are the copy-paste shops which create and run the same template for every customer.
+              Social Theka does business differently. We don't sell you a package before knowing your business. We will meet (or call) you, understand your real needs, and then create something that is right for you. Sounds like what everyone is saying? Well, when you check the work, you will realize the difference. We have made websites for local stores. The market of Delhi is wild, fierce, and quite particular about what it wants. Lack of originality is absolutely not acceptable. That is why we don't cater to generic needs.
             </p>
             <div className="wdd-hero__ctas">
               <a href="#contact" className="wdd-btn-primary">Start Your Project <IconArrow /></a>
@@ -155,27 +156,26 @@ export default function WebDevDelhi() {
               </div>
             </div>
           </div>
-          {/* RIGHT */}
           <div className="wdd-hero__right">
             <div className="wdd-hero__cards">
               <div className="wdd-hero__card">
                 <div className="wdd-hero__card-icon"><IconCode /></div>
                 <div>
-                  <div className="wdd-hero__card-name">Custom Dev</div>
-                  <div className="wdd-hero__card-desc">Built from scratch</div>
+                  <div className="wdd-hero__card-name">Custom Design</div>
+                  <div className="wdd-hero__card-desc">No templates</div>
                 </div>
               </div>
               <div className="wdd-hero__card">
                 <div className="wdd-hero__card-icon"><IconMobile /></div>
                 <div>
-                  <div className="wdd-hero__card-name">Responsive</div>
+                  <div className="wdd-hero__card-name">Mobile-First</div>
                   <div className="wdd-hero__card-desc">All devices ready</div>
                 </div>
               </div>
               <div className="wdd-hero__card">
                 <div className="wdd-hero__card-icon"><IconShop /></div>
                 <div>
-                  <div className="wdd-hero__card-name">E-commerce</div>
+                  <div className="wdd-hero__card-name">E-Commerce</div>
                   <div className="wdd-hero__card-desc">Sell online easily</div>
                 </div>
               </div>
@@ -190,7 +190,7 @@ export default function WebDevDelhi() {
                 <div className="wdd-hero__card-icon"><IconZap /></div>
                 <div>
                   <div className="wdd-hero__card-name">Fast Loading</div>
-                  <div className="wdd-hero__card-desc">Optimised performance</div>
+                  <div className="wdd-hero__card-desc">Optimised speed</div>
                 </div>
               </div>
               <div className="wdd-hero__card wdd-hero__card--highlight">
@@ -205,40 +205,31 @@ export default function WebDevDelhi() {
         </div>
       </section>
 
-      {/* ── GROWTH MACHINE ── */}
+      {/* ── WHAT MAKES A WEBSITE GOOD ── */}
       <section className="wdd-section wdd-section--gray">
-        <div className="wdd-section__inner wdd-section__inner--narrow">
+        <div className="wdd-section__inner">
           <div className="wdd-section__head">
-            <p className="wdd-eyebrow">More Than Just a Website</p>
-            <h2 className="wdd-section__title">A 24/7 Growth Machine for Your Business</h2>
-            <p className="wdd-section__sub">When someone lands on your site, three things should happen immediately — or it is time for a change.</p>
+            <h2 className="wdd-section__title">What Actually Makes a Website Good in 2026</h2>
+            <p className="wdd-section__sub">That question alone is enough to challenge your decision to hire one. A mere good-looking website with no traffic is merely a decoration. A website that even if ranked in Google, is so unappealing that the first click will be a bouncer. Speed, design, SEO, and usability are all important, and they must be perfectly aligned to harmonize. Here's what we at Social Theka are really into:</p>
           </div>
-          <div className="wdd-pain__grid">
-            {[
-              ["They Understand What You Do",      "Within seconds of landing, visitors should clearly know your business, your services, and your value."],
-              ["They Feel Confident About You",     "A polished, professional website builds trust before you say a single word."],
-              ["They Know How to Reach You",        "Every page guides users toward taking action — calling, filling a form, or sending a message."],
-              ["Your Business Stays Unique",        "Delhi has thousands of businesses. Your website should reflect what makes yours different — not look like everyone else's."],
-            ].map(([title, desc], i) => (
-              <div key={i} className="wdd-pain-card">
-                <div className="wdd-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="wdd-pain-card__title">{title}</div>
-                  <div className="wdd-pain-card__desc">{desc}</div>
-                </div>
+          <div className="wdd-why__grid">
+            {WHAT_MAKES_GOOD.map((item, i) => (
+              <div key={i} className="wdd-why-card">
+                <div className="wdd-why-card__icon">{item.icon}</div>
+                <h3 className="wdd-why-card__title">{item.title}</h3>
+                <p className="wdd-why-card__desc">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
+      {/* ── WHAT WE BUILD ── */}
       <section className="wdd-section wdd-section--white" id="services">
         <div className="wdd-section__inner">
           <div className="wdd-section__head">
-            <p className="wdd-eyebrow">From Idea to Execution — We Handle It All</p>
-            <h2 className="wdd-section__title">Web Development Services in Delhi</h2>
-            <p className="wdd-section__sub">We start by genuinely understanding your business, your customers, and your goals. Only then do we start building.</p>
+            <h2 className="wdd-section__title">What Social Theka Builds</h2>
+            <p className="wdd-section__sub">Social Theka is not a one-size-fits-all shop. The kind of website a law firm needs is completely different from what a fashion brand needs. Here's a breakdown of what we do:</p>
           </div>
           <div className="wdd-services__grid">
             {SERVICES.map((s, i) => (
@@ -252,33 +243,12 @@ export default function WebDevDelhi() {
         </div>
       </section>
 
-      {/* ── WEBSITE TYPES ── */}
+      {/* ── WHY DELHI BUSINESSES ── */}
       <section className="wdd-section wdd-section--gray">
         <div className="wdd-section__inner">
           <div className="wdd-section__head">
-            <p className="wdd-eyebrow">Not Every Business is the Same</p>
-            <h2 className="wdd-section__title">Neither Are Our Websites</h2>
-            <p className="wdd-section__sub">Our experienced web developers in Delhi have worked with businesses of every type. Each project required a completely different approach — and that is exactly what we delivered.</p>
-          </div>
-          <div className="wdd-why__grid">
-            {WEBSITE_TYPES.map((t, i) => (
-              <div key={i} className="wdd-why-card">
-                <div className="wdd-why-card__icon">{t.icon}</div>
-                <h3 className="wdd-why-card__title">{t.title}</h3>
-                <p className="wdd-why-card__desc">{t.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY CHOOSE US ── */}
-      <section className="wdd-section wdd-section--white">
-        <div className="wdd-section__inner">
-          <div className="wdd-section__head">
-            <p className="wdd-eyebrow">Why Delhi Businesses Keep Choosing Social Theka</p>
-            <h2 className="wdd-section__title">Top Web Development Company in Delhi</h2>
-            <p className="wdd-section__sub">It comes down to trust, transparency, and real results. We do not make promises we cannot keep. We communicate clearly, work diligently, and always put your business goals first.</p>
+            <h2 className="wdd-section__title">Why Delhi Businesses Work With Social Theka</h2>
+            <p className="wdd-section__sub">Frankly, only a few things make clients return to us and keep sending referrals regularly.</p>
           </div>
           <div className="wdd-why__grid">
             {WHY_US.map((item, i) => (
@@ -292,13 +262,36 @@ export default function WebDevDelhi() {
         </div>
       </section>
 
+      {/* ── DELHI DIGITAL MARKET ── */}
+      <section className="wdd-section wdd-section--white">
+        <div className="wdd-section__inner wdd-section__inner--narrow">
+          <div className="wdd-section__head">
+            <h2 className="wdd-section__title">Delhi's Digital Market Has Changed - Your Website Needs to Keep Up</h2>
+          </div>
+          <div className="wdd-pain__grid">
+            {[
+              ["Delhi Businesses Are Now Fully Online", "Compared with other major Indian cities, Delhi businesses were the least inclined to become fully digital; however, the discrepancy has now been bridged. After 2020, even the tiniest shops in Karol Bagh or Chandni Chowk can be found online. So having a website is no longer something to be decided. The real question is if your website is better than that of your competitors."],
+              ["Local SEO Is Serious Competition", "When someone living in South Delhi uses the phrase \"interior designer near me\" or \"chartered accountant in Nehru Place\" for the first time, the ones that are displayed are the businesses with an extremely quick website, a good structure, and Google Business Profile properly set up. We can do both for you."],
+              ["Your Website Builds Trust", "According to a 2024 study, over 80% of consumers residing in urban areas in India depend on a brand's website to help them decide whether to make a purchase, even though they first came across the brand on Instagram. Your social media makes them interested. It is your website that finally convinces them to buy."],
+            ].map(([title, desc], i) => (
+              <div key={i} className="wdd-pain-card">
+                <div className="wdd-pain-card__icon"><IconCheck /></div>
+                <div>
+                  <div className="wdd-pain-card__title">{title}</div>
+                  <div className="wdd-pain-card__desc">{desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── PROCESS ── */}
       <section className="wdd-section wdd-section--gray">
         <div className="wdd-section__inner">
           <div className="wdd-section__head">
-            <p className="wdd-eyebrow">Our Process</p>
-            <h2 className="wdd-section__title">From Day One to Launch Day</h2>
-            <p className="wdd-section__sub">You will always know where your project stands. No surprises, no confusion — just a clear and organised process from start to finish.</p>
+            <h2 className="wdd-section__title">How We Work: Our Website Design Process</h2>
+            <p className="wdd-section__sub">We always keep the process clear and quite straightforward. This is the way it works:</p>
           </div>
           <div className="wdd-process__grid">
             {PROCESS.map((p, i) => (
@@ -314,42 +307,19 @@ export default function WebDevDelhi() {
         </div>
       </section>
 
-      {/* ── PROBLEMS ── */}
+      {/* ── PRICING ── */}
       <section className="wdd-section wdd-section--white">
-        <div className="wdd-section__inner">
-          <div className="wdd-section__head">
-            <p className="wdd-eyebrow">Is Your Website Sick?</p>
-            <h2 className="wdd-section__title">We Know How to Fix It</h2>
-            <p className="wdd-section__sub">A lot of businesses in Delhi have the same issues. We assess your website carefully and recommend the most effective solution — whether that is a targeted fix or a full redesign.</p>
-          </div>
-          <div className="wdd-pain__grid">
-            {PROBLEMS.map(([title, desc], i) => (
-              <div key={i} className="wdd-pain-card">
-                <div className="wdd-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="wdd-pain-card__title">{title}</div>
-                  <div className="wdd-pain-card__desc">{desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SEO ── */}
-      <section className="wdd-section wdd-section--gray">
         <div className="wdd-section__inner wdd-section__inner--narrow">
           <div className="wdd-section__head">
-            <p className="wdd-eyebrow">We Build Websites Search Engines Can't Ignore</p>
-            <h2 className="wdd-section__title">SEO is Built In — Not Added On</h2>
-            <p className="wdd-section__sub">A great website that nobody can find is a wasted investment. At Social Theka, SEO is part of every website we develop from day one.</p>
+            <h2 className="wdd-section__title">What Does Website Design Cost in Delhi?</h2>
+            <p className="wdd-section__sub">This question arises in every first conversation. The straight answer is that it really depends on what you are building. For example, a simple 5-page business website and a multi-vendor e-commerce store are completely different types of projects.</p>
           </div>
           <div className="wdd-pain__grid">
             {[
-              ["Clean, Readable Structure",     "We structure your website so Google can read it clearly and index every page properly."],
-              ["Fast Loading Code",             "We write clean code that keeps your site fast — because speed is a ranking factor."],
-              ["Proper Mobile Optimisation",    "We ensure full mobile responsiveness since most Delhi users browse on their phones."],
-              ["Logical Page Architecture",     "We build a site structure that makes it easy for search engines to crawl and rank your pages."],
+              ["Business Website", "Generally, a professional business website from Social Theka starts at ₹15,000 and the cost will vary depending on the number of pages, features, and integrations."],
+              ["E-Commerce Projects", "E-commerce projects usually start at ₹30,000."],
+              ["Landing Pages", "Landing pages are more budget-friendly."],
+              ["Full Transparency", "We will be open about cost right from the first conversation. We will show you exactly what is included, what is not, and what ongoing costs look like (hosting, domain, maintenance). No surprises."],
             ].map(([title, desc], i) => (
               <div key={i} className="wdd-pain-card">
                 <div className="wdd-pain-card__icon"><IconCheck /></div>
@@ -364,11 +334,10 @@ export default function WebDevDelhi() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="wdd-section wdd-section--white">
+      <section className="wdd-section wdd-section--gray">
         <div className="wdd-section__inner wdd-section__inner--narrow">
           <div className="wdd-section__head">
-            <p className="wdd-eyebrow">FAQs</p>
-            <h2 className="wdd-section__title">FAQs – Web Development in Delhi</h2>
+            <h2 className="wdd-section__title">Frequently Asked Questions</h2>
           </div>
           <div className="wdd-faq__list">
             {FAQS.map((faq, i) => (
@@ -388,13 +357,13 @@ export default function WebDevDelhi() {
       <section className="wdd-cta-banner">
         <div className="wdd-cta-banner__inner">
           <h2 className="wdd-cta-banner__title">
-            Ready to Go Live? So Are We.
+            Ready to Build Something Worth Visiting?
           </h2>
           <p className="wdd-cta-banner__sub">
-            If you have been searching for a top web development company in Delhi that delivers real results with honest communication — you have found it. Get in touch with Social Theka today and let us build a website that works for your business, your customers, and your long-term growth.
+            If you want the top website designing firm in Delhi that really gets business — and not just the design tools — Social Theka is the one. We have been involved in various industries and budget levels, as well as in all kinds of creative briefs imaginable. Contact us. Share with us what you are working on. We'll handle everything afterward.
           </p>
           <a href="#contact" className="wdd-btn-primary wdd-btn-primary--lg">
-            Start Your Project <IconArrow />
+            Contact Social Theka <IconArrow />
           </a>
         </div>
       </section>

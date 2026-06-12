@@ -24,7 +24,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
 .wdc-hero__left {
   display: flex;
@@ -116,6 +116,7 @@
 .wdc-hero__right {
   display: flex;
   flex-direction: column;
+  align-self: start;
 }
 .wdc-hero__cards {
   display: grid;

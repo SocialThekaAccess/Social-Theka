@@ -41,21 +41,21 @@ const SVG_ICONS = {
 };
 
 const DELHI_SERVICES = [
-  { icon: SVG_ICONS.seo,       label: "SEO Services Delhi",               to: "home" },
+  { icon: SVG_ICONS.seo,       label: "SEO Services Delhi",               to: "seo-delhi" },
   { icon: SVG_ICONS.ppc,       label: "PPC Advertising Delhi",            to: "ppc-delhi" },
   { icon: SVG_ICONS.webdev,    label: "Web Development Delhi",            to: "webdev-delhi" },
-  { icon: SVG_ICONS.webdesign, label: "Web Design Delhi",                 to: "home" },
-  { icon: SVG_ICONS.social,    label: "Social Media Marketing Delhi",     to: "home" },
-  { icon: SVG_ICONS.video,     label: "Video Editing Delhi",              to: "home" },
+  { icon: SVG_ICONS.webdesign, label: "Web Design Delhi",                 to: "webdesign-delhi" },
+  { icon: SVG_ICONS.social,    label: "Social Media Marketing Delhi",     to: "social-delhi" },
+  { icon: SVG_ICONS.video,     label: "Video Editing Delhi",              to: "video-delhi" },
 ];
 
 const CHANDIGARH_SERVICES = [
-  { icon: SVG_ICONS.seo,       label: "SEO Services Chandigarh",          to: "home" },
+  { icon: SVG_ICONS.seo,       label: "SEO Services Chandigarh",          to: "seo-chandigarh" },
   { icon: SVG_ICONS.ppc,       label: "PPC Advertising Chandigarh",       to: "ppc" },
   { icon: SVG_ICONS.webdev,    label: "Web Development Chandigarh",       to: "webdev-chandigarh" },
-  { icon: SVG_ICONS.webdesign, label: "Web Design Chandigarh",            to: "home" },
-  { icon: SVG_ICONS.social,    label: "Social Media Marketing Chandigarh",to: "home" },
-  { icon: SVG_ICONS.video,     label: "Video Editing Chandigarh",         to: "home" },
+  { icon: SVG_ICONS.webdesign, label: "Web Design Chandigarh",            to: "webdesign-chandigarh" },
+  { icon: SVG_ICONS.social,    label: "Social Media Marketing Chandigarh",to: "social-chandigarh" },
+  { icon: SVG_ICONS.video,     label: "Video Editing Chandigarh",         to: "video-chandigarh" },
 ];
 
 const NAV_LINKS = [
