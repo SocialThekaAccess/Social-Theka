@@ -5,7 +5,7 @@ import PPCServicePage from './Pages/OurServices/PPCServicePage'
 import PPCServicePageDelhi from './Pages/OurServices/PPCServicePageDelhi'
 import WebDevChandigarh from './Pages/OurServices/WebDevChandigarh'
 import WebDevDelhi from './Pages/OurServices/WebDevDelhi'
-import WebDesignChandigarh from './Pages/OurServices/WebDesignChandigarh'
+import Webdesignchandigarh from './Pages/OurServices/Webdesignchandigarh'
 import WebDesignDelhi from './Pages/OurServices/WebDesignDelhi'
 import SEODelhi from './Pages/OurServices/SEOdelhi'
 import SEOChandigarh from './Pages/OurServices/SEOchandigarh'
@@ -26,7 +26,7 @@ function App() {
       {currentPage === 'ppc-delhi'            && <PPCServicePageDelhi />}
       {currentPage === 'webdev-chandigarh'    && <WebDevChandigarh />}
       {currentPage === 'webdev-delhi'         && <WebDevDelhi />}
-      {currentPage === 'webdesign-chandigarh' && <WebDesignChandigarh />}
+      {currentPage === 'webdesign-chandigarh' && <Webdesignchandigarh />}
       {currentPage === 'webdesign-delhi'      && <WebDesignDelhi />}
       {currentPage === 'seo-delhi'            && <SEODelhi />}
       {currentPage === 'seo-chandigarh'       && <SEOChandigarh />}
