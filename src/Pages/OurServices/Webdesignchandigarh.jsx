@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./WebDesignChandigarh.css";
+import "./Webdesignchandigarh.css" 
 import ServiceLayout from "../../Component/ServiceLayout";
 
 const IconCode = () => (
