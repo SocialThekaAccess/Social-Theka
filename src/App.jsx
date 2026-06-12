@@ -13,6 +13,8 @@ import VideoEditingChd from './Pages/OurServices/VideoEditingChd'
 import VideoEditingDelhi from './Pages/OurServices/VideoEditingDelhi'
 import SocialMediaDelhi from './Pages/OurServices/SocialMediaDelhi'
 import SocialMediachandigarh from './Pages/OurServices/SocialMediachandigarh'
+import ThekaStory from './ThekaStory/Thekastory'
+import ContactUs from './ContactUs/ContactUs'
 import Navbar from './Component/Navbar'
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
     <>
       <Navbar onNavigate={setCurrentPage} currentPage={currentPage} />
       {currentPage === 'home'                 && <Home />}
+      {currentPage === 'theka-story'          && <ThekaStory />}
+      {currentPage === 'contact'              && <ContactUs />}
       {currentPage === 'ppc'                  && <PPCServicePage />}
       {currentPage === 'ppc-delhi'            && <PPCServicePageDelhi />}
       {currentPage === 'webdev-chandigarh'    && <WebDevChandigarh />}
