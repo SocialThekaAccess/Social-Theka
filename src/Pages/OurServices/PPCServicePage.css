@@ -25,7 +25,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
 .ppc-hero__left {
   display: flex;
@@ -120,6 +120,7 @@
 .ppc-hero__right {
   display: flex;
   flex-direction: column;
+  align-self: start;
 }
 .ppc-hero__cards {
   display: grid;

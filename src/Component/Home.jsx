@@ -27,7 +27,7 @@ function Hero() {
         {/* Left */}
         <div className="hero__left">
           <h1 className="hero__h1">
-            Your Complete Digital Growth Partner
+            Social Theka: Your Complete Digital Growth Partner
           </h1>
           <p className="hero__p">
             Social Theka is a digital marketing agency located in Chandigarh, dedicated to providing effective and straightforward solutions to assist businesses in establishing themselves online. Regardless of your company's stage (new, growing, or maturing), we manage all aspects of your digital marketing (SEO, SMO, content creation/marketing, PPC, and brand development), so you do not have to coordinate with numerous people. At our agency, our main objective is to help your target audience discover your business's services and products, comprehend them, and develop the trust required to choose your company time after time.
@@ -569,12 +569,12 @@ function Testimonials() {
 
 /* ── FAQ ─────────────────────────────────────────── */
 const FAQ_ITEMS = [
-  { q: "What exactly do you do?",                                       a: "SEO, social media, paid ads, website design & development, content writing, and lead generation — all under one roof. No chaos, no handoffs between three different agencies." },
-  { q: "How long before I see results?",                                a: "SEO typically takes 3–6 months for meaningful movement. Paid ads and social can move faster — often within weeks. Either way, you're always updated on where things stand." },
-  { q: "We're a small business on a tight budget. Can you help?",       a: "Yes. Some of our best work has come from exactly that scenario. We figure out the highest-impact moves for your specific budget and start there — no bloated retainers." },
-  { q: "We tried another agency and it didn't work. What's different?", a: "We don't overpromise. You'll know what we're working on, why, and what to expect — straight talk from day one. If something isn't working, we tell you and fix it." },
-  { q: "Do you work with international clients?",                       a: "All the time. We have active clients in USA, UK, Dubai, Singapore, and Australia. Location has never been a barrier — we've built the workflows to make it seamless." },
-  { q: "How do we get started?",                                        a: "Drop us a message or book a free strategy call. We understand your business first, then figure out the best way forward — no pressure, no sales script." },
+  { q: "What exactly do you do?",                                       a: "SEO, social media, paid ads, website design & development, content writing, and lead generation — One team handles everything. You get everything in one place. There is no chaos." },
+  { q: "How long before I see results?",                                a: "SEO  takes 3–6 months for meaningful movement. Paid ads and social can move faster — often within weeks. Either way, you're always updated on where things stand." },
+  { q: "We're a small business with a tight budget. Can you still help us? ",       a: "Yes, and honestly some of our favourite work has come from exactly that. We figure out what makes the most impact for what you have and start from there." },
+  { q: " We tried another agency before and it didn't work out. What makes you different? ", a: "We don't overpromise. You'll know what we're working on, why we're doing it, and what results to expect - straight talk from day one." },
+  { q: " We're not based in India. Do you work with international clients? ?",                       a: "All the time. We have clients in the USA, UK, Dubai, and Singapore. Location has never been an issue for us." },
+  { q: ". Okay we're interested. How do we get started?",                                        a: "Just drop us a message or book a free call. We'll understand your business first and then figure out the best way forward - no pressure at all." },
 ];
 
 function FAQ() {
@@ -625,9 +625,9 @@ function CTA() {
     <section id="contact" className="cta">
       <div className="cta__inner">
         <div>
-          <div className="cta__eyebrow">✦  500+ Businesses Trust Us. Yours Could Be Next.</div>
+          {/* <div className="cta__eyebrow">✦  500+ Businesses Trust Us. Yours Could Be Next.</div> */}
           <h2 className="cta__h2">
-            Ready to Grow Your Business<br />With Social Theka?
+           ✦ 500+ Businesses Trust Us. Yours Could Be Next
           </h2>
           <p className="cta__p">
             From Chandigarh to New York - brands across the globe have grown with Social Theka. Ready to see what we can do for you?  
