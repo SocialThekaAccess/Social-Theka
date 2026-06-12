@@ -7,12 +7,12 @@ import WebDevChandigarh from './Pages/OurServices/WebDevChandigarh'
 import WebDevDelhi from './Pages/OurServices/WebDevDelhi'
 import Webdesignchandigarh from './Pages/OurServices/Webdesignchandigarh'
 import WebDesignDelhi from './Pages/OurServices/WebDesignDelhi'
-import SEOdelhifrom './Pages/OurServices/SEOdelhi'
-import SEOchandigarhfrom './Pages/OurServices/SEOchandigarh'
+import SEOdelhi from './Pages/OurServices/SEOdelhi'
+import SEOchandigarh from './Pages/OurServices/SEOchandigarh'
 import VideoEditingChd from './Pages/OurServices/VideoEditingChd'
 import VideoEditingDelhi from './Pages/OurServices/VideoEditingDelhi'
 import SocialMediaDelhi from './Pages/OurServices/SocialMediaDelhi'
-import SEOchandigarhSocialMediachandigarhfrom './Pages/OurServices/SocialMediachandigarh'
+import SocialMediachandigarh from './Pages/OurServices/SocialMediachandigarh'
 import Navbar from './Component/Navbar'
 
 function App() {
@@ -28,12 +28,12 @@ function App() {
       {currentPage === 'webdev-delhi'         && <WebDevDelhi />}
       {currentPage === 'webdesign-chandigarh' && <Webdesignchandigarh />}
       {currentPage === 'webdesign-delhi'      && <WebDesignDelhi />}
-      {currentPage === 'seo-delhi'            && <SEOdelhi/>}
-      {currentPage === 'seo-chandigarh'       && <SEOchandigarh/>}
+      {currentPage === 'seo-delhi'            && <SEOdelhi />}
+      {currentPage === 'seo-chandigarh'       && <SEOchandigarh />}
       {currentPage === 'video-chandigarh'     && <VideoEditingChd />}
       {currentPage === 'video-delhi'          && <VideoEditingDelhi />}
       {currentPage === 'social-delhi'         && <SocialMediaDelhi />}
-      {currentPage === 'social-chandigarh'    && <SEOchandigarhSocialMediachandigarh/>}
+      {currentPage === 'social-chandigarh'    && <SocialMediachandigarh />}
     </>
   )
 }
