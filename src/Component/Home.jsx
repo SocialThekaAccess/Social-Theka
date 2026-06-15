@@ -3,9 +3,9 @@ import logo from "../assets/SocialThekaLogo.png";
 import footerLogo from "../assets/FooterLogo.png";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
-import OrbitSocialTheka from './OrbitSocialTheka';  
-import ServicesSection from './ServicesSection';
-// import RepresentRoster from './RepresentRoster';
+import Pricing from './Pricing';
+import OrbitSocialTheka from './OrbitSocialTheka';
+import manjulImg from "../assets/ManjulSirSocialTheka.png";
 
 /* ── SHARED COMPONENTS ───────────────────────────── */
 function Tag({ children }) {
@@ -31,7 +31,7 @@ function Hero() {
           Your Complete Digital Growth Partner
           </h1>
           <p className="hero__p">
-            Social Theka is a digital marketing agency located in Chandigarh, dedicated to providing effective and straightforward solutions to assist businesses in establishing themselves online. Regardless of your company's stage (new, growing, or maturing), we manage all aspects of your digital marketing (SEO, SMO, content creation/marketing, PPC, and brand development), so you do not have to coordinate with numerous people. At our agency, our main objective is to help your target audience discover your business's services and products, comprehend them, and develop the trust required to choose your company time after time.
+            Social Theka is a digital marketing agency located in Chandigarh, dedicated to providing effective and straightforward solutions to assist businesses in establishing themselves online. Regardless of your company's stage (new, growing, or maturing), we manage all aspects of your digital marketing (SEO, SMO, content creation/marketing, PPC, and brand development).
           </p>
           <a href="#services" className="hero__explore-btn">
             Explore Our Services <span>→</span>
@@ -46,15 +46,18 @@ function Hero() {
           </div>
         </div>
  
-        {/* Right — Brand Character Image */}
+        {/* Right — Lead Form + Location cards */}
         <div className="hero__right">
-          <div className="hero__image-wrapper">
-            <img
-              src={wineCharacterImg}
-              alt="Social Theka brand character"
-              className="hero__character-img"
-            />
+          <div className="hero__form-card">
+           <div className="hero__form-card">
+  <img
+    src={manjulImg}
+    alt="Manjul Sir - Social Theka"
+    style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "16px" }}
+  />
+</div>
           </div>
+          
         </div>
  
       </div>
@@ -539,10 +542,9 @@ const WHY_DIFF = [
     desc: "From web development to brand awareness campaigns — we make sure your brand looks credible, feels trustworthy, and converts visitors into customers.",
   },
 ];
-
 function WhyUs() {
   return (
-    <section id="why" className="why section">
+    <section className="why">
       <div className="container">
         <div className="why__inner">
           <div className="why__left">
@@ -590,7 +592,6 @@ function WhyUs() {
     </section>
   );
 }
-
 /* ── PROCESS ─────────────────────────────────────── */
 const PROCESS_STEPS = [
   { num: "01", title: "Defined Objectives",      desc: "We start by understanding your goals — visibility, leads, or sales. Everything begins with a clear plan, not assumptions." },
@@ -889,13 +890,12 @@ export default function SocialTheka() {
     <>
       <Hero />
       <RegionalPresence />
-      <OrbitSocialTheka />      {/* ← Pricing ki jagah orbit section */}
+      <OrbitSocialTheka />
+      {/* <Pricing /> */}
       {/* <Stats /> */}
       <TrustMarquee />
       <OurVerticals />
       <ClientGallery />
-      <ServicesSection />
-      {/* <RepresentRoster />  */}
       <WhyUs />
       <Process />
       <Results />
