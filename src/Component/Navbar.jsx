@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import logo from "../assets/SocialThekaLogo.png";
 import "./Navbar.css";
 
+/* ── SVG Icons ───────────────────────────────────── */
 const SVG_ICONS = {
   seo: (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -59,11 +60,11 @@ const CHANDIGARH_SERVICES = [
 ];
 
 const NAV_LINKS = [
-  { label: "Home",         href: "#home",     active: true  },
+  { label: "Home",         href: "#home",    active: true },
   { label: "Our Services", href: "#services", dropdown: "services" },
-  { label: "Theka Story",  href: "#story",    to: "theka-story" },
-  { label: "Blogs",        href: "#blog",     dropdown: true },
-  { label: "Contact Us",   href: "#contact",  to: "contact"         },
+  { label: "Theka Story",  href: "#story",   to: "theka-story" },
+  { label: "Blogs",        href: "#blog",    dropdown: true },
+  { label: "Contact Us",   href: "#contact", to: "contact" },
 ];
 
 export default function Navbar({ onNavigate, currentPage }) {
@@ -71,9 +72,10 @@ export default function Navbar({ onNavigate, currentPage }) {
   const [active, setActive]             = useState("Home");
   const [menuOpen, setMenuOpen]         = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const dropdownRef                     = useRef(null);
-  const timeoutRef                      = useRef(null);
+  const dropdownRef = useRef(null);
+  const timeoutRef  = useRef(null);
 
+  /* ── Scroll listener ── */
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn);
@@ -90,7 +92,7 @@ export default function Navbar({ onNavigate, currentPage }) {
 
   return (
     <>
-      {/* ── Announcement bar ─────────────────────── */}
+      {/* ── Announcement bar ── */}
       <div className="nb-top">
         <div className="nb-top__left">
           <span className="nb-top__dot" />
@@ -110,17 +112,25 @@ export default function Navbar({ onNavigate, currentPage }) {
         </div>
       </div>
 
-      {/* ── Main navbar ──────────────────────────── */}
+      {/* ── Main navbar ── */}
       <header className={`nb ${scrolled ? "nb--scrolled" : ""}`}>
         <div className="nb__inner">
 
           {/* Logo */}
-          <a href="#home" className="nb__logo" onClick={() => { setActive("Home"); onNavigate && onNavigate("home"); }}>
-            <img src={logo} alt="Social Theka" className="nb__logo-img" />
+          <a
+            href="#home"
+            className="nb__logo"
+            onClick={() => { setActive("Home"); onNavigate && onNavigate("home"); }}
+          >
+            <img
+            src={logo}
+            alt="Social Theka"
+           key={currentPage}
+           className="nb__logo-img nb__logo-img--reveal"/>
           </a>
 
           {/* Nav links */}
-          <nav className="nb__links">
+          <nav className="nb__links nb__links--reveal">
             {NAV_LINKS.map((l) =>
               l.dropdown === "services" ? (
                 <div
@@ -139,16 +149,12 @@ export default function Navbar({ onNavigate, currentPage }) {
                     <span className={`nb__chevron ${servicesOpen ? "nb__chevron--open" : ""}`}>›</span>
                   </a>
 
-                  {/* ── Mega Dropdown ── */}
                   {servicesOpen && (
                     <div className="nb__mega">
                       <div className="nb__mega-inner">
-
-                        {/* Delhi Column */}
                         <div className="nb__mega-col">
                           <div className="nb__mega-city">
-                            <span className="nb__mega-city-flag">🏙️</span>
-                            Delhi
+                            <span className="nb__mega-city-flag">🏙️</span>Delhi
                           </div>
                           <ul className="nb__mega-list">
                             {DELHI_SERVICES.map((s) => (
@@ -160,19 +166,12 @@ export default function Navbar({ onNavigate, currentPage }) {
                               </li>
                             ))}
                           </ul>
-                          <button className="nb__mega-viewall" onClick={() => setServicesOpen(false)}>
-                            View all Delhi services →
-                          </button>
+                          <button className="nb__mega-viewall" onClick={() => setServicesOpen(false)}>View all Delhi services →</button>
                         </div>
-
-                        {/* Divider */}
                         <div className="nb__mega-divider" />
-
-                        {/* Chandigarh Column */}
                         <div className="nb__mega-col">
                           <div className="nb__mega-city">
-                            <span className="nb__mega-city-flag">🏙️</span>
-                            Chandigarh
+                            <span className="nb__mega-city-flag">🏙️</span>Chandigarh
                           </div>
                           <ul className="nb__mega-list">
                             {CHANDIGARH_SERVICES.map((s) => (
@@ -184,14 +183,9 @@ export default function Navbar({ onNavigate, currentPage }) {
                               </li>
                             ))}
                           </ul>
-                          <button className="nb__mega-viewall" onClick={() => setServicesOpen(false)}>
-                            View all Chandigarh services →
-                          </button>
+                          <button className="nb__mega-viewall" onClick={() => setServicesOpen(false)}>View all Chandigarh services →</button>
                         </div>
-
                       </div>
-
-                      {/* Bottom stats bar */}
                       <div className="nb__mega-stats">
                         <span><strong>5M+</strong> keywords ranked</span>
                         <span><strong>1M+</strong> leads generated</span>
@@ -223,14 +217,7 @@ export default function Navbar({ onNavigate, currentPage }) {
 
           {/* CTA buttons */}
           <div className="nb__ctas">
-            <a
-              href="https://wa.me/91XXXXXXXXXX"
-              className="nb__wa-icon"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Chat on WhatsApp"
-              title="Chat on WhatsApp"
-            >
+            <a href="https://wa.me/91XXXXXXXXXX" className="nb__wa-icon" target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.563 4.14 1.535 5.875L.057 23.996l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.359-.213-3.722.976.994-3.632-.234-.373A9.818 9.818 0 1112 21.818z"/>
@@ -269,7 +256,6 @@ export default function Navbar({ onNavigate, currentPage }) {
                 {l.label}
               </a>
             ))}
-            {/* Mobile Services expanded */}
             <div className="nb__mobile-cities">
               <div className="nb__mobile-city-group">
                 <div className="nb__mobile-city-label">🏙️ Delhi</div>

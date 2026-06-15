@@ -3,8 +3,9 @@ import logo from "../assets/SocialThekaLogo.png";
 import footerLogo from "../assets/FooterLogo.png";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
-import Pricing from './Pricing';
-
+import OrbitSocialTheka from './OrbitSocialTheka';  
+import ServicesSection from './ServicesSection';
+// import RepresentRoster from './RepresentRoster';
 
 /* ── SHARED COMPONENTS ───────────────────────────── */
 function Tag({ children }) {
@@ -19,15 +20,15 @@ function Divider({ center }) {
 /* ── HERO ────────────────────────────────────────── */
 function Hero() {
   const logos = ["Google", "Meta", "ISO-Certified"];
-
+ 
   return (
     <section id="home" className="hero">
       <div className="hero__inner">
-
+ 
         {/* Left */}
         <div className="hero__left">
           <h1 className="hero__h1">
-            Social Theka: Your Complete Digital Growth Partner
+          Your Complete Digital Growth Partner
           </h1>
           <p className="hero__p">
             Social Theka is a digital marketing agency located in Chandigarh, dedicated to providing effective and straightforward solutions to assist businesses in establishing themselves online. Regardless of your company's stage (new, growing, or maturing), we manage all aspects of your digital marketing (SEO, SMO, content creation/marketing, PPC, and brand development), so you do not have to coordinate with numerous people. At our agency, our main objective is to help your target audience discover your business's services and products, comprehend them, and develop the trust required to choose your company time after time.
@@ -44,83 +45,23 @@ function Hero() {
             ))}
           </div>
         </div>
-
-        {/* Right — Lead Form + Location cards */}
+ 
+        {/* Right — Brand Character Image */}
         <div className="hero__right">
-          <div className="hero__form-card">
-            <div className="hero__form-header">
-              <h3 className="hero__form-title">Get a Free Strategy Call</h3>
-              <p className="hero__form-sub">Processed immediately by our growth experts.</p>
-            </div>
-            <form className="hero__form" onSubmit={(e) => e.preventDefault()}>
-              <div className="hero__form-row">
-                <div className="hero__form-group">
-                  <label>FULL NAME *</label>
-                  <input type="text" placeholder="Rahul Sharma" required />
-                </div>
-                <div className="hero__form-group">
-                  <label>BUSINESS EMAIL *</label>
-                  <input type="email" placeholder="rahul@company.com" required />
-                </div>
-              </div>
-              <div className="hero__form-row">
-                <div className="hero__form-group">
-                  <label>PHONE NUMBER *</label>
-                  <input type="tel" placeholder="+91 78887-35337" required />
-                </div>
-                <div className="hero__form-group">
-                  <label>SERVICE NEEDED</label>
-                  <select>
-                    <option>SEO Services</option>
-                    <option>Social Media Marketing</option>
-                    <option>Paid Advertising (PPC)</option>
-                    <option>Website Development</option>
-                    <option>Content Writing</option>
-                    <option>Link Building</option>
-                  </select>
-                </div>
-              </div>
-              <div className="hero__form-group">
-                <label>MONTHLY BUDGET</label>
-                <select>
-                  <option>₹10k – ₹25k</option>
-                  <option>₹25k – ₹50k</option>
-                  <option>₹50k – ₹1L</option>
-                  <option>₹1L+</option>
-                </select>
-              </div>
-              <div className="hero__form-group">
-                <label>MESSAGE</label>
-                <textarea placeholder="Tell us about your business goals..." rows="3" />
-              </div>
-              <button type="submit" className="hero__form-btn">
-                SUBMIT INQUIRY
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13"/>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                </svg>
-              </button>
-            </form>
-          </div>
-
-          {/* Location cards below form */}
-          <div className="hero__locations">
-            {[
-              { city: "Chandigarh", sub: "India's #1 Digital Hub" },
-              { city: "Delhi NCR",  sub: "North India Coverage" },
-            ].map((l) => (
-              <div key={l.city} className="hero__loc-card">
-                <span className="hero__loc-city">{l.city}</span>
-                <span className="hero__loc-sub">{l.sub}</span>
-              </div>
-            ))}
+          <div className="hero__image-wrapper">
+            <img
+              src={wineCharacterImg}
+              alt="Social Theka brand character"
+              className="hero__character-img"
+            />
           </div>
         </div>
-
+ 
       </div>
     </section>
   );
 }
+ 
 
 /* ── STATS ───────────────────────────────────────── */
 function Stats() {
@@ -179,33 +120,56 @@ function Stats() {
 }
 
 /* ── TRUST MARQUEE ───────────────────────────────── */
+// Import all brand logos
+import wb1  from "../assets/WorkingBrand1.png";
+import wb2  from "../assets/WorkingBrand2.avif";
+import wb3  from "../assets/WorkingBrand3.png";
+import wb4  from "../assets/WorkingBrand4.png";
+import wb5  from "../assets/WorkingBrand5.png";
+import wb6  from "../assets/WorkingBrand6.png";
+import wb7  from "../assets/WorkingBrand7.png";
+import wb8  from "../assets/WorkingBrand8.png";
+import wb9  from "../assets/WorkingBrand9.png";
+import wb10 from "../assets/WorkingBrand10.png";
+import wb11 from "../assets/WorkingBrand11.png";
+import wb12 from "../assets/WorkingBrand12.png";
+import wb13 from "../assets/WorkingBrand13.png";
+import wb14 from "../assets/WorkingBrand14.png";
+import wb15 from "../assets/WorkingBrand15.png";
+import wb16 from "../assets/WorkingBrand16.png";
+import wb17 from "../assets/WorkingBrand17.png";
+import wb18 from "../assets/WorkingBrand18.png";
+import wb19 from "../assets/WorkingBrand19.png";
+import wb20 from "../assets/WorkingBrand20.png";
+import wb21 from "../assets/WorkingBrand21.png";
+
+const BRAND_LOGOS = [
+  wb1, wb2, wb3, wb4, wb5, wb6, wb7, wb8, wb9, wb10,
+  wb11, wb12, wb13, wb14, wb15, wb16, wb17, wb18, wb19, wb20, wb21,
+];
+
 function TrustMarquee() {
-  const pills = [
-    "TechNova India", "GrowthHub", "BrandBoost", "DigitalX",
-    "MarketPeak", "ScaleUp Digital", "VisionCo", "NexGen",
-    "Elevate Media", "PrimeReach",
-  ];
-  const doubled = [...pills, ...pills];
+  const doubled = [...BRAND_LOGOS, ...BRAND_LOGOS];
 
   return (
     <section className="trust">
-      <div className="container">
-        <p className="trust__label">
-          Trusted by 500+ businesses across India, USA, UK &amp; Dubai
-        </p>
-        <div className="marquee">
-          <div className="marquee__track">
-            {doubled.map((name, i) => (
-              <div key={i} className="marquee__pill">{name}</div>
-            ))}
-          </div>
+      <p className="trust__label">
+        ✦ 500+ businesses trusted us. Yours could be next  ✦
+      </p>
+      <div className="marquee">
+        <div className="marquee__track">
+          {doubled.map((src, i) => (
+            <div key={i} className="marquee__logo-pill">
+              <img src={src} alt={`Brand ${(i % 21) + 1}`} loading="lazy" />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-/* ── SERVICES ────────────────────────────────────── */
+/* ── SERVICES (old card grid — kept for reference) ───────────────────────────────────── */
 const SERVICE_CARDS = [
   {
     icon: (
@@ -268,39 +232,249 @@ const SERVICE_CARDS = [
   },
 ];
 
-function Services() {
+/* ── OUR VERTICALS ───────────────────────────────── */
+const VERTICALS = [
+  {
+    id: "seo",
+    label: "SEO",
+    tagline: "SEO",
+    desc: "We rank your business on Google so the right people find you — not your competitors.",
+    photos: [
+      { url: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&q=80", tag: "@rankings", rotate: -18, x: -200, y: 20 },
+      { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", tag: "@traffic", rotate: -7, x: -100, y: -30 },
+      { url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=80", tag: "@growth", rotate: 10, x: 100, y: -20 },
+      { url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+    ],
+  },
+  {
+    id: "social",
+    label: "Social Media",
+    tagline: "Social Media",
+    desc: "We build social media presence that makes people stop scrolling and start trusting.",
+    photos: [
+      { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80", tag: "@instagram", rotate: -18, x: -200, y: 20 },
+      { url: "https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=400&q=80", tag: "@content", rotate: -7, x: -100, y: -30 },
+      { url: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80", tag: "@reels", rotate: 10, x: 100, y: -20 },
+      { url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+    ],
+  },
+  {
+    id: "ppc",
+    label: "PPC Ads",
+    tagline: "PPC Ads",
+    desc: "Every rupee you spend on ads works harder — targeted campaigns, real conversions.",
+    photos: [
+      { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80", tag: "@google", rotate: -18, x: -200, y: 20 },
+      { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", tag: "@roi", rotate: -7, x: -100, y: -30 },
+      { url: "https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80", tag: "@leads", rotate: 10, x: 100, y: -20 },
+      { url: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+    ],
+  },
+  {
+    id: "web",
+    label: "Web Dev",
+    tagline: "Web Dev",
+    desc: "Fast, clean, conversion-focused websites that your visitors actually enjoy using.",
+    photos: [
+      { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -18, x: -200, y: 20 },
+      { url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80", tag: "@ux", rotate: -7, x: -100, y: -30 },
+      { url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80", tag: "@code", rotate: 10, x: 100, y: -20 },
+      { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+    ],
+  },
+  {
+    id: "content",
+    label: "Content",
+    tagline: "Content",
+    desc: "Words, videos and visuals that speak to your audience and build lasting brand trust.",
+    photos: [
+      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80", tag: "@writing", rotate: -18, x: -200, y: 20 },
+      { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", tag: "@strategy", rotate: -7, x: -100, y: -30 },
+      { url: "https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&q=80", tag: "@video", rotate: 10, x: 100, y: -20 },
+      { url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+    ],
+  },
+  {
+    id: "video",
+    label: "Video Editing",
+    tagline: "Video Editing",
+    desc: "Scroll-stopping video content — reels, ads, explainers — edited to perfection.",
+    photos: [
+      { url: "https://images.unsplash.com/photo-1574717024453-354056aafa98?w=400&q=80", tag: "@reels", rotate: -18, x: -200, y: 20 },
+      { url: "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80", tag: "@cinematic", rotate: -7, x: -100, y: -30 },
+      { url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80", tag: "@motion", rotate: 10, x: 100, y: -20 },
+      { url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+    ],
+  },
+];
+
+function OurVerticals() {
+  const [active, setActive] = useState(0);
+  const current = VERTICALS[active];
+
   return (
-    <section id="services" className="svc-section">
-      <div className="svc-bg-shape svc-bg-shape--1" />
-      <div className="svc-bg-shape svc-bg-shape--2" />
-
-      <div className="container svc-inner">
-        <div className="svc-head">
-          OUR EXPERTISE
-          <h2 className="svc-h2">
-            Digital Solutions That Drive<br />
-            Real Business Forward
-          </h2>
-          <p className="svc-sub">
-            One strategic partner for SEO, paid media, content, web development,
-            and long-term digital growth.
-          </p>
+    <section className="verticals">
+      <div className="verticals__inner">
+        <p className="verticals__eyebrow">Our Services</p>
+        <div className="verticals__tabs">
+          {VERTICALS.map((v, i) => (
+            <button
+              key={v.id}
+              className={`verticals__tab ${i === active ? "verticals__tab--active" : ""}`}
+              onClick={() => setActive(i)}
+            >
+              {v.label}
+            </button>
+          ))}
         </div>
+        <h2 className="verticals__name">{current.tagline}</h2>
+        <div className="verticals__fan">
+          {current.photos.map((p, i) => (
+            <div
+              key={i}
+              className={`verticals__photo ${i === 2 ? "verticals__photo--center" : ""}`}
+              style={{
+                transform: `translateX(${p.x}px) rotate(${p.rotate}deg)`,
+                zIndex: i === 2 ? 10 : i < 2 ? i + 1 : 9 - i,
+              }}
+            >
+              <img src={p.url} alt="" loading="lazy" />
+              {p.tag && (
+                <div className={`verticals__tag ${i < 2 ? "verticals__tag--light" : "verticals__tag--dark"}`}>
+                  {p.tag}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="verticals__dots">
+          {VERTICALS.map((_, i) => (
+            <button
+              key={i}
+              className={`verticals__dot ${i === active ? "verticals__dot--active" : ""}`}
+              onClick={() => setActive(i)}
+              aria-label={`Go to ${VERTICALS[i].label}`}
+            />
+          ))}
+        </div>
+        <p className="verticals__desc">{current.desc}</p>
+      </div>
+    </section>
+  );
+}
 
-        <div className="svc-grid">
-          {SERVICE_CARDS.map((c, i) => (
-            <div key={i} className="svc-card">
-              <div className="svc-card__icon-wrap">
-                {c.icon}
+/* ── CLIENT GALLERY ──────────────────────────────── */
+const CARD_TILTS = [
+  "perspective(700px) rotateY(14deg) rotateX(-3deg) scale(0.95)",
+  "perspective(700px) rotateY(9deg)  rotateX(-2deg) scale(0.97)",
+  "perspective(700px) rotateY(4deg)  rotateX(-1deg) scale(0.99)",
+  "perspective(700px) rotateY(0deg)  rotateX(0deg)  scale(1.00)",
+  "perspective(700px) rotateY(-4deg) rotateX(-1deg) scale(0.99)",
+  "perspective(700px) rotateY(-9deg) rotateX(-2deg) scale(0.97)",
+  "perspective(700px) rotateY(-14deg) rotateX(-3deg) scale(0.95)",
+];
+
+const CARD_TILTS_HOVER = "perspective(700px) rotateY(0deg) rotateX(0deg) scale(1.03)";
+
+const SHOWCASE_CARDS = [
+  { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=90", label: "Brand Strategy",   tag: "@strategy",  offset: 100 },
+  { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=90", label: "Campaign Design",  tag: "@campaigns", offset: 60  },
+  { url: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=90", label: "Social Growth",    tag: "@social",    offset: 20  },
+  { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&q=90", label: "Content Creation", tag: "@content",   offset: 0   },
+  { url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=90", label: "Performance SEO",  tag: "@seo",       offset: 20  },
+  { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=90", label: "Web Development",  tag: "@webdev",    offset: 60  },
+  { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=90", label: "PPC Advertising",  tag: "@ppc",       offset: 100 },
+];
+
+function ClientGallery() {
+  const trackRef   = useRef(null);
+  const sectionRef = useRef(null);
+  const [hoveredIdx, setHoveredIdx] = useState(null);
+  const animRef = useRef(null);
+  const posRef  = useRef(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const totalWidth = track.scrollWidth / 2;
+
+    const animate = () => {
+      posRef.current += 0.5;
+      if (posRef.current >= totalWidth) {
+        posRef.current = 0;
+      }
+      track.style.transform = `translateX(-${posRef.current}px)`;
+      animRef.current = requestAnimationFrame(animate);
+    };
+
+    animRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animRef.current);
+  }, []);
+
+  const CARDS = [...SHOWCASE_CARDS, ...SHOWCASE_CARDS];
+
+  return (
+    <section className="lux" ref={sectionRef}>
+      <div className="lux__header">
+        <p className="lux__eyebrow">Our Work</p>
+        <div className="lux__heading-wrap">
+          <h2 className="lux__title">Results We&apos;re</h2>
+          <h2 className="lux__title lux__title--outline">Proud Of</h2>
+        </div>
+        <div className="lux__dot" />
+        <p className="lux__sub">
+          Brands across India, USA, UK &amp; Dubai — campaigns that convert,
+          content that resonates, growth that lasts.
+        </p>
+      </div>
+      <div className="lux__viewport">
+        <div className="lux__track" ref={trackRef}>
+          {CARDS.map((card, i) => (
+            <div
+              key={i}
+              className="lux__card"
+              style={{ marginTop: `${card.offset}px` }}
+              onMouseEnter={() => {
+                setHoveredIdx(i);
+                cancelAnimationFrame(animRef.current);
+              }}
+              onMouseLeave={() => {
+                setHoveredIdx(null);
+                const track = trackRef.current;
+                const totalWidth = track.scrollWidth / 2;
+                const animate = () => {
+                  posRef.current += 0.5;
+                  if (posRef.current >= totalWidth) posRef.current = 0;
+                  track.style.transform = `translateX(-${posRef.current}px)`;
+                  animRef.current = requestAnimationFrame(animate);
+                };
+                animRef.current = requestAnimationFrame(animate);
+              }}
+            >
+              <div
+                className="lux__card-img"
+                style={{
+                  transform: hoveredIdx === i ? CARD_TILTS_HOVER : CARD_TILTS[i % 7],
+                  transition: "transform 0.4s ease, box-shadow 0.3s ease",
+                  boxShadow: hoveredIdx === i
+                    ? "0 20px 56px rgba(0,0,0,0.20), 0 6px 16px rgba(0,0,0,0.12)"
+                    : "0 8px 32px rgba(0,0,0,0.13), 0 2px 8px rgba(0,0,0,0.08)",
+                }}
+              >
+                <img src={card.url} alt={card.label} loading="lazy" />
+                <div className="lux__card-overlay" />
               </div>
-              <h3 className="svc-card__title">{c.title}</h3>
-              <p className="svc-card__desc">{c.desc}</p>
-              <a href="#contact" className="svc-card__link">
-                Learn More
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </a>
+              <div className="lux__card-footer">
+                <span className="lux__card-tag">{card.tag}</span>
+                <span className="lux__card-label">{card.label}</span>
+              </div>
             </div>
           ))}
         </div>
@@ -371,8 +545,6 @@ function WhyUs() {
     <section id="why" className="why section">
       <div className="container">
         <div className="why__inner">
-
-          {/* LEFT — image + why diff cards neeche */}
           <div className="why__left">
             <div className="why__img-wrap">
               <img
@@ -380,12 +552,6 @@ function WhyUs() {
                 alt="Social Theka Team"
               />
             </div>
-            {/* <div className="why__achievement">
-              <div className="why__ach-num">98%</div>
-              <div className="why__ach-text">Client Retention Rate</div>
-            </div> */}
-
-            {/* Why Different Strip — image ke neeche */}
             <div className="why__diff">
               {WHY_DIFF.map((item, i) => (
                 <div key={i} className="why__diff-item">
@@ -399,10 +565,8 @@ function WhyUs() {
             </div>
           </div>
 
-          {/* RIGHT */}
           <div className="why__right">
             <div className="why__right-head">
-              {/* Why Social Theka */}
               <h2 className="section-title">
                 Why Businesses Choose Social Theka
               </h2>
@@ -421,7 +585,6 @@ function WhyUs() {
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -534,7 +697,7 @@ const TESTIS = [
   { avatarMod: "--grey", initials: "JC", name: "James Caldwell", role: "CEO, ScaleUp Digital — London", quote: '"We\'re UK-based and were genuinely sceptical. Social Theka removed every doubt within the first 60 days — the results speak for themselves."' },
 ];
 
-function Testimonials() {  
+function Testimonials() {
   return (
     <section id="testimonials" className="testimonials section">
       <div className="container">
@@ -570,11 +733,11 @@ function Testimonials() {
 /* ── FAQ ─────────────────────────────────────────── */
 const FAQ_ITEMS = [
   { q: "What exactly do you do?",                                       a: "SEO, social media, paid ads, website design & development, content writing, and lead generation — One team handles everything. You get everything in one place. There is no chaos." },
-  { q: "How long before I see results?",                                a: "SEO  takes 3–6 months for meaningful movement. Paid ads and social can move faster — often within weeks. Either way, you're always updated on where things stand." },
-  { q: "We're a small business with a tight budget. Can you still help us? ",       a: "Yes, and honestly some of our favourite work has come from exactly that. We figure out what makes the most impact for what you have and start from there." },
-  { q: " We tried another agency before and it didn't work out. What makes you different? ", a: "We don't overpromise. You'll know what we're working on, why we're doing it, and what results to expect - straight talk from day one." },
-  { q: " We're not based in India. Do you work with international clients? ?",                       a: "All the time. We have clients in the USA, UK, Dubai, and Singapore. Location has never been an issue for us." },
-  { q: ". Okay we're interested. How do we get started?",                                        a: "Just drop us a message or book a free call. We'll understand your business first and then figure out the best way forward - no pressure at all." },
+  { q: "How long before I see results?",                                a: "SEO takes 3–6 months for meaningful movement. Paid ads and social can move faster — often within weeks. Either way, you're always updated on where things stand." },
+  { q: "We're a small business with a tight budget. Can you still help us?",       a: "Yes, and honestly some of our favourite work has come from exactly that. We figure out what makes the most impact for what you have and start from there." },
+  { q: "We tried another agency before and it didn't work out. What makes you different?", a: "We don't overpromise. You'll know what we're working on, why we're doing it, and what results to expect - straight talk from day one." },
+  { q: "We're not based in India. Do you work with international clients?",        a: "All the time. We have clients in the USA, UK, Dubai, and Singapore. Location has never been an issue for us." },
+  { q: "Okay we're interested. How do we get started?",                            a: "Just drop us a message or book a free call. We'll understand your business first and then figure out the best way forward - no pressure at all." },
 ];
 
 function FAQ() {
@@ -582,8 +745,6 @@ function FAQ() {
   return (
     <section id="faq" className="faq">
       <div className="faq__inner">
-
-        {/* Left */}
         <div className="faq__left">
           <span className="faq__eyebrow">GOT QUESTIONS?</span>
           <h2 className="faq__left-h2">
@@ -596,8 +757,6 @@ function FAQ() {
             CHAT WITH US →
           </a>
         </div>
-
-        {/* Right — accordion */}
         <div className="faq__list">
           {FAQ_ITEMS.map((item, i) => (
             <div
@@ -613,7 +772,6 @@ function FAQ() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -625,12 +783,11 @@ function CTA() {
     <section id="contact" className="cta">
       <div className="cta__inner">
         <div>
-          {/* <div className="cta__eyebrow">✦  500+ Businesses Trust Us. Yours Could Be Next.</div> */}
           <h2 className="cta__h2">
            ✦ 500+ Businesses Trust Us. Yours Could Be Next
           </h2>
           <p className="cta__p">
-            From Chandigarh to New York - brands across the globe have grown with Social Theka. Ready to see what we can do for you?  
+            From Chandigarh to New York - brands across the globe have grown with Social Theka. Ready to see what we can do for you?
           </p>
         </div>
         <div className="cta__actions">
@@ -668,19 +825,15 @@ function Footer() {
             Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.
           </p>
           <div className="footer__socials">
-            {/* LinkedIn */}
             <a href="https://www.linkedin.com/company/socialtheka/" target="_blank" rel="noreferrer" className="footer__soc footer__soc--li" aria-label="LinkedIn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
-            {/* Instagram */}
             <a href="https://instagram.com/socialtheka" target="_blank" rel="noreferrer" className="footer__soc footer__soc--ig" aria-label="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            {/* Facebook */}
             <a href="https://www.facebook.com/officialsocialtheka" target="_blank" rel="noreferrer" className="footer__soc footer__soc--fb" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
-            {/* Twitter/X */}
             <a href="https://x.com/SocialTheka" target="_blank" rel="noreferrer" className="footer__soc footer__soc--tw" aria-label="Twitter / X">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
@@ -736,10 +889,13 @@ export default function SocialTheka() {
     <>
       <Hero />
       <RegionalPresence />
-      <Pricing />
+      <OrbitSocialTheka />      {/* ← Pricing ki jagah orbit section */}
       {/* <Stats /> */}
       <TrustMarquee />
-      <Services />
+      <OurVerticals />
+      <ClientGallery />
+      <ServicesSection />
+      {/* <RepresentRoster />  */}
       <WhyUs />
       <Process />
       <Results />
