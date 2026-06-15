@@ -1,0 +1,214 @@
+/* ══════════════════════════════════════
+   TOKENS
+══════════════════════════════════════ */
+:root {
+  --black: #0d0d0d;
+  --white: #ffffff;
+  --red:   #e8192c;
+}
+
+/* ══════════════════════════════════════
+   SECTION
+══════════════════════════════════════ */
+.roster-section {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--white);
+  overflow: hidden;
+  padding-bottom: 60px;
+  user-select: none;
+}
+
+/* ══════════════════════════════════════
+   LOGOS BAR
+══════════════════════════════════════ */
+.logos-bar {
+  padding: 28px 60px 24px;
+}
+
+.eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.eyebrow-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.eyebrow-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+}
+
+.logos-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.logo-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.logo-text {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: pre-line;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: #111;
+  text-transform: uppercase;
+}
+
+/* Circle logo */
+.logo-circle .logo-text {
+  width: 86px; height: 86px;
+  border-radius: 50%;
+  border: 2px solid #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7.5px;
+  letter-spacing: .13em;
+  padding: 8px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.logo-pink .logo-text   { color: #d81b7a; font-size: 17px; letter-spacing: -.02em; }
+.logo-yellow .logo-text { color: #e09b00; font-size: 15px; }
+.logo-blue .logo-text   { color: #1a6bbf; font-size: 12px; }
+.logo-bharatbox .logo-text {
+  color: #e8192c;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1;
+}
+.logo-studios .logo-text { color: #e8192c; font-size: 14px; letter-spacing: .04em; }
+
+/* ══════════════════════════════════════
+   HEADING
+══════════════════════════════════════ */
+.roster-heading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 48px 0;
+}
+
+.roster-heading {
+  font-family: 'Syne', 'Arial Black', Arial, sans-serif;
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 800;
+  color: var(--black);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.roster-dot {
+  display: block;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--red);
+  margin-top: 10px;
+}
+
+/* ══════════════════════════════════════
+   SLIDER — full bleed, cards overflow edges
+══════════════════════════════════════ */
+.slider-track {
+  overflow-x: auto;
+  overflow-y: visible;
+  cursor: grab;
+  padding: 40px 0 30px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+.slider-track.dragging { cursor: grabbing; }
+
+.slider-inner {
+  display: flex;
+  align-items: flex-end;
+  width: max-content;
+  padding: 0 80px 10px;
+  /* negative margin so cards overlap */
+  gap: 0;
+}
+
+/* ── CREATOR CARD ── */
+.creator-card {
+  flex-shrink: 0;
+  width: 200px;
+  margin-right: -18px; /* overlap */
+  position: relative;
+  transform: rotate(var(--rot, 0deg)) scale(var(--sc, 1));
+  transform-origin: bottom center;
+  transition: transform .35s cubic-bezier(.22,.68,0,1.2), z-index 0s;
+}
+
+.creator-card:hover {
+  transform: rotate(0deg) scale(1.07) !important;
+  z-index: 20 !important;
+  margin-top: 0 !important;
+}
+
+.creator-img-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.22);
+  aspect-ratio: 3/4;
+  background: #ddd;
+}
+
+.creator-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  transition: transform .4s ease;
+}
+.creator-card:hover .creator-img { transform: scale(1.05); }
+
+.creator-info {
+  padding: 10px 4px 0;
+  text-align: center;
+}
+.creator-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.creator-handle {
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .logos-bar { padding: 20px 20px 16px; }
+  .logo-text  { font-size: 10px; }
+  .logo-circle .logo-text { width: 64px; height: 64px; font-size: 6px; }
+  .logo-pink .logo-text { font-size: 13px; }
+  .roster-heading-wrap { padding: 24px 20px 0; }
+  .creator-card { width: 150px; }
+  .slider-inner { padding: 0 30px 10px; }
+}
