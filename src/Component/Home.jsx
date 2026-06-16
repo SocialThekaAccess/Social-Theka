@@ -19,24 +19,15 @@ function Divider({ center }) {
 
 
 /* ── HERO ────────────────────────────────────────── */
-// Positions matched to reference screenshot.
-// Arc goes: SEO (bottom, near glass) → Social Media (left-mid) → PPC Ads (left-upper)
-//           → Web Design (top-center) → Web Dev (right-upper) → Video Editing (right-mid)
 const SERVICE_ICONS = [
-  { label: "Web Design",      icon: "🎨", left: "75%", top: "9%" },
-
-  { label: "PPC Ads",         icon: "📊", left: "50%", top: "4%" },
-
-  { label: "Web Development", icon: "💻", left: "88%", top: "30%" },
-
-  { label: "Social Media",    icon: "📱", left: "30%", top: "20%" },
-
-  { label: "Video Editing",   icon: "🎬", left: "92%", top: "58%" },
-
-  { label: "SEO",             icon: "🔍", left: "29%", top: "48%" },
+  { label: "Web Design",      icon: "🎨", left: "75%", top: "9%",  revealOrder: 3 },
+  { label: "PPC Ads",         icon: "📊", left: "50%", top: "4%",  revealOrder: 2 },
+  { label: "Web Development", icon: "💻", left: "88%", top: "30%", revealOrder: 4 },
+  { label: "Social Media",    icon: "📱", left: "30%", top: "20%", revealOrder: 1 },
+  { label: "Video Editing",   icon: "🎬", left: "92%", top: "58%", revealOrder: 5 },
+  { label: "SEO",             icon: "🔍", left: "29%", top: "48%", revealOrder: 0 },
 ];
 
-/* SVG icons for trust badges */
 const GoogleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -60,6 +51,26 @@ const ISOIcon = () => (
 );
 
 function Hero() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add("hero--icons-visible");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   const badges = [
     { label: "Google", icon: <GoogleIcon /> },
     { label: "Meta",   icon: <MetaIcon /> },
@@ -67,7 +78,7 @@ function Hero() {
   ];
 
   return (
-    <section id="home" className="hero hero--glass">
+    <section id="home" className="hero hero--glass" ref={sectionRef}>
       <div className="hero__inner hero__inner--glass">
 
         {/* LEFT — text content */}
@@ -120,7 +131,7 @@ function Hero() {
             />
           </svg>
 
-          {/* Character image — centered in scene */}
+          {/* Character image */}
           <img
             src={manjul2Img}
             alt="Social Theka"
@@ -128,15 +139,16 @@ function Hero() {
           />
           <div className="hero__glass-glow" />
 
-          {/* Floating service icons */}
+          {/* Floating service icons — ek ek karke appear honge */}
           {SERVICE_ICONS.map((svc, i) => (
             <div
               key={svc.label}
               className="hero__float-icon"
               style={{
-                animationDelay: `${i * 0.18}s`,
                 left: svc.left,
                 top: svc.top,
+                "--icon-delay": `${svc.revealOrder * 0.18}s`,
+                "--reveal-delay": `${0.2 + svc.revealOrder * 0.15}s`,
               }}
             >
               <span className="hero__float-icon-emoji">{svc.icon}</span>
@@ -149,7 +161,7 @@ function Hero() {
     </section>
   );
 }
- 
+
 
 /* ── STATS ───────────────────────────────────────── */
 function Stats() {
@@ -208,7 +220,6 @@ function Stats() {
 }
 
 /* ── TRUST MARQUEE ───────────────────────────────── */
-// Import all brand logos
 import wb1  from "../assets/WorkingBrand1.png";
 import wb2  from "../assets/WorkingBrand2.avif";
 import wb3  from "../assets/WorkingBrand3.png";
@@ -287,8 +298,6 @@ function TrustMarquee() {
 
   return (
     <section className="trust trust--dark" ref={sectionRef}>
-
-      {/* Top: character + floating icons */}
       <div className="trust__hero">
         {TRUST_ICONS.map((svc, i) => {
           const rad = (svc.angle * Math.PI) / 180;
@@ -310,7 +319,6 @@ function TrustMarquee() {
           );
         })}
 
-        {/* Character image */}
         <div className="trust__char-wrap">
           <img src={manjulSirImg} alt="Social Theka" className="trust__char-img" />
           <div className="trust__glass-glow" />
@@ -323,7 +331,6 @@ function TrustMarquee() {
           )}
         </div>
 
-        {/* Headline overlay */}
         <div className="trust__overlay-text">
           <p className="trust__overlay-label">✦ &nbsp; Trusted by 500+ Businesses &nbsp; ✦</p>
           <h2 className="trust__overlay-h2">
@@ -332,7 +339,6 @@ function TrustMarquee() {
         </div>
       </div>
 
-      {/* Bottom: client logo strip — infinite scroll right to left */}
       <div className="trust__marquee-wrap">
         <div className="marquee trust__marquee">
           <div className="marquee__track">
@@ -348,12 +354,11 @@ function TrustMarquee() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
 
-/* ── SERVICES (old card grid — kept for reference) ───────────────────────────────────── */
+/* ── SERVICES ────────────────────────────────────── */
 const SERVICE_CARDS = [
   {
     icon: (
@@ -428,9 +433,7 @@ const FEATURES = {
 
 const VERTICALS = [
   {
-    id: "seo",
-    label: "SEO",
-    tagline: "SEO",
+    id: "seo", label: "SEO", tagline: "SEO",
     desc: "We rank your business on Google so the right people find you — not your competitors.",
     photos: [
       { url: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&q=80", tag: "@rankings", rotate: -28, x: -230, y: 20 },
@@ -441,9 +444,7 @@ const VERTICALS = [
     ],
   },
   {
-    id: "social",
-    label: "Social Media",
-    tagline: "Social Media",
+    id: "social", label: "Social Media", tagline: "Social Media",
     desc: "We build social media presence that makes people stop scrolling and start trusting.",
     photos: [
       { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80", tag: "@instagram", rotate: -28, x: -230, y: 20 },
@@ -454,9 +455,7 @@ const VERTICALS = [
     ],
   },
   {
-    id: "ppc",
-    label: "PPC Ads",
-    tagline: "PPC Ads",
+    id: "ppc", label: "PPC Ads", tagline: "PPC Ads",
     desc: "Every rupee you spend on ads works harder — targeted campaigns, real conversions.",
     photos: [
       { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80", tag: "@google", rotate: -28, x: -230, y: 20 },
@@ -467,9 +466,7 @@ const VERTICALS = [
     ],
   },
   {
-    id: "web",
-    label: "Web Development",
-    tagline: "Web Development",
+    id: "web", label: "Web Development", tagline: "Web Development",
     desc: "Fast, clean, conversion-focused websites that your visitors actually enjoy using.",
     photos: [
       { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -28, x: -230, y: 20 },
@@ -480,9 +477,7 @@ const VERTICALS = [
     ],
   },
   {
-    id: "content",
-    label: "Content",
-    tagline: "Content",
+    id: "content", label: "Content", tagline: "Content",
     desc: "Words, videos and visuals that speak to your audience and build lasting brand trust.",
     photos: [
       { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80", tag: "@writing", rotate: -28, x: -230, y: 20 },
@@ -493,9 +488,7 @@ const VERTICALS = [
     ],
   },
   {
-    id: "video",
-    label: "Video Editing",
-    tagline: "Video Editing",
+    id: "video", label: "Video Editing", tagline: "Video Editing",
     desc: "Scroll-stopping video content — reels, ads, explainers — edited to perfection.",
     photos: [
       { url: "https://images.unsplash.com/photo-1574717024453-354056aafa98?w=400&q=80", tag: "@reels", rotate: -28, x: -230, y: 20 },
@@ -526,9 +519,7 @@ function OurVerticals() {
   return (
     <section className="verticals">
       <div className="verticals__inner">
-
         <p className="verticals__eyebrow">Our Services</p>
-
         <div className="verticals__tabs">
           {VERTICALS.map((v, i) => (
             <button
@@ -540,10 +531,7 @@ function OurVerticals() {
             </button>
           ))}
         </div>
-
         <div className="verticals__body">
-
-          {/* LEFT */}
           <div className="verticals__left">
             <h2 className="verticals__name">{current.tagline}</h2>
             <p className="verticals__desc">{current.desc}</p>
@@ -554,8 +542,6 @@ function OurVerticals() {
             </ul>
             <button className="verticals__cta">Get started →</button>
           </div>
-
-          {/* RIGHT */}
           <div className="verticals__right">
             <div className="verticals__fan">
               {current.photos.map((p, i) => (
@@ -578,9 +564,7 @@ function OurVerticals() {
               ))}
             </div>
           </div>
-
         </div>
-
         <div className="verticals__dots">
           {VERTICALS.map((_, i) => (
             <button
@@ -591,11 +575,11 @@ function OurVerticals() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );
 }
+
 /* ── CLIENT GALLERY ──────────────────────────────── */
 const CARD_TILTS = [
   "perspective(700px) rotateY(14deg) rotateX(-3deg) scale(0.95)",
@@ -629,18 +613,13 @@ function ClientGallery() {
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-
     const totalWidth = track.scrollWidth / 2;
-
     const animate = () => {
       posRef.current += 0.5;
-      if (posRef.current >= totalWidth) {
-        posRef.current = 0;
-      }
+      if (posRef.current >= totalWidth) posRef.current = 0;
       track.style.transform = `translateX(-${posRef.current}px)`;
       animRef.current = requestAnimationFrame(animate);
     };
-
     animRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animRef.current);
   }, []);
@@ -712,60 +691,21 @@ function ClientGallery() {
 
 /* ── WHY US ──────────────────────────────────────── */
 const WHY_CARDS = [
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>,
-    title: "Plain Language Reporting",
-    desc: "No jargon, no vanity metrics. You always know exactly what's working.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>,
-    title: "Everything Under One Roof",
-    desc: "SEO, PPC, social, web, content — one team handles it all seamlessly.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>,
-    title: "Built Around Your Goals",
-    desc: "We learn your business before touching a single ad or keyword.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
-    title: "Long-Term Growth Focus",
-    desc: "Strategies built to keep delivering months and years down the line.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
-    title: "Brand-First Approach",
-    desc: "We make your brand look credible, feel trustworthy, and convert.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>,
-    title: "A Team That Cares",
-    desc: "Reachable, responsive — whether you're in Chandigarh or Dubai.",
-  },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>, title: "Plain Language Reporting", desc: "No jargon, no vanity metrics. You always know exactly what's working." },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>, title: "Everything Under One Roof", desc: "SEO, PPC, social, web, content — one team handles it all seamlessly." },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>, title: "Built Around Your Goals", desc: "We learn your business before touching a single ad or keyword." },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>, title: "Long-Term Growth Focus", desc: "Strategies built to keep delivering months and years down the line." },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, title: "Brand-First Approach", desc: "We make your brand look credible, feel trustworthy, and convert." },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>, title: "A Team That Cares", desc: "Reachable, responsive — whether you're in Chandigarh or Dubai." },
 ];
 
 const WHY_DIFF = [
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
-    title: "Results, Not Jargon",
-    desc: "No confusing reports. Our SEO and PPC campaigns are tracked and reported in plain language — what's working, what's not, and what we're doing about it.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>,
-    title: "Full-Stack Under One Roof",
-    desc: "SEO, social media, web development, PPC — you don't need five vendors. We handle it all, and everything works together to maximize your ROI.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
-    title: "In It For The Long Game",
-    desc: "Quick wins are great, but sustainable growth is the goal. Our strategies are built to keep delivering months and years down the line.",
-  },
-  {
-    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>,
-    title: "We Build Brands",
-    desc: "From web development to brand awareness campaigns — we make sure your brand looks credible, feels trustworthy, and converts visitors into customers.",
-  },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>, title: "Results, Not Jargon", desc: "No confusing reports. Our SEO and PPC campaigns are tracked and reported in plain language — what's working, what's not, and what we're doing about it." },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>, title: "Full-Stack Under One Roof", desc: "SEO, social media, web development, PPC — you don't need five vendors. We handle it all, and everything works together to maximize your ROI." },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: "In It For The Long Game", desc: "Quick wins are great, but sustainable growth is the goal. Our strategies are built to keep delivering months and years down the line." },
+  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>, title: "We Build Brands", desc: "From web development to brand awareness campaigns — we make sure your brand looks credible, feels trustworthy, and converts visitors into customers." },
 ];
+
 function WhyUs() {
   return (
     <section className="why">
@@ -773,10 +713,7 @@ function WhyUs() {
         <div className="why__inner">
           <div className="why__left">
             <div className="why__img-wrap">
-              <img
-                src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=700"
-                alt="Social Theka Team"
-              />
+              <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Social Theka Team" />
             </div>
             <div className="why__diff">
               {WHY_DIFF.map((item, i) => (
@@ -790,12 +727,9 @@ function WhyUs() {
               ))}
             </div>
           </div>
-
           <div className="why__right">
             <div className="why__right-head">
-              <h2 className="section-title">
-                Why Businesses Choose Social Theka
-              </h2>
+              <h2 className="section-title">Why Businesses Choose Social Theka</h2>
               <Divider />
               <p className="section-sub" style={{ maxWidth: "none" }}>
                 Honestly, there are dozens of digital marketing agencies in India out there. So why do businesses - from local startups in Chandigarh to growing brands across the USA and UK - keep coming back to us? Because we don't just run campaigns. We actually care about your growth.
@@ -827,92 +761,25 @@ const PROCESS_STEPS = [
 
 function Process() {
   const [active, setActive] = useState(0);
-
   return (
     <section className="process section">
       <div className="container">
         <div className="process__head">
           <span className="tag">How We Work</span>
           <h2 className="section-title">Our Approach to <span className="cherry">Scalable Growth</span></h2>
-          <p className="section-sub">
-            Growth isn't left to chance. Every decision follows a clear framework built for consistent, measurable results.
-          </p>
+          <p className="section-sub">Growth isn't left to chance. Every decision follows a clear framework built for consistent, measurable results.</p>
         </div>
-
         <div className="process__grid">
           {PROCESS_STEPS.map((s, i) => (
-            <div
-              key={i}
-              className="process-step"
-              onClick={() => setActive(i)}
-              style={{ cursor: 'pointer' }}
-            >
-              {/* Number circle */}
+            <div key={i} className="process-step" onClick={() => setActive(i)} style={{ cursor: 'pointer' }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                <div
-                  style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '15px',
-                    fontWeight: '800',
-                    cursor: 'pointer',
-                    flexShrink: 0,
-                    margin: '0 auto',
-                    transition: 'all 0.35s ease',
-                    background: i === active
-                      ? 'linear-gradient(135deg, #e8202a, #C1121F, #A00F19)'
-                      : '#fff',
-                    color: i === active ? '#fff' : '#C1121F',
-                    border: `3px solid #C1121F`,
-                    transform: i === active ? 'scale(1.1)' : 'scale(1)',
-                    boxShadow: i === active
-                      ? '0 8px 32px rgba(193,18,31,0.35), 0 0 0 6px rgba(193,18,31,0.15)'
-                      : '0 0 0 6px rgba(193,18,31,0.1)',
-                    animation: i !== active ? 'pulseGlow 1.8s ease-in-out infinite' : 'none',
-                  }}
-                >
-                  {s.num}
-                </div>
+                <div style={{ width: '56px', height: '56px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '15px', fontWeight: '800', cursor: 'pointer', flexShrink: 0, margin: '0 auto', transition: 'all 0.35s ease', background: i === active ? 'linear-gradient(135deg, #e8202a, #C1121F, #A00F19)' : '#fff', color: i === active ? '#fff' : '#C1121F', border: `3px solid #C1121F`, transform: i === active ? 'scale(1.1)' : 'scale(1)', boxShadow: i === active ? '0 8px 32px rgba(193,18,31,0.35), 0 0 0 6px rgba(193,18,31,0.15)' : '0 0 0 6px rgba(193,18,31,0.1)', animation: i !== active ? 'pulseGlow 1.8s ease-in-out infinite' : 'none' }}>{s.num}</div>
               </div>
-
-              {/* Click hint only on first load */}
               {i === 0 && active === 0 && (
-                <p style={{
-                  fontSize: '11px',
-                  color: '#6B7280',
-                  textAlign: 'center',
-                  marginTop: '-12px',
-                  marginBottom: '8px',
-                }}>
-                  ☝ click steps to explore
-                </p>
+                <p style={{ fontSize: '11px', color: '#6B7280', textAlign: 'center', marginTop: '-12px', marginBottom: '8px' }}>☝ click steps to explore</p>
               )}
-
-              {/* Title */}
-              <div
-                className="process-step__title"
-                style={{
-                  color: i === active ? '#C1121F' : '',
-                  transition: 'color 0.3s',
-                }}
-              >
-                {s.title}
-              </div>
-
-              {/* Description — only show for active */}
-              <p
-                className="process-step__desc"
-                style={{
-                  opacity: i === active ? 1 : 0.45,
-                  transition: 'opacity 0.3s ease',
-                }}
-              >
-                {s.desc}
-              </p>
+              <div className="process-step__title" style={{ color: i === active ? '#C1121F' : '', transition: 'color 0.3s' }}>{s.title}</div>
+              <p className="process-step__desc" style={{ opacity: i === active ? 1 : 0.45, transition: 'opacity 0.3s ease' }}>{s.desc}</p>
             </div>
           ))}
         </div>
@@ -920,23 +787,12 @@ function Process() {
     </section>
   );
 }
+
 /* ── RESULTS ─────────────────────────────────────── */
 const RESULT_CARDS = [
-  {
-    logoClass: "",       initials: "TN", name: "TechNova India",   type: "B2B SaaS · Pune",
-    m1: "3.2x", l1: "Organic traffic growth", m2: "4 mo", l2: "Time to results",
-    desc: "SEO + content strategy tripled organic reach. 48 new keywords ranking on page 1 within 4 months of engagement.",
-  },
-  {
-    logoClass: "--dark", initials: "GH", name: "GrowthHub",        type: "E-Commerce · Delhi",
-    m1: "4.2x", l1: "ROAS improvement",       m2: "62%",  l2: "CPA reduction",
-    desc: "PPC campaign restructure took ROAS from 1.6x to 4.2x. Reporting clarity revealed where 12L/month was being wasted.",
-  },
-  {
-    logoClass: "--grey", initials: "SD", name: "ScaleUp Digital",  type: "Agency · London, UK",
-    m1: "280%", l1: "Lead increase",           m2: "9mo",  l2: "Partnership duration",
-    desc: "UK-based agency scaled white-label SEO delivery. Full-funnel strategy drove 280% more qualified inbound leads in 6 months.",
-  },
+  { logoClass: "",       initials: "TN", name: "TechNova India",   type: "B2B SaaS · Pune",      m1: "3.2x", l1: "Organic traffic growth", m2: "4 mo", l2: "Time to results",   desc: "SEO + content strategy tripled organic reach. 48 new keywords ranking on page 1 within 4 months of engagement." },
+  { logoClass: "--dark", initials: "GH", name: "GrowthHub",        type: "E-Commerce · Delhi",   m1: "4.2x", l1: "ROAS improvement",       m2: "62%",  l2: "CPA reduction",     desc: "PPC campaign restructure took ROAS from 1.6x to 4.2x. Reporting clarity revealed where 12L/month was being wasted." },
+  { logoClass: "--grey", initials: "SD", name: "ScaleUp Digital",  type: "Agency · London, UK",  m1: "280%", l1: "Lead increase",           m2: "9mo",  l2: "Partnership duration", desc: "UK-based agency scaled white-label SEO delivery. Full-funnel strategy drove 280% more qualified inbound leads in 6 months." },
 ];
 
 function Results() {
@@ -945,9 +801,7 @@ function Results() {
       <div className="container">
         <div className="results__head">
           Case Studies
-          <h2 className="section-title">
-            Results That Speak Louder
-          </h2>
+          <h2 className="section-title">Results That Speak Louder</h2>
           <Divider />
           <p className="section-sub">Real numbers. Real businesses. Real growth.</p>
         </div>
@@ -955,23 +809,15 @@ function Results() {
           {RESULT_CARDS.map((c, i) => (
             <div key={i} className="result-card">
               <div className="result-card__company">
-                <div className={`result-card__logo result-card__logo${c.logoClass}`}>
-                  {c.initials}
-                </div>
+                <div className={`result-card__logo result-card__logo${c.logoClass}`}>{c.initials}</div>
                 <div>
                   <div className="result-card__co-name">{c.name}</div>
                   <div className="result-card__co-type">{c.type}</div>
                 </div>
               </div>
               <div className="result-card__metrics">
-                <div>
-                  <div className="result-card__metric-val">{c.m1}</div>
-                  <div className="result-card__metric-label">{c.l1}</div>
-                </div>
-                <div>
-                  <div className="result-card__metric-val">{c.m2}</div>
-                  <div className="result-card__metric-label">{c.l2}</div>
-                </div>
+                <div><div className="result-card__metric-val">{c.m1}</div><div className="result-card__metric-label">{c.l1}</div></div>
+                <div><div className="result-card__metric-val">{c.m2}</div><div className="result-card__metric-label">{c.l2}</div></div>
               </div>
               <p className="result-card__desc">{c.desc}</p>
             </div>
@@ -995,9 +841,7 @@ function Testimonials() {
       <div className="container">
         <div className="testimonials__head">
           Client Stories
-          <h2 className="section-title">
-            What Our Clients Actually Say
-          </h2>
+          <h2 className="section-title">What Our Clients Actually Say</h2>
           <Divider center />
         </div>
         <div className="testimonials__grid">
@@ -1006,9 +850,7 @@ function Testimonials() {
               <div className="testi-card__stars">★★★★★</div>
               <p className="testi-card__quote">{t.quote}</p>
               <div className="testi-card__author">
-                <div className={`testi-card__avatar testi-card__avatar${t.avatarMod}`}>
-                  {t.initials}
-                </div>
+                <div className={`testi-card__avatar testi-card__avatar${t.avatarMod}`}>{t.initials}</div>
                 <div>
                   <div className="testi-card__name">{t.name}</div>
                   <div className="testi-card__role">{t.role}</div>
@@ -1024,12 +866,12 @@ function Testimonials() {
 
 /* ── FAQ ─────────────────────────────────────────── */
 const FAQ_ITEMS = [
-  { q: "What exactly do you do?",                                       a: "SEO, social media, paid ads, website design & development, content writing, and lead generation — One team handles everything. You get everything in one place. There is no chaos." },
-  { q: "How long before I see results?",                                a: "SEO takes 3–6 months for meaningful movement. Paid ads and social can move faster — often within weeks. Either way, you're always updated on where things stand." },
-  { q: "We're a small business with a tight budget. Can you still help us?",       a: "Yes, and honestly some of our favourite work has come from exactly that. We figure out what makes the most impact for what you have and start from there." },
+  { q: "What exactly do you do?",                                                      a: "SEO, social media, paid ads, website design & development, content writing, and lead generation — One team handles everything. You get everything in one place. There is no chaos." },
+  { q: "How long before I see results?",                                                a: "SEO takes 3–6 months for meaningful movement. Paid ads and social can move faster — often within weeks. Either way, you're always updated on where things stand." },
+  { q: "We're a small business with a tight budget. Can you still help us?",           a: "Yes, and honestly some of our favourite work has come from exactly that. We figure out what makes the most impact for what you have and start from there." },
   { q: "We tried another agency before and it didn't work out. What makes you different?", a: "We don't overpromise. You'll know what we're working on, why we're doing it, and what results to expect - straight talk from day one." },
-  { q: "We're not based in India. Do you work with international clients?",        a: "All the time. We have clients in the USA, UK, Dubai, and Singapore. Location has never been an issue for us." },
-  { q: "Okay we're interested. How do we get started?",                            a: "Just drop us a message or book a free call. We'll understand your business first and then figure out the best way forward - no pressure at all." },
+  { q: "We're not based in India. Do you work with international clients?",             a: "All the time. We have clients in the USA, UK, Dubai, and Singapore. Location has never been an issue for us." },
+  { q: "Okay we're interested. How do we get started?",                                 a: "Just drop us a message or book a free call. We'll understand your business first and then figure out the best way forward - no pressure at all." },
 ];
 
 function FAQ() {
@@ -1039,23 +881,13 @@ function FAQ() {
       <div className="faq__inner">
         <div className="faq__left">
           <span className="faq__eyebrow">GOT QUESTIONS?</span>
-          <h2 className="faq__left-h2">
-            Frequently<br />Asked<br />Questions
-          </h2>
-          <p className="faq__left-p">
-            More questions about Social Theka or our services?
-          </p>
-          <a href="#contact" className="faq__chat-btn">
-            CHAT WITH US →
-          </a>
+          <h2 className="faq__left-h2">Frequently<br />Asked<br />Questions</h2>
+          <p className="faq__left-p">More questions about Social Theka or our services?</p>
+          <a href="#contact" className="faq__chat-btn">CHAT WITH US →</a>
         </div>
         <div className="faq__list">
           {FAQ_ITEMS.map((item, i) => (
-            <div
-              key={i}
-              className={`faq__item ${open === i ? "faq__item--open" : ""}`}
-              onClick={() => setOpen(open === i ? null : i)}
-            >
+            <div key={i} className={`faq__item ${open === i ? "faq__item--open" : ""}`} onClick={() => setOpen(open === i ? null : i)}>
               <div className="faq__item-row">
                 <span className="faq__item-q">{item.q}</span>
                 <span className="faq__item-icon">{open === i ? "×" : "+"}</span>
@@ -1075,20 +907,12 @@ function CTA() {
     <section id="contact" className="cta">
       <div className="cta__inner">
         <div>
-          <h2 className="cta__h2">
-           ✦ 500+ Businesses Trust Us. Yours Could Be Next
-          </h2>
-          <p className="cta__p">
-            From Chandigarh to New York - brands across the globe have grown with Social Theka. Ready to see what we can do for you?
-          </p>
+          <h2 className="cta__h2">✦ 500+ Businesses Trust Us. Yours Could Be Next</h2>
+          <p className="cta__p">From Chandigarh to New York - brands across the globe have grown with Social Theka. Ready to see what we can do for you?</p>
         </div>
         <div className="cta__actions">
-          <a href="tel:+91XXXXXXXXXX" className="btn-white">
-            Claim Free Strategy Session →
-          </a>
-          <a href="mailto:hello@socialtheka.com" className="btn-glass">
-            Send a Message
-          </a>
+          <a href="tel:+91XXXXXXXXXX" className="btn-white">Claim Free Strategy Session →</a>
+          <a href="mailto:hello@socialtheka.com" className="btn-glass">Send a Message</a>
         </div>
       </div>
     </section>
@@ -1113,9 +937,7 @@ function Footer() {
           <div className="footer__logo-wrap">
             <img src={footerLogo} alt="Social Theka" className="footer__logo-img" />
           </div>
-          <p className="footer__tagline">
-            Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.
-          </p>
+          <p className="footer__tagline">Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.</p>
           <div className="footer__socials">
             <a href="https://www.linkedin.com/company/socialtheka/" target="_blank" rel="noreferrer" className="footer__soc footer__soc--li" aria-label="LinkedIn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1157,21 +979,13 @@ function Footer() {
 /* ── SCROLL TO TOP ───────────────────────────────── */
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
     const fn = () => setVisible(window.scrollY > 400);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
-
   return visible ? (
-    <button
-      className="scroll-top"
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      aria-label="Scroll to top"
-    >
-      ↑
-    </button>
+    <button className="scroll-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Scroll to top">↑</button>
   ) : null;
 }
 

@@ -390,15 +390,36 @@ transform: translateX(-20%);
 .hero__float-icon {
  position: absolute;
   z-index: 10;
-
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-
+ 
   transform: translate(-50%, -50%);
-  animation: floatUp 4s ease-in-out infinite;
+ 
+  /* Hidden state — before section enters viewport */
+  opacity: 0;
+  scale: 0.4;
+  filter: blur(4px);
+ 
+  /* Smooth reveal transition */
+  transition:
+    opacity  0.45s ease var(--reveal-delay, 0s),
+    scale    0.45s cubic-bezier(0.34, 1.56, 0.64, 1) var(--reveal-delay, 0s),
+    filter   0.45s ease var(--reveal-delay, 0s);
 }
+
+.hero--icons-visible .hero__float-icon {
+  opacity: 1;
+  scale: 1;
+  filter: blur(0px);
+ 
+  /* Float up/down animation starts AFTER reveal */
+  animation: floatUp 4s ease-in-out infinite;
+  animation-delay: var(--icon-delay, 0s);
+}
+
 .hero__float-icon:nth-child(1)  { animation-delay: 0.0s; }
 .hero__float-icon:nth-child(2)  { animation-delay: 0.3s; }
 .hero__float-icon:nth-child(3)  { animation-delay: 0.6s; }
@@ -407,35 +428,35 @@ transform: translateX(-20%);
 .hero__float-icon:nth-child(6)  { animation-delay: 1.5s; }
 
 @keyframes floatUp {
-  0%,100% {
+  0%, 100% {
     transform: translate(-50%, -50%) translateY(0);
   }
   50% {
     transform: translate(-50%, -50%) translateY(-8px);
   }
 }
-
+ 
 .hero__float-icon-emoji {
    width: 58px;
-   height: 58px;
-
+  height: 58px;
+ 
   display: flex;
   align-items: center;
   justify-content: center;
-
+ 
   font-size: 22px;
-
+ 
   border-radius: 16px;
-
+ 
   background: rgba(15,15,15,0.75);
   backdrop-filter: blur(16px);
-
+ 
   border: 1px solid rgba(190,18,60,0.35);
-
+ 
   box-shadow:
     0 10px 35px rgba(0,0,0,0.45),
     0 0 20px rgba(190,18,60,0.18);
-
+ 
   transition: all 0.3s ease;
 }
 .hero__float-icon:hover .hero__float-icon-emoji {
@@ -450,11 +471,11 @@ transform: translateX(-20%);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-
+ 
   color: rgba(255,255,255,0.9);
-
+ 
   white-space: nowrap;
-
+ 
   text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
@@ -483,7 +504,7 @@ transform: translateX(-20%);
 @media (max-width: 480px) {
   .hero__inner--glass { padding: 16px 0 32px; }
   .hero__inner--glass .hero__left { padding: 0 20px 24px; }
-  .hero__float-icon-emoji { width: 40px; height: 40px; font-size: 17px; }
+ .hero__float-icon-emoji { width: 40px; height: 40px; font-size: 17px; }
   .hero__float-icon-label { font-size: 9px; }
   .hero__scene { height: 80vw; }
 }
