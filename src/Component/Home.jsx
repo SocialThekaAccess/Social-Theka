@@ -19,13 +19,21 @@ function Divider({ center }) {
 
 
 /* ── HERO ────────────────────────────────────────── */
+// Positions matched to reference screenshot.
+// Arc goes: SEO (bottom, near glass) → Social Media (left-mid) → PPC Ads (left-upper)
+//           → Web Design (top-center) → Web Dev (right-upper) → Video Editing (right-mid)
 const SERVICE_ICONS = [
-  { label: "SEO",           icon: "🔍", angle: 210, dist: 200 },
-  { label: "Social Media",  icon: "📱", angle: 240, dist: 220 },
-  { label: "PPC Ads",       icon: "📊", angle: 270, dist: 210 },
-  { label: "Web Design",    icon: "🎨", angle: 300, dist: 230 },
-  { label: "Web Dev",       icon: "💻", angle: 330, dist: 200 },
-  { label: "Video Editing", icon: "🎬", angle: 30,  dist: 220 },
+  { label: "Web Design",      icon: "🎨", left: "63%", top: "4%" },
+
+  { label: "PPC Ads",         icon: "📊", left: "40%", top: "8%" },
+
+  { label: "Web Development", icon: "💻", left: "88%", top: "22%" },
+
+  { label: "Social Media",    icon: "📱", left: "25%", top: "30%" },
+
+  { label: "Video Editing",   icon: "🎬", left: "92%", top: "46%" },
+
+  { label: "SEO",             icon: "🔍", left: "35%", top: "48%" },
 ];
 
 /* SVG icons for trust badges */
@@ -89,39 +97,52 @@ function Hero() {
           </div>
         </div>
 
-        {/* RIGHT — Character with floating service icons + liquid drop */}
-        <div className="hero__right hero__right--glass">
+        {/* RIGHT — Full scene: character + orbit arc + floating icons */}
+        <div className="hero__scene">
+
+          {/* Dashed orbit arc */}
+          <svg
+            className="hero__orbit-arc"
+            viewBox="0 0 560 600"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <ellipse
+              cx="280"
+              cy="300"
+              rx="240"
+              ry="265"
+              stroke="rgba(190,18,60,0.35)"
+              strokeWidth="1.5"
+              strokeDasharray="6 8"
+              fill="none"
+            />
+          </svg>
+
+          {/* Character image — centered in scene */}
+          <img
+            src={manjul2Img}
+            alt="Social Theka"
+            className="hero__char-img"
+          />
+          <div className="hero__glass-glow" />
 
           {/* Floating service icons */}
-          {SERVICE_ICONS.map((svc, i) => {
-            const rad = (svc.angle * Math.PI) / 180;
-            const x = Math.cos(rad) * svc.dist;
-            const y = Math.sin(rad) * svc.dist;
-            return (
-              <div
-                key={svc.label}
-                className="hero__float-icon"
-                style={{
-                  animationDelay: `${i * 0.18}s`,
-                  left: `calc(50% + ${x}px)`,
-                  top: `calc(45% + ${y}px)`,
-                }}
-              >
-                <span className="hero__float-icon-emoji">{svc.icon}</span>
-                <span className="hero__float-icon-label">{svc.label}</span>
-              </div>
-            );
-          })}
-
-          {/* Character image */}
-          <div className="hero__char-wrap">
-            <img
-              src={manjul2Img}
-              alt="Social Theka"
-              className="hero__char-img"
-            />
-            <div className="hero__glass-glow" />
-          </div>
+          {SERVICE_ICONS.map((svc, i) => (
+            <div
+              key={svc.label}
+              className="hero__float-icon"
+              style={{
+                animationDelay: `${i * 0.18}s`,
+                left: svc.left,
+                top: svc.top,
+              }}
+            >
+              <span className="hero__float-icon-emoji">{svc.icon}</span>
+              <span className="hero__float-icon-label">{svc.label}</span>
+            </div>
+          ))}
 
         </div>
       </div>
@@ -447,8 +468,8 @@ const VERTICALS = [
   },
   {
     id: "web",
-    label: "Web Dev",
-    tagline: "Web Dev",
+    label: "Web Development",
+    tagline: "Web Development",
     desc: "Fast, clean, conversion-focused websites that your visitors actually enjoy using.",
     photos: [
       { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -28, x: -230, y: 20 },
