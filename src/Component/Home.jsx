@@ -23,17 +23,17 @@ function Divider({ center }) {
 // Arc goes: SEO (bottom, near glass) → Social Media (left-mid) → PPC Ads (left-upper)
 //           → Web Design (top-center) → Web Dev (right-upper) → Video Editing (right-mid)
 const SERVICE_ICONS = [
-  { label: "Web Design",      icon: "🎨", left: "63%", top: "4%" },
+  { label: "Web Design",      icon: "🎨", left: "75%", top: "9%" },
 
-  { label: "PPC Ads",         icon: "📊", left: "40%", top: "8%" },
+  { label: "PPC Ads",         icon: "📊", left: "50%", top: "4%" },
 
-  { label: "Web Development", icon: "💻", left: "88%", top: "22%" },
+  { label: "Web Development", icon: "💻", left: "88%", top: "30%" },
 
-  { label: "Social Media",    icon: "📱", left: "25%", top: "30%" },
+  { label: "Social Media",    icon: "📱", left: "30%", top: "20%" },
 
-  { label: "Video Editing",   icon: "🎬", left: "92%", top: "46%" },
+  { label: "Video Editing",   icon: "🎬", left: "92%", top: "58%" },
 
-  { label: "SEO",             icon: "🔍", left: "35%", top: "48%" },
+  { label: "SEO",             icon: "🔍", left: "29%", top: "48%" },
 ];
 
 /* SVG icons for trust badges */
