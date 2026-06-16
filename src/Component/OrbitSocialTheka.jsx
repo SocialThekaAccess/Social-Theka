@@ -30,7 +30,7 @@ export default function OrbitSocialTheka() {
       <div className="ost-content">
         {/* Header */}
         <div className="ost-top">
-          <p className="ost-eyebrow">Our Services</p>
+          <p className="ost-eyebrow">Our Cost-Effective Service Pricing</p>
           <h2 className="ost-title">Grow with Social Theka</h2>
           <p className="ost-subtitle">Digital solutions orbiting around your brand's success</p>
         </div>
