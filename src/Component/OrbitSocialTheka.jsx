@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import "./OrbitSocialTheka.css";
 import socialThekaLogo from "../assets/SocialThekaLogo.png";
 
@@ -13,15 +14,31 @@ const outerServices = [
   { icon: "ti ti-brand-instagram", name: "Social Media", price: "₹7,999", pos: "sat-outer-4" },
 ];
 
-const strips = [
-  // { icon: "ti ti-shield-check", label: "No hidden charges" },
-  // { icon: "ti ti-refresh", label: "Cancel anytime" },
-  // { icon: "ti ti-headset", label: "Dedicated support" },
-];
+const strips = [];
 
 export default function OrbitSocialTheka() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("ost-animate");
+          observer.disconnect(); // ek baar trigger hone ke baad disconnect
+        }
+      },
+      { threshold: 0.2 } // 20% section visible hone par trigger hoga
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="ost-section">
+    <section className="ost-section" ref={sectionRef}>
       <div className="ost-cloud ost-c1" />
       <div className="ost-cloud ost-c2" />
       <div className="ost-cloud ost-c3" />
@@ -93,9 +110,6 @@ export default function OrbitSocialTheka() {
               </div>
             ))}
           </div>
-          {/* <button className="ost-cta-btn">
-            Book a Meeting <i className="ti ti-arrow-right" aria-hidden="true" />
-          </button> */}
         </div>
 
       </div>
