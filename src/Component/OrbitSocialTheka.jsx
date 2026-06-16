@@ -1,4 +1,6 @@
 import "./OrbitSocialTheka.css";
+import socialThekaLogo from "../assets/SocialThekaLogo.png";
+
 const innerServices = [
   { icon: "ti ti-search", name: "SEO", price: "₹9,999", pos: "sat-inner-1" },
   { icon: "ti ti-pencil", name: "Content Writing", price: "₹6,999", pos: "sat-inner-2" },
@@ -12,9 +14,9 @@ const outerServices = [
 ];
 
 const strips = [
-  { icon: "ti ti-shield-check", label: "No hidden charges" },
-  { icon: "ti ti-refresh", label: "Cancel anytime" },
-  { icon: "ti ti-headset", label: "Dedicated support" },
+  // { icon: "ti ti-shield-check", label: "No hidden charges" },
+  // { icon: "ti ti-refresh", label: "Cancel anytime" },
+  // { icon: "ti ti-headset", label: "Dedicated support" },
 ];
 
 export default function OrbitSocialTheka() {
@@ -40,8 +42,7 @@ export default function OrbitSocialTheka() {
 
           {/* Center */}
           <div className="ost-center">
-            <i className="ti ti-rocket ost-center-icon" aria-hidden="true" />
-            <p className="ost-center-logo">Social<br />Theka</p>
+            <img src={socialThekaLogo} alt="Social Theka" className="ost-center-logo-img" />
             <p className="ost-center-sub">Digital Agency</p>
           </div>
 
@@ -82,20 +83,21 @@ export default function OrbitSocialTheka() {
           </div>
         </div>
 
-        {/* Bottom row */}
+        {/* Strips + CTA */}
         <div className="ost-bottom">
-          <div className="ost-strip">
+          <div className="ost-strips">
             {strips.map((s) => (
-              <div key={s.label} className="ost-strip-item">
+              <div key={s.label} className="ost-strip">
                 <i className={s.icon} aria-hidden="true" />
                 {s.label}
               </div>
             ))}
           </div>
-          <button className="ost-cta-btn">
+          {/* <button className="ost-cta-btn">
             Book a Meeting <i className="ti ti-arrow-right" aria-hidden="true" />
-          </button>
+          </button> */}
         </div>
+
       </div>
     </section>
   );
