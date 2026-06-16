@@ -66,7 +66,7 @@ function Hero() {
         <div className="hero__left">
           <h1 className="hero__h1">
             Your Complete<br />
-            <span style={{ color: "var(--cherry)" }}>Digital Growth</span><br />
+            Digital Growth<br />
             Partner
           </h1>
           <p className="hero__p">
@@ -396,6 +396,15 @@ const SERVICE_CARDS = [
 ];
 
 /* ── OUR VERTICALS ───────────────────────────────── */
+const FEATURES = {
+  seo:     ["Technical SEO & site audits", "Keyword research & strategy", "On-page & off-page optimization"],
+  social:  ["Content calendar & strategy", "Instagram, LinkedIn, Facebook", "Community engagement & DMs"],
+  ppc:     ["Google & Meta Ads management", "A/B testing & optimization", "Conversion tracking & ROI reports"],
+  web:     ["Custom React & Next.js builds", "Mobile-first responsive design", "SEO-optimized codebase"],
+  content: ["Blog writing & SEO articles", "Social media captions & scripts", "Brand storytelling & copywriting"],
+  video:   ["Short-form reels & YouTube edits", "Motion graphics & subtitles", "48–72hr fast turnaround"],
+};
+
 const VERTICALS = [
   {
     id: "seo",
@@ -403,11 +412,11 @@ const VERTICALS = [
     tagline: "SEO",
     desc: "We rank your business on Google so the right people find you — not your competitors.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&q=80", tag: "@rankings", rotate: -18, x: -200, y: 20 },
-      { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", tag: "@traffic", rotate: -7, x: -100, y: -30 },
-      { url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=80", tag: "@growth", rotate: 10, x: 100, y: -20 },
-      { url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+      { url: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&q=80", tag: "@rankings", rotate: -28, x: -230, y: 20 },
+      { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", tag: "@traffic", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=80", tag: "@growth", rotate: 14, x: 115, y: -20 },
+      { url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
     ],
   },
   {
@@ -416,11 +425,11 @@ const VERTICALS = [
     tagline: "Social Media",
     desc: "We build social media presence that makes people stop scrolling and start trusting.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80", tag: "@instagram", rotate: -18, x: -200, y: 20 },
-      { url: "https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=400&q=80", tag: "@content", rotate: -7, x: -100, y: -30 },
-      { url: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80", tag: "@reels", rotate: 10, x: 100, y: -20 },
-      { url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+      { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80", tag: "@instagram", rotate: -28, x: -230, y: 20 },
+      { url: "https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=400&q=80", tag: "@content", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80", tag: "@reels", rotate: 14, x: 115, y: -20 },
+      { url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
     ],
   },
   {
@@ -429,11 +438,11 @@ const VERTICALS = [
     tagline: "PPC Ads",
     desc: "Every rupee you spend on ads works harder — targeted campaigns, real conversions.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80", tag: "@google", rotate: -18, x: -200, y: 20 },
-      { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", tag: "@roi", rotate: -7, x: -100, y: -30 },
-      { url: "https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80", tag: "@leads", rotate: 10, x: 100, y: -20 },
-      { url: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+      { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80", tag: "@google", rotate: -28, x: -230, y: 20 },
+      { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", tag: "@roi", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80", tag: "@leads", rotate: 14, x: 115, y: -20 },
+      { url: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
     ],
   },
   {
@@ -442,11 +451,11 @@ const VERTICALS = [
     tagline: "Web Dev",
     desc: "Fast, clean, conversion-focused websites that your visitors actually enjoy using.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -18, x: -200, y: 20 },
-      { url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80", tag: "@ux", rotate: -7, x: -100, y: -30 },
-      { url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80", tag: "@code", rotate: 10, x: 100, y: -20 },
-      { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+      { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -28, x: -230, y: 20 },
+      { url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80", tag: "@ux", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80", tag: "@code", rotate: 14, x: 115, y: -20 },
+      { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
     ],
   },
   {
@@ -455,11 +464,11 @@ const VERTICALS = [
     tagline: "Content",
     desc: "Words, videos and visuals that speak to your audience and build lasting brand trust.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80", tag: "@writing", rotate: -18, x: -200, y: 20 },
-      { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", tag: "@strategy", rotate: -7, x: -100, y: -30 },
-      { url: "https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&q=80", tag: "@video", rotate: 10, x: 100, y: -20 },
-      { url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80", tag: "@writing", rotate: -28, x: -230, y: 20 },
+      { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", tag: "@strategy", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&q=80", tag: "@video", rotate: 14, x: 115, y: -20 },
+      { url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
     ],
   },
   {
@@ -468,23 +477,37 @@ const VERTICALS = [
     tagline: "Video Editing",
     desc: "Scroll-stopping video content — reels, ads, explainers — edited to perfection.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1574717024453-354056aafa98?w=400&q=80", tag: "@reels", rotate: -18, x: -200, y: 20 },
-      { url: "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80", tag: "@cinematic", rotate: -7, x: -100, y: -30 },
-      { url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=80", tag: null, rotate: 2, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80", tag: "@motion", rotate: 10, x: 100, y: -20 },
-      { url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80", tag: null, rotate: 20, x: 200, y: 30 },
+      { url: "https://images.unsplash.com/photo-1574717024453-354056aafa98?w=400&q=80", tag: "@reels", rotate: -28, x: -230, y: 20 },
+      { url: "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80", tag: "@cinematic", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
+      { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80", tag: "@motion", rotate: 14, x: 115, y: -20 },
+      { url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
     ],
   },
 ];
+
+const CARD_GAP_MS = 150;
 
 function OurVerticals() {
   const [active, setActive] = useState(0);
   const current = VERTICALS[active];
 
+  useEffect(() => {
+    const photos = document.querySelectorAll(".verticals__photo");
+    photos.forEach((el, i) => {
+      el.classList.remove("is-in");
+      void el.offsetWidth;
+      el.style.animationDelay = `${i * CARD_GAP_MS}ms`;
+      el.classList.add("is-in");
+    });
+  }, [active]);
+
   return (
     <section className="verticals">
       <div className="verticals__inner">
+
         <p className="verticals__eyebrow">Our Services</p>
+
         <div className="verticals__tabs">
           {VERTICALS.map((v, i) => (
             <button
@@ -496,26 +519,47 @@ function OurVerticals() {
             </button>
           ))}
         </div>
-        <h2 className="verticals__name">{current.tagline}</h2>
-        <div className="verticals__fan">
-          {current.photos.map((p, i) => (
-            <div
-              key={i}
-              className={`verticals__photo ${i === 2 ? "verticals__photo--center" : ""}`}
-              style={{
-                transform: `translateX(${p.x}px) rotate(${p.rotate}deg)`,
-                zIndex: i === 2 ? 10 : i < 2 ? i + 1 : 9 - i,
-              }}
-            >
-              <img src={p.url} alt="" loading="lazy" />
-              {p.tag && (
-                <div className={`verticals__tag ${i < 2 ? "verticals__tag--light" : "verticals__tag--dark"}`}>
-                  {p.tag}
+
+        <div className="verticals__body">
+
+          {/* LEFT */}
+          <div className="verticals__left">
+            <h2 className="verticals__name">{current.tagline}</h2>
+            <p className="verticals__desc">{current.desc}</p>
+            <ul className="verticals__features">
+              {FEATURES[current.id].map((f) => (
+                <li key={f} className="verticals__feature">{f}</li>
+              ))}
+            </ul>
+            <button className="verticals__cta">Get started →</button>
+          </div>
+
+          {/* RIGHT */}
+          <div className="verticals__right">
+            <div className="verticals__fan">
+              {current.photos.map((p, i) => (
+                <div
+                  key={i}
+                  className={`verticals__photo ${i === 2 ? "verticals__photo--center" : ""}`}
+                  style={{
+                    "--tx": `${p.x}px`,
+                    "--rot": `${p.rotate}deg`,
+                    zIndex: i === 2 ? 10 : i < 2 ? i + 1 : 9 - i,
+                  }}
+                >
+                  <img src={p.url} alt="" loading="lazy" />
+                  {p.tag && (
+                    <div className={`verticals__tag ${i < 2 ? "verticals__tag--light" : "verticals__tag--dark"}`}>
+                      {p.tag}
+                    </div>
+                  )}
                 </div>
-              )}
+              ))}
             </div>
-          ))}
+          </div>
+
         </div>
+
         <div className="verticals__dots">
           {VERTICALS.map((_, i) => (
             <button
@@ -526,12 +570,11 @@ function OurVerticals() {
             />
           ))}
         </div>
-        <p className="verticals__desc">{current.desc}</p>
+
       </div>
     </section>
   );
 }
-
 /* ── CLIENT GALLERY ──────────────────────────────── */
 const CARD_TILTS = [
   "perspective(700px) rotateY(14deg) rotateX(-3deg) scale(0.95)",
@@ -1117,11 +1160,12 @@ export default function SocialTheka() {
     <>
       <Hero />
       {/* <RegionalPresence /> */}
+      <OurVerticals />
       <OrbitSocialTheka />
       {/* <Pricing /> */}
       {/* <Stats /> */}
       <TrustMarquee />
-      <OurVerticals />
+      {/* <OurVerticals /> */}
       <ClientGallery />
       <WhyUs />
       <Process />
