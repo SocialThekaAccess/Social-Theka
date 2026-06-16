@@ -54,13 +54,23 @@
 .ost-orbit { position: absolute; border-radius: 50%; }
 
 .ost-orbit-inner { width: 420px; height: 420px; top: 50%; left: 50%; margin-top: -210px; margin-left: -210px; animation: ostSpinCW 28s linear infinite; }
-.ost-orbit-inner .ost-sat { animation: ostSpinCCW 28s linear infinite; }
+.ost-orbit-inner .ost-sat { animation: ost-emerge 0.7s cubic-bezier(.34,1.56,.64,1) 1s both, ostSpinCCW 28s linear infinite; }
 
 .ost-orbit-outer { width: 680px; height: 680px; top: 50%; left: 50%; margin-top: -340px; margin-left: -340px; animation: ostSpinCCW 40s linear infinite; }
-.ost-orbit-outer .ost-sat { animation: ostSpinCW 40s linear infinite; }
+.ost-orbit-outer .ost-sat { animation: ost-emerge 0.7s cubic-bezier(.34,1.56,.64,1) 1s both, ostSpinCW 40s linear infinite; }
 
-@keyframes ostSpinCW  { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
-@keyframes ostSpinCCW { from{transform:rotate(0deg);} to{transform:rotate(-360deg);} }
+/* Rotation uses the standalone `rotate` property (not `transform`) so it never
+   collides with the emerge animation's translate/scale on the same element */
+@keyframes ostSpinCW  { from { rotate: 0deg; } to { rotate: 360deg; } }
+@keyframes ostSpinCCW { from { rotate: 0deg; } to { rotate: -360deg; } }
+
+/* Satellite hides at the orbit's center (--ix/--iy), then pops out to its
+   real slot (translate 0,0) once the animation-delay above elapses */
+@keyframes ost-emerge {
+  0%   { translate: var(--ix) var(--iy); scale: 0.15; opacity: 0; }
+  60%  { opacity: 1; }
+  100% { translate: 0 0; scale: 1; opacity: 1; }
+}
 
 .ost-orbit-inner:hover, .ost-orbit-outer:hover,
 .ost-orbit-inner:hover .ost-sat, .ost-orbit-outer:hover .ost-sat { animation-play-state: paused; }
@@ -74,6 +84,7 @@
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; padding: 14px; cursor: pointer;
   transition: box-shadow 0.3s ease;
+  z-index: 1; /* stays behind .ost-center (z-index:10) while hidden at the center point */
 }
 .ost-sat:hover { box-shadow: 0 12px 36px rgba(192,57,43,0.2); }
 .ost-sat-icon { display: none; }
@@ -81,15 +92,16 @@
 .ost-sat-price { font-size: 17px; font-weight: 600; color: #C0392B; }
 .ost-sat-mo { font-size: 12px; color: #bbb; }
 
-/* Inner positions — radius 210, sat half 100 */
-.sat-inner-1 { top: -100px;    left: 110px; }
-.sat-inner-2 { bottom: -100px; left: 110px; }
+/* Inner positions — radius 210, sat half 100
+   --ix/--iy = vector from this slot back to the orbit's center, used by ost-emerge */
+.sat-inner-1 { top: -100px;    left: 110px;  --ix: 0px;    --iy: 210px; }
+.sat-inner-2 { bottom: -100px; left: 110px;  --ix: 0px;    --iy: -210px; }
 
 /* Outer positions — radius 340, sat half 100 */
-.sat-outer-1 { top: -100px;    left: 240px; }
-.sat-outer-2 { top: 240px;     right: -100px; }
-.sat-outer-3 { bottom: -100px; left: 240px; }
-.sat-outer-4 { top: 240px;     left: -100px; }
+.sat-outer-1 { top: -100px;    left: 240px;  --ix: 0px;    --iy: 340px; }
+.sat-outer-2 { top: 240px;     right: -100px; --ix: -340px; --iy: 0px; }
+.sat-outer-3 { bottom: -100px; left: 240px;  --ix: 0px;    --iy: -340px; }
+.sat-outer-4 { top: 240px;     left: -100px; --ix: 340px;  --iy: 0px; }
 
 .ost-sat-actions { display: flex; flex-direction: column; gap: 5px; margin-top: 8px; width: 80%; }
 .ost-sat-btn { font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 100px; border: none; cursor: pointer; white-space: nowrap; width: 100%; font-family: inherit; }
@@ -111,12 +123,12 @@
   .ost-center { width: 170px; height: 170px; }
   .ost-center-logo-img { width: 96px; }
   .ost-sat { width: 155px; height: 155px; }
-  .sat-inner-1 { top: -78px;  left: 112px; }
-  .sat-inner-2 { bottom: -78px; left: 112px; }
-  .sat-outer-1 { top: -78px;  left: 232px; }
-  .sat-outer-2 { top: 232px;  right: -78px; }
-  .sat-outer-3 { bottom: -78px; left: 232px; }
-  .sat-outer-4 { top: 232px;  left: -78px; }
+  .sat-inner-1 { top: -78px;  left: 112px; --iy: 190px; }
+  .sat-inner-2 { bottom: -78px; left: 112px; --iy: -190px; }
+  .sat-outer-1 { top: -78px;  left: 232px; --iy: 310px; }
+  .sat-outer-2 { top: 232px;  right: -78px; --ix: -310px; }
+  .sat-outer-3 { bottom: -78px; left: 232px; --iy: -310px; }
+  .sat-outer-4 { top: 232px;  left: -78px; --ix: 310px; }
 }
 
 @media (max-width: 600px) {
@@ -130,11 +142,11 @@
   .ost-sat-name { font-size: 12px; }
   .ost-sat-price { font-size: 13px; }
   .ost-sat-actions { display: none; }
-  .sat-inner-1 { top: -58px;  left: 82px; }
-  .sat-inner-2 { bottom: -58px; left: 82px; }
-  .sat-outer-1 { top: -58px;  left: 172px; }
-  .sat-outer-2 { top: 172px;  right: -58px; }
-  .sat-outer-3 { bottom: -58px; left: 172px; }
-  .sat-outer-4 { top: 172px;  left: -58px; }
+  .sat-inner-1 { top: -58px;  left: 82px; --iy: 140px; }
+  .sat-inner-2 { bottom: -58px; left: 82px; --iy: -140px; }
+  .sat-outer-1 { top: -58px;  left: 172px; --iy: 230px; }
+  .sat-outer-2 { top: 172px;  right: -58px; --ix: -230px; }
+  .sat-outer-3 { bottom: -58px; left: 172px; --iy: -230px; }
+  .sat-outer-4 { top: 172px;  left: -58px; --ix: 230px; }
   .ost-bottom { padding: 0 20px; }
 }
