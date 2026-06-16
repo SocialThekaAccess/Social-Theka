@@ -286,7 +286,7 @@ ul { list-style: none; }
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 0;
   align-items: start;
   min-height: auto;
@@ -328,54 +328,58 @@ ul { list-style: none; }
   background: rgba(190,18,60,0.12);
 }
 
-/* Right — character + floating icons */
-.hero__right--glass {
+/* Right — scene container (character + orbit + icons all absolutely positioned) */
+.hero__scene {
   position: relative;
-  height: auto;
-  min-height: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  overflow: visible;
-  z-index: 2;
-}
-
-.hero__char-wrap {
-  position: relative;
-  height: auto;
   width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  height: 600px;
+  z-index: 2;
   overflow: visible;
 }
 
-.hero__char-img {
-  height: auto;
-  max-height: min(85vh, 720px);
+.hero__scene .hero__char-img {
+  position: absolute;
+
+  right: 10px;
+  bottom: -10px;
+
+/* left: 50%; */
+top: 55px;
+transform: translateX(-20%);
+
+  height: 100%;
   width: auto;
-  max-width: 100%;
+  max-width: none;
+
   object-fit: contain;
-  object-position: top center;
+  object-position: bottom center;
+
   display: block;
-  position: relative;
   z-index: 2;
+
   filter: drop-shadow(0 0 60px rgba(190,18,60,0.15));
 }
 
 /* Red glow from wine glass area */
 .hero__glass-glow {
   position: absolute;
-  bottom: 35%;
-  left: 42%;
-  transform: translateX(-50%);
-  width: 110px;
-  height: 110px;
+  width: 380px;
+  height: 380px;
+
+  right: 80px;
+  top: 140px;
+
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(190,18,60,0.65) 0%, rgba(120,10,40,0.35) 42%, transparent 72%);
-  filter: blur(18px);
-  z-index: 3;
-  animation: glassGlow 3s ease-in-out infinite;
+
+  background: radial-gradient(
+    circle,
+    rgba(190,18,60,0.25) 0%,
+    rgba(190,18,60,0.08) 40%,
+    transparent 75%
+  );
+
+  filter: blur(50px);
+  z-index: 1;
 }
 @keyframes glassGlow {
   0%, 100% { opacity: 0.75; transform: translateX(-50%) scale(1); }
@@ -384,14 +388,16 @@ ul { list-style: none; }
 
 /* Floating service icons */
 .hero__float-icon {
-  position: absolute;
+ position: absolute;
   z-index: 10;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  animation: floatUp 3s ease-in-out infinite;
-  transform: translateX(-50%) translateY(-50%);
+  gap: 10px;
+
+  transform: translate(-50%, -50%);
+  animation: floatUp 4s ease-in-out infinite;
 }
 .hero__float-icon:nth-child(1)  { animation-delay: 0.0s; }
 .hero__float-icon:nth-child(2)  { animation-delay: 0.3s; }
@@ -401,37 +407,60 @@ ul { list-style: none; }
 .hero__float-icon:nth-child(6)  { animation-delay: 1.5s; }
 
 @keyframes floatUp {
-  0%, 100% { transform: translateX(-50%) translateY(-50%) translateY(0px); }
-  50%       { transform: translateX(-50%) translateY(-50%) translateY(-10px); }
+  0%,100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-8px);
+  }
 }
 
 .hero__float-icon-emoji {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: rgba(20, 5, 8, 0.75);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(190,18,60,0.4);
+   width: 58px;
+   height: 58px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(190,18,60,0.2);
-  transition: transform 0.3s ease;
+
+  font-size: 22px;
+
+  border-radius: 16px;
+
+  background: rgba(15,15,15,0.75);
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(190,18,60,0.35);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.45),
+    0 0 20px rgba(190,18,60,0.18);
+
+  transition: all 0.3s ease;
 }
 .hero__float-icon:hover .hero__float-icon-emoji {
-  transform: scale(1.15);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 30px rgba(190,18,60,0.4);
+ transform: scale(1.08);
+  box-shadow:
+    0 15px 45px rgba(0,0,0,0.55),
+    0 0 30px rgba(190,18,60,0.35);
 }
 
 .hero__float-icon-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  color: rgba(255,255,255,0.8);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 1px;
+
+  color: rgba(255,255,255,0.9);
+
   white-space: nowrap;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Dashed orbit arc SVG */
+.hero__orbit-arc {
+   display: none;
 }
 
 /* Responsive */
@@ -449,15 +478,14 @@ ul { list-style: none; }
     text-align: center;
   }
   .hero__inner--glass .hero__p { max-width: 100%; }
-  .hero__right--glass { height: auto; }
-  .hero__char-img { max-height: 70vw; }
+  .hero__scene { height: 70vw; }
 }
 @media (max-width: 480px) {
   .hero__inner--glass { padding: 16px 0 32px; }
   .hero__inner--glass .hero__left { padding: 0 20px 24px; }
-  .hero__float-icon-emoji { width: 44px; height: 44px; font-size: 18px; }
-  .hero__right--glass { height: auto; }
-  .hero__char-img { max-height: 80vw; }
+  .hero__float-icon-emoji { width: 40px; height: 40px; font-size: 17px; }
+  .hero__float-icon-label { font-size: 9px; }
+  .hero__scene { height: 80vw; }
 }
 
 /* ── STATS ──────────────────────────────────────── */
