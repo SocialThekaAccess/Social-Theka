@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import logo from "../assets/SocialThekaLogo.png";
 import footerLogo from "../assets/FooterLogo.png";
+import manjul2Img from "../assets/Manjulsir2.png";
+import manjulSirImg from "../assets/ManjulSirSocialTheka.png";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
 import Pricing from './Pricing';
 import OrbitSocialTheka from './OrbitSocialTheka';
-import manjulImg from "../assets/ManjulSirSocialTheka.png";
 
 /* ── SHARED COMPONENTS ───────────────────────────── */
 function Tag({ children }) {
@@ -18,20 +19,59 @@ function Divider({ center }) {
 
 
 /* ── HERO ────────────────────────────────────────── */
+const SERVICE_ICONS = [
+  { label: "SEO",           icon: "🔍", angle: 210, dist: 200 },
+  { label: "Social Media",  icon: "📱", angle: 240, dist: 220 },
+  { label: "PPC Ads",       icon: "📊", angle: 270, dist: 210 },
+  { label: "Web Design",    icon: "🎨", angle: 300, dist: 230 },
+  { label: "Web Dev",       icon: "💻", angle: 330, dist: 200 },
+  { label: "Video Editing", icon: "🎬", angle: 30,  dist: 220 },
+];
+
+/* SVG icons for trust badges */
+const GoogleIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+  </svg>
+);
+
+const MetaIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+    <path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.186-.325.358-.633.53-.94l.369-.65.396-.7c.206-.364.406-.72.601-1.069l.277-.486-.615-.582c-.96-.906-1.996-1.304-3.269-1.304m0 1.36c1.024 0 1.877.327 2.694 1.04l-.282.497c-.2.354-.4.71-.608 1.079l-.403.714-.369.651a62.14 62.14 0 0 0-.514.925l-.167.306c-1.129 2.085-1.682 3.016-2.392 3.981-.897 1.234-1.632 1.748-2.62 1.748-1.084 0-1.81-.477-2.248-1.217a4.25 4.25 0 0 1-.292-.607 5.206 5.206 0 0 1-.207-1.55c0-2.33.64-4.744 1.832-6.415.944-1.347 2.138-2.147 3.376-2.147M17.415 4.03c-1.149 0-2.243.481-3.211 1.367l-.602.571.277.487c.192.339.39.686.591 1.042l.396.7.369.651.53.94.185.325.688 1.22c1.682 2.986 2.076 3.616 2.725 4.461 1.283 1.686 2.355 2.324 3.827 2.324 1.791 0 2.918-.768 3.618-1.93a5.3 5.3 0 0 0 .371-.76c.116-.291.202-.575.265-.861.141-.604.21-1.267.21-1.973 0-2.565-.703-5.239-2.044-7.305-1.188-1.832-2.903-3.113-4.871-3.113m0 1.36c1.237 0 2.432.8 3.376 2.148 1.191 1.67 1.831 4.086 1.831 6.414 0 .572-.066 1.105-.207 1.55a4.178 4.178 0 0 1-.292.608c-.437.739-1.163 1.216-2.248 1.216-.996 0-1.73-.514-2.62-1.748-.713-.97-1.267-1.902-2.394-3.982l-.367-.675a62.1 62.1 0 0 0-.514-.924l-.368-.651-.403-.714a47.54 47.54 0 0 0-.608-1.079l-.28-.496c.816-.712 1.669-1.039 2.694-1.039" fill="#0081FB"/>
+  </svg>
+);
+
+const ISOIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#22c55e" fill="rgba(34,197,94,0.15)"/>
+    <path d="M9 12l2 2 4-4" stroke="#22c55e" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 function Hero() {
-  const logos = ["Google", "Meta", "ISO-Certified"];
- 
+  const badges = [
+    { label: "Google", icon: <GoogleIcon /> },
+    { label: "Meta",   icon: <MetaIcon /> },
+    { label: "ISO-Certified", icon: <ISOIcon /> },
+  ];
+
   return (
-    <section id="home" className="hero">
-      <div className="hero__inner">
- 
-        {/* Left */}
+    <section id="home" className="hero hero--glass">
+      <div className="hero__inner hero__inner--glass">
+
+        {/* LEFT — text content */}
         <div className="hero__left">
           <h1 className="hero__h1">
-          Your Complete Digital Growth Partner
+            Your Complete<br />
+            <span style={{ color: "var(--cherry)" }}>Digital Growth</span><br />
+            Partner
           </h1>
           <p className="hero__p">
-            Social Theka is a digital marketing agency located in Chandigarh, dedicated to providing effective and straightforward solutions to assist businesses in establishing themselves online. Regardless of your company's stage (new, growing, or maturing), we manage all aspects of your digital marketing (SEO, SMO, content creation/marketing, PPC, and brand development).
+            Social Theka is a digital marketing agency in Chandigarh — handling SEO, social media,
+            PPC, web development and content so you can focus on growing your business.
           </p>
           <a href="#services" className="hero__explore-btn">
             Explore Our Services <span>→</span>
@@ -40,26 +80,50 @@ function Hero() {
             Recognized for Core Digital Marketing Services
           </p>
           <div className="hero__logos">
-            {logos.map((logo) => (
-              <div key={logo} className="hero__logo-pill">{logo}</div>
+            {badges.map((b) => (
+              <div key={b.label} className="hero__logo-pill">
+                {b.icon}
+                {b.label}
+              </div>
             ))}
           </div>
         </div>
- 
-        {/* Right — Lead Form + Location cards */}
-        <div className="hero__right">
-          <div className="hero__form-card">
-           <div className="hero__form-card">
-  <img
-    src={manjulImg}
-    alt="Manjul Sir - Social Theka"
-    style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "16px" }}
-  />
-</div>
+
+        {/* RIGHT — Character with floating service icons + liquid drop */}
+        <div className="hero__right hero__right--glass">
+
+          {/* Floating service icons */}
+          {SERVICE_ICONS.map((svc, i) => {
+            const rad = (svc.angle * Math.PI) / 180;
+            const x = Math.cos(rad) * svc.dist;
+            const y = Math.sin(rad) * svc.dist;
+            return (
+              <div
+                key={svc.label}
+                className="hero__float-icon"
+                style={{
+                  animationDelay: `${i * 0.18}s`,
+                  left: `calc(50% + ${x}px)`,
+                  top: `calc(45% + ${y}px)`,
+                }}
+              >
+                <span className="hero__float-icon-emoji">{svc.icon}</span>
+                <span className="hero__float-icon-label">{svc.label}</span>
+              </div>
+            );
+          })}
+
+          {/* Character image */}
+          <div className="hero__char-wrap">
+            <img
+              src={manjul2Img}
+              alt="Social Theka"
+              className="hero__char-img"
+            />
+            <div className="hero__glass-glow" />
           </div>
-          
+
         </div>
- 
       </div>
     </section>
   );
@@ -151,23 +215,119 @@ const BRAND_LOGOS = [
   wb11, wb12, wb13, wb14, wb15, wb16, wb17, wb18, wb19, wb20, wb21,
 ];
 
+const TRUST_ICONS = [
+  { label: "SEO",           emoji: "🔍", angle: -80, dist: 180 },
+  { label: "Social Media",  emoji: "📱", angle: -50, dist: 220 },
+  { label: "PPC Ads",       emoji: "📊", angle: -20, dist: 190 },
+  { label: "Web Design",    emoji: "🎨", angle: 15,  dist: 210 },
+  { label: "Web Dev",       emoji: "💻", angle: 45,  dist: 185 },
+  { label: "Video Editing", emoji: "🎬", angle: 72,  dist: 215 },
+  { label: "Content",       emoji: "✍️", angle: -110, dist: 170 },
+];
+
+const WINE_DROP_FALL_MS = 650;
+const LOGO_REVEAL_INTERVAL = WINE_DROP_FALL_MS;
+
 function TrustMarquee() {
-  const doubled = [...BRAND_LOGOS, ...BRAND_LOGOS];
+  const sectionRef = useRef(null);
+  const [triggered, setTriggered] = useState(false);
+  const [activeDrop, setActiveDrop] = useState(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !triggered) {
+          setTriggered(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, [triggered]);
+
+  useEffect(() => {
+    if (!triggered) return undefined;
+
+    const timeouts = [];
+    BRAND_LOGOS.forEach((_, i) => {
+      timeouts.push(
+        setTimeout(() => setActiveDrop(i), i * LOGO_REVEAL_INTERVAL)
+      );
+      timeouts.push(
+        setTimeout(() => {
+          setActiveDrop((current) => (current === i ? null : current));
+        }, i * LOGO_REVEAL_INTERVAL + WINE_DROP_FALL_MS)
+      );
+    });
+
+    return () => timeouts.forEach(clearTimeout);
+  }, [triggered]);
 
   return (
-    <section className="trust">
-      <p className="trust__label">
-        ✦ 500+ businesses trusted us. Yours could be next  ✦
-      </p>
-      <div className="marquee">
-        <div className="marquee__track">
-          {doubled.map((src, i) => (
-            <div key={i} className="marquee__logo-pill">
-              <img src={src} alt={`Brand ${(i % 21) + 1}`} loading="lazy" />
+    <section className="trust trust--dark" ref={sectionRef}>
+
+      {/* Top: character + floating icons */}
+      <div className="trust__hero">
+        {TRUST_ICONS.map((svc, i) => {
+          const rad = (svc.angle * Math.PI) / 180;
+          const x = Math.cos(rad) * svc.dist;
+          const y = Math.sin(rad) * svc.dist * -1;
+          return (
+            <div
+              key={svc.label}
+              className="trust__float-icon"
+              style={{
+                left: `calc(50% + ${x}px)`,
+                top:  `calc(55% + ${y}px)`,
+                animationDelay: `${i * 0.22}s`,
+              }}
+            >
+              <span className="trust__float-emoji">{svc.emoji}</span>
+              <span className="trust__float-label">{svc.label}</span>
             </div>
-          ))}
+          );
+        })}
+
+        {/* Character image */}
+        <div className="trust__char-wrap">
+          <img src={manjulSirImg} alt="Social Theka" className="trust__char-img" />
+          <div className="trust__glass-glow" />
+          {activeDrop !== null && (
+            <span
+              key={`wine-drop-${activeDrop}`}
+              className="trust__wine-drop"
+              aria-hidden="true"
+            />
+          )}
+        </div>
+
+        {/* Headline overlay */}
+        <div className="trust__overlay-text">
+          <p className="trust__overlay-label">✦ &nbsp; Trusted by 500+ Businesses &nbsp; ✦</p>
+          <h2 className="trust__overlay-h2">
+            We Grow Brands Every Service One Agency
+          </h2>
         </div>
       </div>
+
+      {/* Bottom: client logo strip — infinite scroll right to left */}
+      <div className="trust__marquee-wrap">
+        <div className="marquee trust__marquee">
+          <div className="marquee__track">
+            {[...BRAND_LOGOS, ...BRAND_LOGOS].map((src, i) => (
+              <div key={i} className="marquee__logo-pill marquee__logo-pill--visible">
+                <img
+                  src={src}
+                  alt={`Brand ${(i % BRAND_LOGOS.length) + 1}`}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }
@@ -592,35 +752,103 @@ function WhyUs() {
     </section>
   );
 }
+
 /* ── PROCESS ─────────────────────────────────────── */
 const PROCESS_STEPS = [
-  { num: "01", title: "Defined Objectives",      desc: "We start by understanding your goals — visibility, leads, or sales. Everything begins with a clear plan, not assumptions." },
-  { num: "02", title: "Strategic Planning",      desc: "A tailored strategy around your business, your audience, and your market. No generic playbooks copied from someone else." },
-  { num: "03", title: "Smart Execution",         desc: "The right mix of tools and expertise applied carefully across campaigns, content, and web — with intent." },
+  { num: "01", title: "Defined Objectives", desc: "We start by understanding your goals — visibility, leads, or sales. Everything begins with a clear plan, not assumptions." },
+  { num: "02", title: "Strategic Planning", desc: "A tailored strategy around your business, your audience, and your market. No generic playbooks copied from someone else." },
+  { num: "03", title: "Smart Execution", desc: "The right mix of tools and expertise applied carefully across campaigns, content, and web — with intent." },
   { num: "04", title: "Continuous Optimisation", desc: "We monitor, analyse, and keep improving so your growth compounds over time — never set-and-forget." },
 ];
 
 function Process() {
+  const [active, setActive] = useState(0);
+
   return (
     <section className="process section">
       <div className="container">
         <div className="process__head">
-          How We Work
-          <h2 className="section-title">
-            Our Approach to Scalable Growth
-          </h2>
-          <Divider center />
+          <span className="tag">How We Work</span>
+          <h2 className="section-title">Our Approach to <span className="cherry">Scalable Growth</span></h2>
           <p className="section-sub">
-            Growth isn't left to chance. Every decision follows a clear framework
-            built for consistent, measurable results.
+            Growth isn't left to chance. Every decision follows a clear framework built for consistent, measurable results.
           </p>
         </div>
+
         <div className="process__grid">
           {PROCESS_STEPS.map((s, i) => (
-            <div key={i} className="process-step">
-              <div className="process-step__num">{s.num}</div>
-              <div className="process-step__title">{s.title}</div>
-              <p className="process-step__desc">{s.desc}</p>
+            <div
+              key={i}
+              className="process-step"
+              onClick={() => setActive(i)}
+              style={{ cursor: 'pointer' }}
+            >
+              {/* Number circle */}
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div
+                  style={{
+                    width: '56px',
+                    height: '56px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '15px',
+                    fontWeight: '800',
+                    cursor: 'pointer',
+                    flexShrink: 0,
+                    margin: '0 auto',
+                    transition: 'all 0.35s ease',
+                    background: i === active
+                      ? 'linear-gradient(135deg, #e8202a, #C1121F, #A00F19)'
+                      : '#fff',
+                    color: i === active ? '#fff' : '#C1121F',
+                    border: `3px solid #C1121F`,
+                    transform: i === active ? 'scale(1.1)' : 'scale(1)',
+                    boxShadow: i === active
+                      ? '0 8px 32px rgba(193,18,31,0.35), 0 0 0 6px rgba(193,18,31,0.15)'
+                      : '0 0 0 6px rgba(193,18,31,0.1)',
+                    animation: i !== active ? 'pulseGlow 1.8s ease-in-out infinite' : 'none',
+                  }}
+                >
+                  {s.num}
+                </div>
+              </div>
+
+              {/* Click hint only on first load */}
+              {i === 0 && active === 0 && (
+                <p style={{
+                  fontSize: '11px',
+                  color: '#6B7280',
+                  textAlign: 'center',
+                  marginTop: '-12px',
+                  marginBottom: '8px',
+                }}>
+                  ☝ click steps to explore
+                </p>
+              )}
+
+              {/* Title */}
+              <div
+                className="process-step__title"
+                style={{
+                  color: i === active ? '#C1121F' : '',
+                  transition: 'color 0.3s',
+                }}
+              >
+                {s.title}
+              </div>
+
+              {/* Description — only show for active */}
+              <p
+                className="process-step__desc"
+                style={{
+                  opacity: i === active ? 1 : 0.45,
+                  transition: 'opacity 0.3s ease',
+                }}
+              >
+                {s.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -628,7 +856,6 @@ function Process() {
     </section>
   );
 }
-
 /* ── RESULTS ─────────────────────────────────────── */
 const RESULT_CARDS = [
   {
@@ -889,7 +1116,7 @@ export default function SocialTheka() {
   return (
     <>
       <Hero />
-      <RegionalPresence />
+      {/* <RegionalPresence /> */}
       <OrbitSocialTheka />
       {/* <Pricing /> */}
       {/* <Stats /> */}
