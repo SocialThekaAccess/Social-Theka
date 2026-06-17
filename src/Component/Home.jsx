@@ -491,8 +491,8 @@ const VERTICALS = [
     id: "video", label: "Video Editing", icon: "🎬", tagline: "Video Editing",
     desc: "Scroll-stopping video content — reels, ads, explainers — edited to perfection.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1574717024453-354056aafa98?w=400&q=80", tag: "@reels", rotate: -22, x: -185, y: 20 },
-      { url: "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80", tag: "@cinematic", rotate: -11, x: -92, y: -20 },
+      { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0gnbBW5eSB3B4ZreHazVouOzbAfaRX3lIhQ&s", tag: "@reels", rotate: -22, x: -185, y: 20 },
+      { url: "https://pixflow.net/blog/wp-content/uploads/2023/12/Efficient-Video-Editing-Workflow.webp", tag: "@cinematic", rotate: -11, x: -92, y: -20 },
       { url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
       { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80", tag: "@motion", rotate: 11, x: 92, y: -20 },
       { url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
