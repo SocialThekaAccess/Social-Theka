@@ -228,8 +228,8 @@ import wb5  from "../assets/WorkingBrand5.png";
 import wb6  from "../assets/WorkingBrand6.png";
 import wb7  from "../assets/WorkingBrand7.png";
 import wb8  from "../assets/WorkingBrand8.png";
-import wb9  from "../assets/WorkingBrand9.png";
-import wb10 from "../assets/WorkingBrand10.png";
+// import wb9  from "../assets/WorkingBrand9.png";
+// import wb10 from "../assets/WorkingBrand10.png";
 import wb11 from "../assets/WorkingBrand11.png";
 import wb12 from "../assets/WorkingBrand12.png";
 import wb13 from "../assets/WorkingBrand13.png";
@@ -243,7 +243,7 @@ import wb20 from "../assets/WorkingBrand20.png";
 import wb21 from "../assets/WorkingBrand21.png";
 
 const BRAND_LOGOS = [
-  wb1, wb2, wb3, wb4, wb5, wb6, wb7, wb8, wb9, wb10,
+  wb1, wb2, wb3, wb4, wb5, wb6, wb7, wb8,
   wb11, wb12, wb13, wb14, wb15, wb16, wb17, wb18, wb19, wb20, wb21,
 ];
 
@@ -433,69 +433,69 @@ const FEATURES = {
 
 const VERTICALS = [
   {
-    id: "seo", label: "SEO", tagline: "SEO",
+    id: "seo", label: "SEO", icon: "🔍", tagline: "SEO",
     desc: "We rank your business on Google so the right people find you — not your competitors.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&q=80", tag: "@rankings", rotate: -28, x: -230, y: 20 },
-      { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", tag: "@traffic", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&q=80", tag: "@rankings", rotate: -22, x: -185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", tag: "@traffic", rotate: -11, x: -92, y: -20 },
       { url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=80", tag: "@growth", rotate: 14, x: 115, y: -20 },
-      { url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
+      { url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=80", tag: "@growth", rotate: 11, x: 92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
     ],
   },
   {
-    id: "social", label: "Social Media", tagline: "Social Media",
+    id: "social", label: "Social Media", icon: "📱", tagline: "Social Media",
     desc: "We build social media presence that makes people stop scrolling and start trusting.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80", tag: "@instagram", rotate: -28, x: -230, y: 20 },
-      { url: "https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=400&q=80", tag: "@content", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80", tag: "@instagram", rotate: -22, x: -185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=400&q=80", tag: "@content", rotate: -11, x: -92, y: -20 },
       { url: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80", tag: "@reels", rotate: 14, x: 115, y: -20 },
-      { url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
+      { url: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80", tag: "@reels", rotate: 11, x: 92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
     ],
   },
   {
-    id: "ppc", label: "PPC Ads", tagline: "PPC Ads",
+    id: "ppc", label: "PPC Ads", icon: "📊", tagline: "PPC Ads",
     desc: "Every rupee you spend on ads works harder — targeted campaigns, real conversions.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80", tag: "@google", rotate: -28, x: -230, y: 20 },
-      { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", tag: "@roi", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80", tag: "@google", rotate: -22, x: -185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", tag: "@roi", rotate: -11, x: -92, y: -20 },
       { url: "https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80", tag: "@leads", rotate: 14, x: 115, y: -20 },
-      { url: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
+      { url: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80", tag: "@leads", rotate: 11, x: 92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
     ],
   },
   {
-    id: "web", label: "Web Development", tagline: "Web Development",
+    id: "web", label: "Web Development", icon: "💻", tagline: "Web Development",
     desc: "Fast, clean, conversion-focused websites that your visitors actually enjoy using.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -28, x: -230, y: 20 },
-      { url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80", tag: "@ux", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -22, x: -185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80", tag: "@ux", rotate: -11, x: -92, y: -20 },
       { url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80", tag: "@code", rotate: 14, x: 115, y: -20 },
-      { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
+      { url: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80", tag: "@code", rotate: 11, x: 92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
     ],
   },
   {
-    id: "content", label: "Content", tagline: "Content",
+    id: "content", label: "Content", icon: "✍️", tagline: "Content",
     desc: "Words, videos and visuals that speak to your audience and build lasting brand trust.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80", tag: "@writing", rotate: -28, x: -230, y: 20 },
-      { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", tag: "@strategy", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80", tag: "@writing", rotate: -22, x: -185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", tag: "@strategy", rotate: -11, x: -92, y: -20 },
       { url: "https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&q=80", tag: "@video", rotate: 14, x: 115, y: -20 },
-      { url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
+      { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&q=80", tag: "@video", rotate: 11, x: 92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
     ],
   },
   {
-    id: "video", label: "Video Editing", tagline: "Video Editing",
+    id: "video", label: "Video Editing", icon: "🎬", tagline: "Video Editing",
     desc: "Scroll-stopping video content — reels, ads, explainers — edited to perfection.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1574717024453-354056aafa98?w=400&q=80", tag: "@reels", rotate: -28, x: -230, y: 20 },
-      { url: "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80", tag: "@cinematic", rotate: -14, x: -115, y: -30 },
+      { url: "https://images.unsplash.com/photo-1574717024453-354056aafa98?w=400&q=80", tag: "@reels", rotate: -22, x: -185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80", tag: "@cinematic", rotate: -11, x: -92, y: -20 },
       { url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80", tag: "@motion", rotate: 14, x: 115, y: -20 },
-      { url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80", tag: null, rotate: 28, x: 230, y: 30 },
+      { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80", tag: "@motion", rotate: 11, x: 92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
     ],
   },
 ];
@@ -504,8 +504,28 @@ const CARD_GAP_MS = 150;
 
 function OurVerticals() {
   const [active, setActive] = useState(0);
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
   const current = VERTICALS[active];
 
+  // Scroll-triggered entrance — fires once when section enters viewport
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  // Photo fan animation on tab change
   useEffect(() => {
     const photos = document.querySelectorAll(".verticals__photo");
     photos.forEach((el, i) => {
@@ -517,22 +537,23 @@ function OurVerticals() {
   }, [active]);
 
   return (
-    <section className="verticals">
+    <section className={`verticals${visible ? " verticals--visible" : ""}`} ref={sectionRef}>
       <div className="verticals__inner">
-        <p className="verticals__eyebrow">Our Services</p>
-        <div className="verticals__tabs">
+        <p className="verticals__eyebrow verticals__anim verticals__anim--1">Our Services</p>
+        <div className="verticals__tabs verticals__anim verticals__anim--2">
           {VERTICALS.map((v, i) => (
             <button
               key={v.id}
               className={`verticals__tab ${i === active ? "verticals__tab--active" : ""}`}
               onClick={() => setActive(i)}
             >
-              {v.label}
+              <span className="verticals__tab-icon">{v.icon}</span>
+              <span className="verticals__tab-label">{v.label}</span>
             </button>
           ))}
         </div>
         <div className="verticals__body">
-          <div className="verticals__left">
+          <div className="verticals__left verticals__anim verticals__anim--3">
             <h2 className="verticals__name">{current.tagline}</h2>
             <p className="verticals__desc">{current.desc}</p>
             <ul className="verticals__features">
@@ -542,7 +563,7 @@ function OurVerticals() {
             </ul>
             <button className="verticals__cta">Get started →</button>
           </div>
-          <div className="verticals__right">
+          <div className="verticals__right verticals__anim verticals__anim--4">
             <div className="verticals__fan">
               {current.photos.map((p, i) => (
                 <div
@@ -565,7 +586,7 @@ function OurVerticals() {
             </div>
           </div>
         </div>
-        <div className="verticals__dots">
+        <div className="verticals__dots verticals__anim verticals__anim--5">
           {VERTICALS.map((_, i) => (
             <button
               key={i}
@@ -776,10 +797,23 @@ function Process() {
                 <div style={{ width: '56px', height: '56px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '15px', fontWeight: '800', cursor: 'pointer', flexShrink: 0, margin: '0 auto', transition: 'all 0.35s ease', background: i === active ? 'linear-gradient(135deg, #e8202a, #C1121F, #A00F19)' : '#fff', color: i === active ? '#fff' : '#C1121F', border: `3px solid #C1121F`, transform: i === active ? 'scale(1.1)' : 'scale(1)', boxShadow: i === active ? '0 8px 32px rgba(193,18,31,0.35), 0 0 0 6px rgba(193,18,31,0.15)' : '0 0 0 6px rgba(193,18,31,0.1)', animation: i !== active ? 'pulseGlow 1.8s ease-in-out infinite' : 'none' }}>{s.num}</div>
               </div>
               {i === 0 && active === 0 && (
-                <p style={{ fontSize: '11px', color: '#6B7280', textAlign: 'center', marginTop: '-12px', marginBottom: '8px' }}>☝ click steps to explore</p>
+                <p style={{ fontSize: '11px', color: '#6B7280', textAlign: 'center', marginTop: '-12px', marginBottom: '8px' }}></p>
               )}
               <div className="process-step__title" style={{ color: i === active ? '#C1121F' : '', transition: 'color 0.3s' }}>{s.title}</div>
-              <p className="process-step__desc" style={{ opacity: i === active ? 1 : 0.45, transition: 'opacity 0.3s ease' }}>{s.desc}</p>
+              <div
+                className="process-step__desc-wrap"
+                style={{
+                  display: 'grid',
+                  gridTemplateRows: i === active ? '1fr' : '0fr',
+                  opacity: i === active ? 1 : 0,
+                  transition: 'grid-template-rows 0.38s cubic-bezier(0.22,1,0.36,1), opacity 0.32s ease',
+                  marginTop: i === active ? '8px' : '0',
+                }}
+              >
+                <div style={{ overflow: 'hidden' }}>
+                  <p className="process-step__desc">{s.desc}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
