@@ -122,29 +122,28 @@ export default function TeamSection() {
               {!iframeLoaded && (
                 <div className="ts-iframe-placeholder">
                   <div className="ts-spinner" />
-                  <p>Loading reel…</p>
+                  <p>Loading video…</p>
                 </div>
               )}
               <iframe
-                src="https://www.instagram.com/reel/DUDVPgxEyO6/embed/"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&modestbranding=1&rel=0"
                 className={`ts-reel-iframe ${iframeLoaded ? "ts-iframe-visible" : ""}`}
                 frameBorder="0"
-                scrolling="no"
-                allowTransparency="true"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 onLoad={() => setIframeLoaded(true)}
-                title="Social Theka Instagram Reel"
+                title="Social Theka Team Video"
               />
             </div>
 
             <div className="ts-reel-footer">
-              <span>📍 Reel by Social Theka</span>
+              <span>📍 Social Theka Team</span>
               <a
-                href="https://www.instagram.com/reel/DUDVPgxEyO6/"
+                href="https://www.youtube.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View on Instagram ↗
+                Watch More ↗
               </a>
             </div>
           </div>
