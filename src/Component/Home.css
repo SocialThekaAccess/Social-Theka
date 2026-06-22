@@ -1556,7 +1556,7 @@ transform: translateX(-20%);
 .process__head .section-sub { margin: 0 auto; }
 
 /* ── Vertical Timeline (Theka Story Style) ── */
-.proc-timeline { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+.proc-timeline { max-width: 900px; margin: 0; display: flex; flex-direction: column; gap: 40px; padding-left: 80px; }
 .proc-step-new { display: flex; gap: 32px; align-items: flex-start; opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .proc-step-new--visible { opacity: 1; transform: translateY(0); }
 
@@ -1570,10 +1570,24 @@ transform: translateX(-20%);
 .proc-step-new__content { flex: 1; background: #fff; border: 1.5px solid #f0f0f0; border-radius: 16px; padding: 28px 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); transition: border-color 0.3s ease, box-shadow 0.3s ease; }
 .proc-step-new:hover .proc-step-new__content { border-color: #C1121F; box-shadow: 0 8px 28px rgba(193,18,31,0.12); }
 .proc-step-new__title { font-family: var(--font-heading); font-size: 22px; font-weight: 800; color: #0A0A0A; margin-bottom: 12px; letter-spacing: -0.02em; }
-.proc-step-new__desc { font-size: 15px; color: #6b7280; line-height: 1.75; margin-bottom: 20px; }
-.proc-step-new__btn { display: inline-flex; align-items: center; gap: 8px; background: #5D3891; color: #fff; font-size: 14px; font-weight: 600; font-family: var(--font-body); padding: 10px 22px; border-radius: 50px; border: none; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; }
-.proc-step-new__btn:hover { background: #4A2D75; transform: translateY(-2px); }
-.proc-step-new__btn svg { width: 16px; height: 16px; }
+.proc-step-new__desc { font-size: 15px; color: #6b7280; line-height: 1.75; margin: 0; }
+
+/* Process responsive */
+@media (max-width: 860px) {
+  .proc-timeline { padding-left: 24px; max-width: 100%; }
+  .proc-step-new__circle { width: 80px; height: 80px; }
+  .proc-step-new__num { font-size: 24px; }
+  .proc-step-new__content { padding: 20px 24px; }
+  .proc-step-new__title { font-size: 18px; }
+}
+
+@media (max-width: 560px) {
+  .proc-timeline { padding-left: 12px; }
+  .proc-step-new { gap: 20px; }
+  .proc-step-new__circle { width: 70px; height: 70px; }
+  .proc-step-new__num { font-size: 20px; }
+  .proc-step-new__content { padding: 18px 20px; }
+}
 
 /* ── RESULTS ────────────────────────────────────── */
 .results { background: var(--bg2); }
