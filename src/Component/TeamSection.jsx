@@ -106,17 +106,7 @@ export default function TeamSection() {
         {/* ── right: Instagram reel iframe ── */}
         <div className="ts-right">
           <div className="ts-reel-card">
-            <div className="ts-reel-header">
-              <div className="ts-insta-brand">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-                <span>@socialtheka</span>
-              </div>
-              <span className="ts-live-badge">Reel</span>
-            </div>
+            {/* Header removed - only video */}
 
             <div className="ts-iframe-wrap">
               {!iframeLoaded && (
@@ -137,16 +127,7 @@ export default function TeamSection() {
               />
             </div>
 
-            <div className="ts-reel-footer">
-              <span>📍 Reel by Social Theka</span>
-              <a
-                href="https://www.instagram.com/reel/DUDVPgxEyO6/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View on Instagram ↗
-              </a>
-            </div>
+            {/* Footer removed - only video */}
           </div>
 
           {/* floating stat pill */}

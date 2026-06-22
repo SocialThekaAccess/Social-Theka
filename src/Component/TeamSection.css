@@ -191,14 +191,9 @@
   border: 1px solid #F0F0F0;
 }
 
-/* card header */
+/* card header - HIDDEN */
 .ts-reel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
-  border-bottom: 1px solid #F0F0F0;
-  background: #fff;
+  display: none;
 }
 .ts-insta-brand {
   display: flex;
@@ -273,16 +268,9 @@
   opacity: 1;
 }
 
-/* card footer */
+/* card footer - HIDDEN */
 .ts-reel-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 18px;
-  border-top: 1px solid #F0F0F0;
-  font-size: 0.8rem;
-  color: #6B7280;
-  background: #fff;
+  display: none;
 }
 .ts-reel-footer a {
   color: #C1121F;
