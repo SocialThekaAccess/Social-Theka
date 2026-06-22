@@ -1,17 +1,17 @@
-/* ══════════════════════════════════════════
-   Thekastory.css  —  ts- prefix
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   Thekastory.css  â€”  ts- prefix
    Red (#BE123C) ONLY on accents / CTAs
-   ══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── BASE ─────────────────────────────────── */
+/* â”€â”€ BASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-page {
-  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-family: var(--font-body);
   color: #111827;
   background: #fff;
   line-height: 1.6;
 }
 
-/* ── EYEBROW ──────────────────────────────── */
+/* â”€â”€ EYEBROW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -38,7 +38,7 @@
   color: #BE123C;
 }
 
-/* ── HERO ─────────────────────────────────── */
+/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-hero {
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
@@ -82,7 +82,7 @@
   z-index: 1;
 }
 
-/* ── LEFT ── */
+/* â”€â”€ LEFT â”€â”€ */
 .ts-hero__left {
   display: flex;
   flex-direction: column;
@@ -117,7 +117,7 @@
   50%       { opacity: 0.4; transform: scale(1.5); }
 }
 .ts-hero__h1 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(30px, 3.6vw, 50px);
   font-weight: 900;
   color: #111827;
@@ -201,7 +201,7 @@
   align-items: center;
 }
 .ts-hero__stat-num {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: 22px;
   font-weight: 800;
   color: #111827;
@@ -221,7 +221,7 @@
   flex-shrink: 0;
 }
 
-/* ── RIGHT — cards ── */
+/* â”€â”€ RIGHT â€” cards â”€â”€ */
 .ts-hero__right {
   display: flex;
   flex-direction: column;
@@ -296,7 +296,7 @@
   margin: 0;
 }
 
-/* ── SHARED SECTIONS ──────────────────────── */
+/* â”€â”€ SHARED SECTIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-section {
   padding: 80px 40px;
 }
@@ -318,7 +318,7 @@
   margin-bottom: 48px;
 }
 .ts-section__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(24px, 3vw, 38px);
   font-weight: 800;
   color: #111827;
@@ -335,7 +335,7 @@
   text-align: center;
 }
 
-/* ── ORIGIN STORY ──────────────────────────── */
+/* â”€â”€ ORIGIN STORY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-story {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -420,7 +420,7 @@
   color: #6b7280;
 }
 
-/* ── STATS ─────────────────────────────────── */
+/* â”€â”€ STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-stats__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -451,7 +451,7 @@
   transform: translateY(-4px);
 }
 .ts-stat-card__val {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(40px, 5vw, 60px);
   font-weight: 900;
   color: #111827;
@@ -471,7 +471,7 @@
   line-height: 1.6;
 }
 
-/* ── VALUES ─────────────────────────────────── */
+/* â”€â”€ VALUES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-values__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -517,7 +517,7 @@
   line-height: 1.75;
 }
 
-/* ── AIM (DARK SECTION) ──────────────────────── */
+/* â”€â”€ AIM (DARK SECTION) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-aim {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -529,7 +529,7 @@
   flex-direction: column;
 }
 .ts-aim__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(26px, 3.2vw, 42px);
   font-weight: 800;
   color: #fff;
@@ -570,7 +570,7 @@
   box-shadow: 0 8px 24px rgba(190,18,60,0.45);
 }
 
-/* ── TEAM ───────────────────────────────────── */
+/* â”€â”€ TEAM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-team__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -658,7 +658,7 @@
   max-width: 360px;
 }
 
-/* ── RESPONSIVE ─────────────────────────────── */
+/* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 1024px) {
   .ts-hero__inner {
     grid-template-columns: 1fr;
@@ -724,11 +724,11 @@
   }
 }
 
-/* ── FOOTER ─────────────────────────────────── */
+/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-footer {
   background: #0a0a0a;
   padding: 64px 40px 0;
-  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-family: var(--font-heading);
 }
 
 .ts-footer__top {
@@ -852,7 +852,7 @@
   color: #9ca3af;
 }
 
-/* ── SCROLL TO TOP ───────────────────────────── */
+/* â”€â”€ SCROLL TO TOP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-scroll-top {
   position: fixed;
   bottom: 32px;
@@ -880,7 +880,7 @@
   box-shadow: 0 8px 24px rgba(190,18,60,0.5);
 }
 
-/* ── FOOTER RESPONSIVE ───────────────────────── */
+/* â”€â”€ FOOTER RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 1024px) {
   .ts-footer__top {
     grid-template-columns: 1fr 1fr 1fr;
@@ -914,3 +914,5 @@
     font-size: 18px;
   }
 }
+
+
