@@ -58,10 +58,7 @@ export default function TeamSection() {
       <div className="ts-container">
         {/* ── left: text content ── */}
         <div className="ts-left">
-          <span className="ts-eyebrow">
-            <span className="ts-dot" />
-            Meet the Team
-          </span>
+          {/* Eyebrow removed */}
 
           <h2 className="ts-heading">
             The Minds Behind<br />
