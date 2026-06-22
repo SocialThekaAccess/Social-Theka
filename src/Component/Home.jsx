@@ -9,6 +9,7 @@ import Pricing from './Pricing';
 // import OrbitSocialTheka from './OrbitSocialTheka';
 import AwardedSection from './AwardedSection';
 import PhotoFan from './PhotoFan';
+import Representroster from './Representroster';
 import TeamSection from './TeamSection';
 import AwardsSection from './AwardsSection';
 import ResultsSlider from './ResultsSlider';
@@ -1055,6 +1056,7 @@ export default function SocialTheka() {
       <Hero />
       <AwardedSection />
       <PhotoFan />
+      <Representroster />
       <ServiceTabs />
       {/* <RegionalPresence /> */}
       {/* <OrbitSocialTheka /> */}
