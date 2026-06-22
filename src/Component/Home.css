@@ -55,7 +55,8 @@ ul { list-style: none; }
   margin: 12px 0 14px;
 }
 .section-sub { font-size: 16px; color: var(--muted); max-width: 520px; line-height: 1.75; }
-.cherry { color: var(--cherry); }
+.cherry { color: var(--cherry); font-family: inherit; font-weight: inherit; }
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; font-weight: inherit; }
 
 .tag {
   display: inline-flex; align-items: center; gap: 6px;
