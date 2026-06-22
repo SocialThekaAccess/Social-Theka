@@ -1,49 +1,49 @@
 import { useEffect, useRef, useState } from "react";
 import "./PhotoFan.css";
 
-/* ── Fan photos — 4 cards, symmetrically spread ── */
+/* ── Fan photos — 6 cards, compact overlapping spread ── */
 const PHOTOS = [
   {
     src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&q=80",
     tag: "@events",
-    rotate: -38,
-    tx: -360,
-    ty: 25,
+    rotate: -28,
+    tx: -380,
+    ty: 30,
   },
   {
     src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80",
     tag: "@teamwork",
-    rotate: -18,
-    tx: -180,
-    ty: 10,
+    rotate: -16,
+    tx: -230,
+    ty: 15,
   },
   {
     src: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400&q=80",
     tag: "@clients",
-    rotate: 0,
-    tx: 0,
-    ty: 0,
+    rotate: -5,
+    tx: -80,
+    ty: 5,
   },
   {
     src: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&q=80",
     tag: "@awards",
-    rotate: 18,
-    tx: 180,
-    ty: 10,
+    rotate: 5,
+    tx: 80,
+    ty: 5,
   },
   {
     src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80",
     tag: "@growth",
-    rotate: 38,
-    tx: 360,
-    ty: 25,
+    rotate: 16,
+    tx: 230,
+    ty: 15,
   },
   {
     src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80",
     tag: "@strategy",
-    rotate: 52,
-    tx: 500,
-    ty: 40,
+    rotate: 28,
+    tx: 380,
+    ty: 30,
   },
 ];
 
@@ -111,9 +111,10 @@ export default function PhotoFan() {
             className={`pf-photo${hovered === i ? " pf-photo--hovered" : ""}`}
             style={{
               "--tx":  `${p.tx}px`,
+              "--ty":  `${p.ty}px`,
               "--rot": `${p.rotate}deg`,
-              zIndex: i < 2 ? i + 1 : 9 - i,
-              transitionDelay: visible ? `${i * 0.1}s` : "0s",
+              zIndex: i < 3 ? i + 1 : 10 - i,
+              transitionDelay: visible ? `${i * 0.08}s` : "0s",
             }}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
