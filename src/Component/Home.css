@@ -1674,7 +1674,7 @@ transform: translateX(-20%);
 .footer__bottom-links a:hover { color: rgba(255,255,255,.6); }
 
 /* ── SCROLL TO TOP ──────────────────────────────── */
-.scroll-top { position: fixed; bottom: 32px; right: 32px; z-index: 999; width: 68px; height: 68px; background: transparent; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; animation: fadeInUp 0.3s ease; transition: transform 0.25s ease; }
+.scroll-top { position: fixed; bottom: 32px; right: 32px; z-index: 999; width: 80px; height: 80px; background: transparent; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; animation: fadeInUp 0.3s ease; transition: transform 0.25s ease; }
 .scroll-top:hover { transform: translateY(-4px) scale(1.1); }
 .scroll-top img { width: 100%; height: 100%; object-fit: contain; display: block; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
