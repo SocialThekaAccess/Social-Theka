@@ -1,11 +1,11 @@
-/* ══════════════════════════════════════════
-   ContactUs.css  —  cu- prefix
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ContactUs.css  â€”  cu- prefix
    Red (#BE123C) on accents & CTAs only
-   ══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── BASE ────────────────────────────────── */
+/* â”€â”€ BASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-page {
-  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-family: var(--font-body);
   color: #111827;
   background: #fff;
   line-height: 1.6;
@@ -14,7 +14,7 @@
   color: #BE123C;
 }
 
-/* ── HERO ────────────────────────────────── */
+/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-hero {
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
@@ -79,7 +79,7 @@
   50%       { opacity: 0.4; transform: scale(1.5); }
 }
 .cu-hero__h1 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(32px, 4.5vw, 56px);
   font-weight: 900;
   color: #111827;
@@ -95,7 +95,7 @@
   max-width: 580px;
 }
 
-/* ── SECTION ─────────────────────────────── */
+/* â”€â”€ SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-section {
   padding: 72px 40px 80px;
   background: #f9fafb;
@@ -105,7 +105,7 @@
   margin: 0 auto;
 }
 
-/* ── LAYOUT GRID ─────────────────────────── */
+/* â”€â”€ LAYOUT GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-layout {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -113,7 +113,7 @@
   align-items: start;
 }
 
-/* ── FORM SIDE ───────────────────────────── */
+/* â”€â”€ FORM SIDE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-form-side {
   background: #fff;
   border: 1px solid #e5e7eb;
@@ -125,7 +125,7 @@
   margin-bottom: 28px;
 }
 .cu-form-title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(22px, 2.4vw, 28px);
   font-weight: 800;
   color: #111827;
@@ -187,7 +187,7 @@
   resize: vertical;
 }
 
-/* ── BUTTONS ─────────────────────────────── */
+/* â”€â”€ BUTTONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -217,7 +217,7 @@
   margin-top: 4px;
 }
 
-/* ── SUCCESS STATE ───────────────────────── */
+/* â”€â”€ SUCCESS STATE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-success {
   display: flex;
   flex-direction: column;
@@ -250,7 +250,7 @@
   margin: 0;
 }
 
-/* ── INFO SIDE ───────────────────────────── */
+/* â”€â”€ INFO SIDE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-info-side {
   display: flex;
   flex-direction: column;
@@ -275,7 +275,7 @@
   margin-bottom: 8px;
 }
 .cu-hate-card__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: 22px;
   font-weight: 800;
   color: #fff;
@@ -455,11 +455,11 @@
   margin: 0;
 }
 
-/* ── FOOTER ──────────────────────────────── */
+/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-footer {
   background: #0a0a0a;
   padding: 64px 40px 0;
-  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-family: var(--font-heading);
 }
 .cu-footer__top {
   max-width: 1280px;
@@ -574,7 +574,7 @@
   color: #9ca3af;
 }
 
-/* ── SCROLL TO TOP ───────────────────────── */
+/* â”€â”€ SCROLL TO TOP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cu-scroll-top {
   position: fixed;
   bottom: 32px;
@@ -602,7 +602,7 @@
   box-shadow: 0 8px 24px rgba(190,18,60,0.5);
 }
 
-/* ── RESPONSIVE ──────────────────────────── */
+/* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 1024px) {
   .cu-layout {
     grid-template-columns: 1fr;
@@ -665,3 +665,5 @@
     font-size: 18px;
   }
 }
+
+

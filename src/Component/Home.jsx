@@ -1,12 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import logo from "../assets/SocialThekaLogo.png";
 import footerLogo from "../assets/FooterLogo.png";
-import manjul2Img from "../assets/Manjulsir2.png";
+import heroImg from "../assets/SocialThekahero.png";
 import manjulSirImg from "../assets/ManjulSirSocialTheka.png";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
 import Pricing from './Pricing';
-import OrbitSocialTheka from './OrbitSocialTheka';
+// import OrbitSocialTheka from './OrbitSocialTheka';
+import AwardedSection from './AwardedSection';
+import PhotoFan from './PhotoFan';
+import TeamSection from './TeamSection';
+import AwardsSection from './AwardsSection';
+import ResultsSlider from './ResultsSlider';
+import ServiceTabs from './ServiceTabs';
+import CorePrinciples from './CorePrinciples';
 
 /* ── SHARED COMPONENTS ───────────────────────────── */
 function Tag({ children }) {
@@ -19,14 +26,6 @@ function Divider({ center }) {
 
 
 /* ── HERO ────────────────────────────────────────── */
-const SERVICE_ICONS = [
-  { label: "Web Design",      icon: "🎨", left: "75%", top: "9%",  revealOrder: 3 },
-  { label: "PPC Ads",         icon: "📊", left: "50%", top: "4%",  revealOrder: 2 },
-  { label: "Web Development", icon: "💻", left: "88%", top: "30%", revealOrder: 4 },
-  { label: "Social Media",    icon: "📱", left: "30%", top: "20%", revealOrder: 1 },
-  { label: "Video Editing",   icon: "🎬", left: "92%", top: "58%", revealOrder: 5 },
-  { label: "SEO",             icon: "🔍", left: "29%", top: "48%", revealOrder: 0 },
-];
 
 const GoogleIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -52,111 +51,106 @@ const ISOIcon = () => (
 
 function Hero() {
   const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          setVisible(true);
           section.classList.add("hero--icons-visible");
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.08 }
     );
-
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
-  const badges = [
-    { label: "Google", icon: <GoogleIcon /> },
-    { label: "Meta",   icon: <MetaIcon /> },
-    { label: "ISO-Certified", icon: <ISOIcon /> },
+  const certBadges = [
+    { label: "Google Partner",  icon: <GoogleIcon /> },
+    { label: "Meta Business",   icon: <MetaIcon /> },
+    { label: "ISO Certified",   icon: <ISOIcon /> },
+  ];
+
+  const stats = [
+    { num: "500+", label: "Brands Scaled" },
+    { num: "98%",  label: "Client Retention" },
+    { num: "₹50Cr+", label: "Revenue Generated" },
   ];
 
   return (
-    <section id="home" className="hero hero--glass" ref={sectionRef}>
-      <div className="hero__inner hero__inner--glass">
+    <section id="home" className="hero2" ref={sectionRef}>
 
-        {/* LEFT — text content */}
-        <div className="hero__left">
-          <h1 className="hero__h1">
-            Your Complete<br />
-            Digital Growth<br />
-            Partner
+      {/* Soft background blobs */}
+      <div className="hero2__blob hero2__blob--1" />
+      <div className="hero2__blob hero2__blob--2" />
+
+      <div className="hero2__inner">
+
+        {/* ── LEFT ────────────────────────── */}
+        <div className={`hero2__left${visible ? " hero2__left--in" : ""}`}>
+
+          <div className="hero2__tag">
+            <span className="hero2__tag-dot" />
+            Digital Marketing Agency · Chandigarh
+          </div>
+
+          <h1 className="hero2__h1">
+            Your Complete <span className="hero2__h1-accent">Digital Growth</span> Partner
           </h1>
-          <p className="hero__p">
-            Social Theka is a digital marketing agency in Chandigarh — handling SEO, social media,
-            PPC, web development and content so you can focus on growing your business.
+
+          <p className="hero2__p">
+            Social Theka handles SEO, social media, PPC, web development
+            and content — so you can focus on growing your business.
+            Result-driven strategies with guaranteed outcomes.
           </p>
-          <a href="#services" className="hero__explore-btn">
-            Explore Our Services <span>→</span>
-          </a>
-          <p className="hero__recognised-label">
+
+          <div className="hero2__actions">
+            <a href="#contact" className="hero2__btn-ghost">
+              Book Free Audit
+            </a>
+          </div>
+
+          <p className="hero2__recog-label">
             Recognized for Core Digital Marketing Services
           </p>
-          <div className="hero__logos">
-            {badges.map((b) => (
-              <div key={b.label} className="hero__logo-pill">
-                {b.icon}
-                {b.label}
+
+          <div className="hero2__logos">
+            {certBadges.map((b) => (
+              <div key={b.label} className="hero2__logo-card">
+                <span className="hero2__logo-icon">{b.icon}</span>
+                <span className="hero2__logo-label">{b.label}</span>
               </div>
             ))}
           </div>
+
         </div>
 
-        {/* RIGHT — Full scene: character + orbit arc + floating icons */}
-        <div className="hero__scene">
+        {/* ── RIGHT — image card ───────────── */}
+        <div className={`hero2__right${visible ? " hero2__right--in" : ""}`}>
 
-          {/* Dashed orbit arc */}
-          <svg
-            className="hero__orbit-arc"
-            viewBox="0 0 560 600"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <ellipse
-              cx="280"
-              cy="300"
-              rx="240"
-              ry="265"
-              stroke="rgba(190,18,60,0.35)"
-              strokeWidth="1.5"
-              strokeDasharray="6 8"
-              fill="none"
+          <div className="hero2__img-frame">
+            <img
+              src={heroImg}
+              alt="Social Theka"
+              className="hero2__img"
             />
-          </svg>
 
-          {/* Character image */}
-          <img
-            src={manjul2Img}
-            alt="Social Theka"
-            className="hero__char-img"
-          />
-          <div className="hero__glass-glow" />
-
-          {/* Floating service icons — ek ek karke appear honge */}
-          {SERVICE_ICONS.map((svc, i) => (
-            <div
-              key={svc.label}
-              className="hero__float-icon"
-              style={{
-                left: svc.left,
-                top: svc.top,
-                "--icon-delay": `${svc.revealOrder * 0.18}s`,
-                "--reveal-delay": `${0.2 + svc.revealOrder * 0.15}s`,
-              }}
-            >
-              <span className="hero__float-icon-emoji">{svc.icon}</span>
-              <span className="hero__float-icon-label">{svc.label}</span>
+            {/* 10+ Years badge */}
+            <div className="hero2__corner-badge">
+              <span className="hero2__corner-num">10+</span>
+              <span className="hero2__corner-text">Years<br/>Experience</span>
             </div>
-          ))}
+
+            {/* Stats badge removed */}
+          </div>
 
         </div>
+
       </div>
     </section>
   );
@@ -246,6 +240,8 @@ const BRAND_LOGOS = [
   wb1, wb2, wb3, wb4, wb5, wb6, wb7, wb8,
   wb11, wb12, wb13, wb14, wb15, wb16, wb17, wb18, wb19, wb20, wb21,
 ];
+
+
 
 const TRUST_ICONS = [
   { label: "SEO",           emoji: "🔍", angle: -80, dist: 180 },
@@ -436,66 +432,66 @@ const VERTICALS = [
     id: "seo", label: "SEO", icon: "🔍", tagline: "SEO",
     desc: "We rank your business on Google so the right people find you — not your competitors.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&q=80", tag: "@rankings", rotate: -22, x: -185, y: 20 },
-      { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", tag: "@traffic", rotate: -11, x: -92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&q=80", tag: "@rankings", rotate: -30, x: -210, y: 30 },
+      { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", tag: "@traffic", rotate: -15, x: -105, y: 10 },
       { url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=80", tag: "@growth", rotate: 11, x: 92, y: -20 },
-      { url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=80", tag: "@growth", rotate: 15, x: 105, y: 10 },
+      { url: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80", tag: null, rotate: 30, x: 210, y: 30 },
     ],
   },
   {
     id: "social", label: "Social Media", icon: "📱", tagline: "Social Media",
     desc: "We build social media presence that makes people stop scrolling and start trusting.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80", tag: "@instagram", rotate: -22, x: -185, y: 20 },
-      { url: "https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=400&q=80", tag: "@content", rotate: -11, x: -92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80", tag: "@instagram", rotate: -30, x: -210, y: 30 },
+      { url: "https://images.unsplash.com/photo-1579869847557-1f67382cc158?w=400&q=80", tag: "@content", rotate: -15, x: -105, y: 10 },
       { url: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80", tag: "@reels", rotate: 11, x: 92, y: -20 },
-      { url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80", tag: "@reels", rotate: 15, x: 105, y: 10 },
+      { url: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80", tag: null, rotate: 30, x: 210, y: 30 },
     ],
   },
   {
     id: "ppc", label: "PPC Ads", icon: "📊", tagline: "PPC Ads",
     desc: "Every rupee you spend on ads works harder — targeted campaigns, real conversions.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80", tag: "@google", rotate: -22, x: -185, y: 20 },
-      { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", tag: "@roi", rotate: -11, x: -92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80", tag: "@google", rotate: -30, x: -210, y: 30 },
+      { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", tag: "@roi", rotate: -15, x: -105, y: 10 },
       { url: "https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80", tag: "@leads", rotate: 11, x: 92, y: -20 },
-      { url: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&q=80", tag: "@leads", rotate: 15, x: 105, y: 10 },
+      { url: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=400&q=80", tag: null, rotate: 30, x: 210, y: 30 },
     ],
   },
   {
     id: "web", label: "Web Development", icon: "💻", tagline: "Web Development",
     desc: "Fast, clean, conversion-focused websites that your visitors actually enjoy using.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -22, x: -185, y: 20 },
-      { url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80", tag: "@ux", rotate: -11, x: -92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", tag: "@design", rotate: -30, x: -210, y: 30 },
+      { url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&q=80", tag: "@ux", rotate: -15, x: -105, y: 10 },
       { url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80", tag: "@code", rotate: 11, x: 92, y: -20 },
-      { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=400&q=80", tag: "@code", rotate: 15, x: 105, y: 10 },
+      { url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80", tag: null, rotate: 30, x: 210, y: 30 },
     ],
   },
   {
     id: "content", label: "Content", icon: "✍️", tagline: "Content",
     desc: "Words, videos and visuals that speak to your audience and build lasting brand trust.",
     photos: [
-      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80", tag: "@writing", rotate: -22, x: -185, y: 20 },
-      { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", tag: "@strategy", rotate: -11, x: -92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&q=80", tag: "@writing", rotate: -30, x: -210, y: 30 },
+      { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", tag: "@strategy", rotate: -15, x: -105, y: 10 },
       { url: "https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&q=80", tag: "@video", rotate: 11, x: 92, y: -20 },
-      { url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&q=80", tag: "@video", rotate: 15, x: 105, y: 10 },
+      { url: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&q=80", tag: null, rotate: 30, x: 210, y: 30 },
     ],
   },
   {
     id: "video", label: "Video Editing", icon: "🎬", tagline: "Video Editing",
     desc: "Scroll-stopping video content — reels, ads, explainers — edited to perfection.",
     photos: [
-      { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0gnbBW5eSB3B4ZreHazVouOzbAfaRX3lIhQ&s", tag: "@reels", rotate: -22, x: -185, y: 20 },
-      { url: "https://pixflow.net/blog/wp-content/uploads/2023/12/Efficient-Video-Editing-Workflow.webp", tag: "@cinematic", rotate: -11, x: -92, y: -20 },
+      { url: "https://images.unsplash.com/photo-1574717024453-354056aafa98?w=400&q=80", tag: "@reels", rotate: -30, x: -210, y: 30 },
+      { url: "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80", tag: "@cinematic", rotate: -15, x: -105, y: 10 },
       { url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=80", tag: null, rotate: 0, x: 0, y: 0 },
-      { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80", tag: "@motion", rotate: 11, x: 92, y: -20 },
-      { url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80", tag: null, rotate: 22, x: 185, y: 20 },
+      { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&q=80", tag: "@motion", rotate: 15, x: 105, y: 10 },
+      { url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80", tag: null, rotate: 30, x: 210, y: 30 },
     ],
   },
 ];
@@ -652,8 +648,7 @@ function ClientGallery() {
       <div className="lux__header">
         <p className="lux__eyebrow">Our Work</p>
         <div className="lux__heading-wrap">
-          <h2 className="lux__title">Results We&apos;re</h2>
-          <h2 className="lux__title lux__title--outline">Proud Of</h2>
+          <h2 className="lux__title">Results We're Proud Of</h2>
         </div>
         <div className="lux__dot" />
         <p className="lux__sub">
@@ -712,61 +707,64 @@ function ClientGallery() {
 
 /* ── WHY US ──────────────────────────────────────── */
 const WHY_CARDS = [
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>, title: "Plain Language Reporting", desc: "No jargon, no vanity metrics. You always know exactly what's working." },
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>, title: "Everything Under One Roof", desc: "SEO, PPC, social, web, content — one team handles it all seamlessly." },
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>, title: "Built Around Your Goals", desc: "We learn your business before touching a single ad or keyword." },
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>, title: "Long-Term Growth Focus", desc: "Strategies built to keep delivering months and years down the line." },
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, title: "Brand-First Approach", desc: "We make your brand look credible, feel trustworthy, and convert." },
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>, title: "A Team That Cares", desc: "Reachable, responsive — whether you're in Chandigarh or Dubai." },
+  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>, title: "Plain Language Reporting", desc: "No jargon, no vanity metrics. You always know exactly what's working." },
+  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>, title: "Everything Under One Roof", desc: "SEO, PPC, social, web, content — one team handles it all seamlessly." },
+  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>, title: "Built Around Your Goals", desc: "We learn your business before touching a single ad or keyword." },
+  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>, title: "Long-Term Growth Focus", desc: "Strategies built to keep delivering months and years down the line." },
+  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, title: "Brand-First Approach", desc: "We make your brand look credible, feel trustworthy, and convert." },
+  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>, title: "A Team That Cares", desc: "Reachable, responsive — whether you're in Chandigarh or Dubai." },
 ];
 
-const WHY_DIFF = [
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>, title: "Results, Not Jargon", desc: "No confusing reports. Our SEO and PPC campaigns are tracked and reported in plain language — what's working, what's not, and what we're doing about it." },
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>, title: "Full-Stack Under One Roof", desc: "SEO, social media, web development, PPC — you don't need five vendors. We handle it all, and everything works together to maximize your ROI." },
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: "In It For The Long Game", desc: "Quick wins are great, but sustainable growth is the goal. Our strategies are built to keep delivering months and years down the line." },
-  { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>, title: "We Build Brands", desc: "From web development to brand awareness campaigns — we make sure your brand looks credible, feels trustworthy, and converts visitors into customers." },
+const WHY_STATS = [
+  { num: "500+", label: "Brands Scaled" },
+  { num: "98%",  label: "Client Retention" },
+  { num: "10+",  label: "Years Experience" },
+  { num: "₹50Cr+", label: "Revenue Generated" },
 ];
 
 function WhyUs() {
   return (
     <section className="why">
-      <div className="container">
-        <div className="why__inner">
-          <div className="why__left">
-            <div className="why__img-wrap">
-              <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Social Theka Team" />
-            </div>
-            <div className="why__diff">
-              {WHY_DIFF.map((item, i) => (
-                <div key={i} className="why__diff-item">
-                  <span className="why__diff-icon">{item.icon}</span>
-                  <div>
-                    <div className="why__diff-title">{item.title}</div>
-                    <p className="why__diff-desc">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+      <div className="why__inner">
+
+        {/* ── TOP: heading + stats bar ── */}
+        <div className="why__top">
+          <div className="why__top-left">
+            <p className="why__eyebrow">Why Choose Us</p>
+            <h2 className="why__heading">
+              Why Businesses Choose<br />
+              <span className="why__heading-accent">Social Theka</span>
+            </h2>
           </div>
-          <div className="why__right">
-            <div className="why__right-head">
-              <h2 className="section-title">Why Businesses Choose Social Theka</h2>
-              <Divider />
-              <p className="section-sub" style={{ maxWidth: "none" }}>
-                Honestly, there are dozens of digital marketing agencies in India out there. So why do businesses - from local startups in Chandigarh to growing brands across the USA and UK - keep coming back to us? Because we don't just run campaigns. We actually care about your growth.
-              </p>
-            </div>
-            <div className="why__grid">
-              {WHY_CARDS.map((c, i) => (
-                <div key={i} className="why-card">
-                  <div className="why-card__icon">{c.icon}</div>
-                  <div className="why-card__title">{c.title}</div>
-                  <div className="why-card__desc">{c.desc}</div>
-                </div>
-              ))}
-            </div>
+          <div className="why__top-right">
+            <p className="why__intro">
+              Dozens of agencies exist. But businesses — from Chandigarh startups to UK brands — keep coming back to us. Because we don't just run campaigns. We actually care about your growth.
+            </p>
+            <a href="#contact" className="why__cta">Get a Free Strategy Call →</a>
           </div>
         </div>
+
+        {/* ── STATS ROW ── */}
+        <div className="why__stats-row">
+          {WHY_STATS.map((s) => (
+            <div key={s.label} className="why__stat-box">
+              <span className="why__stat-num">{s.num}</span>
+              <span className="why__stat-label">{s.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* ── CARDS GRID ── */}
+        <div className="why__cards">
+          {WHY_CARDS.map((c, i) => (
+            <div key={i} className="why__card">
+              <div className="why__card-icon">{c.icon}</div>
+              <h3 className="why__card-title">{c.title}</h3>
+              <p className="why__card-desc">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
@@ -780,8 +778,45 @@ const PROCESS_STEPS = [
   { num: "04", title: "Continuous Optimisation", desc: "We monitor, analyse, and keep improving so your growth compounds over time — never set-and-forget." },
 ];
 
+function ProcessStep({ step, index }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.4 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`proc-step${visible ? " proc-step--visible" : ""}`}
+      style={{ transitionDelay: `${index * 0.1}s` }}
+    >
+      {/* Left — number circle + dashed line */}
+      <div className="proc-step__left">
+        <div className={`proc-step__circle${visible ? " proc-step__circle--active" : ""}`}>
+          {step.num}
+        </div>
+        {index < PROCESS_STEPS.length - 1 && (
+          <div className={`proc-step__line${visible ? " proc-step__line--fill" : ""}`} />
+        )}
+      </div>
+
+      {/* Right — content */}
+      <div className="proc-step__right">
+        <h3 className="proc-step__title">{step.title}</h3>
+        <p className="proc-step__desc">{step.desc}</p>
+      </div>
+    </div>
+  );
+}
+
 function Process() {
-  const [active, setActive] = useState(0);
   return (
     <section className="process section">
       <div className="container">
@@ -790,31 +825,9 @@ function Process() {
           <h2 className="section-title">Our Approach to <span className="cherry">Scalable Growth</span></h2>
           <p className="section-sub">Growth isn't left to chance. Every decision follows a clear framework built for consistent, measurable results.</p>
         </div>
-        <div className="process__grid">
+        <div className="proc-timeline">
           {PROCESS_STEPS.map((s, i) => (
-            <div key={i} className="process-step" onClick={() => setActive(i)} style={{ cursor: 'pointer' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                <div style={{ width: '56px', height: '56px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '15px', fontWeight: '800', cursor: 'pointer', flexShrink: 0, margin: '0 auto', transition: 'all 0.35s ease', background: i === active ? 'linear-gradient(135deg, #e8202a, #C1121F, #A00F19)' : '#fff', color: i === active ? '#fff' : '#C1121F', border: `3px solid #C1121F`, transform: i === active ? 'scale(1.1)' : 'scale(1)', boxShadow: i === active ? '0 8px 32px rgba(193,18,31,0.35), 0 0 0 6px rgba(193,18,31,0.15)' : '0 0 0 6px rgba(193,18,31,0.1)', animation: i !== active ? 'pulseGlow 1.8s ease-in-out infinite' : 'none' }}>{s.num}</div>
-              </div>
-              {i === 0 && active === 0 && (
-                <p style={{ fontSize: '11px', color: '#6B7280', textAlign: 'center', marginTop: '-12px', marginBottom: '8px' }}></p>
-              )}
-              <div className="process-step__title" style={{ color: i === active ? '#C1121F' : '', transition: 'color 0.3s' }}>{s.title}</div>
-              <div
-                className="process-step__desc-wrap"
-                style={{
-                  display: 'grid',
-                  gridTemplateRows: i === active ? '1fr' : '0fr',
-                  opacity: i === active ? 1 : 0,
-                  transition: 'grid-template-rows 0.38s cubic-bezier(0.22,1,0.36,1), opacity 0.32s ease',
-                  marginTop: i === active ? '8px' : '0',
-                }}
-              >
-                <div style={{ overflow: 'hidden' }}>
-                  <p className="process-step__desc">{s.desc}</p>
-                </div>
-              </div>
-            </div>
+            <ProcessStep key={i} step={s} index={i} />
           ))}
         </div>
       </div>
@@ -945,7 +958,15 @@ function CTA() {
           <p className="cta__p">From Chandigarh to New York - brands across the globe have grown with Social Theka. Ready to see what we can do for you?</p>
         </div>
         <div className="cta__actions">
-          <a href="tel:+91XXXXXXXXXX" className="btn-white">Claim Free Strategy Session →</a>
+          <a href="tel:+917888735337" className="btn-white cta-call-btn">
+            <span className="cta-call-default">Claim Free Strategy Session →</span>
+            {/* Floating icon above button on hover — outside button content */}
+            <span className="cta-call-float-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+              </svg>
+            </span>
+          </a>
           <a href="mailto:hello@socialtheka.com" className="btn-glass">Send a Message</a>
         </div>
       </div>
@@ -1010,6 +1031,8 @@ function Footer() {
   );
 }
 
+import topUpBtn from "../assets/TopUpButton.png";
+
 /* ── SCROLL TO TOP ───────────────────────────────── */
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -1019,7 +1042,9 @@ function ScrollToTop() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
   return visible ? (
-    <button className="scroll-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Scroll to top">↑</button>
+    <button className="scroll-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Scroll to top">
+      <img src={topUpBtn} alt="Scroll to top" />
+    </button>
   ) : null;
 }
 
@@ -1028,12 +1053,18 @@ export default function SocialTheka() {
   return (
     <>
       <Hero />
+      <AwardedSection />
+      <PhotoFan />
+      <ServiceTabs />
       {/* <RegionalPresence /> */}
-      <OurVerticals />
-      <OrbitSocialTheka />
-      {/* <Pricing /> */}
+      {/* <OrbitSocialTheka /> */}
+      <Pricing />
+      <CorePrinciples />
+      <TeamSection />
+      <AwardsSection />
+      <ResultsSlider />
       {/* <Stats /> */}
-      <TrustMarquee />
+      {/* <TrustMarquee /> */}
       {/* <OurVerticals /> */}
       <ClientGallery />
       <WhyUs />

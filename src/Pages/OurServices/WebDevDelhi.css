@@ -1,5 +1,5 @@
 ﻿.wdd-page {
-  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-family: var(--font-body);
   color: #111827;
   background: #fff;
   line-height: 1.6;
@@ -42,7 +42,7 @@
 }
 @keyframes wdddot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(1.5); } }
 .wdd-hero__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(28px, 3.5vw, 46px);
   font-weight: 800;
   color: #111827;
@@ -70,7 +70,7 @@
 .wdd-hero__stat { flex: 1; padding: 16px 20px; display: flex; flex-direction: column; gap: 4px; }
 .wdd-hero__stat-val {
   font-size: 22px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 800;
   color: #111827;
   line-height: 1;
@@ -166,7 +166,7 @@
   margin: 0 0 12px;
 }
 .wdd-section__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(22px, 2.8vw, 34px);
   font-weight: 800;
   color: #111827;
@@ -337,7 +337,7 @@
 }
 .wdd-cta-banner__inner { max-width: 680px; margin: 0 auto; }
 .wdd-cta-banner__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(24px, 3.5vw, 36px);
   font-weight: 800;
   color: #111827;
@@ -362,3 +362,4 @@
   .wdd-section { padding: 40px 20px; }
   .wdd-cta-banner { padding: 48px 20px; }
 }
+

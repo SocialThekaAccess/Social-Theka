@@ -1,7 +1,7 @@
-/* ── RegionalPresence.css ── */
+﻿/* â”€â”€ RegionalPresence.css â”€â”€ */
 
 .rp-section {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
    padding: 48px 60px;
   background: #ffffff;
   color: #111111;
@@ -21,7 +21,7 @@
 
 /* Main Heading */
 .rp-heading {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(28px, 5vw, 38px);
   font-weight: 700;
   line-height: 1.15;
@@ -30,13 +30,13 @@
 }
 
 .rp-heading em {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
 }
 
 /* Subtext */
 .rp-subtext {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   color: #555555;
   max-width: 420px;
@@ -116,7 +116,7 @@
 }
 
 .rp-list-name {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -126,7 +126,7 @@
 }
 
 .rp-list-tag {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: 11px;
   color: #888888;
 }
@@ -140,7 +140,7 @@
   color: #bbbbbb;
 }
 
-/* ── Right Detail Panel ── */
+/* â”€â”€ Right Detail Panel â”€â”€ */
 .rp-detail {
   display: flex;
   flex-direction: column;
@@ -177,7 +177,7 @@
 }
 
 .rp-detail-heading {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: 28px;
   font-weight: 700;
   color: #111111;
@@ -185,7 +185,7 @@
 }
 
 .rp-detail-desc {
-   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+   font-family: var(--font-body);
   font-size: 16px;
   color: #555555;
   line-height: 1.75;
@@ -196,7 +196,7 @@
 /* Centers */
 .rp-centers-label,
 .rp-highlights-label {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -213,7 +213,7 @@
 }
 
 .rp-center-tag {
- font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+ font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.75;
   /* margin-bottom: 32px; */
@@ -226,7 +226,7 @@
 
 /* Highlights */
 .rp-highlights-label {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
   margin-top: 4px;
   font-size: 11px;
   line-height: 1.75;
@@ -241,14 +241,14 @@
 }
 
 .rp-highlights li {
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+font-family: var(--font-body);
   font-size: 16px;
   color: #444444;
   margin-bottom: 6px;
   line-height: 1.5;
 }
 
-/* Right column — Image + Transit */
+/* Right column â€” Image + Transit */
 .rp-detail-right {
   display: flex;
   flex-direction: column;
@@ -300,7 +300,7 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .rp-transit-text {
- font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+ font-family: var(--font-body);
   font-size: 13px;
   color: #555555;
   line-height: 1.65;
@@ -343,10 +343,10 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: #C1121F;
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 900px) {
   .rp-section {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-body);
     padding: 48px 24px;
   }
 
@@ -383,3 +383,4 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     flex-wrap: wrap;
   }
 }
+

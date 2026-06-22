@@ -4,7 +4,7 @@
    ══════════════════════════════════════════ */
 
 .seod-page {
-  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-family: var(--font-body);
   color: #111827;
   background: #fff;
   line-height: 1.6;
@@ -22,7 +22,7 @@
 }
 .seod-hero__left { display: flex; flex-direction: column; align-items: flex-start; }
 .seod-hero__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(28px, 3.5vw, 46px);
   font-weight: 800;
   color: #111827;
@@ -145,7 +145,7 @@
 .seod-section__inner--narrow { max-width: 860px; margin: 0 auto; }
 .seod-section__head { text-align: center; margin-bottom: 36px; }
 .seod-section__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(24px, 3.5vw, 38px);
   font-weight: 800;
   color: #111827;
@@ -525,7 +525,7 @@
 }
 .seod-cta-banner__inner { max-width: 680px; margin: 0 auto; }
 .seod-cta-banner__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(24px, 3.5vw, 36px);
   font-weight: 800;
   color: #111827;
@@ -555,3 +555,5 @@
   .seod-honest { padding: 24px 20px; }
   .seod-pain__grid { grid-template-columns: 1fr; }
 }
+
+

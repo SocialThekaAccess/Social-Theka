@@ -6,7 +6,7 @@
 
 /* ── BASE ──────────────────────────────── */
 .ppc-page {
-  font-family: 'DM Sans', 'Inter', sans-serif;
+  font-family: var(--font-body);
   color: #111827;
   background: #fff;
   line-height: 1.6;
@@ -61,7 +61,7 @@
   50%      { opacity:.4; transform:scale(1.5); }
 }
 .ppc-hero__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(28px, 3.5vw, 46px);
   font-weight: 800;
   color: #111827;
@@ -102,7 +102,7 @@
 }
 .ppc-hero__stat-val {
   font-size: 22px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 800;
   color: #111827;
   line-height: 1;
@@ -252,7 +252,7 @@
 .ppc-stats__item:last-child { border-right: none; }
 .ppc-stats__value {
   font-size: 36px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 800;
   color: #111827;
   line-height: 1;
@@ -289,7 +289,7 @@
   margin: 0 0 12px;
 }
 .ppc-section__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(22px, 2.8vw, 34px);
   font-weight: 800;
   color: #111827;
@@ -538,7 +538,7 @@
   margin: 0 auto;
 }
 .ppc-cta-banner__title {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(24px, 3.5vw, 36px);
   font-weight: 800;
   color: #111827;
@@ -575,5 +575,7 @@
   .ppc-stats { grid-template-columns: repeat(2, 1fr); }
   .ppc-cta-banner { padding: 48px 20px; }
 }
+
+
 
 
