@@ -71,7 +71,7 @@ export default function AwardsSection() {
         {/* Header */}
         <div className="aw-header">
           <p className="aw-eyebrow">Recognition &amp; Trust</p>
-          <h2 className="aw-heading">Recent Awards</h2>
+          <h2 className="aw-heading">Awarded as the Best Digital Marketing Agency</h2>
           <div className="aw-heading-line" />
           <p className="aw-sub">
             Our awards highlight our commitment to quality, innovation, and client success.
