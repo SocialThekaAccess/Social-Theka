@@ -140,10 +140,10 @@ function Hero() {
               className="hero2__img"
             />
 
-            {/* 10+ Years badge */}
+            {/* 10 Years badge */}
             <div className="hero2__corner-badge">
               <span className="hero2__corner-num">10</span>
-              <span className="hero2__corner-text">Years<br/>Experience</span>
+              <span className="hero2__corner-text">Years</span>
             </div>
 
             {/* Stats badge removed */}
@@ -718,7 +718,7 @@ const WHY_CARDS = [
 const WHY_STATS = [
   { num: "500+", label: "Brands Scaled" },
   { num: "98%",  label: "Client Retention" },
-  { num: "10",  label: "Years Experience" },
+  { num: "10",  label: "Years" },
   { num: "₹50Cr+", label: "Revenue Generated" },
 ];
 
