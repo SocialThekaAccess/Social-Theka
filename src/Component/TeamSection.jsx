@@ -30,7 +30,7 @@ const FEATURES = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: "10+ Years Experience",
+    title: "10 Years Experience",
     desc: "A decade of digital marketing expertise — knowing what works before trends hit.",
   },
 ];
