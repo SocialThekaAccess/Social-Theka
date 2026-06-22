@@ -785,7 +785,7 @@ function ProcessStep({ step, index }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold: 0.4 }
+      { threshold: 0.3 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -794,23 +794,31 @@ function ProcessStep({ step, index }) {
   return (
     <div
       ref={ref}
-      className={`proc-step${visible ? " proc-step--visible" : ""}`}
-      style={{ transitionDelay: `${index * 0.1}s` }}
+      className={`proc-step-new${visible ? " proc-step-new--visible" : ""}`}
+      style={{ transitionDelay: `${index * 0.15}s` }}
     >
-      {/* Left — number circle + dashed line */}
-      <div className="proc-step__left">
-        <div className={`proc-step__circle${visible ? " proc-step__circle--active" : ""}`}>
-          {step.num}
+      {/* Left — large circle with number */}
+      <div className="proc-step-new__circle-wrap">
+        <div className="proc-step-new__circle">
+          <span className="proc-step-new__num">{step.num}</span>
         </div>
         {index < PROCESS_STEPS.length - 1 && (
-          <div className={`proc-step__line${visible ? " proc-step__line--fill" : ""}`} />
+          <div className="proc-step-new__connector" />
         )}
       </div>
 
-      {/* Right — content */}
-      <div className="proc-step__right">
-        <h3 className="proc-step__title">{step.title}</h3>
-        <p className="proc-step__desc">{step.desc}</p>
+      {/* Right — content card */}
+      <div className="proc-step-new__content">
+        <h3 className="proc-step-new__title">{step.title}</h3>
+        <p className="proc-step-new__desc">{step.desc}</p>
+        {index < PROCESS_STEPS.length - 1 && (
+          <button className="proc-step-new__btn">
+            Lets Create 
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        )}
       </div>
     </div>
   );
