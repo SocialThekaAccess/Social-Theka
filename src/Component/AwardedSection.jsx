@@ -12,7 +12,6 @@ import wb12 from "../assets/WorkingBrand12.png";
 import wb13 from "../assets/WorkingBrand13.png";
 import wb14 from "../assets/WorkingBrand14.png";
 import wb15 from "../assets/WorkingBrand15.png";
-import wb16 from "../assets/WorkingBrand16.png";
 import wb17 from "../assets/WorkingBrand17.png";
 import wb18 from "../assets/WorkingBrand18.png";
 import wb19 from "../assets/WorkingBrand19.png";
@@ -21,7 +20,7 @@ import wb21 from "../assets/WorkingBrand21.png";
 
 const LOGOS = [
   wb1, wb2, wb3, wb4, wb5, wb6, wb7, wb8,
-  wb11, wb12, wb13, wb14, wb15, wb16, wb17, wb18, wb19, wb20, wb21,
+  wb11, wb12, wb13, wb14, wb15, wb17, wb18, wb19, wb20, wb21,
 ];
 
 export default function AwardedSection() {

@@ -6,7 +6,6 @@ import manjulSirImg from "../assets/ManjulSirSocialTheka.png";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
 import Pricing from './Pricing';
-// import OrbitSocialTheka from './OrbitSocialTheka';
 import AwardedSection from './AwardedSection';
 import PhotoFan from './PhotoFan';
 import TeamSection from './TeamSection';
@@ -701,13 +700,20 @@ function ClientGallery() {
 }
 
 /* ── WHY US ──────────────────────────────────────── */
+import plainLanguageIcon from "../assets/plainlanguage.png";
+import oneRoofIcon from "../assets/One Roof.png";
+import yourGoalsIcon from "../assets/yourGoals.png";
+import growthFocusIcon from "../assets/Growth Focus.png";
+import brandFirstIcon from "../assets/firstApproach.png";
+import teamCaresIcon from "../assets/teamCares.png";
+
 const WHY_CARDS = [
-  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>, title: "Plain Language Reporting", desc: "No jargon, no vanity metrics. You always know exactly what's working." },
-  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>, title: "Everything Under One Roof", desc: "SEO, PPC, social, web, content — one team handles it all seamlessly." },
-  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>, title: "Built Around Your Goals", desc: "We learn your business before touching a single ad or keyword." },
-  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>, title: "Long-Term Growth Focus", desc: "Strategies built to keep delivering months and years down the line." },
-  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, title: "Brand-First Approach", desc: "We make your brand look credible, feel trustworthy, and convert." },
-  { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>, title: "A Team That Cares", desc: "Reachable, responsive — whether you're in Chandigarh or Dubai." },
+  { icon: plainLanguageIcon, title: "Plain Language Reporting", desc: "No jargon, no vanity metrics. You always know exactly what's working." },
+  { icon: oneRoofIcon, title: "Everything Under One Roof", desc: "SEO, PPC, social, web, content — one team handles it all seamlessly." },
+  { icon: yourGoalsIcon, title: "Built Around Your Goals", desc: "We learn your business before touching a single ad or keyword." },
+  { icon: growthFocusIcon, title: "Long-Term Growth Focus", desc: "Strategies built to keep delivering months and years down the line." },
+  { icon: brandFirstIcon, title: "Brand-First Approach", desc: "We make your brand look credible, feel trustworthy, and convert." },
+  { icon: teamCaresIcon, title: "A Team That Cares", desc: "Reachable, responsive — whether you're in Chandigarh or Dubai." },
 ];
 
 const WHY_STATS = [
@@ -753,7 +759,9 @@ function WhyUs() {
         <div className="why__cards">
           {WHY_CARDS.map((c, i) => (
             <div key={i} className="why__card">
-              <div className="why__card-icon">{c.icon}</div>
+              <div className="why__card-icon">
+                <img src={c.icon} alt={c.title} />
+              </div>
               <h3 className="why__card-title">{c.title}</h3>
               <p className="why__card-desc">{c.desc}</p>
             </div>
@@ -766,11 +774,16 @@ function WhyUs() {
 }
 
 /* ── PROCESS ─────────────────────────────────────── */
+import objectivesIcon from "../assets/objectives.png";
+import strategicIcon from "../assets/strategic.png";
+import executionIcon from "../assets/execution.png";
+import optimisationIcon from "../assets/Optimisation.png";
+
 const PROCESS_STEPS = [
-  { num: "01", title: "Defined Objectives", desc: "We start by understanding your goals — visibility, leads, or sales. Everything begins with a clear plan, not assumptions." },
-  { num: "02", title: "Strategic Planning", desc: "A tailored strategy around your business, your audience, and your market. No generic playbooks copied from someone else." },
-  { num: "03", title: "Smart Execution", desc: "The right mix of tools and expertise applied carefully across campaigns, content, and web — with intent." },
-  { num: "04", title: "Continuous Optimisation", desc: "We monitor, analyse, and keep improving so your growth compounds over time — never set-and-forget." },
+  { icon: objectivesIcon, title: "Defined Objectives", desc: "We start by understanding your goals — visibility, leads, or sales. Everything begins with a clear plan, not assumptions." },
+  { icon: strategicIcon, title: "Strategic Planning", desc: "A tailored strategy around your business, your audience, and your market. No generic playbooks copied from someone else." },
+  { icon: executionIcon, title: "Smart Execution", desc: "The right mix of tools and expertise applied carefully across campaigns, content, and web — with intent." },
+  { icon: optimisationIcon, title: "Continuous Optimisation", desc: "We monitor, analyse, and keep improving so your growth compounds over time — never set-and-forget." },
 ];
 
 function ProcessStep({ step, index }) {
@@ -792,10 +805,10 @@ function ProcessStep({ step, index }) {
       className={`proc-step-new${visible ? " proc-step-new--visible" : ""}`}
       style={{ transitionDelay: `${index * 0.15}s` }}
     >
-      {/* Left — large circle with number */}
+      {/* Left — icon image */}
       <div className="proc-step-new__circle-wrap">
-        <div className="proc-step-new__circle">
-          <span className="proc-step-new__num">{step.num}</span>
+        <div className="proc-step-new__icon-box">
+          <img src={step.icon} alt={step.title} className="proc-step-new__icon" />
         </div>
         {index < PROCESS_STEPS.length - 1 && (
           <div className="proc-step-new__connector" />
@@ -1065,7 +1078,7 @@ export default function SocialTheka() {
       <WhyUs />
       <Process />
       <Results />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FAQ />
       <CTA />
       <Footer />

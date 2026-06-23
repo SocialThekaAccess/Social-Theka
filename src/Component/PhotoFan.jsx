@@ -48,10 +48,7 @@ const PHOTOS = [
 ];
 
 const FLOAT_TAGS = [
-  { text: "@socialtheka",  top: "22%", left: "6%",  delay: 0 },
-  { text: "@chandigarh",   top: "18%", right: "8%", delay: 0.3 },
-  { text: "@500brands",    top: "72%", left: "4%",  delay: 0.6 },
-  { text: "@digitalagency",top: "68%", right: "5%", delay: 0.9 },
+  // Floating tags removed as per requirement
 ];
 
 export default function PhotoFan() {
@@ -97,7 +94,7 @@ export default function PhotoFan() {
       {/* Heading */}
       <div className="pf-heading-wrap">
         <p className="pf-eyebrow">Our Story in Frames</p>
-        <h2 className="pf-heading">We Don't Follow Trends —<br /><span>We Create Them</span></h2>
+        <h2 className="pf-heading">We Don't Follow Trends <br /><span>We Create Them</span></h2>
         <p className="pf-sub">
           Real people. Real results. Building brands across India — one story at a time.
         </p>
