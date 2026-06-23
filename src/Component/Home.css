@@ -209,7 +209,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 .nav__cta:hover { background: var(--cherry-d); transform: translateY(-1px); box-shadow: 0 12px 28px rgba(193,18,31,.28); }
 
 /* ── HERO ───────────────────────────────────────── */
-.hero { background: var(--bg); padding: 48px 24px 48px; overflow: visible; position: relative; }
+.hero { background: var(--bg); padding: 32px 24px 40px; overflow: visible; position: relative; }
 .hero::before {
   content: ''; position: absolute; inset: 0;
   background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
@@ -222,12 +222,12 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 }
 .hero__h1 {
   font-family: var(--font-heading);
-  font-size: clamp(30px, 3.2vw, 46px); font-weight: 900; color: var(--dark);
-  line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 20px 0;
+  font-size: clamp(28px, 3vw, 40px); font-weight: 900; color: var(--dark);
+  line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 16px 0;
 }
 .hero__h1 span { color: var(--cherry); }
 .hero__nowrap { color: var(--dark) !important; white-space: nowrap; }
-.hero__p { font-family: var(--font-body); font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 460px; margin-bottom: 32px; }
+.hero__p { font-family: var(--font-body); font-size: 14.5px; color: var(--muted); line-height: 1.65; max-width: 460px; margin-bottom: 24px; }
 .hero__actions { margin-bottom: 36px; }
 .hero__explore-btn {
   display: inline-flex;
@@ -663,21 +663,21 @@ transform: translateX(-20%);
 
 .hero2__h1 {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(26px, 3vw, 38px);
   font-weight: 900;
   color: #111;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.035em;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .hero2__h1-accent { color: #C1121F; }
 
 .hero2__p {
-  font-size: 16px;
+  font-size: 14.5px;
   color: #5a6270;
-  line-height: 1.7;
+  line-height: 1.65;
   max-width: 460px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .hero2__actions {
