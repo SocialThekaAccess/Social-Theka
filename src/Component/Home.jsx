@@ -94,11 +94,6 @@ function Hero() {
         {/* ── LEFT ────────────────────────── */}
         <div className={`hero2__left${visible ? " hero2__left--in" : ""}`}>
 
-          <div className="hero2__tag">
-            <span className="hero2__tag-dot" />
-            Digital Marketing Agency · Chandigarh
-          </div>
-
           <h1 className="hero2__h1">
             Your Complete <span className="hero2__h1-accent">Digital Growth</span> Partner
           </h1>
@@ -1055,13 +1050,13 @@ export default function SocialTheka() {
       <Hero />
       <AwardedSection />
       <PhotoFan />
+      <AwardsSection />
       <ServiceTabs />
       {/* <RegionalPresence /> */}
       {/* <OrbitSocialTheka /> */}
       <Pricing />
       <CorePrinciples />
       <TeamSection />
-      <AwardsSection />
       <ResultsSlider />
       {/* <Stats /> */}
       {/* <TrustMarquee /> */}
