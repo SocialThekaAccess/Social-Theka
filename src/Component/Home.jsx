@@ -94,13 +94,11 @@ function Hero() {
         <div className={`hero2__left${visible ? " hero2__left--in" : ""}`}>
 
           <h1 className="hero2__h1">
-            Your Complete <span className="hero2__h1-accent">Digital Growth</span> Partner
+           <span className="hero2__h1-accent">Building Brands</span> That Stand Out<br />in the Digital World
           </h1>
 
           <p className="hero2__p">
-            Social Theka handles SEO, social media, PPC, web development
-            and content — so you can focus on growing your business.
-            Result-driven strategies with guaranteed outcomes.
+           Social Theka is a digital marketing agency located in Chandigarh, dedicated to providing effective and straightforward solutions to assist businesses in establishing themselves online.At our agency, our main objective is to help your target audience discover your business's services and products
           </p>
 
           <div className="hero2__actions">
