@@ -84,6 +84,7 @@
   display: inline-block;
 }
 
+/* Remove underline - commented out
 .pf-heading span::after {
   content: '';
   position: absolute;
@@ -94,6 +95,7 @@
   background: linear-gradient(90deg, #C1121F, #ff4757);
   border-radius: 2px;
 }
+*/
 
 .pf-sub {
   font-size: 16px;
