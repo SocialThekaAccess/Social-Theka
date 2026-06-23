@@ -74,15 +74,21 @@
 }
 
 .cp-card-icon {
-  width: 52px;
-  height: 52px;
-  background: #fff5f5;
+  width: 80px;
+  height: 80px;
+  background: transparent;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #C1121F;
   flex-shrink: 0;
+}
+
+.cp-card-icon img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
 }
 
 .cp-card-title {

@@ -88,14 +88,12 @@ export default function AwardsSection() {
               className="aw-card"
               style={{ transitionDelay: `${i * 0.08}s` }}
             >
-              <div className="aw-card-top">
-                <div className="aw-card-text">
-                  <h3 className="aw-card-title">{a.title}</h3>
-                  <p className="aw-card-desc">{a.desc}</p>
-                </div>
+              <div className="aw-card-img-wrap">
+                <img src={a.img} alt={a.title} loading="lazy" className="aw-card-img" />
               </div>
-              <div className="aw-card-bottom">
-                <img src={a.img} alt={a.title} loading="lazy" />
+              <div className="aw-card-content">
+                <h3 className="aw-card-title">{a.title}</h3>
+                <p className="aw-card-desc">{a.desc}</p>
                 <span className="aw-card-by">{a.by}</span>
               </div>
             </div>
