@@ -65,14 +65,14 @@
   max-width: 120px;
   object-fit: contain;
   display: block;
-  opacity: 0.8;
-  filter: grayscale(15%);
-  transition: opacity 0.25s, filter 0.25s;
+  opacity: 0.85;
+  filter: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .as-card:hover img {
   opacity: 1;
-  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
 /* â”€â”€ Responsive â”€â”€ */

@@ -810,9 +810,6 @@ function ProcessStep({ step, index }) {
         <div className="proc-step-new__icon-box">
           <img src={step.icon} alt={step.title} className="proc-step-new__icon" />
         </div>
-        {index < PROCESS_STEPS.length - 1 && (
-          <div className="proc-step-new__connector" />
-        )}
       </div>
 
       {/* Right — content card */}
@@ -1064,12 +1061,10 @@ export default function SocialTheka() {
       <AwardedSection />
       <PhotoFan />
       <AwardsSection />
+       <TeamSection />
       <ServiceTabs />
-      {/* <RegionalPresence /> */}
-      {/* <OrbitSocialTheka /> */}
       <Pricing />
       <CorePrinciples />
-      <TeamSection />
       <ResultsSlider />
       {/* <Stats /> */}
       {/* <TrustMarquee /> */}

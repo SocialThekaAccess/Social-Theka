@@ -70,32 +70,36 @@ export default function AwardsSection() {
 
         {/* Header */}
         <div className="aw-header">
-          <p className="aw-eyebrow">Recognition &amp; Trust</p>
-          <h2 className="aw-heading">Awarded as the Best Digital Marketing Agency</h2>
+          <p className="aw-eyebrow">AWARDS &amp; RECOGNITIONS</p>
+          <h2 className="aw-heading">
+            Awarded as the Best Digital Marketing Agency
+          </h2>
           <div className="aw-heading-line" />
           <p className="aw-sub">
-            Our awards highlight our commitment to quality, innovation, and client success.
-            Recognitions from trusted platforms and industry leaders that prove our ability
-            to deliver effective digital marketing solutions.
+            Honoured to be recognised by leading platforms for our commitment to excellence and results.
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Floating Awards Wall */}
         <div className="aw-grid">
           {AWARDS.map((a, i) => (
             <div
               key={i}
-              className="aw-card"
-              style={{ transitionDelay: `${i * 0.08}s` }}
+              className="aw-tile"
+              style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <div className="aw-card-img-wrap">
-                <img src={a.img} alt={a.title} loading="lazy" className="aw-card-img" />
+              {/* Small Glass Tile - Logo Only */}
+              <div className="aw-tile__logo">
+                <img src={a.img} alt={a.title} loading="lazy" className="aw-tile__img" />
+                {/* Shine effect on glass tile */}
+                <div className="aw-tile__shine"></div>
               </div>
-              <div className="aw-card-content">
-                <h3 className="aw-card-title">{a.title}</h3>
-                <p className="aw-card-desc">{a.desc}</p>
-                <span className="aw-card-by">{a.by}</span>
-              </div>
+              
+              {/* Award Title - Below Tile */}
+              <h3 className="aw-tile__title">{a.title}</h3>
+              
+              {/* Recognition Source - Below Title */}
+              <p className="aw-tile__source">{a.by}</p>
             </div>
           ))}
         </div>
