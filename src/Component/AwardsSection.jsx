@@ -72,11 +72,11 @@ export default function AwardsSection() {
         <div className="aw-header">
           <p className="aw-eyebrow">AWARDS &amp; RECOGNITIONS</p>
           <h2 className="aw-heading">
-            Awarded as the Best Digital Marketing Agency
+           Recognized for Excellence in Digital Marketing
           </h2>
           <div className="aw-heading-line" />
           <p className="aw-sub">
-            Honoured to be recognised by leading platforms for our commitment to excellence and results.
+           At Social Theka, our success is measured by the growth we create for our clients. Through innovative strategies, data-driven campaigns, and a commitment to delivering measurable results, we help businesses strengthen their online presence. From social media marketing and performance advertising to content creation and branding, our solutions are designed to drive engagement, generate leads, and accelerate business growth.
           </p>
         </div>
 
