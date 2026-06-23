@@ -628,6 +628,7 @@ transform: translateX(-20%);
   transform: translateX(-40px);
   transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1);
 }
+
 .hero2__left--in {
   opacity: 1;
   transform: translateX(0);
@@ -663,7 +664,7 @@ transform: translateX(-20%);
 
 .hero2__h1 {
   font-family: var(--font-heading);
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: clamp(26px, 3.2vw, 40px);
   font-weight: 900;
   color: #111;
   line-height: 1.15;
@@ -673,11 +674,12 @@ transform: translateX(-20%);
 .hero2__h1-accent { color: #C1121F; }
 
 .hero2__p {
-  font-size: 14.5px;
+  font-size: 15px;        
   color: #5a6270;
-  line-height: 1.65;
-  max-width: 460px;
+  line-height: 1.68;
+  max-width: 480px;       
   margin-bottom: 24px;
+  text-align: left;
 }
 
 .hero2__actions {
