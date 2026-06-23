@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./TeamSection.css";
+import teamVideo from "../assets/TEAM VIDEO.mp4";
 
 const FEATURES = [
   {
@@ -38,7 +39,6 @@ const FEATURES = [
 export default function TeamSection() {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
-  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -100,31 +100,20 @@ export default function TeamSection() {
           </a>
         </div>
 
-        {/* ── right: Instagram reel iframe ── */}
+        {/* ── right: Team video ── */}
         <div className="ts-right">
           <div className="ts-reel-card">
-            {/* Header removed - only video */}
-
-            <div className="ts-iframe-wrap">
-              {!iframeLoaded && (
-                <div className="ts-iframe-placeholder">
-                  <div className="ts-spinner" />
-                  <p>Loading reel…</p>
-                </div>
-              )}
-              <iframe
-                src="https://www.instagram.com/reel/DUDVPgxEyO6/embed/"
-                className={`ts-reel-iframe ${iframeLoaded ? "ts-iframe-visible" : ""}`}
-                frameBorder="0"
-                scrolling="no"
-                allowTransparency="true"
-                allowFullScreen
-                onLoad={() => setIframeLoaded(true)}
-                title="Social Theka Instagram Reel"
+            <div className="ts-video-wrap">
+              <video
+                src={teamVideo}
+                className="ts-team-video"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
               />
             </div>
-
-            {/* Footer removed - only video */}
           </div>
 
           {/* floating stat pill */}
