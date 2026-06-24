@@ -660,7 +660,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 
 .hero2__h1 {
   font-family: var(--font-heading);
-  font-size: clamp(30px, 4vw, 52px);
+  font-size: 48px;
   font-weight: 900;
   color: #111;
   line-height: 1.12;
@@ -670,7 +670,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 .hero2__h1-accent { color: #C1121F; }
 
 .hero2__p {
-  font-size: 17px;        
+  font-size: 16px;        
   color: #5a6270;
   line-height: 1.7;
   max-width: 560px;       
