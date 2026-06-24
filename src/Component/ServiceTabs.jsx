@@ -98,10 +98,10 @@ export default function ServiceTabs() {
         {/* Header */}
         <div className="st-header">
           <p className="st-eyebrow">What We Do</p>
-          <h2 className="st-heading">How We Turn <span>Attention</span><br /> Into Revenue </h2>
+          <h2 className="st-heading">How We Convert  <span>Visibility</span><br />Into Results </h2>
 
           <p className="st-sub">
-            We create a seamless digital marketing strategy that attracts the right audience, nurtures engagement, and converts prospects into loyal customers.
+           From scrolls to sales, We craft data-driven digital marketing strategies that attract the right audience, build meaningful engagement, and turn prospects into loyal, long-term customers.
           </p>
         </div>
 

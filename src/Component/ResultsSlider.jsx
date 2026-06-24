@@ -73,10 +73,10 @@ export default function ResultsSlider() {
         <div className="rs-header">
           <p className="rs-eyebrow">Real Client Results</p>
           <h2 className="rs-heading">
-            Numbers That <span>Speak</span> for Themselves
+            The Statistics of our <span>Success</span> 
           </h2>
           <p className="rs-sub">
-            Every graph below is a real client result — tracked, measured, and delivered by Social Theka.
+         Every graph you see represents real client performance—carefully tracked, accurately measured, and successfully delivered by Social Theka.
           </p>
         </div>
 
