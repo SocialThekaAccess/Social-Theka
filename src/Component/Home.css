@@ -2033,13 +2033,43 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 /* ══════════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════════ */
+
+/* ── Large Desktop (1920px and above) ── */
+@media (min-width: 1920px) {
+  :root {
+    --max: 1600px;
+  }
+  .container { max-width: 1600px; }
+  .hero__inner { max-width: 1600px; }
+  .hero__inner--glass { max-width: 1720px; }
+  .why__inner { max-width: 1440px; }
+  .section-title { font-size: 52px; }
+  .hero__h1 { font-size: 58px; }
+}
+
+/* ── Medium Desktop (1440px to 1919px) ── */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  :root {
+    --max: 1360px;
+  }
+  .container { max-width: 1360px; }
+  .hero__inner { max-width: 1360px; }
+  .hero__inner--glass { max-width: 1600px; }
+  .why__inner { max-width: 1280px; }
+  .section-title { font-size: 46px; }
+  .hero__h1 { font-size: 52px; }
+}
+
+/* ── Tablet (1024px and below) ── */
 @media (max-width: 1024px) {
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
   .hero__h1 { font-size: 38px; }
   .hero__right { position: static; max-width: 560px; margin: 0 auto; width: 100%; }
   .svc-grid { grid-template-columns: repeat(2,1fr); }
-  .why__inner { grid-template-columns: 1fr; }
-  .why__left { max-width: 480px; }
+  .why__top { grid-template-columns: 1fr; gap: 32px; }
+  .why__top-left { align-items: flex-start; }
+  .why__stats-row { grid-template-columns: repeat(2, 1fr); }
+  .why__cards { grid-template-columns: repeat(2, 1fr); }
   .process__grid { grid-template-columns: repeat(2,1fr); }
   .process__grid::before { display: none; }
   .results__grid { grid-template-columns: 1fr 1fr; }
@@ -2047,23 +2077,34 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   .faq__inner { grid-template-columns: 1fr; gap: 40px; }
   .footer__top { grid-template-columns: 1fr 1fr; }
   .stats__grid { grid-template-columns: repeat(2,1fr); }
-  .cta__inner { flex-direction: column; }
+  .cta__inner { flex-direction: column; gap: 32px; text-align: center; }
+  .container { padding: 0 32px; }
 }
 
+/* ── Mobile Large (768px and below) ── */
 @media (max-width: 768px) {
-  .topbar { flex-direction: column; text-align: center; }
+  .topbar { flex-direction: column; text-align: center; gap: 12px; padding: 12px 20px; }
   .nav__links { display: none; }
   .nav__cta { display: none; }
   .hero { padding: 48px 20px 56px; }
-  .hero__h1 { font-size: 30px; }
-  .svc-grid { grid-template-columns: 1fr; }
-  .why__grid { grid-template-columns: 1fr; }
-  .process__grid { grid-template-columns: 1fr 1fr; }
-  .results__grid { grid-template-columns: 1fr; }
-  .testimonials__grid { grid-template-columns: 1fr; }
-  .footer__top { grid-template-columns: 1fr; }
-  .footer__bottom { flex-direction: column; text-align: center; }
-  .faq__inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero__h1 { font-size: 32px; line-height: 1.2; }
+  .hero__p { font-size: 15px; }
+  .svc-grid { grid-template-columns: 1fr; gap: 20px; }
+  .section { padding: 60px 24px; }
+  .section-title { font-size: 32px; }
+  .section-sub { font-size: 15px; max-width: 100%; }
+  .why { padding: 60px 24px; }
+  .why__top { gap: 28px; }
+  .why__heading { font-size: 28px; }
+  .why__intro { font-size: 15px; }
+  .why__stats-row { grid-template-columns: repeat(2, 1fr); }
+  .why__cards { grid-template-columns: 1fr; gap: 20px; }
+  .process__grid { grid-template-columns: 1fr; }
+  .results__grid { grid-template-columns: 1fr; gap: 20px; }
+  .testimonials__grid { grid-template-columns: 1fr; gap: 20px; }
+  .footer__top { grid-template-columns: 1fr; gap: 32px; }
+  .footer__bottom { flex-direction: column; text-align: center; gap: 16px; }
+  .faq__inner { grid-template-columns: 1fr; gap: 32px; }
   /* Verticals mobile */
   .verticals__fan { height: 260px; }
   .verticals__photo { width: 110px; }
@@ -2071,12 +2112,32 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   .verticals__photo--center { width: 140px; }
   .verticals__photo--center img { height: 175px; }
   .verticals__name { font-size: clamp(28px, 8vw, 48px); }
-  .verticals__tabs { gap: 6px; }
+  .verticals__tabs { gap: 6px; flex-wrap: wrap; }
   .verticals__tab { padding: 10px 12px; min-width: 72px; font-size: 10px; }
   .verticals__tab-icon { font-size: 16px; }
   /* Lux mobile */
   .lux__card { width: 180px; }
   .lux__card-img img { height: 240px; }
+  .lux { padding: 48px 0; }
+  .container { padding: 0 20px; }
+}
+
+/* ── Mobile Small (480px and below) ── */
+@media (max-width: 480px) {
+  .hero__h1 { font-size: 28px; }
+  .hero__p { font-size: 14px; }
+  .section-title { font-size: 26px; }
+  .section-sub { font-size: 14px; }
+  .why__heading { font-size: 24px; }
+  .why__eyebrow { font-size: 10px; }
+  .why__cta { font-size: 13px; padding: 12px 24px; }
+  .why__stats-row { grid-template-columns: 1fr; }
+  .why__stat-num { font-size: 28px; }
+  .stats__grid { grid-template-columns: 1fr; }
+  .tag { font-size: 10px; padding: 6px 14px; }
+  .result-card { padding: 20px; }
+  .testimonial-card { padding: 20px; }
+  .process__step { padding: 24px 20px; }
 }
 
 @media (max-width: 480px) {
