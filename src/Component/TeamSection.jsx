@@ -13,7 +13,7 @@ const FEATURES = [
       </svg>
     ),
     title: "500+ Brands Scaled",
-    desc: "From startups to enterprises — we've driven growth for businesses across India.",
+    desc: "From ambitious startups to established enterprises — we’ve driven measurable growth for businesses across India.",
   },
   {
     icon: (
@@ -22,7 +22,7 @@ const FEATURES = [
       </svg>
     ),
     title: "Data-Driven Strategy",
-    desc: "Every campaign backed by analytics, A/B testing, and real-time optimisation.",
+    desc: "Every campaign is powered by analytics, continuous A/B testing, and real-time optimisation to maximise performance.",
   },
   {
     icon: (
@@ -32,7 +32,7 @@ const FEATURES = [
       </svg>
     ),
     title: "10 Years Experience",
-    desc: "A decade of digital marketing expertise — knowing what works before trends hit.",
+    desc: "A decade of proven expertise in digital marketing—understanding what works today and anticipating what works next.",
   },
 ];
 
@@ -61,14 +61,11 @@ export default function TeamSection() {
           {/* Eyebrow removed */}
 
           <h2 className="ts-heading">
-            The Minds Behind<br />
-            <span className="ts-accent">Your Growth</span>
+          The minds that <span className="ts-accent">make growth inevitable</span>
           </h2>
-
+          
           <p className="ts-subtext">
-            Social Theka is built on one belief — real results, no shortcuts. Our
-            team of strategists, creatives, and performance marketers obsess over
-            your brand's growth every single day.
+           Built on the belief of reals results without shortcuts, Social Theka combines the outcome of creative minds with strategies and work towards your brand’s growth Every Single Day .
           </p>
 
           <div className="ts-features">

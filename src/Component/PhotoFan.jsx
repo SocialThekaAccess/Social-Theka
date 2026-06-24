@@ -96,7 +96,7 @@ export default function PhotoFan() {
         <p className="pf-eyebrow">Our Story in Frames</p>
         <h2 className="pf-heading">We Don't Follow Trends <br /><span>We Create Them</span></h2>
         <p className="pf-sub">
-          Real people. Real results. Building brands across India — one story at a time.
+         Real people and Absolute results. Empowering Brands Across India with Strategies That Deliver Results and Inspire Growth  — one story at a time.
         </p>
       </div>
 

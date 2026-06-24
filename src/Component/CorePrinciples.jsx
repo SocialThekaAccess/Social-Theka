@@ -51,11 +51,10 @@ export default function CorePrinciples() {
         <div className="cp-header">
           <p className="cp-eyebrow">Our Foundation</p>
           <h2 className="cp-heading">
-            Social Theka Strongly Believes<br />In These Core Principles
+           The foundation principles of <br/> every Social Theka strategy
           </h2>
           <p className="cp-sub">
-            At the heart of our success is a dedicated team that brings years of experience,
-            tailored strategies, and a commitment to long-term business growth.
+            Our success is driven by a team of experienced professionals who combine strategic expertise, customized solutions, and a relentless focus on delivering sustainable business growth.
           </p>
         </div>
 
