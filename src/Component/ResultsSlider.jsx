@@ -76,7 +76,7 @@ export default function ResultsSlider() {
             The Statistics of our <span>Success</span> 
           </h2>
           <p className="rs-sub">
-         Every graph you see represents real client performance—carefully tracked, accurately measured, and successfully delivered by Social Theka.
+         Every graph you see represents real client performance—carefully tracked, accurately measured, and successfully delivered by <span style={{ whiteSpace: 'nowrap' }}>Social Theka</span>.
           </p>
         </div>
 
