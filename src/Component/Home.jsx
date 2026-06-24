@@ -638,12 +638,11 @@ function ClientGallery() {
       <div className="lux__header">
         <p className="lux__eyebrow">Our Work</p>
         <div className="lux__heading-wrap">
-          <h2 className="lux__title">Results We're Proud Of</h2>
+          <h2 className="lux__title">Achievements Backed By Results</h2>
         </div>
         <div className="lux__dot" />
         <p className="lux__sub">
-          Brands across India, USA, UK &amp; Dubai — campaigns that convert,
-          content that resonates, growth that lasts.
+        Trusted by brands across India, the USA, the UK, and Dubai—delivering campaigns that convert, content that connects, and growth that endures.
         </p>
       </div>
       <div className="lux__viewport">
@@ -736,7 +735,7 @@ function WhyUs() {
           </div>
           <div className="why__top-right">
             <p className="why__intro">
-              Dozens of agencies exist. But businesses — from Chandigarh startups to UK brands — keep coming back to us. Because we don't just run campaigns. We actually care about your growth.Your success becomes our responsibility the moment we start working together.We treat every brand like our own, ensuring every decision drives measurable impact.That's why our clients stay with us longer and recommend us to others.We measure our success by the growth and results our clients achieve.
+              While countless agencies offer marketing services, businesses continue to choose Social Theka because we deliver more than campaigns—we build partnerships, drive measurable growth, and stay invested in our clients’ long-term success.Because real partnerships create real results, and that's exactly what we deliver.That commitment is what turns first-time clients into long-term partners.
             </p>
           </div>
         </div>
@@ -823,8 +822,8 @@ function Process() {
       <div className="container">
         <div className="process__head">
           <span className="tag">How We Work</span>
-          <h2 className="section-title">Our Approach to <span className="cherry">Scalable Growth</span></h2>
-          <p className="section-sub">Growth isn't left to chance. Every decision follows a clear framework built for consistent, measurable results.</p>
+          <h2 className="section-title">Our strategy behind <span className="cherry">consistent growth</span></h2>
+          <p className="section-sub">Growth is the result of strategy, not luck. Our framework combines data, creativity, and execution to deliver consistent performance and measurable business impact.</p>
         </div>
         <div className="proc-timeline">
           {PROCESS_STEPS.map((s, i) => (
@@ -849,7 +848,7 @@ function Results() {
       <div className="container">
         <div className="results__head">
           <span className="tag">Case Studies</span>
-          <h2 className="section-title">Results That Speak Louder</h2>
+          <h2 className="section-title">Results That Speak for Themselves</h2>
           <p className="section-sub">Real numbers. Real businesses. Real growth.</p>
         </div>
         <div className="results__grid">
