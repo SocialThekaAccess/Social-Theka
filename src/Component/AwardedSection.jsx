@@ -28,7 +28,10 @@ export default function AwardedSection() {
     <section className="as-section">
       <div className="as-inner">
         <p className="as-label">Brands That Trust Us</p>
-        <h2 className="as-heading">Results delivered for businesses</h2>
+        <h2 className="as-heading">Impact Delivered for Modern Businesses</h2>
+        <p className="as-desc">
+          From ambitious startups to growing enterprises, brands trust Social Theka for results that are strategic, scalable, and consistent.
+        </p>
         <div className="as-grid">
           {LOGOS.map((src, i) => (
             <div key={i} className="as-card">
