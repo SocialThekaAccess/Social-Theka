@@ -12,8 +12,7 @@
   --bg:          #FFFFFF;
   --bg2:         #F9FAFB;
   --bg3:         #F3F4F6;
-  --max:         1440px;
-  --max-content: 1680px;
+  --max:         1200px;
   --r:           12px;
   --r-lg:        20px;
   --t:           0.3s ease;
@@ -42,19 +41,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 ul { list-style: none; }
 
 /* ── CONTAINER ──────────────────────────────────── */
-.container { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
-.section { padding: 56px 0; }
-
-@media (max-width: 1280px) {
-  .container { padding: 0 32px; }
-}
-@media (max-width: 768px) {
-  .container { padding: 0 24px; }
-  .section { padding: 48px 0; }
-}
-@media (max-width: 480px) {
-  .container { padding: 0 20px; }
-}
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.section { padding: 64px 0; }
 
 /* ── TYPOGRAPHY HELPERS ─────────────────────────── */
 .section-title {
@@ -221,7 +209,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 .nav__cta:hover { background: var(--cherry-d); transform: translateY(-1px); box-shadow: 0 12px 28px rgba(193,18,31,.28); }
 
 /* ── HERO ───────────────────────────────────────── */
-.hero { background: var(--bg); padding: 24px 40px 64px; overflow: visible; position: relative; min-height: 100vh; }
+.hero { background: var(--bg); padding: 32px 24px 80px; overflow: visible; position: relative; min-height: 100vh; }
 .hero::before {
   content: ''; position: absolute; inset: 0;
   background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
@@ -229,17 +217,17 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 }
 .hero__inner {
   max-width: var(--max); margin: 0 auto;
-  display: grid; grid-template-columns: 1.1fr 1fr;
-  gap: 48px; align-items: start; position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 480px;
+  gap: 64px; align-items: start; position: relative; z-index: 1;
 }
 .hero__h1 {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 3.5vw, 48px); font-weight: 900; color: var(--dark);
-  line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 18px 0;
+  font-size: clamp(28px, 3vw, 40px); font-weight: 900; color: var(--dark);
+  line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 16px 0;
 }
 .hero__h1 span { color: var(--cherry); }
 .hero__nowrap { color: var(--dark) !important; white-space: nowrap; }
-.hero__p { font-family: var(--font-body); font-size: 16px; color: var(--muted); line-height: 1.65; max-width: 540px; margin-bottom: 28px; }
+.hero__p { font-family: var(--font-body); font-size: 14.5px; color: var(--muted); line-height: 1.65; max-width: 460px; margin-bottom: 24px; }
 .hero__actions { margin-bottom: 36px; }
 .hero__explore-btn {
   display: inline-flex;
@@ -357,38 +345,38 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 .hero--glass::before { display: none; }
 
 .hero__inner--glass {
-  max-width: var(--max-content);
+  max-width: 1540px;
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 0;
   align-items: center;
   min-height: 100vh;
   position: relative;
-  padding: 0 40px;
+  padding: 0;
+  transform: scale(1.08);
+  transform-origin: center center;
 }
 
 /* Left text side — top aligned with image */
 .hero__inner--glass .hero__left {
-  padding: 60px 0;
+  padding: 80px 60px 80px 80px;
   z-index: 2;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 680px;
 }
 .hero__inner--glass .hero__h1 {
-  font-size: clamp(46px, 5.5vw, 76px);
+  font-size: clamp(42px, 5vw, 72px);
   color: #ffffff;
   margin-bottom: 28px;
-  line-height: 1.08;
 }
 .hero__inner--glass .hero__p {
   color: #FFFFFF;
-  font-size: 17px;
-  max-width: 520px;
+  font-size: 16px;
+  max-width: 460px;
   margin-bottom: 40px;
   line-height: 1.7;
 }
@@ -412,21 +400,19 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   position: relative;
   width: 100%;
   height: 100vh;
-  max-height: 900px;
   z-index: 2;
   overflow: visible;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .hero__scene .hero__char-img {
   position: absolute;
-  right: -5%;
+  right: 10px;
   bottom: 0;
   top: 50%;
-  transform: translateY(-50%);
-  height: 105%;
+  transform: translateX(-20%) translateY(-50%);
+  height: 110%;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -439,19 +425,19 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 /* Red glow from wine glass area */
 .hero__glass-glow {
   position: absolute;
-  width: 460px;
-  height: 460px;
-  right: 15%;
+  width: 420px;
+  height: 420px;
+  right: 80px;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(190,18,60,0.28) 0%,
-    rgba(190,18,60,0.10) 40%,
+    rgba(190,18,60,0.25) 0%,
+    rgba(190,18,60,0.08) 40%,
     transparent 75%
   );
-  filter: blur(60px);
+  filter: blur(50px);
   z-index: 1;
 }
 @keyframes glassGlow {
@@ -558,44 +544,28 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 }
 
 /* Responsive */
-@media (max-width: 1440px) {
-  .hero__inner--glass {
-    padding: 0 32px;
-  }
-  .hero__inner--glass .hero__h1 {
-    font-size: clamp(40px, 5vw, 64px);
-  }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .hero__inner--glass {
     grid-template-columns: 1fr;
     min-height: auto;
-    gap: 24px;
   }
-  .hero--glass { min-height: auto; padding: 48px 0; }
+  .hero--glass { min-height: auto; }
+  .hero__inner--glass {
+    padding: 20px 0 40px;
+  }
   .hero__inner--glass .hero__left {
-    padding: 32px 0;
-    max-width: 100%;
+    padding: 0 32px 32px;
     text-align: center;
-    align-items: center;
   }
-  .hero__inner--glass .hero__p { max-width: 600px; }
-  .hero__scene { height: 70vw; max-height: 600px; }
+  .hero__inner--glass .hero__p { max-width: 100%; }
+  .hero__scene { height: 70vw; }
 }
-
-@media (max-width: 768px) {
-  .hero__inner--glass { padding: 0 24px; }
-  .hero__inner--glass .hero__left { padding: 24px 0; }
-  .hero__scene { height: 75vw; }
-}
-
 @media (max-width: 480px) {
-  .hero__inner--glass { padding: 0 20px; }
-  .hero__inner--glass .hero__left { padding: 20px 0; }
-  .hero__float-icon-emoji { width: 40px; height: 40px; font-size: 17px; }
+  .hero__inner--glass { padding: 16px 0 32px; }
+  .hero__inner--glass .hero__left { padding: 0 20px 24px; }
+ .hero__float-icon-emoji { width: 40px; height: 40px; font-size: 17px; }
   .hero__float-icon-label { font-size: 9px; }
-  .hero__scene { height: 85vw; }
+  .hero__scene { height: 80vw; }
 }
 
 /* ══════════════════════════════════════════════════
@@ -690,7 +660,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 
 .hero2__h1 {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(30px, 4vw, 52px);
   font-weight: 900;
   color: #111;
   line-height: 1.12;
