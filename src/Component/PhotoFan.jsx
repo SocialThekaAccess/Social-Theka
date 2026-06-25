@@ -12,8 +12,8 @@ import img6 from "../assets/Socialimg6.jpeg";
 /* ── Fan photos — 6 cards, compact overlapping spread ── */
 const PHOTOS = [
   {
-    src: img1,
-    tag: "Breaking Glass",
+    src: img4,
+    tag: "Rewards",
     rotate: -28,
     tx: -380,
     ty: 30,
@@ -33,8 +33,8 @@ const PHOTOS = [
     ty: 5,
   },
   {
-    src: img4,
-    tag: "Rewards",
+    src: img1,
+    tag: "Breaking Glass",
     rotate: 5,
     tx: 80,
     ty: 5,
