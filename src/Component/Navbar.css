@@ -530,6 +530,7 @@
 
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media (max-width: 960px) {
+  .nb-top { display: none; }
   .nb__links { display: none; }
   .nb__ctas  { display: none; }
   .nb__burger { display: flex; }

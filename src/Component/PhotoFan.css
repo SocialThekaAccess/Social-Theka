@@ -168,7 +168,7 @@
   pointer-events: none;
   z-index: 10;
   border: 1.5px solid rgba(0,0,0,0.12);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: none;
   white-space: nowrap;
   max-width: calc(100% - 20px);
   overflow: hidden;
@@ -194,26 +194,6 @@
 
 /* Last card (6th) - tag starts on LEFT */
 .pf-photo:nth-child(6) .pf-photo-tag {
-  left: 10px;
-  right: auto;
-  transform: translateX(0);
-}
-
-/* Tag moves to right on card hover */
-.pf-photo:hover .pf-photo-tag,
-.pf-photo--hovered .pf-photo-tag {
-  left: auto;
-  right: 10px;
-  transform: translateX(0);
-}
-
-/* Cards 1, 3, 6 - tags stay on LEFT (no hover movement) */
-.pf-photo:nth-child(1):hover .pf-photo-tag,
-.pf-photo:nth-child(1).pf-photo--hovered .pf-photo-tag,
-.pf-photo:nth-child(3):hover .pf-photo-tag,
-.pf-photo:nth-child(3).pf-photo--hovered .pf-photo-tag,
-.pf-photo:nth-child(6):hover .pf-photo-tag,
-.pf-photo:nth-child(6).pf-photo--hovered .pf-photo-tag {
   left: 10px;
   right: auto;
   transform: translateX(0);
@@ -290,6 +270,11 @@
     transform: translateY(-8px) scale(1.05) !important; 
     z-index: 30 !important;
   }
+
+  /* Hide tags on mobile */
+  .pf-photo-tag {
+    display: none !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -315,5 +300,10 @@
   
   .pf-photo:hover { 
     transform: translateY(-6px) scale(1.03) !important;
+  }
+
+  /* Hide tags on mobile */
+  .pf-photo-tag {
+    display: none !important;
   }
 }

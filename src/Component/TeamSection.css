@@ -289,8 +289,8 @@
     gap: 48px;
   }
   .ts-left {
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
   }
   .ts-subtext {
     max-width: 100%;
