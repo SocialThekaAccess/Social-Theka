@@ -103,11 +103,11 @@ export default function Navbar({ onNavigate, currentPage }) {
       {/* ── TOP BAR ── */}
       <div className="nb-top">
         <div className="nb-top__left">
-          {/* <span className="nb-top__dot" /> */}
-          {/* <span>SEO Agency of the Year 2024, 25</span> */}
+          <span className="nb-top__dot" />
+          <span>SEO Agency of the Year 2024, 25</span>
         </div>
         <div className="nb-top__right">
-          <span>SEO Audit: &nbsp;<strong>info@socialtheka.com</strong></span>
+          <span> &nbsp;<strong>info@socialtheka.com</strong></span>
           <span className="nb-top__sep">|</span>
           <a href="tel:+919876543210" className="nb-top__phone">
             <span className="nb-top__phone-icon">
