@@ -154,16 +154,58 @@
 .pf-photo-tag {
   position: absolute;
   top: 10px;
-  left: 10px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(6px);
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: #111;
-  padding: 4px 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 5px 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
   pointer-events: none;
+  z-index: 10;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  max-width: calc(100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Third card - better positioning for dark background, tag on LEFT */
+.pf-photo:nth-child(3) .pf-photo-tag {
+  left: 10px;
+  right: auto;
+  transform: translateX(0);
+  background: rgba(255,255,255,0.99);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  border: 1.5px solid rgba(0,0,0,0.15);
+}
+
+/* Last card (6th) - tag starts on LEFT */
+.pf-photo:nth-child(6) .pf-photo-tag {
+  left: 10px;
+  right: auto;
+  transform: translateX(0);
+}
+
+/* Tag moves to right on card hover */
+.pf-photo:hover .pf-photo-tag,
+.pf-photo--hovered .pf-photo-tag {
+  left: auto;
+  right: 10px;
+  transform: translateX(0);
+}
+
+/* Last card (6th) - tag moves to LEFT on hover */
+.pf-photo:nth-child(6):hover .pf-photo-tag,
+.pf-photo:nth-child(6).pf-photo--hovered .pf-photo-tag {
+  left: 10px;
+  right: auto;
+  transform: translateX(0);
 }
 
 /* Auto-scroll animation for mobile */
