@@ -44,6 +44,14 @@ ul { list-style: none; }
 .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .section { padding: 64px 0; }
 
+@media (max-width: 768px) {
+  .section { padding: 40px 0; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 32px 0; }
+}
+
 /* ── TYPOGRAPHY HELPERS ─────────────────────────── */
 .section-title {
   font-family: var(--font-heading);
@@ -1892,10 +1900,47 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 .scroll-top img { width: 100%; height: 100%; object-fit: contain; display: block; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Scroll-to-top mobile responsive */
+/* ── FLOATING WHATSAPP BUTTON ──────────────────── */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 998;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  animation: fadeInUp 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+  background: #20b858;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+}
+
+.floating-whatsapp svg {
+  color: #fff;
+}
+
+/* Scroll-to-top and WhatsApp mobile responsive */
 @media (max-width: 768px) {
   .scroll-top {
     bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-whatsapp {
+    display: flex;
+    bottom: 84px;
     right: 20px;
     width: 50px;
     height: 50px;
@@ -1908,6 +1953,13 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
     right: 16px;
     width: 45px;
     height: 45px;
+  }
+  
+  .floating-whatsapp {
+    bottom: 72px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
   }
 }
 
