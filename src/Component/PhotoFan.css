@@ -231,6 +231,11 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .pf-section {
+    padding: 48px 16px 64px;
+    overflow-x: hidden;
+  }
+
   .pf-fan-wrap { 
     height: auto; 
     max-width: 100%; 
@@ -288,7 +293,10 @@
 }
 
 @media (max-width: 600px) {
-  .pf-section { padding: 48px 20px 64px; }
+  .pf-section { 
+    padding: 48px 12px 64px;
+    overflow-x: hidden;
+  }
   
   .pf-fan-wrap { 
     padding: 16px 0;
