@@ -4,7 +4,7 @@
 
 .st-section {
   background: linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #f8f9fa 100%);
-  padding: 100px 24px 110px;
+  padding: 72px 24px 80px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
