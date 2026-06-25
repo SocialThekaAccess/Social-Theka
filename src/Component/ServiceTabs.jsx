@@ -77,6 +77,7 @@ const SERVICES = [
 export default function ServiceTabs() {
   const [active, setActive] = useState(0);
   const [visible, setVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -86,6 +87,13 @@ export default function ServiceTabs() {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 900);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
@@ -110,15 +118,43 @@ export default function ServiceTabs() {
 
           {/* Left tabs */}
           <div className="st-tabs">
-            {SERVICES.map((s, i) => (
-              <button
-                key={i}
-                className={`st-tab${i === active ? " st-tab--active" : ""}`}
-                onClick={() => setActive(i)}
-              >
-                {s.tab}
-              </button>
-            ))}
+            {isMobile ? (
+              <div className="st-tabs-wrapper">
+                {/* First set */}
+                {SERVICES.map((s, i) => (
+                  <button
+                    key={`first-${i}`}
+                    className={`st-tab${i === active ? " st-tab--active" : ""}`}
+                    onClick={() => setActive(i)}
+                  >
+                    {s.tab}
+                  </button>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {SERVICES.map((s, i) => (
+                  <button
+                    key={`second-${i}`}
+                    className={`st-tab${i === active ? " st-tab--active" : ""}`}
+                    onClick={() => setActive(i)}
+                  >
+                    {s.tab}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              // Desktop: no animation, normal tabs
+              <>
+                {SERVICES.map((s, i) => (
+                  <button
+                    key={i}
+                    className={`st-tab${i === active ? " st-tab--active" : ""}`}
+                    onClick={() => setActive(i)}
+                  >
+                    {s.tab}
+                  </button>
+                ))}
+              </>
+            )}
           </div>
 
           {/* Right content */}

@@ -166,19 +166,93 @@
   pointer-events: none;
 }
 
+/* Auto-scroll animation for mobile */
+@keyframes scrollPhotos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Responsive */
 @media (max-width: 900px) {
-  .pf-fan-wrap { height: 280px; max-width: 700px; }
-  .pf-photo { width: 150px; border: 3px solid #fff; }
-  .pf-photo img { height: 200px; }
-  .pf-photo:hover { transform: translate(var(--tx, 0px), -18px) rotate(0deg) scale(1.08) !important; }
+  .pf-fan-wrap { 
+    height: auto; 
+    max-width: 100%; 
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible;
+    justify-content: flex-start;
+    padding: 20px 0;
+    scrollbar-width: none;
+    gap: 20px;
+  }
+
+  .pf-fan-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Wrapper for animation */
+  .pf-photos-slider {
+    display: flex;
+    gap: 20px;
+    animation: scrollPhotos 25s linear infinite;
+  }
+
+  /* Paused state */
+  .pf-photos-slider--paused {
+    animation-play-state: paused !important;
+  }
+
+  /* Pause on hover/touch */
+  .pf-fan-wrap:hover .pf-photos-slider:not(.pf-photos-slider--paused),
+  .pf-fan-wrap:active .pf-photos-slider:not(.pf-photos-slider--paused) {
+    animation-play-state: paused;
+  }
+
+  .pf-photo { 
+    position: relative;
+    width: 180px; 
+    border: 3px solid #fff; 
+    flex-shrink: 0;
+    opacity: 1;
+    transform: none !important;
+    cursor: pointer;
+  }
+
+  .pf-section--visible .pf-photo {
+    transform: none !important;
+  }
+
+  .pf-photo img { height: 240px; }
+  
+  .pf-photo:hover { 
+    transform: translateY(-8px) scale(1.05) !important; 
+    z-index: 30 !important;
+  }
 }
 
 @media (max-width: 600px) {
   .pf-section { padding: 48px 20px 64px; }
-  .pf-fan-wrap { height: 240px; max-width: 100%; }
-  .pf-photo { width: 110px; border: 2px solid #fff; }
-  .pf-photo img { height: 150px; }
+  
+  .pf-fan-wrap { 
+    padding: 16px 0;
+    gap: 16px;
+  }
+
+  .pf-photos-slider {
+    gap: 16px;
+    animation: scrollPhotos 20s linear infinite;
+  }
+
+  .pf-photo { width: 140px; border: 2px solid #fff; }
+  .pf-photo img { height: 180px; }
   .pf-heading { font-size: 1.8rem; }
   .pf-float-tag { display: none; }
+  
+  .pf-photo:hover { 
+    transform: translateY(-6px) scale(1.03) !important;
+  }
 }
