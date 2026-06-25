@@ -3,7 +3,12 @@ import footerLogo from "../../assets/FooterLogo.png";
 
 const FOOTER_SERVICES = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Website Development", "Content Writing", "Link Building"];
 const FOOTER_COMPANY  = ["About Us", "Theka Story", "Case Studies", "Blog", "Careers"];
-const FOOTER_CONTACT  = ["hello@socialtheka.com", "+91 XXXXX XXXXX", "Chandigarh, India"];
+const FOOTER_CONTACT  = [
+  "hello@socialtheka.com", 
+  "+91 78887 35337",
+  "+91 6280 614518",
+  "D-151, Second Floor, Phase-8, Industrial Area, Sector 73, Sahibzada Ajit Singh Nagar, Punjab 160071"
+];
 const FOOTER_COLS = [
   { title: "Services", links: FOOTER_SERVICES },
   { title: "Company",  links: FOOTER_COMPANY  },
