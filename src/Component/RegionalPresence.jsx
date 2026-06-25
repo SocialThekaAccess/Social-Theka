@@ -1,7 +1,5 @@
 import { useState } from "react";
 import "./RegionalPresence.css";
-import ChandigarhImg from "../assets/ChandigarhIT.png";
-import DelhiImg from "../assets/DelhiIT.png";
 
 const regions = [
   {
@@ -20,7 +18,7 @@ const regions = [
     ],
     transit: "Direct interface with G.T. Road arterial routes, premium retail hubs, and the international airport pathway.",
     config: "PRESETS-LOC-CHANDIGARH-V1.0",
-    image: ChandigarhImg ,
+    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&q=80",
   },
   {
   id: "delhi",
@@ -38,7 +36,7 @@ const regions = [
   ],
   transit: "Seamless connectivity via Delhi Metro's 14 lines, NH-48 to IGI Airport, and Ring Road arterial network linking all business districts.",
   config: "PRESETS-LOC-DELHI-V1.0",
-  image: DelhiImg ,
+  image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&q=80",
 },
 //   {
 //     id: "panchkula",

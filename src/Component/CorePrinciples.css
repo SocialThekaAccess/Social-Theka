@@ -74,8 +74,8 @@
 }
 
 .cp-card-icon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background: transparent;
   border-radius: 14px;
   display: flex;
@@ -86,8 +86,8 @@
 }
 
 .cp-card-icon img {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   object-fit: contain;
 }
 
@@ -106,7 +106,84 @@
 }
 
 @media (max-width: 640px) {
+  .cp-section {
+    padding: 60px 20px 68px;
+  }
+  
+  .cp-header {
+    margin-bottom: 44px;
+  }
+  
+  .cp-heading {
+    font-size: 1.75rem;
+  }
+  
+  .cp-sub {
+    font-size: 14px;
+    max-width: 100%;
+  }
+  
   .cp-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .cp-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 20px;
+  }
+  
+  .cp-card-icon {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .cp-card-icon img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .cp-card-title {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+  
+  .cp-card-desc {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cp-section {
+    padding: 48px 16px 56px;
+  }
+  
+  .cp-heading {
+    font-size: 1.5rem;
+  }
+  
+  .cp-card {
+    padding: 20px 16px;
+  }
+  
+  .cp-card-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .cp-card-icon img {
+    width: 72px;
+    height: 72px;
+  }
+  
+  .cp-card-title {
+    font-size: 16px;
+  }
+  
+  .cp-card-desc {
+    font-size: 12px;
+    line-height: 1.6;
   }
 }

@@ -254,8 +254,36 @@
   display: block;
 }
 
+/* Auto-scroll animation for mobile */
+@keyframes scrollTabs {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Responsive */
 @media (max-width: 900px) {
+  .st-section {
+    padding: 80px 20px 90px;
+  }
+
+  .st-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .st-heading {
+    text-align: center;
+  }
+
+  .st-sub {
+    text-align: center;
+    font-size: 16px;
+  }
+
   .st-body {
     grid-template-columns: 1fr;
   }
@@ -267,16 +295,25 @@
     border-bottom: 1px solid #e5e7eb;
     padding: 12px;
     scrollbar-width: none;
+    position: relative;
   }
 
   .st-tabs::-webkit-scrollbar {
     display: none;
   }
 
+  /* Auto-scroll container wrapper */
+  .st-tabs-wrapper {
+    display: flex;
+    animation: scrollTabs 20s linear infinite;
+  }
+
   .st-tab {
     white-space: nowrap;
     margin-bottom: 0;
     margin-right: 6px;
+    flex-shrink: 0;
+    text-align: center;
   }
 
   .st-tab::before {
@@ -292,22 +329,78 @@
     width: 70%;
   }
 
+  /* Pause animation on hover/touch */
+  .st-tabs:hover .st-tabs-wrapper,
+  .st-tabs:active .st-tabs-wrapper {
+    animation-play-state: paused;
+  }
+
   .st-content {
     padding: 36px 28px;
+  }
+
+  .st-point {
+    text-align: left;
+  }
+
+  .st-point:hover {
+    transform: translateX(0);
   }
 }
 
 @media (max-width: 640px) {
   .st-section {
-    padding: 70px 20px 80px;
+    padding: 70px 16px 80px;
+  }
+
+  .st-header {
+    margin-bottom: 40px;
+  }
+
+  .st-eyebrow {
+    font-size: 11px;
+    padding: 6px 16px;
+  }
+
+  .st-heading {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .st-sub {
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.7;
   }
   
   .st-content {
-    padding: 28px 20px;
-    gap: 16px;
+    padding: 24px 16px;
+    gap: 14px;
   }
   
   .st-point {
-    padding: 16px 18px;
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+  }
+
+  .st-point-dot {
+    font-size: 20px;
+  }
+
+  .st-point-title {
+    font-size: 14px;
+  }
+
+  .st-point-desc {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .st-tab {
+    font-size: 13px;
+    padding: 14px 18px;
   }
 }

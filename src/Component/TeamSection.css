@@ -288,8 +288,12 @@
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  .ts-right {
-    order: -1;
+  .ts-left {
+    text-align: center;
+    align-items: center;
+  }
+  .ts-subtext {
+    max-width: 100%;
   }
   .ts-stat-pill {
     top: -14px;
