@@ -1498,7 +1498,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 /* ── WHY US ─────────────────────────────────────── */
 .why {
   background: #fff;
-  padding: 88px 40px;
+  padding: 40px 40px 88px;
   overflow: hidden;
 }
 
@@ -1722,7 +1722,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 }
 
 @media (max-width: 540px) {
-  .why { padding: 60px 16px; }
+  .why { padding: 28px 16px 60px; }
   .why__cards { 
     grid-template-columns: 1fr; 
     gap: 16px;
@@ -2307,7 +2307,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 /* ══════════════════════════════════════════════════
    CLIENT GALLERY (.lux)
 ════════════════════════════════════════════════╗ */
-.lux { background: #fff; padding: 64px 0 60px; overflow: hidden; position: relative; }
+.lux { background: #fff; padding: 40px 0 8px; overflow: hidden; position: relative; }
 .lux__header { max-width: var(--max); margin: 0 auto 56px; padding: 0 24px; text-align: center; }
 .lux__eyebrow { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--cherry); background: var(--cherry-pale); border: 1px solid rgba(193,18,31,0.18); padding: 5px 14px; border-radius: 100px; margin-bottom: 20px; }
 .lux__heading-wrap { margin-bottom: 12px; }
@@ -2315,7 +2315,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 .lux__title--outline { -webkit-text-stroke: 2.5px var(--dark); color: transparent; }
 .lux__dot { width: 10px; height: 10px; background: var(--cherry); border-radius: 50%; margin: 16px auto; }
 .lux__sub { font-size: 15px; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.75; }
-.lux__viewport { width: 100%; overflow: hidden; padding: 20px 0 40px; }
+.lux__viewport { width: 100%; overflow: hidden; padding: 20px 0 16px; }
 .lux__track { display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -2450,7 +2450,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   .section { padding: 60px 24px; }
   .section-title { font-size: 32px; }
   .section-sub { font-size: 15px; max-width: 100%; }
-  .why { padding: 60px 24px; }
+  .why { padding: 32px 24px 60px; }
   .why__top { gap: 28px; }
   .why__top-left { align-items: center; text-align: center; }
   .why__top-right { text-align: center; align-items: center; }
@@ -2481,7 +2481,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   /* Lux mobile */
   .lux__card { width: 180px; }
   .lux__card-img img { height: 240px; }
-  .lux { padding: 48px 0; }
+  .lux { padding: 32px 0 16px; }
   .container { padding: 0 20px; }
 }
 
