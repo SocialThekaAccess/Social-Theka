@@ -5,377 +5,421 @@ import ServiceLayout from "../../Component/ServiceLayout";
 // ── ICONS ──────────────────────────────────────────────────────────────
 const IconCode = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-);
-const IconMobile = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-);
-const IconShop = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
-    <path d="M16 10a4 4 0 0 1-8 0"/></svg>
-);
-const IconRefresh = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
-    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+  </svg>
 );
 const IconLayout = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/>
-    <line x1="9" y1="21" x2="9" y2="9"/></svg>
+    <rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+  </svg>
 );
-const IconSearch = () => (
+const IconShoppingCart = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+  </svg>
 );
 const IconZap = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </svg>
+);
+const IconSearch = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg>
+);
+const IconSmartphone = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+    <line x1="12" y1="18" x2="12.01" y2="18"/>
+  </svg>
 );
 const IconShield = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+);
+const IconTrendingUp = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+    <polyline points="17 6 23 6 23 12"/>
+  </svg>
+);
+const IconGlobe = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="2" y1="12" x2="22" y2="12"/>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+  </svg>
+);
+const IconSettings = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+  </svg>
+);
+const IconCheckCircle = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+    <polyline points="22 4 12 14.01 9 11.01"/>
+  </svg>
 );
 const IconUsers = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg>
 );
-const IconCheck = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="20 6 9 17 4 12"/></svg>
-);
-const IconArrow = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 12h14M12 5l7 7-7 7"/></svg>
+const IconArrowRight = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+  </svg>
 );
 const IconStar = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-);
-const IconTarget = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </svg>
 );
 
 // ── DATA ────────────────────────────────────────────────────────────────
+
+const HERO_CARDS = [
+  { icon: <IconLayout />,       title: "Custom Design",        subtitle: "Pixel-perfect layouts built for your brand" },
+  { icon: <IconSmartphone />,   title: "Mobile-First",         subtitle: "Optimized for every screen size" },
+  { icon: <IconSearch />,       title: "SEO-Ready",            subtitle: "Built to rank from day one" },
+  { icon: <IconZap />,          title: "Fast Loading",         subtitle: "Under 3s load time guaranteed" },
+  { icon: <IconShield />,       title: "Secure & Reliable",    subtitle: "SSL, backups, and uptime monitoring" },
+  { icon: <IconTrendingUp />,   title: "Conversion Focused",   subtitle: "Designed to turn visitors into customers", highlight: true },
+];
+
+const WHY_MATTERS = [
+  { icon: <IconGlobe />,        title: "Your Digital Storefront",   desc: "Your website is open 24/7. It's often the first impression customers have of your business — and first impressions decide whether they stay or leave." },
+  { icon: <IconTrendingUp />,   title: "Credibility & Trust",       desc: "A professional website builds immediate trust. Outdated or generic sites lose customers before they even read your offer." },
+  { icon: <IconSearch />,       title: "Organic Discoverability",   desc: "A well-structured site ranks on Google. Organic traffic is free and long-lasting — making your website your best marketing investment." },
+  { icon: <IconZap />,          title: "Speed = Revenue",           desc: "Every 1-second delay in load time reduces conversions by 7%. We build fast because fast websites make more money." },
+];
+
 const SERVICES = [
-  { icon: <IconCode />,    name: "Custom Website Development",  desc: "We don't use random templates. Every website is built to fit your specific needs, showing your brand's personality uniquely." },
-  { icon: <IconMobile />,  name: "Responsive Web Design",       desc: "With most users browsing on mobile, we make sure your site looks great and works perfectly on all phones, tablets, and desktops." },
-  { icon: <IconShield />,  name: "PHP Development",             desc: "We use PHP and reliable technologies to build robust, scalable websites that can grow without performance issues." },
-  { icon: <IconShop />,    name: "E-commerce Development",      desc: "Planning to sell online? We build e-commerce websites that are easy to manage and simple for users to shop from — smooth from product to checkout." },
-  { icon: <IconRefresh />, name: "Website Redesign Services",   desc: "If your website looks outdated or isn't performing well, we redesign it — improving both the look and the functionality for better results." },
-  { icon: <IconLayout />,  name: "Landing Page Development",    desc: "Running ads or campaigns? We create focused landing pages with one goal — getting leads or conversions from your traffic." },
+  {
+    icon: <IconLayout />,
+    name: "Business Websites",
+    desc: "Professional multi-page websites that establish authority, communicate your services clearly, and guide visitors toward taking action.",
+    tags: ["About", "Services", "Contact", "Blog"],
+  },
+  {
+    icon: <IconShoppingCart />,
+    name: "eCommerce Stores",
+    desc: "Full-featured online stores with product pages, cart, checkout, and payment integrations — built to sell seamlessly.",
+    tags: ["Shopify", "WooCommerce", "Razorpay", "COD"],
+  },
+  {
+    icon: <IconCode />,
+    name: "Landing Pages",
+    desc: "High-converting single pages built around one goal — whether that's capturing leads, selling a product, or driving sign-ups.",
+    tags: ["Lead Gen", "Product Launch", "Event", "Ad Campaign"],
+  },
+  {
+    icon: <IconSearch />,
+    name: "SEO-Optimized Sites",
+    desc: "Websites built from the ground up with technical SEO in mind — structured data, page speed, clean code, and keyword targeting.",
+    tags: ["On-Page SEO", "Schema", "Core Web Vitals", "Local SEO"],
+  },
+  {
+    icon: <IconSettings />,
+    name: "CMS Integration",
+    desc: "Give your team control. We integrate WordPress, Webflow, or custom CMS so you can update content without touching code.",
+    tags: ["WordPress", "Webflow", "Sanity", "Strapi"],
+  },
+  {
+    icon: <IconSmartphone />,
+    name: "Website Redesign",
+    desc: "Transform an outdated site into a modern, high-performing web presence — keeping what works and rebuilding what doesn't.",
+    tags: ["UI Refresh", "Speed Fix", "Mobile Fix", "Rebranding"],
+  },
 ];
 
 const WEBSITE_TYPES = [
-  { icon: <IconUsers />,  title: "Business Websites",  desc: "Perfect for companies that want to show their services and build trust online. Simple, clean, and focused on giving the right information." },
-  { icon: <IconShop />,   title: "E-commerce Stores",  desc: "We design e-commerce sites where clients can browse merchandise and complete transactions. Everything is made to ensure the purchasing process runs smoothly." },
-  { icon: <IconStar />,   title: "Portfolio Websites", desc: "Perfect for people or organizations looking to display their work. It helps present your projects professionally." },
-  { icon: <IconLayout />, title: "Landing Pages",      desc: "Single pages designed for campaigns or ads. They focus on one goal — getting leads or conversions." },
-  { icon: <IconCode />,   title: "Custom Solutions",   desc: "If you need something specific, we build it as per your requirements. This gives you flexibility without limiting your ideas." },
+  { icon: <IconLayout />,       title: "Portfolio Sites",       desc: "Showcase your work with elegant, minimal layouts designed to impress clients and collaborators." },
+  { icon: <IconShoppingCart />, title: "Online Stores",         desc: "From single product to full catalog — we build stores that convert browsers into buyers." },
+  { icon: <IconCode />,         title: "SaaS Landing Pages",    desc: "Clean, persuasive pages that explain your product fast and push visitors toward a free trial or demo." },
+  { icon: <IconUsers />,        title: "Service Businesses",    desc: "Local clinics, agencies, consultants — we build sites that generate calls, inquiries, and bookings." },
+  { icon: <IconGlobe />,        title: "News & Blogs",          desc: "Content-heavy sites built for speed, readability, and SEO — so your articles actually get read." },
+  { icon: <IconZap />,          title: "Event Pages",           desc: "Time-sensitive, high-energy pages built to drive registrations and ticket sales before the deadline." },
 ];
 
-const WHY_US = [
-  { icon: <IconLayout />, title: "Simple & User-Friendly Designs", desc: "We don't make things confusing. Users should feel comfortable using your website from the moment they land on it." },
-  { icon: <IconMobile />, title: "Mobile-First Approach",          desc: "We design keeping mobile users in mind from the start — because most of your visitors are on their phones." },
-  { icon: <IconZap />,    title: "Focus on Performance",           desc: "A website should load fast and run smoothly. That's non-negotiable for us on every project we take." },
-  { icon: <IconShield />, title: "Clear Communication",            desc: "You'll always know what's happening. No guesswork, no surprises — just regular updates throughout the project." },
-  { icon: <IconSearch />, title: "SEO-Friendly Development",       desc: "We build with clean code, fast loading, and proper structure so search engines can find and rank your website effectively." },
-  { icon: <IconTarget />, title: "Ongoing Support",                desc: "Even after the website is live, we're here if you need changes or help. We stay available for updates and support." },
+const WHY_CHOOSE = [
+  { icon: <IconCheckCircle />, title: "No Templates",           desc: "Every website we build is custom-designed from scratch. You won't find your site on another business's page." },
+  { icon: <IconSearch />,      title: "SEO Built In",           desc: "SEO isn't an add-on. It's part of how we build — from URL structure to image compression to schema markup." },
+  { icon: <IconZap />,         title: "Performance First",      desc: "We optimize every asset, lazy-load images, and use modern hosting to ensure your site loads fast everywhere." },
+  { icon: <IconShield />,      title: "Post-Launch Support",    desc: "We don't disappear after delivery. We offer ongoing maintenance, updates, and support to keep your site running." },
+  { icon: <IconSmartphone />,  title: "Mobile Perfected",       desc: "Over 70% of traffic is mobile. Every element is tested and refined specifically for small screens." },
+  { icon: <IconUsers />,       title: "Real Collaboration",     desc: "You're involved at every stage. We share mockups, get feedback, and iterate until you're genuinely happy." },
 ];
 
 const PROCESS = [
-  { step: "01", title: "Consultation",          desc: "We find out what your business is about, what your goals are, and what you need from a website." },
-  { step: "02", title: "Requirement Analysis",  desc: "We go deeper into the details — features, pages, and functionality — and plan everything to match your business needs." },
-  { step: "03", title: "Concept & Planning",    desc: "We create a proper plan including structure, timeline, and approach to keep the project organized." },
-  { step: "04", title: "UI/UX Design",          desc: "We create a clean, easy-to-use layout so visitors can navigate your website without confusion." },
-  { step: "05", title: "Development",           desc: "We build your website based on the approved design — working properly on desktop, phone, and tablet." },
-  { step: "06", title: "Implementation",        desc: "All tools, features, and backend configurations are added so your website functions properly for real customers." },
-  { step: "07", title: "Testing",               desc: "Before launch, we test everything carefully — speed, responsiveness, and performance — to make sure there are no issues." },
-  { step: "08", title: "Deployment",            desc: "We launch your website and make it live. Even after that, we stay available for support and updates." },
+  { num: "01", title: "Discovery & Brief",         desc: "We start with a detailed conversation about your business, target audience, competitors, and goals. This shapes everything." },
+  { num: "02", title: "Wireframe & Structure",      desc: "Before any visual design, we plan the site's structure — every page, every section, every user flow mapped out clearly." },
+  { num: "03", title: "Visual Design",              desc: "We create full mockups in Figma. You see exactly what your site will look like before a single line of code is written." },
+  { num: "04", title: "Development",                desc: "Clean, modern code — HTML/CSS/JS or your chosen CMS. Fully responsive, accessible, and fast from the start." },
+  { num: "05", title: "Testing & QA",               desc: "Every page is tested on 10+ device sizes, multiple browsers, and checked for speed, accessibility, and broken links." },
+  { num: "06", title: "Launch & Handover",          desc: "We deploy your site, set up analytics, train your team on the CMS, and hand over everything you need to succeed." },
 ];
 
 const PROBLEMS = [
-  ["Website is Too Slow",         "We optimize speed so your site loads fast and keeps visitors from leaving."],
-  ["Design Looks Outdated",       "We redesign your site to look modern, clean, and professional."],
-  ["Users Leave Without Action",  "We improve UX and CTAs so visitors know exactly what to do next."],
-  ["Not Mobile-Friendly",         "We make sure your site works perfectly on every device and screen size."],
-  ["Not Generating Leads",        "We build your site to convert — with clear messaging and focused user journeys."],
+  { icon: <IconTrendingUp />, title: "Low on Google?",           desc: "Poor rankings often trace back to a slow, poorly structured website. We fix the technical foundation so search engines reward you." },
+  { icon: <IconSmartphone />, title: "Site Looks Bad on Mobile?", desc: "A broken mobile experience kills conversions. We rebuild or redesign with mobile-first as the default, not the afterthought." },
+  { icon: <IconZap />,        title: "Slow Load Times?",         desc: "We audit and optimize: images, hosting, caching, and code — shaving seconds off your load time and recovering lost revenue." },
+  { icon: <IconLayout />,     title: "Outdated Design?",         desc: "An old-looking website signals an old-thinking business. We redesign with modern aesthetics that match your ambition." },
+  { icon: <IconShield />,     title: "Security Concerns?",       desc: "We implement SSL, firewall rules, regular backups, and update policies to protect your site and your customers' data." },
+  { icon: <IconUsers />,      title: "Not Generating Leads?",    desc: "Traffic without conversions is wasted. We redesign your site's CTAs, forms, and user flow to turn visitors into inquiries." },
 ];
 
 const FAQS = [
-  { q: "How much does a website cost?",        a: "It depends on what you need. A simple website costs less, while advanced ones with custom features cost more. Contact us for a quote." },
-  { q: "How long does it take?",               a: "Usually a few weeks, depending on the size and complexity of the project." },
-  { q: "Will it work on mobile?",              a: "Yes, all our websites are fully mobile-friendly and responsive across all devices." },
-  { q: "Do you provide support after launch?", a: "Yes, we're available for updates and support even after the website goes live." },
-  { q: "Can you improve my current website?",  a: "Yes, we can redesign and improve your existing website to make it faster, better-looking, and more effective." },
+  { q: "How long does it take to build a website?", a: "A standard business website takes 2–4 weeks. eCommerce sites typically take 4–6 weeks depending on catalog size and integrations. We give a clear timeline before starting." },
+  { q: "Do I need to provide content?", a: "We recommend you provide your own content for accuracy, but we can help with copywriting and sourcing professional images if needed — just let us know." },
+  { q: "Will my website work on mobile?", a: "Yes, always. Every website we build is fully responsive and tested across phones, tablets, and desktops before launch." },
+  { q: "Can I update the website myself after launch?", a: "Yes. We integrate a CMS (like WordPress or Webflow) and train you on how to update pages, add blog posts, and change images without touching code." },
+  { q: "Do you offer hosting and domain setup?", a: "Yes. We can handle domain registration, hosting setup, SSL certificates, and DNS configuration as part of your project." },
+  { q: "What if I already have a website and want a redesign?", a: "We do full redesigns. We audit your existing site, preserve what's working (like SEO rankings and content), and rebuild everything that needs improvement." },
 ];
 
 // ── COMPONENT ───────────────────────────────────────────────────────────
+
 export default function WebDevChandigarh() {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <ServiceLayout>
-    <div className="wdc-page">
+      <div className="wdc-page">
 
-      {/* ── HERO ── */}
-      <section className="wdc-hero">
-        <div className="wdc-hero__inner">
-          {/* LEFT */}
-          <div className="wdc-hero__left">
-            <div className="wdc-hero__badge">
-              <span className="wdc-hero__badge-dot" />
-              Web Development — Chandigarh
-            </div>
-            <h1 className="wdc-hero__title">
-              Best Web Development Company in Chandigarh
-            </h1>
-            <p className="wdc-hero__sub">
-              We don't build cookie-cutter websites. We create websites that truly benefit our clients — attractive designs, fast load times, and user-friendly experiences that work for your business.
-            </p>
-            <div className="wdc-hero__ctas">
-              <a href="#contact" className="wdc-btn-primary">Start Your Project <IconArrow /></a>
-              <a href="#services" className="wdc-btn-outline">View Services</a>
-            </div>
-            <div className="wdc-hero__stats">
-              <div className="wdc-hero__stat">
-                <span className="wdc-hero__stat-val">200+</span>
-                <span className="wdc-hero__stat-label">Websites Built</span>
+        {/* ── HERO ── */}
+        <section className="wdc-hero">
+          <div className="wdc-hero__inner">
+            <div className="wdc-hero__left">
+              <div className="wdc-hero__badge">
+                <span className="wdc-hero__badge-dot" />
+                Web Development · Chandigarh
               </div>
-              <div className="wdc-hero__stat-divider" />
-              <div className="wdc-hero__stat">
-                <span className="wdc-hero__stat-val">100%</span>
-                <span className="wdc-hero__stat-label">Mobile Friendly</span>
-              </div>
-              <div className="wdc-hero__stat-divider" />
-              <div className="wdc-hero__stat">
-                <span className="wdc-hero__stat-val">98%</span>
-                <span className="wdc-hero__stat-label">Client Satisfaction</span>
+              <h1 className="wdc-hero__title">
+                Websites That Work<br />
+                <span className="wdc-hero__title-accent">As Hard As You Do</span>
+              </h1>
+              <p className="wdc-hero__desc">
+                We design and develop custom websites for businesses in Chandigarh and across India — built for speed, search engines, and real conversions.
+              </p>
+              <p className="wdc-hero__desc">
+                No templates. No cookie-cutter designs. Every project starts from scratch and is tailored to your brand, your audience, and your goals.
+              </p>
+              <div style={{ marginTop: "28px" }}>
+                <a href="/contact" className="wdc-btn-primary">
+                  Start Your Project <IconArrowRight />
+                </a>
               </div>
             </div>
+
+            <div className="wdc-hero__right">
+              {HERO_CARDS.map((card, i) => (
+                <div key={i} className={`wdc-hero__card${card.highlight ? " wdc-hero__card--highlight" : ""}`}>
+                  <div className={`wdc-hero__card-icon${card.highlight ? " wdc-hero__card-icon--highlight" : ""}`}>
+                    {card.icon}
+                  </div>
+                  <div className="wdc-hero__card-content">
+                    <p className="wdc-hero__card-title">{card.title}</p>
+                    <p className="wdc-hero__card-subtitle">{card.subtitle}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          {/* RIGHT */}
-          <div className="wdc-hero__right">
-            <div className="wdc-hero__cards">
-              <div className="wdc-hero__card">
-                <div className="wdc-hero__card-icon"><IconCode /></div>
-                <div>
-                  <div className="wdc-hero__card-name">Custom Dev</div>
-                  <div className="wdc-hero__card-desc">Built for your brand</div>
-                </div>
+        </section>
+
+        {/* ── WHY IT MATTERS ── */}
+        <section className="wdc-performance">
+          <div className="wdc-performance__inner">
+            <div className="wdc-performance__header">
+              <div className="wdc-badge">
+                <IconStar /> Why Your Website Matters
               </div>
-              <div className="wdc-hero__card">
-                <div className="wdc-hero__card-icon"><IconMobile /></div>
-                <div>
-                  <div className="wdc-hero__card-name">Responsive</div>
-                  <div className="wdc-hero__card-desc">All devices ready</div>
+              <h2 className="wdc-performance__title">Your Website Is Your Best Salesperson</h2>
+              <p className="wdc-performance__subtitle">
+                It's working 24 hours a day, 7 days a week — and the quality of your site directly determines whether people trust you enough to buy.
+              </p>
+            </div>
+            <div className="wdc-performance__grid">
+              {WHY_MATTERS.map((item, i) => (
+                <div key={i} className="wdc-performance__card">
+                  <div className="wdc-performance__icon">{item.icon}</div>
+                  <h3 className="wdc-performance__card-title">{item.title}</h3>
+                  <p className="wdc-performance__card-desc">{item.desc}</p>
                 </div>
-              </div>
-              <div className="wdc-hero__card">
-                <div className="wdc-hero__card-icon"><IconShop /></div>
-                <div>
-                  <div className="wdc-hero__card-name">E-commerce</div>
-                  <div className="wdc-hero__card-desc">Sell online easily</div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── SERVICES ── */}
+        <section className="wdc-platforms">
+          <div className="wdc-platforms__inner">
+            <div className="wdc-platforms__header">
+              <div className="wdc-badge">What We Build</div>
+              <h2 className="wdc-platforms__title">Every Type of Website, Done Right</h2>
+              <p className="wdc-platforms__subtitle">
+                From simple landing pages to complex eCommerce platforms — we cover the full spectrum of web development.
+              </p>
+            </div>
+            <div className="wdc-platforms__grid">
+              {SERVICES.map((s, i) => (
+                <div key={i} className="wdc-platform-card">
+                  <div className="wdc-platform-card__header">
+                    <div className="wdc-platform-card__icon">{s.icon}</div>
+                    <h3 className="wdc-platform-card__name">{s.name}</h3>
+                  </div>
+                  <p className="wdc-platform-card__desc">{s.desc}</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "14px" }}>
+                    {s.tags.map((tag, j) => (
+                      <span key={j} style={{
+                        fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em",
+                        background: "#f8fafc", border: "1px solid #e2e8f0",
+                        borderRadius: "6px", padding: "4px 10px", color: "#475569"
+                      }}>{tag}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="wdc-hero__card">
-                <div className="wdc-hero__card-icon"><IconSearch /></div>
-                <div>
-                  <div className="wdc-hero__card-name">SEO Ready</div>
-                  <div className="wdc-hero__card-desc">Rank on Google</div>
-                </div>
-              </div>
-              <div className="wdc-hero__card">
-                <div className="wdc-hero__card-icon"><IconZap /></div>
-                <div>
-                  <div className="wdc-hero__card-name">Fast Loading</div>
-                  <div className="wdc-hero__card-desc">Optimized speed</div>
-                </div>
-              </div>
-              <div className="wdc-hero__card wdc-hero__card--highlight">
-                <div className="wdc-hero__card-icon"><IconTarget /></div>
-                <div>
-                  <div className="wdc-hero__card-name">Lead Focused</div>
-                  <div className="wdc-hero__card-desc">Converts visitors</div>
-                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── WEBSITE TYPES MARQUEE ── */}
+        <section className="wdc-conversion">
+          <div className="wdc-conversion__inner">
+            <div className="wdc-conversion__header">
+              <div className="wdc-badge">Industries We Serve</div>
+              <h2 className="wdc-conversion__title">Built for Every Business Type</h2>
+              <p className="wdc-conversion__subtitle">
+                Whether you're a freelancer, startup, or enterprise — we've built websites across every industry and know what works.
+              </p>
+            </div>
+            <div className="wdc-marquee-wrapper">
+              <div className="wdc-marquee-track">
+                {[...WEBSITE_TYPES, ...WEBSITE_TYPES].map((item, i) => (
+                  <div key={i} className="wdc-marquee-card">
+                    <div className="wdc-marquee-card__icon">{item.icon}</div>
+                    <h3 className="wdc-marquee-card__title">{item.title}</h3>
+                    <p className="wdc-marquee-card__desc">{item.desc}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── WHY WEBSITE MATTERS ── */}
-      <section className="wdc-section wdc-section--gray">
-        <div className="wdc-section__inner wdc-section__inner--narrow">
-          <div className="wdc-section__head">
-            <p className="wdc-eyebrow">Why It Matters</p>
-            <h2 className="wdc-section__title">Web Development That Actually Brings Results</h2>
-            <p className="wdc-section__sub">A website should not just "exist." It should work for you — building trust, showing your services clearly, and bringing in real inquiries.</p>
-          </div>
-          <div className="wdc-pain__grid">
-            {[
-              ["Understand in Seconds",    "When someone lands on your website, they should understand your business within seconds — who you are and what you do."],
-              ["Feel Comfortable Exploring","Simple navigation and clear content makes visitors want to stay and explore more of what you offer."],
-              ["Know How to Contact You",  "Every page guides users toward taking action — whether it's calling, filling a form, or sending a message."],
-              ["Trust Your Business",      "A clean, professional website makes your business look genuine and helps people feel confident about choosing you."],
-            ].map(([title, desc], i) => (
-              <div key={i} className="wdc-pain-card">
-                <div className="wdc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="wdc-pain-card__title">{title}</div>
-                  <div className="wdc-pain-card__desc">{desc}</div>
+        {/* ── WHY CHOOSE US ── */}
+        <section className="wdc-excellence">
+          <div className="wdc-excellence__inner">
+            <div className="wdc-excellence__header">
+              <div className="wdc-badge">
+                <IconStar /> Why Choose Us
+              </div>
+              <h2 className="wdc-excellence__title">What Sets Our Work Apart</h2>
+            </div>
+            <div className="wdc-excellence__grid">
+              {WHY_CHOOSE.map((item, i) => (
+                <div key={i} className="wdc-excellence__card">
+                  <div className="wdc-excellence__icon">{item.icon}</div>
+                  <h3 className="wdc-excellence__card-title">{item.title}</h3>
+                  <p className="wdc-excellence__card-desc">{item.desc}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── SERVICES ── */}
-      <section className="wdc-section wdc-section--white" id="services">
-        <div className="wdc-section__inner">
-          <div className="wdc-section__head">
-            <p className="wdc-eyebrow">Our Web Development Services</p>
-            <h2 className="wdc-section__title">Website Development Services in Chandigarh</h2>
-            <p className="wdc-section__sub">Every business is unique. We make your website the way you want it — fitting your way of working, not the other way around.</p>
-          </div>
-          <div className="wdc-services__grid">
-            {SERVICES.map((s, i) => (
-              <div key={i} className="wdc-service-card">
-                <div className="wdc-service-card__icon">{s.icon}</div>
-                <h3 className="wdc-service-card__name">{s.name}</h3>
-                <p className="wdc-service-card__desc">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── WEBSITE TYPES ── */}
-      <section className="wdc-section wdc-section--gray">
-        <div className="wdc-section__inner">
-          <div className="wdc-section__head">
-            <p className="wdc-eyebrow">Types of Websites We Build</p>
-            <h2 className="wdc-section__title">Not Every Website Should Be Built the Same Way</h2>
-            <p className="wdc-section__sub">We plan everything based on what actually suits your business and your goals — no fixed templates.</p>
-          </div>
-          <div className="wdc-types__grid">
-            {WEBSITE_TYPES.map((t, i) => (
-              <div key={i} className="wdc-type-card">
-                <div className="wdc-type-card__icon">{t.icon}</div>
-                <h3 className="wdc-type-card__title">{t.title}</h3>
-                <p className="wdc-type-card__desc">{t.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY CHOOSE US ── */}
-      <section className="wdc-section wdc-section--white">
-        <div className="wdc-section__inner">
-          <div className="wdc-section__head">
-            <p className="wdc-eyebrow">Why Choose Social Theka</p>
-            <h2 className="wdc-section__title">Why Social Theka is a Top Web Development Company in Chandigarh</h2>
-            <p className="wdc-section__sub">No overpromising, no complicated terms — just clear work that actually makes sense for your business.</p>
-          </div>
-          <div className="wdc-why__grid">
-            {WHY_US.map((item, i) => (
-              <div key={i} className="wdc-why-card">
-                <div className="wdc-why-card__icon">{item.icon}</div>
-                <h3 className="wdc-why-card__title">{item.title}</h3>
-                <p className="wdc-why-card__desc">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROCESS ── */}
-      <section className="wdc-section wdc-section--gray">
-        <div className="wdc-section__inner">
-          <div className="wdc-section__head">
-            <p className="wdc-eyebrow">Our Process</p>
-            <h2 className="wdc-section__title">Web Development in Chandigarh – From Idea to Execution</h2>
-            <p className="wdc-section__sub">Every project follows a structured and clear process so you always know what's happening.</p>
-          </div>
-          <div className="wdc-process__grid">
-            {PROCESS.map((p, i) => (
-              <div key={i} className="wdc-process-card">
-                <div className="wdc-process-card__step">{p.step}</div>
-                <div>
-                  <div className="wdc-process-card__title">{p.title}</div>
-                  <div className="wdc-process-card__desc">{p.desc}</div>
+        {/* ── PROCESS ── */}
+        <section className="wdc-process">
+          <div className="wdc-process__inner">
+            <div className="wdc-process__header">
+              <div className="wdc-badge">How We Work</div>
+              <h2 className="wdc-process__title">Our Development Process</h2>
+              <p className="wdc-process__subtitle">
+                Transparent, collaborative, and built around your timeline.
+              </p>
+            </div>
+            <div className="wdc-process__grid">
+              {PROCESS.map((step, i) => (
+                <div key={i} className="wdc-process__card">
+                  <span className="wdc-process__number">{step.num}</span>
+                  <div className="wdc-process__content">
+                    <h3 className="wdc-process__card-title">{step.title}</h3>
+                    <p className="wdc-process__card-desc">{step.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── PROBLEMS WE FIX ── */}
-      <section className="wdc-section wdc-section--white">
-        <div className="wdc-section__inner">
-          <div className="wdc-section__head">
-            <p className="wdc-eyebrow">Common Website Problems — Fixed</p>
-            <h2 className="wdc-section__title">A Lot of Businesses Come to Us with Similar Issues</h2>
-            <p className="wdc-section__sub">We go step by step, find what's wrong, and improve it properly — not just patch things.</p>
-          </div>
-          <div className="wdc-pain__grid">
-            {PROBLEMS.map(([title, desc], i) => (
-              <div key={i} className="wdc-pain-card">
-                <div className="wdc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="wdc-pain-card__title">{title}</div>
-                  <div className="wdc-pain-card__desc">{desc}</div>
+        {/* ── PROBLEMS WE SOLVE ── */}
+        <section className="wdc-solutions">
+          <div className="wdc-solutions__inner">
+            <div className="wdc-solutions__header">
+              <div className="wdc-badge">Problems We Solve</div>
+              <h2 className="wdc-solutions__title">Recognise Any of These?</h2>
+            </div>
+            <div className="wdc-solutions__grid">
+              {PROBLEMS.map((item, i) => (
+                <div key={i} className="wdc-solutions__card">
+                  <div className="wdc-solutions__icon">{item.icon}</div>
+                  <div className="wdc-solutions__content">
+                    <h3 className="wdc-solutions__card-title">{item.title}</h3>
+                    <p className="wdc-solutions__card-desc">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── FAQ ── */}
-      <section className="wdc-section wdc-section--gray">
-        <div className="wdc-section__inner wdc-section__inner--narrow">
-          <div className="wdc-section__head">
-            <p className="wdc-eyebrow">FAQs</p>
-            <h2 className="wdc-section__title">FAQs – Web Development in Chandigarh</h2>
+        {/* ── FAQ ── */}
+        <section className="wdc-faq">
+          <div className="wdc-faq__inner">
+            <div className="wdc-faq__header">
+              <div className="wdc-badge">FAQ</div>
+              <h2 className="wdc-faq__title">Frequently Asked Questions about SEO Services</h2>
+            </div>
+            <div className="wdc-faq__list">
+              {FAQS.map((item, i) => (
+                <div key={i} className={`wdc-faq__item${openFaq === i ? " wdc-faq__item--open" : ""}`}>
+                  <button className="wdc-faq__q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                    <span>{item.q}</span>
+                    <span className="wdc-faq__icon">⌄</span>
+                  </button>
+                  {openFaq === i && <div className="wdc-faq__a">{item.a}</div>}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="wdc-faq__list">
-            {FAQS.map((faq, i) => (
-              <div key={i} className={`wdc-faq__item ${openFaq === i ? "wdc-faq__item--open" : ""}`}>
-                <button className="wdc-faq__q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
-                  <span>{faq.q}</span>
-                  <span className="wdc-faq__icon">{openFaq === i ? "−" : "+"}</span>
-                </button>
-                {openFaq === i && <div className="wdc-faq__a">{faq.a}</div>}
-              </div>
-            ))}
+        </section>
+
+        {/* ── CTA ── */}
+        <section className="wdc-cta">
+          <div className="wdc-cta__inner">
+            <div className="wdc-cta__content">
+              <h2 className="wdc-cta__title">Ready to Build Something Great?</h2>
+              <p className="wdc-cta__subtitle">
+                Tell us about your project — we'll come back with ideas, a timeline, and a clear proposal.
+              </p>
+            </div>
+            <a href="/contact" className="wdc-btn-primary wdc-btn-primary--lg">
+              Get a Free Quote <IconArrowRight />
+            </a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── CTA ── */}
-      <section className="wdc-cta-banner">
-        <div className="wdc-cta-banner__inner">
-          <h2 className="wdc-cta-banner__title">
-            Let's Build Your Website with Social Theka
-          </h2>
-          <p className="wdc-cta-banner__sub">
-            If you're looking for a web development company in Chandigarh that actually understands your needs, Social Theka is here to help. Let's create a website that not only looks good but also works properly for your business.
-          </p>
-          <a href="#contact" className="wdc-btn-primary wdc-btn-primary--lg">
-            Start Your Project <IconArrow />
-          </a>
-        </div>
-      </section>
-
-    </div>
+      </div>
     </ServiceLayout>
   );
 }
