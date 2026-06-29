@@ -974,8 +974,6 @@ function CTA() {
   );
 }
 
-import topUpBtn from "../assets/TopUpButton.png";
-
 /* ── SCROLL TO TOP ───────────────────────────────── */
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -1001,15 +999,15 @@ function ScrollToTop() {
     });
   };
   
-  return (
+  return visible ? (
     <button 
-      className={`scroll-top ${visible ? 'visible' : ''}`}
+      className="scroll-top"
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >
-      <img src={topUpBtn} alt="Scroll to top" />
+      ↑
     </button>
-  );
+  ) : null;
 }
 
 /* ── FLOATING WHATSAPP ────────────────────────────── */

@@ -9,6 +9,10 @@
   color: #111827;
   background: #fff;
   line-height: 1.6;
+  min-height: 100vh;
+  display: block !important;
+  visibility: visible !important;
+  overflow: visible !important;
 }
 
 /* â”€â”€ EYEBROW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -299,6 +303,10 @@
 /* â”€â”€ SHARED SECTIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ts-section {
   padding: 80px 40px;
+  position: relative;
+  z-index: 1;
+  display: block !important;
+  visibility: visible !important;
 }
 .ts-section--white {
   background: #fff;
@@ -312,6 +320,8 @@
 .ts-section__inner {
   max-width: 1280px;
   margin: 0 auto;
+  display: block !important;
+  visibility: visible !important;
 }
 .ts-section__head {
   text-align: center;

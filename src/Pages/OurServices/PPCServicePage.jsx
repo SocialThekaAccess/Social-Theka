@@ -59,6 +59,22 @@ const IconUsers = () => (
     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
     <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
 );
+const IconCursor = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>
+);
+const IconTrendingUp = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+);
+const IconDollar = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+);
+const IconEye = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+);
 
 const STATS = [
   { value: "500+", label: "Campaigns Managed" },
@@ -129,85 +145,67 @@ export default function PPCServicePage() {
       {/* ── HERO ── */}
       <section className="ppc-hero">
         <div className="ppc-hero__inner">
-          {/* LEFT COLUMN */}
           <div className="ppc-hero__left">
             <div className="ppc-hero__badge">
               <span className="ppc-hero__badge-dot" />
-              PPC Services — Chandigarh
+              PPC ADVERTISING - CHANDIGARH
             </div>
             <h1 className="ppc-hero__title">
-              Best PPC Services in Chandigarh – Drive Clicks, Leads &amp; Real Growth
+              Pay-Per-Click Advertising<br/>
+              <span className="ppc-hero__title-accent">That Actually Converts</span>
             </h1>
-            <p className="ppc-hero__sub">
-              Creating ads is not the hard part — getting real results is where most businesses face challenges. At Social Theka, we offer PPC services in Chandigarh focused on real business growth, not just traffic.
+            <p className="ppc-hero__desc">
+              Most businesses waste money on PPC ads that don't convert. They get clicks but no customers. They see traffic but no real growth.
             </p>
-            <div className="ppc-hero__ctas">
-              <a href="#contact" className="ppc-btn-primary">Get Free PPC Audit <IconArrow /></a>
-              <a href="#platforms" className="ppc-btn-outline">View Platforms</a>
-            </div>
-            {/* Mini stats */}
-            <div className="ppc-hero__stats">
-              <div className="ppc-hero__stat">
-                <span className="ppc-hero__stat-val">500+</span>
-                <span className="ppc-hero__stat-label">Campaigns Managed</span>
-              </div>
-              <div className="ppc-hero__stat-divider" />
-              <div className="ppc-hero__stat">
-                <span className="ppc-hero__stat-val">3.2x</span>
-                <span className="ppc-hero__stat-label">Avg. ROI Delivered</span>
-              </div>
-              <div className="ppc-hero__stat-divider" />
-              <div className="ppc-hero__stat">
-                <span className="ppc-hero__stat-val">98%</span>
-                <span className="ppc-hero__stat-label">Client Retention</span>
-              </div>
-            </div>
+            <p className="ppc-hero__desc">
+              At Social Theka, we run PPC campaigns in Chandigarh that are built around one goal: turning your ad spend into actual revenue. We focus on the metrics that matter—conversions, cost per lead, and ROI.
+            </p>
+            <p className="ppc-hero__desc">
+              Whether it's Google Ads, Facebook, Instagram, or LinkedIn, we know how to get your ads in front of people who are ready to buy. No fluff. No vanity metrics. Just campaigns that drive results.
+            </p>
           </div>
 
-          {/* RIGHT COLUMN */}
           <div className="ppc-hero__right">
-            <div className="ppc-hero__cards">
-              <div className="ppc-hero__card">
-                <div className="ppc-hero__card-icon"><IconGoogle /></div>
-                <div>
-                  <div className="ppc-hero__card-name">Google Ads</div>
-                  <div className="ppc-hero__card-desc">Top of search results</div>
-                </div>
+            <div className="ppc-hero__card">
+              <div className="ppc-hero__card-icon"><IconGoogle /></div>
+              <div className="ppc-hero__card-content">
+                <h3 className="ppc-hero__card-title">Google Ads</h3>
+                <p className="ppc-hero__card-subtitle">Search & display reach</p>
               </div>
-              <div className="ppc-hero__card">
-                <div className="ppc-hero__card-icon"><IconFacebook /></div>
-                <div>
-                  <div className="ppc-hero__card-name">Facebook Ads</div>
-                  <div className="ppc-hero__card-desc">Interest-based targeting</div>
-                </div>
+            </div>
+            <div className="ppc-hero__card">
+              <div className="ppc-hero__card-icon"><IconFacebook /></div>
+              <div className="ppc-hero__card-content">
+                <h3 className="ppc-hero__card-title">Facebook</h3>
+                <p className="ppc-hero__card-subtitle">Ads & local reach</p>
               </div>
-              <div className="ppc-hero__card">
-                <div className="ppc-hero__card-icon"><IconInstagram /></div>
-                <div>
-                  <div className="ppc-hero__card-name">Instagram Ads</div>
-                  <div className="ppc-hero__card-desc">Visual campaigns</div>
-                </div>
+            </div>
+            <div className="ppc-hero__card">
+              <div className="ppc-hero__card-icon"><IconLinkedin /></div>
+              <div className="ppc-hero__card-content">
+                <h3 className="ppc-hero__card-title">LinkedIn</h3>
+                <p className="ppc-hero__card-subtitle">B2B & professional</p>
               </div>
-              <div className="ppc-hero__card">
-                <div className="ppc-hero__card-icon"><IconYoutube /></div>
-                <div>
-                  <div className="ppc-hero__card-name">YouTube Ads</div>
-                  <div className="ppc-hero__card-desc">Video advertising</div>
-                </div>
+            </div>
+            <div className="ppc-hero__card">
+              <div className="ppc-hero__card-icon"><IconInstagram /></div>
+              <div className="ppc-hero__card-content">
+                <h3 className="ppc-hero__card-title">Instagram</h3>
+                <p className="ppc-hero__card-subtitle">Targeted, not boosted</p>
               </div>
-              <div className="ppc-hero__card">
-                <div className="ppc-hero__card-icon"><IconLinkedin /></div>
-                <div>
-                  <div className="ppc-hero__card-name">LinkedIn Ads</div>
-                  <div className="ppc-hero__card-desc">B2B lead generation</div>
-                </div>
+            </div>
+            <div className="ppc-hero__card">
+              <div className="ppc-hero__card-icon"><IconYoutube /></div>
+              <div className="ppc-hero__card-content">
+                <h3 className="ppc-hero__card-title">YouTube</h3>
+                <p className="ppc-hero__card-subtitle">Planned & consistent</p>
               </div>
-              <div className="ppc-hero__card ppc-hero__card--highlight">
-                <div className="ppc-hero__card-icon"><IconTarget /></div>
-                <div>
-                  <div className="ppc-hero__card-name">40% Less</div>
-                  <div className="ppc-hero__card-desc">Cost per lead</div>
-                </div>
+            </div>
+            <div className="ppc-hero__card ppc-hero__card--highlight">
+              <div className="ppc-hero__card-icon ppc-hero__card-icon--highlight"><IconChart /></div>
+              <div className="ppc-hero__card-content">
+                <h3 className="ppc-hero__card-title">Real Growth</h3>
+                <p className="ppc-hero__card-subtitle">Not just activity</p>
               </div>
             </div>
           </div>
@@ -215,28 +213,23 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── PERFORMANCE ── */}
-      <section className="ppc-section ppc-section--white">
-        <div className="ppc-section__inner ppc-section__inner--narrow">
-          <div className="ppc-section__head">
-            <p className="ppc-eyebrow">Performance That Actually Matters</p>
-            <h2 className="ppc-section__title">Results That Truly Impact Your Business</h2>
-            <p className="ppc-section__sub">
-              As a top PPC company in Chandigarh, we focus on outcomes that matter — not just vanity metrics.
-            </p>
+      <section className="ppc-performance">
+        <div className="ppc-performance__inner">
+          <div className="ppc-performance__header">
+            <span className="ppc-badge">Performance-Driven Results</span>
+            <h2 className="ppc-performance__title">Outcomes That Drive Revenue</h2>
           </div>
-          <div className="ppc-pain__grid">
+          <div className="ppc-performance__grid">
             {[
-              ["High-Quality Traffic",      "We bring in relevant, high-intent visitors who are actually interested in your services."],
-              ["Improved Conversion Rates", "We optimize ads and landing pages so more visitors become paying customers."],
-              ["Reduced Cost Per Lead",     "Smarter targeting and continuous optimization lower your cost per acquisition."],
-              ["Measurable ROI",            "Every rupee is tracked. You always know what your ad spend is delivering."],
-            ].map(([title, desc], i) => (
-              <div key={i} className="ppc-pain-card">
-                <div className="ppc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="ppc-pain-card__title">{title}</div>
-                  <div className="ppc-pain-card__desc">{desc}</div>
-                </div>
+              { icon: <IconCursor />, title: "High-Intent Traffic", desc: "Targeted visitors with genuine purchase intent and immediate conversion potential." },
+              { icon: <IconTrendingUp />, title: "Conversion Excellence", desc: "Optimized campaigns and landing pages engineered to maximize customer acquisition." },
+              { icon: <IconDollar />, title: "Cost Efficiency", desc: "Advanced targeting and continuous optimization that reduces acquisition costs." },
+              { icon: <IconEye />, title: "Transparent ROI", desc: "Real-time tracking and detailed analytics for complete campaign visibility." },
+            ].map((item, i) => (
+              <div key={i} className="ppc-performance__card">
+                <div className="ppc-performance__icon">{item.icon}</div>
+                <h3 className="ppc-performance__card-title">{item.title}</h3>
+                <p className="ppc-performance__card-desc">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -244,18 +237,20 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── PLATFORMS ── */}
-      <section className="ppc-section ppc-section--gray" id="platforms">
-        <div className="ppc-section__inner">
-          <div className="ppc-section__head">
-            <p className="ppc-eyebrow">Result-Driven PPC Services in Chandigarh</p>
-            <h2 className="ppc-section__title">Your Audience is Everywhere. So Are We.</h2>
-            <p className="ppc-section__sub">We run high-performance campaigns across every major platform — tailored to where your customers actually spend time.</p>
+      <section className="ppc-platforms" id="platforms">
+        <div className="ppc-platforms__inner">
+          <div className="ppc-platforms__header">
+            <span className="ppc-badge">Multi-Platform Expertise</span>
+            <h2 className="ppc-platforms__title">Strategic Advertising Across All Channels</h2>
+            <p className="ppc-platforms__subtitle">Enterprise-grade campaigns optimized for maximum reach and conversion on every major platform.</p>
           </div>
           <div className="ppc-platforms__grid">
             {PLATFORMS.map((p, i) => (
               <div key={i} className="ppc-platform-card">
-                <div className="ppc-platform-card__icon">{p.icon}</div>
-                <h3 className="ppc-platform-card__name">{p.name}</h3>
+                <div className="ppc-platform-card__header">
+                  <div className="ppc-platform-card__icon">{p.icon}</div>
+                  <h3 className="ppc-platform-card__name">{p.name}</h3>
+                </div>
                 <p className="ppc-platform-card__desc">{p.desc}</p>
                 <div className="ppc-platform-card__tags">
                   {p.tags.map(t => <span key={t} className="ppc-tag">{t}</span>)}
@@ -267,25 +262,24 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── TURN CLICKS INTO CUSTOMERS ── */}
-      <section className="ppc-section ppc-section--white">
-        <div className="ppc-section__inner ppc-section__inner--narrow">
-          <div className="ppc-section__head">
-            <p className="ppc-eyebrow">Turn Clicks into Customers</p>
-            <h2 className="ppc-section__title">Best PPC Services in Chandigarh — Focused on Conversions</h2>
-            <p className="ppc-section__sub">Getting clicks is only the first step — what matters is turning those clicks into customers.</p>
+      <section className="ppc-conversion">
+        <div className="ppc-conversion__inner">
+          <div className="ppc-conversion__header">
+            <span className="ppc-badge">Conversion Engineering</span>
+            <h2 className="ppc-conversion__title">Precision-Targeted Campaign Architecture</h2>
           </div>
-          <div className="ppc-pain__grid">
+          <div className="ppc-conversion__grid">
             {[
-              ["Attract the Right Audience",    "We focus on those who have a sincere interest in your goods or services, so your ads reach people more likely to convert."],
-              ["Guide Users Toward Action",     "We present ads which push users to take the next step with confidence — clear messaging and strong CTAs that improve engagement."],
-              ["Improve Conversion Rates",      "We optimize campaigns so more visitors turn into leads and customers. Small improvements in strategy lead to better overall results."],
-              ["Maximize ROI",                  "We make sure your ad spend delivers the best possible returns by reducing waste and improving performance over time."],
+              ["Strategic Targeting", "Advanced audience segmentation ensures maximum relevance and conversion probability."],
+              ["Action-Driven Design", "Compelling ad creative and strategic CTAs engineered for maximum engagement."],
+              ["Conversion Optimization", "Continuous A/B testing and data analysis for sustained performance improvement."],
+              ["ROI Maximization", "Intelligent budget allocation and bid strategies that eliminate waste and amplify returns."],
             ].map(([title, desc], i) => (
-              <div key={i} className="ppc-pain-card">
-                <div className="ppc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="ppc-pain-card__title">{title}</div>
-                  <div className="ppc-pain-card__desc">{desc}</div>
+              <div key={i} className="ppc-conversion__card">
+                <div className="ppc-conversion__number">{String(i + 1).padStart(2, '0')}</div>
+                <div className="ppc-conversion__content">
+                  <h3 className="ppc-conversion__card-title">{title}</h3>
+                  <p className="ppc-conversion__card-desc">{desc}</p>
                 </div>
               </div>
             ))}
@@ -294,19 +288,18 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── WHY US ── */}
-      <section className="ppc-section ppc-section--gray">
-        <div className="ppc-section__inner">
-          <div className="ppc-section__head">
-            <p className="ppc-eyebrow">Why Choose Social Theka</p>
-            <h2 className="ppc-section__title">Why Social Theka is a Top PPC Company in Chandigarh</h2>
-            <p className="ppc-section__sub">We don't complicate things — we focus on what actually works and brings results.</p>
+      <section className="ppc-excellence">
+        <div className="ppc-excellence__inner">
+          <div className="ppc-excellence__header">
+            <span className="ppc-badge ppc-badge--dark">The Social Theka Advantage</span>
+            <h2 className="ppc-excellence__title">Premium PPC Management</h2>
           </div>
-          <div className="ppc-why__grid">
+          <div className="ppc-excellence__grid">
             {WHY_US.map((item, i) => (
-              <div key={i} className="ppc-why-card">
-                <div className="ppc-why-card__icon">{item.icon}</div>
-                <h3 className="ppc-why-card__title">{item.title}</h3>
-                <p className="ppc-why-card__desc">{item.desc}</p>
+              <div key={i} className="ppc-excellence__card">
+                <div className="ppc-excellence__icon">{item.icon}</div>
+                <h3 className="ppc-excellence__card-title">{item.title}</h3>
+                <p className="ppc-excellence__card-desc">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -314,19 +307,19 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── PROCESS ── */}
-      <section className="ppc-section ppc-section--white">
-        <div className="ppc-section__inner">
-          <div className="ppc-section__head">
-            <p className="ppc-eyebrow">Our Process</p>
-            <h2 className="ppc-section__title">Social Theka's Step-by-Step PPC Process</h2>
+      <section className="ppc-process">
+        <div className="ppc-process__inner">
+          <div className="ppc-process__header">
+            <span className="ppc-badge">Strategic Methodology</span>
+            <h2 className="ppc-process__title">Our Proven Framework</h2>
           </div>
           <div className="ppc-process__grid">
             {PROCESS.map((p, i) => (
-              <div key={i} className="ppc-process-card">
-                <div className="ppc-process-card__step">{p.step}</div>
-                <div>
-                  <div className="ppc-process-card__title">{p.title}</div>
-                  <div className="ppc-process-card__desc">{p.desc}</div>
+              <div key={i} className="ppc-process__card">
+                <div className="ppc-process__number">{p.step}</div>
+                <div className="ppc-process__content">
+                  <h3 className="ppc-process__card-title">{p.title}</h3>
+                  <p className="ppc-process__card-desc">{p.desc}</p>
                 </div>
               </div>
             ))}
@@ -335,20 +328,19 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── PAIN POINTS ── */}
-      <section className="ppc-section ppc-section--gray">
-        <div className="ppc-section__inner">
-          <div className="ppc-section__head">
-            <p className="ppc-eyebrow">Common PPC Problems — Solved</p>
-            <h2 className="ppc-section__title">How We Help You Overcome PPC Roadblocks</h2>
-            <p className="ppc-section__sub">Many businesses struggle with common PPC issues. At Social Theka, we help solve them with better strategy and continuous optimization.</p>
+      <section className="ppc-solutions">
+        <div className="ppc-solutions__inner">
+          <div className="ppc-solutions__header">
+            <span className="ppc-badge ppc-badge--dark">Challenge Resolution</span>
+            <h2 className="ppc-solutions__title">Strategic Solutions to Common Obstacles</h2>
           </div>
-          <div className="ppc-pain__grid">
+          <div className="ppc-solutions__grid">
             {PAIN_POINTS.map(([title, desc], i) => (
-              <div key={i} className="ppc-pain-card">
-                <div className="ppc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="ppc-pain-card__title">{title}</div>
-                  <div className="ppc-pain-card__desc">{desc}</div>
+              <div key={i} className="ppc-solutions__card">
+                <div className="ppc-solutions__icon"><IconCheck /></div>
+                <div className="ppc-solutions__content">
+                  <h3 className="ppc-solutions__card-title">{title}</h3>
+                  <p className="ppc-solutions__card-desc">{desc}</p>
                 </div>
               </div>
             ))}
@@ -357,18 +349,18 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── COMPLETE SOLUTIONS ── */}
-      <section className="ppc-section ppc-section--white">
-        <div className="ppc-section__inner">
-          <div className="ppc-section__head">
-            <p className="ppc-eyebrow">Complete PPC Solutions</p>
-            <h2 className="ppc-section__title">Social Theka Offers Comprehensive PPC Solutions</h2>
+      <section className="ppc-services">
+        <div className="ppc-services__inner">
+          <div className="ppc-services__header">
+            <span className="ppc-badge">Comprehensive Services</span>
+            <h2 className="ppc-services__title">Full-Spectrum PPC Solutions</h2>
           </div>
-          <div className="ppc-why__grid">
+          <div className="ppc-services__grid">
             {SOLUTIONS.map((s, i) => (
-              <div key={i} className="ppc-why-card">
-                <div className="ppc-why-card__icon"><IconChart /></div>
-                <h3 className="ppc-why-card__title">{s.title}</h3>
-                <p className="ppc-why-card__desc">{s.desc}</p>
+              <div key={i} className="ppc-services__card">
+                <div className="ppc-services__icon"><IconChart /></div>
+                <h3 className="ppc-services__card-title">{s.title}</h3>
+                <p className="ppc-services__card-desc">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -376,20 +368,20 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="ppc-section ppc-section--gray">
-        <div className="ppc-section__inner ppc-section__inner--narrow">
-          <div className="ppc-section__head">
-            <p className="ppc-eyebrow">FAQs</p>
-            <h2 className="ppc-section__title">Questions You're Probably Thinking</h2>
+      <section className="ppc-faq-section">
+        <div className="ppc-faq-section__inner">
+          <div className="ppc-faq-header">
+            <span className="ppc-faq-badge">Common Inquiries</span>
+            <h2 className="ppc-faq-title">Frequently Asked Questions</h2>
           </div>
-          <div className="ppc-faq__list">
+          <div className="ppc-faq-list">
             {FAQS.map((faq, i) => (
-              <div key={i} className={`ppc-faq__item ${openFaq === i ? "ppc-faq__item--open" : ""}`}>
-                <button className="ppc-faq__q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
-                  <span>{faq.q}</span>
-                  <span className="ppc-faq__icon">{openFaq === i ? "−" : "+"}</span>
+              <div key={i} className={`ppc-faq-card ${openFaq === i ? "ppc-faq-card--open" : ""}`}>
+                <button className="ppc-faq-question" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                  <span className="ppc-faq-question-text">{faq.q}</span>
+                  <span className="ppc-faq-icon">{openFaq === i ? "−" : "+"}</span>
                 </button>
-                {openFaq === i && <div className="ppc-faq__a">{faq.a}</div>}
+                {openFaq === i && <div className="ppc-faq-answer">{faq.a}</div>}
               </div>
             ))}
           </div>
@@ -397,16 +389,18 @@ export default function PPCServicePage() {
       </section>
 
       {/* ── CTA BANNER ── */}
-      <section className="ppc-cta-banner">
-        <div className="ppc-cta-banner__inner">
-          <h2 className="ppc-cta-banner__title">
-            Let's Grow Your Business with the Best PPC Services in Chandigarh
-          </h2>
-          <p className="ppc-cta-banner__sub">
-            Let's build campaigns that don't just bring clicks — but bring real results. Free PPC audit included.
-          </p>
+      <section className="ppc-cta">
+        <div className="ppc-cta__inner">
+          <div className="ppc-cta__content">
+            <h2 className="ppc-cta__title">
+              Ready to Scale Your Growth?
+            </h2>
+            <p className="ppc-cta__subtitle">
+              Partner with Chandigarh's premier PPC agency. Complimentary strategy audit included.
+            </p>
+          </div>
           <a href="#contact" className="ppc-btn-primary ppc-btn-primary--lg">
-            Book a Free Consultation <IconArrow />
+            Schedule Consultation <IconArrow />
           </a>
         </div>
       </section>
