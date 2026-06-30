@@ -1,4 +1,4 @@
-﻿/* ══════════════════════════════════════════
+/* ══════════════════════════════════════════
    Thekastory.css — ts- prefix — v2.0
    Red (#BE123C) ONLY on accents / CTAs
    FIXED: Hero section spacing and content visibility
@@ -299,7 +299,6 @@
 .ts-section {
   padding: 60px 40px;
   position: relative;
-  min-height: 200px;
   border-top: 2px solid #f0f0f0;
 }
 .ts-section--white {

@@ -7,7 +7,7 @@ import Webdesignchandigarh from './Pages/OurServices/Webdesignchandigarh'
 import SEOchandigarh from './Pages/OurServices/SEOchandigarh'
 import VideoEditingChd from './Pages/OurServices/VideoEditingChd'
 import SocialMediachandigarh from './Pages/OurServices/SocialMediachandigarh'
-import ThekaStory from './ThekaStory/Thekastory'
+import ThekaStory from './ThekaStory/ThekaStory'
 import ContactUs from './ContactUs/ContactUs'
 import Navbar from './Component/Navbar'
 
