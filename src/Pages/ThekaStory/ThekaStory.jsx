@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import "./Thekastory.css";
-import footerLogo from "../assets/FooterLogo.png";
-
+import "./ThekaStory.css";
+import footerLogo from "../../assets/FooterLogo.png";
 /* ── SVG Icons ────────────────────────────────── */
 const IconStar = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -58,7 +57,7 @@ const PILLARS = [
 ];
 
 const STATS = [
-  { val: "5+",   label: "Years in business",        sub: "We pride ourselves on our proven track record." },
+  { val: "10",   label: "Years in business",        sub: "We pride ourselves on our proven track record." },
   { val: "10/10", label: "Award winning campaigns", sub: "Quality is at the heart of everything we do." },
   { val: "9/10",  label: "Global reach",            sub: "Our dedicated support team is always ready to assist you." },
 ];

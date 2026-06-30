@@ -59,11 +59,11 @@ const CHANDIGARH_SERVICES = [
 ];
 
 const NAV_LINKS = [
-  { label: "Home",         href: "#home",     active: true },
-  { label: "Our Services", href: "#services", dropdown: "services" },
-  { label: "Theka Story",  href: "#story",    to: "theka-story" },
-  { label: "Blogs",        href: "#blog",     dropdown: true },
-  { label: "Contact Us",   href: "#contact",  to: "contact" },
+  { label: "Home",         href: "#", dropdown: false, to: "home" },
+  { label: "Our Services", href: "#", dropdown: "services" },
+  { label: "Theka Story",  href: "#", to: "theka-story" },
+  { label: "Blogs",        href: "#", dropdown: true },
+  { label: "Contact Us",   href: "#", to: "contact" },
 ];
 
 export default function Navbar({ onNavigate, currentPage }) {
@@ -80,6 +80,22 @@ export default function Navbar({ onNavigate, currentPage }) {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
+  useEffect(() => {
+    const pageToLabel = {
+      home: "Home",
+      "theka-story": "Theka Story",
+      contact: "Contact Us",
+      ppc: "Our Services",
+      "webdev-chandigarh": "Our Services",
+      "webdesign-chandigarh": "Our Services",
+      "seo-chandigarh": "Our Services",
+      "video-chandigarh": "Our Services",
+      "social-chandigarh": "Our Services",
+    };
+
+    setActive(pageToLabel[currentPage] || "Home");
+  }, [currentPage]);
+
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
     setServicesOpen(true);
@@ -92,7 +108,16 @@ export default function Navbar({ onNavigate, currentPage }) {
     setActive(label);
     setMenuOpen(false);
     setServicesOpen(false);
-    if (page) onNavigate?.(page);
+
+    // Remove old hash like #story so page does not open from middle/blank area
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+
+    if (page) {
+      onNavigate?.(page);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const leftCol  = CHANDIGARH_SERVICES.filter((_, i) => i % 2 === 0);
@@ -125,7 +150,7 @@ export default function Navbar({ onNavigate, currentPage }) {
         <div className="nb__inner">
 
           {/* Logo */}
-          <a href="#home" className="nb__logo" onClick={() => navigateTo("home", "Home")}>
+          <a href="#" className="nb__logo" onClick={(e) => { e.preventDefault(); navigateTo("home", "Home"); }}>
             <img
               src={logo}
               alt="Social Theka"
@@ -148,7 +173,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                   <a
                     href={link.href}
                     className={`nb__link ${active === link.label || servicesOpen ? "nb__link--active" : ""}`}
-                    onClick={() => navigateTo(null, link.label)}
+                    onClick={(e) => { e.preventDefault(); navigateTo(null, link.label); }}
                   >
                     {link.label}
                     <span className={`nb__chevron ${servicesOpen ? "nb__chevron--open" : ""}`}>^</span>
@@ -212,7 +237,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                   key={link.label}
                   href={link.href}
                   className={`nb__link ${active === link.label ? "nb__link--active" : ""}`}
-                  onClick={() => navigateTo(link.label === "Home" ? "home" : link.to, link.label)}
+                  onClick={(e) => { e.preventDefault(); navigateTo(link.to, link.label); }}
                 >
                   {link.label}
                   {link.dropdown && <span className="nb__chevron">^</span>}
@@ -258,7 +283,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                 key={link.label}
                 href={link.href}
                 className={`nb__mobile-link ${active === link.label ? "nb__mobile-link--active" : ""}`}
-                onClick={() => navigateTo(link.label === "Home" ? "home" : link.to, link.label)}
+                onClick={(e) => { e.preventDefault(); navigateTo(link.to, link.label); }}
               >
                 {link.label}
               </a>
@@ -278,7 +303,7 @@ export default function Navbar({ onNavigate, currentPage }) {
               </div>
             </div>
             <div className="nb__mobile-ctas">
-              <a href="#contact" className="nb__btn-solid" onClick={() => setMenuOpen(false)}>Book a Meeting</a>
+              <a href="#" className="nb__btn-solid" onClick={(e) => { e.preventDefault(); navigateTo("contact", "Contact Us"); }}>Book a Meeting</a>
             </div>
           </div>
         )}

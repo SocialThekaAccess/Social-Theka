@@ -16,6 +16,9 @@
 .ts-eyebrow {
   display: inline-flex;
   align-items: center;
+  width: fit-content;
+  padding: 8px 18px;
+  white-space: nowrap;
   gap: 8px;
   font-size: 12px;
   font-weight: 700;
@@ -25,7 +28,7 @@
   background: #fff7f8;
   border: 1px solid rgba(190,18,60,0.18);
   border-radius: 100px;
-  padding: 5px 14px;
+  /* padding: 5px 14px; */
   margin-bottom: 16px;
 }
 .ts-eyebrow--light {
@@ -937,4 +940,35 @@
     height: 42px;
     font-size: 18px;
   }
+}
+
+.ts-page {
+  display: block;
+  min-height: auto;
+  overflow: visible;
+}
+
+.ts-hero {
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+.ts-hero__inner {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+.ts-section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.ts-section--white,
+.ts-section--gray,
+.ts-section--dark {
+  display: block !important;
 }
