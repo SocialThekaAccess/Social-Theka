@@ -680,10 +680,44 @@
 /* ── RESPONSIVE ──────────────────────────── */
 @media (max-width: 1100px) {
   .wdc-hero__inner { grid-template-columns: 1fr; gap: 45px; }
+  .wdc-hero__left { max-width: 100%; }
+  .wdc-hero__right { max-width: 600px; margin: 0 auto; }
+  .wdc-performance__grid,
+  .wdc-platforms__grid,
+  .wdc-excellence__grid,
+  .wdc-process__grid,
+  .wdc-solutions__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .wdc-hero { padding: 48px 32px 56px; }
+  .wdc-hero__badge { font-size: 12px; margin-bottom: 24px; }
+  .wdc-hero__title { margin-bottom: 20px; }
+  .wdc-hero__desc { font-size: 14.5px; margin-bottom: 16px; }
+  .wdc-performance,
+  .wdc-platforms,
+  .wdc-conversion,
+  .wdc-excellence,
+  .wdc-process,
+  .wdc-solutions,
+  .wdc-faq { padding: 48px 32px; }
+  .wdc-btn-primary { padding: 13px 28px; font-size: 13.5px; }
+  .wdc-btn-primary--lg { padding: 15px 36px; font-size: 14.5px; }
+  .wdc-cta { padding: 50px 32px; }
 }
 @media (max-width: 768px) {
   .wdc-hero { padding: 45px 24px 50px; }
-  .wdc-hero__right { grid-template-columns: 1fr; }
+  .wdc-hero__inner { gap: 40px; }
+  .wdc-hero__right { grid-template-columns: 1fr; max-width: 100%; }
+  .wdc-hero__badge { font-size: 11.5px; margin-bottom: 22px; }
+  .wdc-hero__title { margin-bottom: 18px; }
+  .wdc-hero__desc { font-size: 14px; margin-bottom: 14px; }
+  .wdc-hero__card { padding: 22px 18px; }
+  .wdc-hero__card-icon { width: 40px; height: 40px; }
+  .wdc-hero__card-title { font-size: 15px; }
+  .wdc-hero__card-subtitle { font-size: 12.5px; }
   .wdc-performance,
   .wdc-platforms,
   .wdc-conversion,
@@ -691,8 +725,22 @@
   .wdc-process,
   .wdc-solutions,
   .wdc-faq { padding: 40px 24px; }
+  .wdc-performance__grid,
+  .wdc-platforms__grid,
+  .wdc-excellence__grid,
+  .wdc-process__grid,
+  .wdc-solutions__grid { grid-template-columns: 1fr; gap: 14px; }
+  .wdc-marquee-card { width: 280px; padding: 22px 20px; }
+  .wdc-btn-primary { padding: 12px 26px; font-size: 13px; width: 100%; justify-content: center; }
+  .wdc-btn-primary--lg { padding: 14px 32px; font-size: 14px; }
+  .wdc-badge { font-size: 10.5px; padding: 7px 18px; }
+  .wdc-faq__list { gap: 10px; }
+  .wdc-faq__q { padding: 18px 20px; }
+  .wdc-faq__q span:first-child { font-size: 14.5px; }
+  .wdc-faq__a { padding: 0 20px 18px; font-size: 13.5px; }
+  .wdc-faq__icon { font-size: 20px; }
   .wdc-cta { padding: 45px 24px; }
-  .wdc-cta__inner { flex-direction: column; text-align: center; }
+  .wdc-cta__inner { flex-direction: column; text-align: center; gap: 24px; }
   .wdc-platforms__grid,
   .wdc-excellence__grid { grid-template-columns: 1fr; }
 }

@@ -1,21 +1,18 @@
-﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   Thekastory.css  â€”  ts- prefix
+﻿/* ══════════════════════════════════════════
+   Thekastory.css — ts- prefix — v2.0
    Red (#BE123C) ONLY on accents / CTAs
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   FIXED: Hero section spacing and content visibility
+   ══════════════════════════════════════════ */
 
-/* â”€â”€ BASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── BASE ─────────────────────────────────── */
 .ts-page {
   font-family: var(--font-body);
   color: #111827;
   background: #fff;
   line-height: 1.6;
-  min-height: 100vh;
-  display: block !important;
-  visibility: visible !important;
-  overflow: visible !important;
 }
 
-/* â”€â”€ EYEBROW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── EYEBROW ─────────────────────────────── */
 .ts-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -42,11 +39,11 @@
   color: #BE123C;
 }
 
-/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── HERO ────────────────────────────────── */
 .ts-hero {
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
-  padding: 72px 40px 80px;
+  padding: 40px 40px 50px;
   position: relative;
   overflow: hidden;
 }
@@ -55,8 +52,7 @@
 .ts-hero__bg-grid {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+  background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
   background-size: 28px 28px;
   opacity: 0.45;
   pointer-events: none;
@@ -80,17 +76,17 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: center;
+  gap: 48px;
+  align-items: start;
   position: relative;
   z-index: 1;
 }
 
-/* â”€â”€ LEFT â”€â”€ */
+/* ── LEFT ── */
 .ts-hero__left {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 .ts-hero__badge {
   display: inline-flex;
@@ -118,7 +114,7 @@
 }
 @keyframes tsDot {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.4; transform: scale(1.5); }
+  50% { opacity: 0.4; transform: scale(1.5); }
 }
 .ts-hero__h1 {
   font-family: var(--font-heading);
@@ -225,7 +221,7 @@
   flex-shrink: 0;
 }
 
-/* â”€â”€ RIGHT â€” cards â”€â”€ */
+/* ── RIGHT — cards ── */
 .ts-hero__right {
   display: flex;
   flex-direction: column;
@@ -261,7 +257,6 @@
   right: 0;
   height: 3px;
   background: #BE123C;
-  border-radius: 0;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.22s ease;
@@ -300,16 +295,15 @@
   margin: 0;
 }
 
-/* â”€â”€ SHARED SECTIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── SHARED SECTIONS ─────────────────────── */
 .ts-section {
-  padding: 80px 40px;
+  padding: 60px 40px;
   position: relative;
-  z-index: 1;
-  display: block !important;
-  visibility: visible !important;
+  min-height: 200px;
+  border-top: 2px solid #f0f0f0;
 }
 .ts-section--white {
-  background: #fff;
+  background: #ffffff;
 }
 .ts-section--gray {
   background: #f9fafb;
@@ -320,8 +314,8 @@
 .ts-section__inner {
   max-width: 1280px;
   margin: 0 auto;
-  display: block !important;
-  visibility: visible !important;
+  position: relative;
+  z-index: 1;
 }
 .ts-section__head {
   text-align: center;
@@ -345,11 +339,11 @@
   text-align: center;
 }
 
-/* â”€â”€ ORIGIN STORY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── ORIGIN STORY ───────────────────────── */
 .ts-story {
   display: grid;
   grid-template-columns: 1fr 360px;
-  gap: 72px;
+  gap: 48px;
   align-items: start;
 }
 .ts-story__left {
@@ -375,7 +369,7 @@
   flex-direction: column;
   gap: 16px;
   position: sticky;
-  top: 100px;
+  top: 20px;
 }
 .ts-story__card {
   border-radius: 16px;
@@ -430,7 +424,7 @@
   color: #6b7280;
 }
 
-/* â”€â”€ STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── STATS ──────────────────────────────── */
 .ts-stats__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -481,7 +475,7 @@
   line-height: 1.6;
 }
 
-/* â”€â”€ VALUES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── VALUES ─────────────────────────────── */
 .ts-values__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -527,11 +521,11 @@
   line-height: 1.75;
 }
 
-/* â”€â”€ AIM (DARK SECTION) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── AIM (DARK SECTION) ─────────────────── */
 .ts-aim {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 48px;
   align-items: start;
 }
 .ts-aim__left {
@@ -580,7 +574,7 @@
   box-shadow: 0 8px 24px rgba(190,18,60,0.45);
 }
 
-/* â”€â”€ TEAM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── TEAM ───────────────────────────────── */
 .ts-team__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -668,18 +662,18 @@
   max-width: 360px;
 }
 
-/* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── RESPONSIVE ─────────────────────────── */
 @media (max-width: 1024px) {
   .ts-hero__inner {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
   .ts-hero__sub {
     max-width: 100%;
   }
   .ts-story {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
   .ts-story__right {
     position: static;
@@ -691,12 +685,19 @@
     min-width: 240px;
   }
 }
+
 @media (max-width: 768px) {
   .ts-hero {
-    padding: 48px 20px 56px;
+    padding: 32px 20px 40px;
   }
   .ts-section {
-    padding: 56px 20px;
+    padding: 48px 20px;
+  }
+  .ts-hero__inner {
+    gap: 32px;
+  }
+  .ts-hero__left {
+    gap: 18px;
   }
   .ts-hero__cards-grid {
     grid-template-columns: 1fr;
@@ -713,7 +714,7 @@
   }
   .ts-aim {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
   .ts-team__grid {
     grid-template-columns: 1fr;
@@ -722,9 +723,22 @@
     flex-direction: column;
   }
 }
+
 @media (max-width: 480px) {
+  .ts-hero {
+    padding: 28px 18px 36px;
+  }
+  .ts-section {
+    padding: 42px 18px;
+  }
   .ts-hero__h1 {
     font-size: clamp(24px, 6vw, 36px);
+  }
+  .ts-hero__inner {
+    gap: 28px;
+  }
+  .ts-hero__left {
+    gap: 16px;
   }
   .ts-hero__cards-grid {
     grid-template-columns: 1fr;
@@ -734,7 +748,7 @@
   }
 }
 
-/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── FOOTER ─────────────────────────────── */
 .ts-footer {
   background: #0a0a0a;
   padding: 64px 40px 0;
@@ -862,7 +876,7 @@
   color: #9ca3af;
 }
 
-/* â”€â”€ SCROLL TO TOP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── SCROLL TO TOP ──────────────────────── */
 .ts-scroll-top {
   position: fixed;
   bottom: 32px;
@@ -890,7 +904,7 @@
   box-shadow: 0 8px 24px rgba(190,18,60,0.5);
 }
 
-/* â”€â”€ FOOTER RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── FOOTER RESPONSIVE ──────────────────── */
 @media (max-width: 1024px) {
   .ts-footer__top {
     grid-template-columns: 1fr 1fr 1fr;
@@ -900,6 +914,7 @@
     grid-column: 1 / -1;
   }
 }
+
 @media (max-width: 640px) {
   .ts-footer {
     padding: 48px 20px 0;
@@ -924,5 +939,3 @@
     font-size: 18px;
   }
 }
-
-

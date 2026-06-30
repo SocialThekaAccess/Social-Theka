@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Thekastory.css";
+import "./Thekastory.css?v=4";
 import footerLogo from "../assets/FooterLogo.png";
 
 /* ── SVG Icons ────────────────────────────────── */
@@ -255,7 +255,7 @@ export default function ThekaStory() {
       </section>
 
       {/* ══ ORIGIN STORY ══════════════════════════ */}
-      <section className="ts-section ts-section--white">
+      <section className="ts-section ts-section--white" id="story">
         <div className="ts-section__inner ts-story">
           <div className="ts-story__left">
             <div className="ts-eyebrow">Social Theka Story</div>

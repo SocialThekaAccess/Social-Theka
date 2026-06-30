@@ -735,87 +735,6 @@
   margin: 0;
 }
 
-/* Keeping the rest of the styles for other sections - will send in next message */
-
-/* ── RESPONSIVE ──────────────────────────── */
-@media (max-width: 1100px) {
-  .vec-hero__inner,
-  .vec-trust__inner {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  
-  .vec-float-icons {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .vec-hero {
-    padding: 60px 24px 80px;
-  }
-  
-  .vec-section {
-    padding: 60px 24px;
-  }
-  
-  .vec-hero__title {
-    font-size: 32px;
-  }
-  
-  .vec-hero__stats-inline {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .vec-stat-badge {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .vec-grid--3,
-  .vec-grid--services {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .vec-hero {
-    padding: 48px 20px 64px;
-  }
-  
-  .vec-section {
-    padding: 48px 20px;
-  }
-  
-  .vec-hero__desc {
-    font-size: 16px;
-  }
-  
-  .vec-hero__ctas {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .vec-btn-primary,
-  .vec-btn-outline {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .vec-format-tags {
-    bottom: 12px;
-    right: 12px;
-    gap: 6px;
-  }
-  
-  .vec-format-tag {
-    padding: 4px 10px;
-    font-size: 10px;
-  }
-}
-
 /* ── ADDITIONAL SECTIONS ────────────────── */
 .vec-best__grid {
   display: grid;
@@ -1391,62 +1310,377 @@
   line-height: 1.7;
 }
 
-/* ── ADDITIONAL RESPONSIVE ADJUSTMENTS ──── */
-@media (max-width: 900px) {
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 1100px) {
+  .vec-hero__inner,
+  .vec-trust__inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .vec-float-icons {
+    display: none;
+  }
+
   .vec-best__grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
-  
+
   .vec-questions__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .vec-final__cards {
-    grid-template-columns: 1fr;
-  }
-  
+
   .vec-formats__grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
-  .vec-tags {
+
+  .vec-industries-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .vec-best__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .vec-best__right,
+  .vec-prod__right {
+    grid-template-columns: 1fr;
+  }
+
+  .vec-questions__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vec-final__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .vec-formats__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .vec-industries-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .vec-industries-grid {
+
+  .vec-tags {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+  .vec-hero {
+    padding: 50px 20px 60px;
+  }
+
+  .vec-section {
+    padding: 50px 20px;
+  }
+
+  .vec-trust-section,
+  .vec-final-section,
+  .vec-cta-banner {
+    padding: 50px 20px;
+  }
+
+  .vec-hero__title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .vec-hero__desc {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .vec-hero__badge {
+    font-size: 10px;
+    padding: 8px 18px;
+  }
+
+  .vec-section__title {
+    font-size: 28px;
+  }
+
+  .vec-section__subtitle {
+    font-size: 16px;
+  }
+
+  .vec-trust__title,
+  .vec-best__title {
+    font-size: 24px;
+  }
+
+  .vec-hero__stats-inline {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .vec-stat-badge {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  .vec-stat-value {
+    font-size: 24px;
+  }
+
+  .vec-hero__ctas {
+    gap: 12px;
+  }
+
+  .vec-btn-primary,
+  .vec-btn-outline {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  .vec-grid--3,
+  .vec-grid--services,
+  .vec-why__grid,
+  .vec-process__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vec-glass-card,
+  .vec-service-card,
+  .vec-why-card {
+    padding: 24px 20px;
+  }
+
+  .vec-service-card__title {
+    font-size: 18px;
+  }
+
+  .vec-formats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .vec-format-card {
+    padding: 18px 16px;
+  }
+
+  .vec-industries-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .vec-industry-card {
+    padding: 14px 16px;
+  }
+
+  .vec-tags {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
   .vec-best__right,
   .vec-prod__right {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
-  
-  .vec-formats__grid {
-    grid-template-columns: repeat(2, 1fr);
+
+  .vec-best-tag,
+  .vec-prod-card {
+    padding: 14px 16px;
   }
-  
-  .vec-why__grid {
-    grid-template-columns: 1fr;
+
+  .vec-trust__left {
+    max-width: 100%;
   }
-  
-  .vec-process__grid {
-    grid-template-columns: 1fr;
+
+  .vec-process-card {
+    padding: 20px 18px;
+    gap: 16px;
   }
-  
-  .vec-industries-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+  .vec-question-card {
+    padding: 18px 16px;
+  }
+
+  .vec-final__card {
+    padding: 28px 24px;
   }
 }
 
 @media (max-width: 480px) {
+  .vec-hero {
+    padding: 40px 16px 50px;
+  }
+
+  .vec-section {
+    padding: 40px 16px;
+  }
+
+  .vec-trust-section,
+  .vec-final-section,
+  .vec-cta-banner {
+    padding: 40px 16px;
+  }
+
+  .vec-hero__title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .vec-hero__desc {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .vec-section__title {
+    font-size: 24px;
+  }
+
+  .vec-section__subtitle {
+    font-size: 15px;
+  }
+
+  .vec-section__header {
+    margin-bottom: 40px;
+  }
+
+  .vec-trust__title,
+  .vec-best__title {
+    font-size: 22px;
+  }
+
+  .vec-hero__ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .vec-btn-primary,
+  .vec-btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .vec-format-tags {
+    bottom: 10px;
+    right: 10px;
+    gap: 4px;
+  }
+
+  .vec-format-tag {
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+
+  .vec-play-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .vec-formats__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .vec-format-card {
+    padding: 16px 14px;
+  }
+
+  .vec-format-card__ratio {
+    font-size: 20px;
+  }
+
+  .vec-glass-card,
+  .vec-service-card,
+  .vec-why-card,
+  .vec-trust-card {
+    padding: 20px 16px;
+  }
+
+  .vec-glass-card__icon,
+  .vec-service-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .vec-glass-card__title,
+  .vec-service-card__title {
+    font-size: 16px;
+  }
+
+  .vec-glass-card__desc,
+  .vec-service-card__desc {
+    font-size: 13px;
+  }
+
+  .vec-process-card {
+    flex-direction: column;
+    padding: 18px 16px;
+    gap: 12px;
+  }
+
+  .vec-process-card__step {
+    align-self: flex-start;
+  }
+
+  .vec-question-card {
+    flex-direction: column;
+    padding: 16px 14px;
+    gap: 12px;
+  }
+
+  .vec-question-card__num {
+    align-self: flex-start;
+  }
+
+  .vec-question-card__text {
+    font-size: 14px;
+  }
+
+  .vec-industry-card {
+    padding: 12px 14px;
+  }
+
+  .vec-industry-card__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .vec-industry-card__name {
+    font-size: 13px;
+  }
+
+  .vec-best-tag__label,
+  .vec-prod-card__text {
+    font-size: 13px;
+  }
+
+  .vec-final__card {
+    padding: 24px 20px;
+  }
+
+  .vec-final__card-icon,
+  .vec-trust-card__icon,
+  .vec-why-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .vec-badge {
+    font-size: 10px;
+    padding: 6px 16px;
+  }
+
   .vec-tags {
     grid-template-columns: 1fr;
   }
-  
+
   .vec-industries-grid {
     grid-template-columns: 1fr;
   }
