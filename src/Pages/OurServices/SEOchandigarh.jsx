@@ -110,14 +110,14 @@ const SEO_SERVICES = [
 ];
 
 const PROCESS = [
-  { num: "01", title: "Website Audit",           desc: "We start with a thorough audit of your existing site — identifying technical problems, content gaps, and keywords you're missing out on right now." },
-  { num: "02", title: "Competitor Analysis",     desc: "We analyze what your top competitors rank for, their backlinks, and content strategy — then build a plan that puts you ahead of them." },
-  { num: "03", title: "Keyword Research",        desc: "We find the exact search terms your customers type into Google — high-volume, high-intent keywords most likely to drive qualified traffic to your site." },
-  { num: "04", title: "On-Page Optimization",    desc: "We optimize meta tags, content, URL structure, internal links, and schema on every page so each one is set up to rank." },
-  { num: "05", title: "Technical Fixes",         desc: "Crawlability issues, page speed problems, broken links — we resolve everything technical that could be holding back your rankings." },
-  { num: "06", title: "Content & Link Building", desc: "Each month we create SEO-driven content and build powerful backlinks — the two most influential factors for achieving strong search performance." },
-  { num: "07", title: "SEO Reporting",           desc: "Every month you get clear reports on keyword rankings, organic traffic, leads, and ROI — so you always know exactly what's working." },
-  { num: "08", title: "Ongoing Optimization",    desc: "SEO is never finished. We continuously optimize based on data, algorithm updates, and new opportunities so your rankings keep growing month to month." },
+  { num: "01", title: "Website Audit",           desc: "It begins with you letting us spend some time conducting a thorough audit on your existing site identifying any technical problems, content gaps, and what keywords are missing out on rankings at this moment." },
+  { num: "02", title: "Competitor Analysis",     desc: "Let us look at what your top competitors are doing. We will find out the keywords they rank for. We will also check their backlinks and content strategy. We will use this information to make a plan that helps you do better than your competitors." },
+  { num: "03", title: "Keyword Research",        desc: "We find all the search terms that your customers type into Google. These are big-volume keywords that show what people are really looking for. They are most likely to drive traffic to your website when customers search for them." },
+  { num: "04", title: "On-Page Optimization",    desc: "We make sure your pages have meta tags, nice content, a simple URL structure and proper internal links. We also add schema to each page on your website. This helps each page on your website to be set up so that it can rank well. We do this so that your pages can rank." },
+  { num: "05", title: "Technical Fixes",         desc: "We identify issues that could be holding your rankings back so that nothing technical stands in the way: crawlability, page speed improvements, or broken links, we resolve all of that and make sure to hit core web vitals on your site!" },
+  { num: "06", title: "Content & Link Building", desc: "Content & Link Building Each month, we create and publish SEO-driven content and build powerful backlinks to grow and maintain your search rankings, the two most influential factors for achieving good performance on search engines." },
+  { num: "07", title: "SEO Reporting",           desc: "They have their monthly reports that are basically easy to decipher. Every month you get the Keyword rankings, organic traffic, leads & ROI so you always know what exactly is working and heading towards." },
+  { num: "08", title: "Ongoing Optimization",    desc: "SEO is never finished. We continuously optimize based on data, algorithm updates, and new opportunities so your rankings keep growing month to month.SEO is never done. We have a constant optimization process based on data, algorithm updates, and emerging opportunities so that your rankings continue to scale from month-to-month." },
 ];
 
 const PRICING = [
@@ -166,13 +166,13 @@ const PRICING = [
 ];
 
 const WHY_CHOOSE = [
-  { icon: <IconTrendingUp />, title: "Ongoing Optimization",          desc: "SEO is never done. We optimize your strategy continuously using data, algorithm updates, and new opportunities so your rankings grow month after month." },
-  { icon: <IconTarget />,     title: "Custom SEO Strategies",         desc: "No copy-paste, ever. Every SEO campaign is custom-built and tailored to your industry, audience, and business objectives." },
-  { icon: <IconSearch />,     title: "Data-Driven Approach",          desc: "All our decisions are based on real data — keyword research, competitor analysis, search intent, and performance metrics — not guesswork." },
-  { icon: <IconShield />,     title: "White-Hat SEO Only",            desc: "We apply only white-hat, Google-approved strategies that create permanent rankings. No shortcuts that could penalize your site." },
-  { icon: <IconFileText />,   title: "Full Transparency",             desc: "You always know what we're doing and why. Transparent monthly reports, clear communication, and no smoke and mirrors." },
-  { icon: <IconStar />,       title: "Proven ROI",                    desc: "Our clients see an average 150% traffic increase in 6 months. We focus on driving organic leads and revenue — not vanity metrics." },
-  { icon: <IconUsers />,      title: "Chandigarh-Based Expert Team",  desc: "Our SEO experts are based in Chandigarh and have delivered results for businesses across Punjab, all over India, and international eCommerce brands worldwide." },
+  { icon: <IconTrendingUp />, title: "Ongoing Optimization",          desc: "SEO is never done. We optimize your strategy on an ongoing basis using data, updates to algorithms, and new opportunities, so your rankings grow month in and month out." },
+  { icon: <IconTarget />,     title: "Custom SEO Strategies",         desc: "No copy-paste ever used. The Best SEO Services are Custom-built and tailored to your industry, audience, business objectives." },
+  { icon: <IconSearch />,     title: "Data-Driven Approach",          desc: "All our decisions are based on real data  whether it is keyword research, competitor analysis, search intent or performance metrics not speculation." },
+  { icon: <IconShield />,     title: "White-Hat SEO Only",            desc: "All our decisions are based on real data  whether it is keyword research, competitor analysis, search intent or performance metrics not speculation." },
+  { icon: <IconFileText />,   title: "Full Transparency",             desc: "You will always see what we are doing and why. Transparent monthly reports with communication and no smoke and mirrors." },
+  { icon: <IconStar />,       title: "Proven ROI",                    desc: "Our clients experience an average of 150% traffic increase in 6 months. We are way more than vanity metrics when it comes to driving organic leads and revenue" },
+  { icon: <IconUsers />,      title: "Chandigarh-Based Expert Team",  desc: "Our team of experts is based in Chandigarh. These experts do search engine optimization work. They have been doing this work for a time. They have worked with companies. Some of these companies are from Punjab. Do business only in this area. Chandigarh-Based Expert Team has also worked with online shopping brands that do business all over the world." },
 ];
 
 const FAQS = [
@@ -328,7 +328,7 @@ export default function SEOChandigarh() {
           <div className="seoc-process__inner">
             <div className="seoc-process__header">
               <div className="seoc-badge">How We Work</div>
-              <h2 className="seoc-process__title">Our SEO Process — Built for Faster Results</h2>
+              <h2 className="seoc-process__title"> Our SEO Process Gets You Faster Results</h2>
               <p className="seoc-process__subtitle">
                 A structured, transparent process that removes guesswork and drives consistent growth.
               </p>
@@ -352,7 +352,7 @@ export default function SEOChandigarh() {
           <div className="seoc-pricing-section__inner">
             <div className="seoc-pricing-section__header">
               <div className="seoc-badge">Pricing</div>
-              <h2 className="seoc-pricing-section__title">Affordable SEO Packages — Transparent Pricing</h2>
+              <h2 className="seoc-pricing-section__title">Affordable SEO Packages  Transparent Pricing</h2>
               <p className="seoc-pricing-section__subtitle">
                 Flexible plans built around your budget and business goals. No hidden fees, no long-term lock-ins.
               </p>
