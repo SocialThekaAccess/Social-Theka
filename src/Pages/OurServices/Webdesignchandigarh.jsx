@@ -469,6 +469,130 @@ export default function WebDesignChandigarh() {
         </div>
       </section>
 
+      {/* ── TECH STACK ARTICLE (premium editorial layout, verbatim content) ── */}
+      <section className="wdsc-article">
+        <div className="wdsc-article__inner">
+
+          <div className="wdsc-article__intro">
+            <span className="wdsc-eyebrow">Guide</span>
+            <h2 className="wdsc-article__title">Why the Tech Stack Behind Your Website Actually Matters</h2>
+            <p className="wdsc-article__lead">
+              <span className="wdsc-article__dropcap">M</span>ost business owners in Chandigarh treat the choice of web technology like it's something to leave entirely to the developer — a back-end detail, nothing to lose sleep over. But it's worth pushing back on that a little. The stack you build on shapes your hosting bills, how painful (or painless) it is to add a new feature six months from now, where you land on Google search results, what kind of developer you'll need to hire down the line, and whether your site buckles or holds up when traffic suddenly spikes. Picking the right partner among Chandigarh's web development services matters precisely because this decision compounds over time.
+            </p>
+            <p className="wdsc-article__p">
+              Think about it like this: a clinic that just wants people to book appointments and a fashion label that wants to sell sarees are both using a website but they need very different things. A clinic and a fashion label are both running a website. Their needs are not similar. Instead of comparing these technologies it is better to look at what each website is really made for. A clinic that is running a website and a fashion label that is running a website have goals.
+            </p>
+          </div>
+
+          <div className="wdsc-article__body">
+
+            <aside className="wdsc-article__nav">
+              <span className="wdsc-article__nav-label">On this page</span>
+              <a href="#mern" className="wdsc-article__nav-link">Breaking Down MERN</a>
+              <a href="#nextjs" className="wdsc-article__nav-link">Where Next.js Comes In</a>
+              <a href="#typescript" className="wdsc-article__nav-link">TypeScript Isn't a Framework</a>
+              <a href="#wordpress" className="wdsc-article__nav-link">WordPress for Content</a>
+              <a href="#wix" className="wdsc-article__nav-link">Wix for Going Live Fast</a>
+              <a href="#shopify" className="wdsc-article__nav-link">Shopify, Built to Sell</a>
+              <a href="#fits" className="wdsc-article__nav-link">Which One Actually Fits?</a>
+            </aside>
+
+            <div className="wdsc-article__content">
+
+              <div className="wdsc-article__section" id="mern">
+                <span className="wdsc-article__num">01</span>
+                <h3 className="wdsc-article__heading">Breaking Down MERN</h3>
+                <p className="wdsc-article__p">
+                  MERN gets thrown around as if it's one thing, but it's really four separate tools — MongoDB, Express, React, and Node.js — that happen to fit together nicely because every piece of them is written in JavaScript. That shared language is actually the whole reason MERN took off. Before stacks like this existed, a developer needed one language to build what users saw in their browser and an entirely different one — PHP, Java, Ruby, whatever — to run the server behind the scenes. MERN does away with that split. One language, front to back, which in practice means a smaller team (sometimes even a single developer) can realistically own the whole product.
+                </p>
+                <p className="wdsc-article__p">
+                  Start with MongoDB, which handles storage. A conventional database like MySQL forces every record into the same rigid structure — rows and columns, like a spreadsheet, where every "customer" entry needs the exact same fields whether they're relevant or not. MongoDB throws that rigidity out. Each record is stored as a flexible document, closer to JSON, so one product entry can carry five attributes and another can carry fifteen without anything breaking. That flexibility isn't just academic — picture an online catalogue where a saree needs fields for fabric and weave, but a laptop needs RAM and processor specs instead. MongoDB handles that mismatch without forcing you to redesign your database every time the product line changes.
+                </p>
+                <p className="wdsc-article__p">
+                  Express runs on top of Node and takes care of what happens on the server — a request comes in ("pull up this customer's past orders"), Express routes it, fetches what's needed, and sends a response back. People call it "lightweight" because it really doesn't do much on its own; it hands developers a basic toolkit and lets them build the rest themselves. That's great for moving fast, but it also means the quality of what gets built depends entirely on the skill of whoever's writing it — there's no scaffolding forcing good habits.
+                </p>
+                <p className="wdsc-article__p">
+                  React, Meta's contribution to all this, lives entirely in the browser. Its big idea is breaking a page down into small, independent components — a search bar here, a product card there, a checkout button somewhere else — each one able to update on its own without dragging the whole page down with it. That's why a cart counter can tick up the second you add an item, with nothing else on the page so much as flickering. It's the same logic running underneath things like your Gmail inbox or an Instagram feed, where the page never seems to "reload" no matter how much changes on screen.
+                </p>
+                <p className="wdsc-article__p">
+                  And then there's Node.js, which is really what makes all of this possible — letting JavaScript, a language originally built only for browsers, run on a server instead. Its standout trait is being non-blocking: rather than handling one request, finishing it completely, then moving to the next, Node juggles thousands of requests at once, parking the slow ones (like a database lookup) while it keeps working through everything else. For a Chandigarh business bracing for an unpredictable rush — a festival sale, a post that suddenly goes viral — that's not a minor technical perk, it's the difference between a site that stays up and one that doesn't.
+                </p>
+                <p className="wdsc-article__p">
+                  Put it all together and MERN earns its keep on things like custom dashboards, marketplaces with multiple vendors, or booking systems juggling real-time availability — anywhere the underlying logic is genuinely complicated and likely to keep evolving. It's the wrong tool, though, for a five-page brochure site for a local clinic. You'd be paying for firepower you'll never actually use.
+                </p>
+              </div>
+
+              <div className="wdsc-article__divider" />
+
+              <div className="wdsc-article__section" id="nextjs">
+                <span className="wdsc-article__num">02</span>
+                <h3 className="wdsc-article__heading">Where Next.js Comes In</h3>
+                <p className="wdsc-article__p">
+                  React has one real weak spot: because it builds everything dynamically inside the browser, search engines (and sometimes real visitors) can momentarily hit a blank page while the JavaScript loads — not great for SEO, not great for first impressions either. Next.js was built on top of React specifically to fix this. It renders pages on the server first, or generates the HTML ahead of time, so a fully formed page reaches the browser immediately, with React stepping in afterward to handle interactivity. That's the reason so many agencies reach for Next.js when building blogs, marketing sites, or storefronts — you keep React's responsiveness without losing the search visibility that plain React tends to struggle with. For any Chandigarh business depending on someone typing "best dentist Sector 22" into Google, that SEO edge isn't a footnote — it's directly tied to whether people find you at all.
+                </p>
+              </div>
+
+              <div className="wdsc-article__divider" />
+
+              <div className="wdsc-article__section" id="typescript">
+                <span className="wdsc-article__num">03</span>
+                <h3 className="wdsc-article__heading">TypeScript Isn't a Framework, It's Insurance</h3>
+                <p className="wdsc-article__p">
+                  TypeScript deserves its own bucket because it isn't really competing with React or Node — it's a layer you add on top of plain JavaScript. The problem with regular JavaScript is that it won't check whether you're passing the right kind of data — a number where a number's expected, text where text's expected — until the code actually runs. So a sloppy mistake, like accidentally sending a customer's name into a field meant for a price, might sit there undetected until a real user stumbles onto it in production. TypeScript catches that kind of error the moment the code is written, long before it ever reaches a live site. For a tiny one-person project, this extra layer can feel like unnecessary ceremony. But for anything meant to last, grow, or change hands between developers over the years, it quietly prevents a huge number of bugs that would otherwise show up as broken features for your customers.
+                </p>
+              </div>
+
+              <div className="wdsc-article__divider" />
+
+              <div className="wdsc-article__section" id="wordpress">
+                <span className="wdsc-article__num">04</span>
+                <h3 className="wdsc-article__heading">WordPress Still Wins for Content-Heavy Sites</h3>
+                <p className="wdsc-article__p">
+                  WordPress operates on a completely different logic from everything above — it's a content management system first and foremost, meaning the whole point is letting someone with zero coding ability log in and update text, swap photos, or publish a blog post. Its dominance online comes down to its plugin ecosystem: need a booking form, an SEO toolkit, multilingual support? There's almost certainly a plugin already built for it, no custom development required. That's exactly why it suits a clinic, a school, a restaurant, or a consultancy in Chandigarh so well — these businesses need to tweak hours, update menus, or refresh staff bios constantly, and WordPress lets office staff handle that directly instead of phoning a developer every time something minor changes. The catch is that piling on plugins can slow a site down and creates ongoing security upkeep, so it's a poor fit once you need genuinely custom, interactive functionality.
+                </p>
+              </div>
+
+              <div className="wdsc-article__divider" />
+
+              <div className="wdsc-article__section" id="wix">
+                <span className="wdsc-article__num">05</span>
+                <h3 className="wdsc-article__heading">Wix for Getting Something Live Fast</h3>
+                <p className="wdsc-article__p">
+                  Wix takes coding out of the picture entirely with its drag-and-drop builder, which makes it the quickest route from nothing to a working website for someone with no technical team behind them at all — a freelance photographer, a single boutique owner, a consultant who just needs a page to point people toward. Its limitation isn't about polish, it's structural: everything lives inside Wix's own closed system, so there's a hard ceiling on customization and scale, and walking away from Wix later if you outgrow it is far messier than migrating off a custom-built site would be. It's the right call when the goal is "get something online this week," not "build something we'll still be running in five years."
+                </p>
+              </div>
+
+              <div className="wdsc-article__divider" />
+
+              <div className="wdsc-article__section" id="shopify">
+                <span className="wdsc-article__num">06</span>
+                <h3 className="wdsc-article__heading">Shopify, Built Purely to Sell</h3>
+                <p className="wdsc-article__p">
+                  Shopify earns its own category because, unlike the broader tools above, it was designed from day one to do exactly one job: run an online store. That focus shows up in the details a general-purpose builder usually fumbles — secure payment handling, inventory that updates automatically as stock sells out, shipping calculations, abandoned-cart emails, and a checkout experience customers already trust because they've used it on countless other stores already. For retailers, handicraft sellers, and fashion brands in Chandigarh moving online, that means the riskiest part of e-commerce — handling payment data, taxes, fraud — is already solved and maintained by Shopify, rather than something a local team has to build and secure from scratch.
+                </p>
+              </div>
+
+              <div className="wdsc-article__divider" />
+
+              <div className="wdsc-article__section wdsc-article__section--highlight" id="fits">
+                <span className="wdsc-article__num">07</span>
+                <h3 className="wdsc-article__heading">So, Which One Actually Fits?</h3>
+                <p className="wdsc-article__p">
+                  It comes down to three honest questions: what does the site actually need to do — display info, manage content regularly, process payments, or run something genuinely custom? Who's going to maintain it day to day — non-technical staff, or a developer? And realistically, how much will the business grow over the next couple of years?
+                </p>
+                <p className="wdsc-article__p">
+                  A small boutique selling a couple dozen products doesn't need custom engineering — Shopify or Wix handles the heavy lifting just fine. A clinic or school updating content weekly but never processing payments is well served by WordPress. A startup building something closer to an app than a website — logins, dashboards, live data — needs the flexibility that MERN or Next.js offers, ideally written in TypeScript if the team plans to be maintaining this thing for years.
+                </p>
+                <p className="wdsc-article__p">
+                  Whether what you need is a straightforward business site or something far more custom, working with best web development services in Chandigarh that actually understand these tradeoffs means the technology gets chosen around where your business is headed, not just what's convenient right now. Getting that match right early on is what saves you from the much costlier scenario — rebuilding the whole thing eighteen months in because the platform you started with simply couldn't keep up.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── INDUSTRIES ── */}
       <section className="wdsc-section wdsc-section--gray">
         <div className="wdsc-section__inner wdsc-section__inner--narrow">
