@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Thekastory.css?v=4";
+import "./Thekastory.css";
 import footerLogo from "../assets/FooterLogo.png";
 
 /* ── SVG Icons ────────────────────────────────── */
