@@ -539,3 +539,28 @@
   .nb-top { flex-direction: column; text-align: center; gap: 6px; padding: 8px 16px; }
   .nb-top__right { justify-content: center; flex-wrap: wrap; }
 }
+
+/* ===== Navigation hash/spacing safety fix ===== */
+.nb,
+.nb__inner,
+.nb__links,
+.nb__link-wrapper {
+  overflow: visible !important;
+}
+
+.nb__link,
+.nb__mobile-link {
+  user-select: none;
+}
+
+@media (max-width: 640px) {
+  .nb__inner {
+    height: 64px;
+    padding: 0 18px;
+  }
+
+  .nb__logo-img {
+    height: 62px;
+    max-width: 150px;
+  }
+}
