@@ -55,79 +55,6 @@ const IconArrow = () => (
     <path d="M5 12h14M12 5l7 7-7 7"/></svg>
 );
 
-const SERVICES = [
-  { icon: <IconLayout />,  name: "Custom Website Design",          desc: "We design every website from scratch keeping your business goals and target audience in mind. No copy-paste templates — just a design that is entirely yours." },
-  { icon: <IconMobile />,  name: "Mobile-Friendly Website Design", desc: "Most users in Chandigarh browse on their phones. Every website we design looks perfect and works smoothly on all devices — mobile, tablet, and desktop." },
-  { icon: <IconShop />,    name: "WordPress Website Design",       desc: "We build fully functional WordPress sites that are easy for you to manage yourself — update text, images, and pages without needing any technical knowledge." },
-  { icon: <IconShield />,  name: "PHP Website Design",             desc: "For businesses that need advanced features — booking systems, custom dashboards, or special functions — we build everything from scratch, exactly as you need it." },
-  { icon: <IconRefresh />, name: "Website Redesign Services",      desc: "If your website looks outdated, loads slowly, or confuses visitors, we redesign it with fresh visuals, better speed, and improved user experience." },
-  { icon: <IconSearch />,  name: "SEO-Friendly Website Design",    desc: "We build every website with a clean structure and proper setup so Google can understand it easily — helping your business rank better in search results." },
-];
-
-const CUSTOM_BENEFITS = [
-  { icon: <IconShield />,  title: "Build Trust",                     desc: "We build websites that will not only look great but they also instill confidence when visitors land on your site and interact with you or buy anything from you." },
-  { icon: <IconUsers />,   title: "Attract Visitors",                desc: "With a great design and proper structure your website becomes more engaging and easy to navigate. We make sure your content is easy to read so that visitors stay longer." },
-  { icon: <IconTarget />,  title: "Convert Visitors into Customers", desc: "Our system provides a clear and consistent route for users as they go from being potential customers to taking action — calling you, filling in a form, and more." },
-];
-
-const WHY_US = [
-  { icon: <IconLayout />, title: "Simple and Clean Design",  desc: "We keep everything easy to understand. Your visitors don't have to think too much — they quickly know what your business offers." },
-  { icon: <IconZap />,    title: "Fast Website Speed",       desc: "No one likes slow websites. We make sure your site loads fast so visitors stay and explore more." },
-  { icon: <IconMobile />, title: "Mobile-Friendly Layout",   desc: "Most users come from mobile. Your website will work smoothly on every screen — phone, tablet, or laptop." },
-  { icon: <IconSearch />, title: "SEO-Ready Structure",      desc: "We make your website in a way that helps you rank better on Google. More people can find your business online when they search." },
-  { icon: <IconUsers />,  title: "Friendly Support",         desc: "We stay connected with you even after the website is live. If you need help, we are always a message away." },
-];
-
-const WORDPRESS_FEATURES = [
-  ["Easy to Manage",  "Update text, images, and pages yourself — no technical knowledge needed. You stay in control of your own website."],
-  ["SEO-Friendly",    "We build with a proper structure that Google understands, helping your website rank better in search results."],
-  ["Quick to Launch", "WordPress allows faster development, so your website can go live in less time. Start your online presence without long waits."],
-];
-
-const PHP_BENEFITS = [
-  ["Custom Features",    "Any feature your business needs can be built — booking systems, dashboards, or custom functions — all tailored to your requirements."],
-  ["High Performance",   "PHP websites handle heavy workloads smoothly. They perform well even as your website grows and gets more traffic."],
-  ["Flexible Design",    "No fixed layout or structure. We design everything to match your brand and goals, exactly the way you want."],
-  ["Scalable Solutions", "As your business grows, your website can grow too. New features and updates can be added anytime without starting from scratch."],
-];
-
-const PROCESS = [
-  { step: "01", title: "Understand Your Business", desc: "We learn about your goals and needs." },
-  { step: "02", title: "Plan the Design",           desc: "We create a simple structure and layout." },
-  { step: "03", title: "Design & Development",      desc: "We build your website with care." },
-  { step: "04", title: "Testing",                   desc: "We check speed, mobile view, and performance." },
-  { step: "05", title: "Launch",                    desc: "Your website goes live." },
-];
-
-const SEO_FEATURES = [
-  ["Clean Code",          "We keep the coding simple and well-organized. This helps search engines understand your website easily and improves overall performance."],
-  ["Fast Loading Speed",  "A slow website pushes visitors away. We optimize everything so your site loads quickly and keeps users engaged."],
-  ["Proper Structure",    "We arrange content in a clear and logical way. This makes it easier for both users and search engines to navigate your site."],
-  ["Mobile Optimization", "Most users visit on their phones. We make sure your website works smoothly on all screen sizes without any issues."],
-];
-
-const MOBILE_FEATURES = [
-  ["Mobile Phones", "Your website will fit perfectly on small screens, making it easy for users to scroll, read, and take action."],
-  ["Tablets",       "We make sure your website looks balanced and clear on medium-sized screens without any layout issues."],
-  ["Laptops",       "Your website will appear polished and organized, and easy to navigate on larger devices."],
-];
-
-const REDESIGN_BENEFITS = [
-  ["Improve Design",           "We give your website a fresh and modern look. Clean layouts and better visuals help create a strong first impression."],
-  ["Increase Speed",           "Slow websites lose visitors quickly. We optimize your site so it loads faster and keeps users engaged."],
-  ["Make it User-Friendly",    "We simplify the structure so visitors can easily find what they need. Clear navigation helps users move around without confusion."],
-  ["Better Mobile Experience", "We make sure your website works smoothly on mobile devices — reaching more users and keeping them on your site longer."],
-];
-
-const INDUSTRIES = ["Local businesses", "Startups", "E-commerce stores", "Service providers", "Agencies"];
-
-const FAQS = [
-  { q: "How much time does it take to build a website?", a: "It depends on your needs. Most websites take 1–3 weeks." },
-  { q: "Will my website be mobile-friendly?",            a: "Yes, every website we create works on all devices." },
-  { q: "Can I update my website later?",                 a: "Yes, especially with WordPress websites, you can easily make changes." },
-  { q: "Do you provide support after launch?",           a: "Yes, Social Theka provides ongoing support." },
-];
-
 export default function WebDesignChandigarh() {
   const [openFaq, setOpenFaq] = useState(null);
 
@@ -148,8 +75,14 @@ export default function WebDesignChandigarh() {
               <span className="wdsc-hero__title-accent">in Chandigarh</span>
             </h1>
             <p className="wdsc-hero__sub">
-              Your site could be someone's first impression of your business. Will they stay? Or will they go? Social Theka, a trusted Website Designing Company in Chandigarh, builds websites that keep visitors engaged and work for your business.
+              Think about it this way: a clinic that just needs people to book appointments and a fashion label trying to sell sarees are both technically running a website but they have very different needs.
             </p>
+            <p className="wdsc-hero__sub">
+              The website technology you use is really important. Most business owners in Chandigarh think that choosing the web technology is something the developer should handle — it is not a big deal. It is worth thinking about it a little more. The technology you choose will affect how much you pay for hosting, how easy it is to add things to your website later, where your website shows up on Google search, what kind of developer you need to hire and if your website can handle a lot of visitors at the same time.
+            </p>
+            {/* <p className="wdsc-hero__sub">
+              Picking the web development service in Chandigarh is a big decision because it will affect your website over time. A clinic and a fashion label are both running a website. Their needs are very different. So instead of comparing website technologies it makes more sense to look at what each technology is actually good for.
+            </p> */}
             <div className="wdsc-hero__ctas">
               <a href="#contact" className="wdsc-btn-primary">Start Your Project <IconArrow /></a>
               <a href="#services" className="wdsc-btn-outline">View Services</a>
@@ -219,27 +152,35 @@ export default function WebDesignChandigarh() {
         </div>
       </section>
 
-      {/* ── WHY WEBSITE MATTERS ── */}
+      {/* ── FIRST IMPRESSION ── */}
       <section className="wdsc-section wdsc-section--white">
         <div className="wdsc-section__inner wdsc-section__inner--narrow">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">Why It Matters</span>
-            <h2 className="wdsc-section__title">Your Website is Your First Impression</h2>
+            <span className="wdsc-eyebrow">Your website creates the first impression</span>
+            <h2 className="wdsc-section__title">Make Every First Impression Count</h2>
           </div>
           <div className="wdsc-pain__grid">
-            {[
-              ["First Impression Counts", "Your web design makes people want to stay on your website or look elsewhere. If they lose faith in your business, you lose that customer before they ever contact you."],
-              ["We Clear the Confusion", "Social Theka makes your website feel seamless. Your clients can find what they need, contact you easily, and stay engaged longer — that's our commitment."],
-              ["Focus on Your Business", "We handle everything — starting or improving your site. No more worrying about technical aspects. Focus on your business, we'll design and develop the rest."],
-            ].map(([title, desc], i) => (
-              <div key={i} className="wdsc-pain-card">
-                <div className="wdsc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="wdsc-pain-card__title">{title}</div>
-                  <div className="wdsc-pain-card__desc">{desc}</div>
-                </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Make Every First Impression Count</div>
+                <div className="wdsc-pain-card__desc">For most customers, your website is the very first thing they see of your business. Get the design right and trust builds almost instantly. Get it wrong, and you've lost them before they've even reached out.</div>
               </div>
-            ))}
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Create a Seamless User Experience</div>
+                <div className="wdsc-pain-card__desc">We build sites that feel natural to use — clear messaging, navigation that doesn't make people think twice. Every piece is there to help a visitor find what they came for and actually do something about it.</div>
+              </div>
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Focus on Growing Your Business</div>
+                <div className="wdsc-pain-card__desc">Starting fresh or fixing up something old, we handle the whole process so you're not stuck managing it. You run the business; we'll worry about the website.</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -248,46 +189,77 @@ export default function WebDesignChandigarh() {
       <section className="wdsc-section wdsc-section--gray">
         <div className="wdsc-section__inner wdsc-section__inner--narrow">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">Local Advantage</span>
-            <h2 className="wdsc-section__title">Local Web Design Company in Chandigarh</h2>
-            <p className="wdsc-section__sub">Working with a local team makes things easier. No waiting, no complicated back-and-forths. Social Theka is quick to reach and always ready to help.</p>
-            <h3 className="wdsc-section__subtitle">With Social Theka, you get:</h3>
+            <span className="wdsc-eyebrow">Leading Web Design Company in Chandigarh</span>
+            <h2 className="wdsc-section__title">Work with a Team That Understands Your Business</h2>
+            <p className="wdsc-section__sub">Partnering with a local web design team means faster communication, better collaboration, and reliable support whenever you need it. At Social Theka, we combine local expertise with professional web solutions to help your business and this is what you get:</p>
           </div>
           <div className="wdsc-pain__grid">
-            {[
-              ["Quick Support When You Need It",              "We are just around the corner. A quick message and we are on it — no long waits, no delays."],
-              ["Easy and Clear Communication",                "You always know where your project stands. No confusion, no surprises — straight updates throughout."],
-              ["Better Understanding of Your Local Market",   "We understand how businesses in Chandigarh work and what local customers expect. This helps us create websites that connect better with your audience."],
-              ["Building a Long-Term Relationship",           "For us, it's not just about building a website — it's about building a long-term partnership. We're always available to help, even after your site is live."],
-            ].map(([title, desc], i) => (
-              <div key={i} className="wdsc-pain-card">
-                <div className="wdsc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="wdsc-pain-card__title">{title}</div>
-                  <div className="wdsc-pain-card__desc">{desc}</div>
-                </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Responsive Support, Every Step of the Way</div>
+                <div className="wdsc-pain-card__desc">From consultation to post-launch, our team is always within reach, resolving issues efficiently.</div>
               </div>
-            ))}
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Transparent & Hassle-Free Communication</div>
+                <div className="wdsc-pain-card__desc">Regular updates and clear timelines mean you always know where your project stands.</div>
+              </div>
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Local Market Expertise</div>
+                <div className="wdsc-pain-card__desc">Years of building for Chandigarh businesses means we know what actually clicks with local customers.</div>
+              </div>
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">A Partnership Beyond Launch</div>
+                <div className="wdsc-pain-card__desc">Launch day isn't really the end. We stay on for support and maintenance as your business keeps moving.</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── WHY CHOOSE ── */}
+      {/* ── WHY PARTNER ── */}
       <section className="wdsc-section wdsc-section--white" id="services">
         <div className="wdsc-section__inner">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">The Social Theka Advantage</span>
-            <h2 className="wdsc-section__title">Why Choose Social Theka for Web Designing?</h2>
-            <p className="wdsc-section__sub">Many web designing agencies exist in Chandigarh, but Social Theka prioritizes what really matters — building simple, fast, and results-oriented websites.</p>
+            <span className="wdsc-eyebrow">Why partner with Social Theka?</span>
+            <h2 className="wdsc-section__title">Your website should do more than just look good</h2>
+            <p className="wdsc-section__sub">It should help make your brand stronger. It should get your audience excited about what you have to say. It should help you reach your business goals. At Social Theka we make websites that work well. We combine design with things that actually work so your website does what you want it to do.</p>
           </div>
           <div className="wdsc-why__grid">
-            {WHY_US.map((item, i) => (
-              <div key={i} className="wdsc-why-card">
-                <div className="wdsc-why-card__icon">{item.icon}</div>
-                <h3 className="wdsc-why-card__title">{item.title}</h3>
-                <p className="wdsc-why-card__desc">{item.desc}</p>
-              </div>
-            ))}
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconLayout /></div>
+              <h3 className="wdsc-why-card__title">User-Centric Design</h3>
+              <p className="wdsc-why-card__desc">We make sure the pages are easy to look at and easy to use. This keeps people on your site and makes them want to do something.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconZap /></div>
+              <h3 className="wdsc-why-card__title">High-Performance Websites</h3>
+              <p className="wdsc-why-card__desc">We make sure every website loads fast and works on every device.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconMobile /></div>
+              <h3 className="wdsc-why-card__title">Fully Responsive Across Devices</h3>
+              <p className="wdsc-why-card__desc">Your website will look great and work great on computers, tablets and smartphones.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconSearch /></div>
+              <h3 className="wdsc-why-card__title">SEO-Optimised Foundation</h3>
+              <p className="wdsc-why-card__desc">We use code and make sure everything is structured properly. This helps you get found online.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconUsers /></div>
+              <h3 className="wdsc-why-card__title">Ongoing Support & Partnership</h3>
+              <p className="wdsc-why-card__desc">We will keep helping you even after your website is launched. We will stick with you as long as you keep growing. Social Theka will be there to help. Social Theka will keep supporting you.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -297,18 +269,30 @@ export default function WebDesignChandigarh() {
         <div className="wdsc-section__inner">
           <div className="wdsc-section__head">
             <span className="wdsc-eyebrow">Custom Development</span>
-            <h2 className="wdsc-section__title">Transforming Businesses through Custom Websites</h2>
-            <p className="wdsc-section__sub">Each business is unique. So why should two websites look the same? At Social Theka, we consider your company, your audience, and your goals before any design begins.</p>
-            <p className="wdsc-section__sub">Social Theka creates custom websites that:</p>
+            <h2 className="wdsc-section__title">Custom Websites Built Around Your Business Goals</h2>
+            <p className="wdsc-section__sub">Every business is unique and has its identity, goals and people it wants to reach. Your website should be the same. At Social Theka we make custom websites that fit your brand so every part of the design helps your business goals and gives users something.</p>
           </div>
           <div className="wdsc-why__grid">
-            {CUSTOM_BENEFITS.map((item, i) => (
-              <div key={i} className="wdsc-why-card">
-                <div className="wdsc-why-card__icon">{item.icon}</div>
-                <h3 className="wdsc-why-card__title">{item.title}</h3>
-                <p className="wdsc-why-card__desc">{item.desc}</p>
-              </div>
-            ))}
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconShield /></div>
+              <h3 className="wdsc-why-card__title">Build Credibility And Trust</h3>
+              <p className="wdsc-why-card__desc">When your website looks modern and your branding is consistent it helps people trust you when they visit.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconUsers /></div>
+              <h3 className="wdsc-why-card__title">Engage the Right Audience</h3>
+              <p className="wdsc-why-card__desc">Thoughtful layouts and visuals keep visitors exploring longer.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconTarget /></div>
+              <h3 className="wdsc-why-card__title">Convert Visitors into Customers</h3>
+              <p className="wdsc-why-card__desc">Smart CTAs and easy journeys that make it simple to enquire, book, or buy.</p>
+            </div>
+             <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconTarget /></div>
+              <h3 className="wdsc-why-card__title">Convert Visitors into Customers</h3>
+              <p className="wdsc-why-card__desc">Smart CTAs and easy journeys that make it simple to enquire, book, or buy.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -317,17 +301,41 @@ export default function WebDesignChandigarh() {
       <section className="wdsc-section wdsc-section--white">
         <div className="wdsc-section__inner">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">Comprehensive Services</span>
-            <h2 className="wdsc-section__title">Full-Spectrum Web Design Solutions</h2>
+            <span className="wdsc-eyebrow">Website Solutions for Every Business</span>
+            <h2 className="wdsc-section__title">At Social Theka we provide web designing services in Chandigarh</h2>
+            <p className="wdsc-section__sub">We make websites for people who are starting a website or for those who want to make their old website better or for those who need a special website. We create websites that look great work well and can grow with the business over time.</p>
           </div>
           <div className="wdsc-services__grid">
-            {SERVICES.map((s, i) => (
-              <div key={i} className="wdsc-service-card">
-                <div className="wdsc-service-card__icon">{s.icon}</div>
-                <h3 className="wdsc-service-card__name">{s.name}</h3>
-                <p className="wdsc-service-card__desc">{s.desc}</p>
-              </div>
-            ))}
+            <div className="wdsc-service-card">
+              <div className="wdsc-service-card__icon"><IconLayout /></div>
+              <h3 className="wdsc-service-card__name">Custom Website Design</h3>
+              <p className="wdsc-service-card__desc">We build a website for your business from the very beginning. We do not use a template that we used for someone.</p>
+            </div>
+            <div className="wdsc-service-card">
+              <div className="wdsc-service-card__icon"><IconMobile /></div>
+              <h3 className="wdsc-service-card__name">Responsive Website Design</h3>
+              <p className="wdsc-service-card__desc">Our websites work well on computers, tablets and phones. Social Theka makes sure that the website looks good and is easy to use no matter what device you are using.</p>
+            </div>
+            <div className="wdsc-service-card">
+              <div className="wdsc-service-card__icon"><IconShop /></div>
+              <h3 className="wdsc-service-card__name">WordPress Website Development</h3>
+              <p className="wdsc-service-card__desc">Secure, easy to manage, no coding required on your end.</p>
+            </div>
+            <div className="wdsc-service-card">
+              <div className="wdsc-service-card__icon"><IconShield /></div>
+              <h3 className="wdsc-service-card__name">Custom PHP Web Development</h3>
+              <p className="wdsc-service-card__desc">Booking systems, customer portals, dashboards — shaped around how your business actually runs.</p>
+            </div>
+            <div className="wdsc-service-card">
+              <div className="wdsc-service-card__icon"><IconRefresh /></div>
+              <h3 className="wdsc-service-card__name">Website Redesign & Optimisation</h3>
+              <p className="wdsc-service-card__desc">Your website will have a look. It will be easier to use. It will work better. Your brand will still be recognisable. The things that make your brand special will stay the same.</p>
+            </div>
+            <div className="wdsc-service-card">
+              <div className="wdsc-service-card__icon"><IconSearch /></div>
+              <h3 className="wdsc-service-card__name">SEO-Ready Website Development</h3>
+              <p className="wdsc-service-card__desc">Clean code and solid structure built for growth that lasts.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -336,45 +344,234 @@ export default function WebDesignChandigarh() {
       <section className="wdsc-section wdsc-section--gray">
         <div className="wdsc-section__inner wdsc-section__inner--narrow">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">WordPress</span>
-            <h2 className="wdsc-section__title">Website Designing using WordPress</h2>
-            <p className="wdsc-section__sub">All businesses want a strong online presence, but they also want simple and smart solutions. WordPress gives you that power — and Social Theka makes sure you can use it without any technical knowledge.</p>
-            <p className="wdsc-section__sub">At Social Theka, we create WordPress websites that are:</p>
+            <span className="wdsc-eyebrow">SERVICES</span>
+            <h2 className="wdsc-section__title">Website Designing with WordPress and custom PHP solutions</h2>
+            <p className="wdsc-section__sub">A strong online presence starts with choosing the platform. WordPress is an option because it is flexible, easy to manage and grows with your business. At Social Theka we create performing WordPress websites that are simple to manage. We also add custom PHP features when your business needs functionality.</p>
           </div>
           <div className="wdsc-pain__grid--3">
-            {WORDPRESS_FEATURES.map(([title, desc], i) => (
-              <div key={i} className="wdsc-pain-card">
-                <div className="wdsc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="wdsc-pain-card__title">{title}</div>
-                  <div className="wdsc-pain-card__desc">{desc}</div>
-                </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Easy to Manage</div>
+                <div className="wdsc-pain-card__desc">Update text, images, pages, and blogs with no technical skills.</div>
               </div>
-            ))}
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">SEO-Optimised Foundation</div>
+                <div className="wdsc-pain-card__desc">Clean code and structured layouts improve visibility.</div>
+              </div>
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Faster Development & Launch</div>
+                <div className="wdsc-pain-card__desc">Go live sooner without compromising quality.</div>
+              </div>
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Custom PHP Functionality</div>
+                <div className="wdsc-pain-card__desc">Advanced features like booking systems and customer portals added as needed.</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── PHP ── */}
+      {/* ── MERN STACK ── */}
       <section className="wdsc-section wdsc-section--white">
         <div className="wdsc-section__inner">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">PHP Development</span>
-            <h2 className="wdsc-section__title">Website Designing using PHP</h2>
-            <p className="wdsc-section__sub">Need something more advanced? If your business needs special features or custom functions, PHP is the right choice. At Social Theka, we build everything from scratch — no templates, full control.</p>
-            <p className="wdsc-section__sub--bold">Benefits of PHP websites:</p>
-            <p className="wdsc-section__sub">PHP is the right choice for businesses that need something more powerful and fully customized. With Social Theka, you get a website built for long-term use — strong, flexible, and ready to grow with your business.</p>
+            <span className="wdsc-eyebrow">MERN Stack</span>
+            <h2 className="wdsc-section__title">Website design using MERN Stack</h2>
+            <p className="wdsc-section__sub">The MERN Stack — MongoDB, Express.js, React, and Node.js — builds fast, scalable, dynamic applications using one language across front-end and back-end.</p>
           </div>
           <div className="wdsc-benefits-grid">
-            {PHP_BENEFITS.map(([title, desc], i) => (
-              <div key={i} className="wdsc-benefit-card">
-                <div className="wdsc-benefit-card__icon"><IconCheck /></div>
-                <div className="wdsc-benefit-card__content">
-                  <h3 className="wdsc-benefit-card__title">{title}</h3>
-                  <p className="wdsc-benefit-card__desc">{desc}</p>
-                </div>
+            <div className="wdsc-benefit-card">
+              <div className="wdsc-benefit-card__icon"><IconCheck /></div>
+              <div className="wdsc-benefit-card__content">
+                <h3 className="wdsc-benefit-card__title">M — MongoDB</h3>
+                <p className="wdsc-benefit-card__desc">Flexible NoSQL database storing data in JSON-like format, ideal for large data volumes.</p>
               </div>
-            ))}
+            </div>
+            <div className="wdsc-benefit-card">
+              <div className="wdsc-benefit-card__icon"><IconCheck /></div>
+              <div className="wdsc-benefit-card__content">
+                <h3 className="wdsc-benefit-card__title">E — Express.js</h3>
+                <p className="wdsc-benefit-card__desc">Lightweight back-end framework simplifying server-side development and APIs.</p>
+              </div>
+            </div>
+            <div className="wdsc-benefit-card">
+              <div className="wdsc-benefit-card__icon"><IconCheck /></div>
+              <div className="wdsc-benefit-card__content">
+                <h3 className="wdsc-benefit-card__title">R — React</h3>
+                <p className="wdsc-benefit-card__desc">Component-based front-end library for fast, interactive interfaces.</p>
+              </div>
+            </div>
+            <div className="wdsc-benefit-card">
+              <div className="wdsc-benefit-card__icon"><IconCheck /></div>
+              <div className="wdsc-benefit-card__content">
+                <h3 className="wdsc-benefit-card__title">N — Node.js</h3>
+                <p className="wdsc-benefit-card__desc">JavaScript runtime handling multiple requests simultaneously for scalable solutions.</p>
+              </div>
+            </div>
+          </div>
+          <div className="wdsc-why__grid" style={{marginTop: "2rem"}}>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconZap /></div>
+              <h3 className="wdsc-why-card__title">Scalable & Future-Ready</h3>
+              <p className="wdsc-why-card__desc">Whether you're a startup or an enterprise, MERN makes it easy to scale your website or web application as your business grows.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconCode /></div>
+              <h3 className="wdsc-why-card__title">Faster Development</h3>
+              <p className="wdsc-why-card__desc">Using JavaScript across both the front-end and back-end streamlines development, reducing project timelines and making future updates easier.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconShield /></div>
+              <h3 className="wdsc-why-card__title">Secure & Reliable</h3>
+              <p className="wdsc-why-card__desc">The MERN stack supports secure authentication, robust APIs, and reliable data management for business-critical applications.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconUsers /></div>
+              <h3 className="wdsc-why-card__title">Dynamic User Experience</h3>
+              <p className="wdsc-why-card__desc">React brings in interactive, real-time interfaces that genuinely feel responsive.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SHOPIFY ── */}
+      <section className="wdsc-section wdsc-section--gray">
+        <div className="wdsc-section__inner">
+          <div className="wdsc-section__head">
+            <span className="wdsc-eyebrow">Shopify</span>
+            <h2 className="wdsc-section__title">Shopify in Web Designing</h2>
+            <p className="wdsc-section__sub">A good online store needs a platform that's fast, safe and easy to use. At Social Theka we make custom Shopify websites that look great are simple to manage and help your online store do well. We want your business to grow online with a Shopify website that's just right for you. At Social Theka we design Shopify websites that are easy to use and help your online business grow.</p>
+          </div>
+          <div className="wdsc-why__grid">
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconLayout /></div>
+              <h3 className="wdsc-why-card__title">Easy Store Management</h3>
+              <p className="wdsc-why-card__desc">Simple dashboard for products, inventory, and orders.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconTarget /></div>
+              <h3 className="wdsc-why-card__title">Conversion-Focused Design</h3>
+              <p className="wdsc-why-card__desc">Clear navigation and streamlined checkout to turn visitors into customers.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconShield /></div>
+              <h3 className="wdsc-why-card__title">Secure & Scalable Platform</h3>
+              <p className="wdsc-why-card__desc">Enterprise-grade security and performance that scales with you.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconSearch /></div>
+              <h3 className="wdsc-why-card__title">SEO & Performance Optimised</h3>
+              <p className="wdsc-why-card__desc">Responsive, fast-loading, SEO-friendly storefronts.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── NEXT.JS ── */}
+      <section className="wdsc-section wdsc-section--white">
+        <div className="wdsc-section__inner">
+          <div className="wdsc-section__head">
+            <span className="wdsc-eyebrow">Next.js</span>
+            <h2 className="wdsc-section__title">Website Design Using Next.js</h2>
+            <p className="wdsc-section__sub">Businesses today need websites that load quickly and work well for lots of people. At Social Theka we make websites that are really fast and good for users. We use Next.js to build these websites. This means Social Theka websites are fast, safe and easy for people to find on search engines. We want Social Theka websites to be good for a time so we build them to last.</p>
+          </div>
+          <div className="wdsc-why__grid">
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconZap /></div>
+              <h3 className="wdsc-why-card__title">Lightning-Fast Performance</h3>
+              <p className="wdsc-why-card__desc">Advanced rendering for seamless browsing.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconSearch /></div>
+              <h3 className="wdsc-why-card__title">SEO-Optimised Architecture</h3>
+              <p className="wdsc-why-card__desc">Server-side rendering boosts search visibility.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconCode /></div>
+              <h3 className="wdsc-why-card__title">Scalable & Future-Ready</h3>
+              <p className="wdsc-why-card__desc">Flexible architecture for business websites, apps, or enterprise platforms.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconShield /></div>
+              <h3 className="wdsc-why-card__title">Secure & Custom Development</h3>
+              <p className="wdsc-why-card__desc">Custom builds integrating APIs, CMS, and payment gateways securely.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TYPESCRIPT ── */}
+      <section className="wdsc-section wdsc-section--gray">
+        <div className="wdsc-section__inner">
+          <div className="wdsc-section__head">
+            <span className="wdsc-eyebrow">TypeScript</span>
+            <h2 className="wdsc-section__title">Website Development Using TypeScript</h2>
+            <p className="wdsc-section__sub">Building scalable web applications needs clean code. At Social Theka we use TypeScript to make websites and web applications. These are easy to manage, secure and grow over time.</p>
+          </div>
+          <div className="wdsc-why__grid">
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconShield /></div>
+              <h3 className="wdsc-why-card__title">Reliable & Error-Free Development</h3>
+              <p className="wdsc-why-card__desc">We catch coding mistakes early. This makes websites stable.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconCode /></div>
+              <h3 className="wdsc-why-card__title">Scalable Code Architecture</h3>
+              <p className="wdsc-why-card__desc">The code is easy to maintain and expand as you grow.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconZap /></div>
+              <h3 className="wdsc-why-card__title">Enhanced Performance & Maintainability</h3>
+              <p className="wdsc-why-card__desc">Cleaner code makes future updates simple.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconTarget /></div>
+              <h3 className="wdsc-why-card__title">Enterprise-Ready Solutions</h3>
+              <p className="wdsc-why-card__desc">Our solutions work well with React and Next.js. They are secure and ready for the future.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WIX ── */}
+      <section className="wdsc-section wdsc-section--white">
+        <div className="wdsc-section__inner">
+          <div className="wdsc-section__head">
+            <span className="wdsc-eyebrow">Wix</span>
+            <h2 className="wdsc-section__title">Using Wix for Web designing</h2>
+            <p className="wdsc-section__sub">I think Wix is a way for businesses to get a professional website that is simple to manage and gets online fast. At Social Theka we make custom Wix websites that have a look work well on different devices and are easy for people to use. This helps your business get noticed on the internet. We design these custom Wix websites to help your business have a strong presence online with Wix.</p>
+          </div>
+          <div className="wdsc-why__grid">
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconLayout /></div>
+              <h3 className="wdsc-why-card__title">Easy Website Management</h3>
+              <p className="wdsc-why-card__desc">Drag-and-drop editing with no technical expertise needed.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconMobile /></div>
+              <h3 className="wdsc-why-card__title">Professional & Responsive Design</h3>
+              <p className="wdsc-why-card__desc">Mobile-friendly visuals that stay true to your brand.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconZap /></div>
+              <h3 className="wdsc-why-card__title">Fast & Cost-Effective Development</h3>
+              <p className="wdsc-why-card__desc">Go online quickly without sacrificing quality.</p>
+            </div>
+            <div className="wdsc-why-card">
+              <div className="wdsc-why-card__icon"><IconTarget /></div>
+              <h3 className="wdsc-why-card__title">Built for Growth</h3>
+              <p className="wdsc-why-card__desc">Booking systems, e-commerce features, and SEO added as needed.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -383,20 +580,46 @@ export default function WebDesignChandigarh() {
       <section className="wdsc-section wdsc-section--gray">
         <div className="wdsc-section__inner">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">Strategic Methodology</span>
-            <h2 className="wdsc-section__title">Our Website Design Process</h2>
-            <p className="wdsc-section__sub">We follow a simple step-by-step process — clear, collaborative, and built around your goals.</p>
+            <span className="wdsc-eyebrow">Our Process</span>
+            <h2 className="wdsc-section__title">Our Process for Website Designing</h2>
+            <p className="wdsc-section__sub">We follow a clear, collaborative, and goal-focused process to ensure your website is designed with purpose and delivered with precision.</p>
           </div>
           <div className="wdsc-process__grid">
-            {PROCESS.map((p, i) => (
-              <div key={i} className="wdsc-process-card">
-                <div className="wdsc-process-card__step">{p.step}</div>
-                <div>
-                  <div className="wdsc-process-card__title">{p.title}</div>
-                  <div className="wdsc-process-card__desc">{p.desc}</div>
-                </div>
+            <div className="wdsc-process-card">
+              <div className="wdsc-process-card__step">01</div>
+              <div>
+                <div className="wdsc-process-card__title">Discovery & Consultation</div>
+                <div className="wdsc-process-card__desc">We understand your business, goals, audience, and website requirements.</div>
               </div>
-            ))}
+            </div>
+            <div className="wdsc-process-card">
+              <div className="wdsc-process-card__step">02</div>
+              <div>
+                <div className="wdsc-process-card__title">Strategy & Planning</div>
+                <div className="wdsc-process-card__desc">We create a structured roadmap, layout, and user flow for your website.</div>
+              </div>
+            </div>
+            <div className="wdsc-process-card">
+              <div className="wdsc-process-card__step">03</div>
+              <div>
+                <div className="wdsc-process-card__title">Design & Development</div>
+                <div className="wdsc-process-card__desc">Building a professional, responsive, user-friendly site.</div>
+              </div>
+            </div>
+            <div className="wdsc-process-card">
+              <div className="wdsc-process-card__step">04</div>
+              <div>
+                <div className="wdsc-process-card__title">Testing & Optimisation</div>
+                <div className="wdsc-process-card__desc">Checking speed, mobile responsiveness, and functionality.</div>
+              </div>
+            </div>
+            <div className="wdsc-process-card">
+              <div className="wdsc-process-card__step">05</div>
+              <div>
+                <div className="wdsc-process-card__title">Launch & Support</div>
+                <div className="wdsc-process-card__desc">Going live, with support there whenever you need it.</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -405,43 +628,65 @@ export default function WebDesignChandigarh() {
       <section className="wdsc-section wdsc-section--white">
         <div className="wdsc-section__inner wdsc-section__inner--narrow">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">Search Visibility</span>
-            <h2 className="wdsc-section__title">SEO-Friendly Website Design</h2>
-            <p className="wdsc-section__sub">A website should not only look good — it should also rank on Google. If people can't find your website, it won't bring you business. At Social Theka, we optimize for both user experience and search engines.</p>
-            <p className="wdsc-section__sub">Social Theka builds SEO-friendly websites with:</p>
+            <span className="wdsc-eyebrow">SEO Optimisation</span>
+            <h2 className="wdsc-section__title">SEO-Optimised Website Design</h2>
+            <p className="wdsc-section__sub">An SEO-friendly website is really an investment — performance, usability, and technical optimisation all working together to bring in better traffic and more enquiries over time.</p>
           </div>
           <div className="wdsc-pain__grid">
-            {SEO_FEATURES.map(([title, desc], i) => (
-              <div key={i} className="wdsc-pain-card">
-                <div className="wdsc-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="wdsc-pain-card__title">{title}</div>
-                  <div className="wdsc-pain-card__desc">{desc}</div>
-                </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Clean & Optimised Code</div>
+                <div className="wdsc-pain-card__desc">Better performance and easier crawlability.</div>
               </div>
-            ))}
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">High-Speed Performance</div>
+                <div className="wdsc-pain-card__desc">Fast loading that keeps bounce rates down.</div>
+              </div>
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Well-Structured Website Architecture</div>
+                <div className="wdsc-pain-card__desc">Logical navigation for users and search engines.</div>
+              </div>
+            </div>
+            <div className="wdsc-pain-card">
+              <div className="wdsc-pain-card__icon"><IconCheck /></div>
+              <div>
+                <div className="wdsc-pain-card__title">Mobile-First Responsive Design</div>
+                <div className="wdsc-pain-card__desc">Consistent experience across all screen sizes.</div>
+              </div>
+            </div>
           </div>
-          <p className="wdsc-section__sub" style={{marginTop: "1.5rem"}}>With the right SEO setup, your website gets a better chance to rank higher and reach more people online. At Social Theka, we build websites that help your business grow by bringing in real traffic.</p>
         </div>
       </section>
 
-      {/* ── MOBILE ── */}
+      {/* ── MOBILE RESPONSIVE ── */}
       <section className="wdsc-section wdsc-section--gray">
         <div className="wdsc-section__inner">
           <div className="wdsc-split__grid">
             <div className="wdsc-split__left">
               <span className="wdsc-eyebrow">Mobile Experience</span>
-              <h2 className="wdsc-split__title">Mobile-Friendly Website Design</h2>
-              <p className="wdsc-split__sub">The trend for browsing is moving firmly to mobile. If your website isn't mobile-friendly, people will leave before they even start using it.</p>
-              <p className="wdsc-split__sub">Social Theka makes sure sites look neat regardless of screen size. Browsing should be straightforward and uncomplicated — on every device.</p>
+              <h2 className="wdsc-split__title">Mobile-Responsive Website Design</h2>
+              <p className="wdsc-split__sub">Most people are browsing on their phones now, so responsive design isn't really optional anymore — it's just expected.</p>
             </div>
             <div className="wdsc-split__right">
-              {MOBILE_FEATURES.map(([title, desc], i) => (
-                <div key={i} className="wdsc-split-card">
-                  <div className="wdsc-split-card__title">{title}</div>
-                  <div className="wdsc-split-card__desc">{desc}</div>
-                </div>
-              ))}
+              <div className="wdsc-split-card">
+                <div className="wdsc-split-card__title">Optimised for Smartphones</div>
+                <div className="wdsc-split-card__desc">Intuitive layouts with clear calls to action.</div>
+              </div>
+              <div className="wdsc-split-card">
+                <div className="wdsc-split-card__title">Seamless Tablet Experience</div>
+                <div className="wdsc-split-card__desc">A balanced layout with smooth functionality.</div>
+              </div>
+              <div className="wdsc-split-card">
+                <div className="wdsc-split-card__title">Enhanced Desktop Performance</div>
+                <div className="wdsc-split-card__desc">Clean, professional presentation on bigger screens.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -454,140 +699,25 @@ export default function WebDesignChandigarh() {
             <div className="wdsc-split__left">
               <span className="wdsc-eyebrow">Redesign Services</span>
               <h2 className="wdsc-split__title">Website Redesign Services</h2>
-              <p className="wdsc-split__sub">If your website is outdated, slow, or confusing — people will just leave without doing anything. Often, smart changes bring more value than starting from zero.</p>
-              <p className="wdsc-split__sub">We carefully examine your existing website, identify issues, update its speed and aesthetics, and improve the overall experience. Even small updates can bring better results.</p>
+              <p className="wdsc-split__sub">An outdated, slow, or confusing website costs you in user experience and conversions. We give existing sites a strategic refresh — better design, better performance — without necessarily tearing everything down and starting over.</p>
             </div>
             <div className="wdsc-split__right">
-              {REDESIGN_BENEFITS.map(([title, desc], i) => (
-                <div key={i} className="wdsc-split-card">
-                  <div className="wdsc-split-card__title">{title}</div>
-                  <div className="wdsc-split-card__desc">{desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── TECH STACK ARTICLE (premium editorial layout, verbatim content) ── */}
-      <section className="wdsc-article">
-        <div className="wdsc-article__inner">
-
-          <div className="wdsc-article__intro">
-            <span className="wdsc-eyebrow">Guide</span>
-            <h2 className="wdsc-article__title">Why the Tech Stack Behind Your Website Actually Matters</h2>
-            <p className="wdsc-article__lead">
-              <span className="wdsc-article__dropcap">M</span>ost business owners in Chandigarh treat the choice of web technology like it's something to leave entirely to the developer — a back-end detail, nothing to lose sleep over. But it's worth pushing back on that a little. The stack you build on shapes your hosting bills, how painful (or painless) it is to add a new feature six months from now, where you land on Google search results, what kind of developer you'll need to hire down the line, and whether your site buckles or holds up when traffic suddenly spikes. Picking the right partner among Chandigarh's web development services matters precisely because this decision compounds over time.
-            </p>
-            <p className="wdsc-article__p">
-              Think about it like this: a clinic that just wants people to book appointments and a fashion label that wants to sell sarees are both using a website but they need very different things. A clinic and a fashion label are both running a website. Their needs are not similar. Instead of comparing these technologies it is better to look at what each website is really made for. A clinic that is running a website and a fashion label that is running a website have goals.
-            </p>
-          </div>
-
-          <div className="wdsc-article__body">
-
-            <aside className="wdsc-article__nav">
-              <span className="wdsc-article__nav-label">On this page</span>
-              <a href="#mern" className="wdsc-article__nav-link">Breaking Down MERN</a>
-              <a href="#nextjs" className="wdsc-article__nav-link">Where Next.js Comes In</a>
-              <a href="#typescript" className="wdsc-article__nav-link">TypeScript Isn't a Framework</a>
-              <a href="#wordpress" className="wdsc-article__nav-link">WordPress for Content</a>
-              <a href="#wix" className="wdsc-article__nav-link">Wix for Going Live Fast</a>
-              <a href="#shopify" className="wdsc-article__nav-link">Shopify, Built to Sell</a>
-              <a href="#fits" className="wdsc-article__nav-link">Which One Actually Fits?</a>
-            </aside>
-
-            <div className="wdsc-article__content">
-
-              <div className="wdsc-article__section" id="mern">
-                <span className="wdsc-article__num">01</span>
-                <h3 className="wdsc-article__heading">Breaking Down MERN</h3>
-                <p className="wdsc-article__p">
-                  MERN gets thrown around as if it's one thing, but it's really four separate tools — MongoDB, Express, React, and Node.js — that happen to fit together nicely because every piece of them is written in JavaScript. That shared language is actually the whole reason MERN took off. Before stacks like this existed, a developer needed one language to build what users saw in their browser and an entirely different one — PHP, Java, Ruby, whatever — to run the server behind the scenes. MERN does away with that split. One language, front to back, which in practice means a smaller team (sometimes even a single developer) can realistically own the whole product.
-                </p>
-                <p className="wdsc-article__p">
-                  Start with MongoDB, which handles storage. A conventional database like MySQL forces every record into the same rigid structure — rows and columns, like a spreadsheet, where every "customer" entry needs the exact same fields whether they're relevant or not. MongoDB throws that rigidity out. Each record is stored as a flexible document, closer to JSON, so one product entry can carry five attributes and another can carry fifteen without anything breaking. That flexibility isn't just academic — picture an online catalogue where a saree needs fields for fabric and weave, but a laptop needs RAM and processor specs instead. MongoDB handles that mismatch without forcing you to redesign your database every time the product line changes.
-                </p>
-                <p className="wdsc-article__p">
-                  Express runs on top of Node and takes care of what happens on the server — a request comes in ("pull up this customer's past orders"), Express routes it, fetches what's needed, and sends a response back. People call it "lightweight" because it really doesn't do much on its own; it hands developers a basic toolkit and lets them build the rest themselves. That's great for moving fast, but it also means the quality of what gets built depends entirely on the skill of whoever's writing it — there's no scaffolding forcing good habits.
-                </p>
-                <p className="wdsc-article__p">
-                  React, Meta's contribution to all this, lives entirely in the browser. Its big idea is breaking a page down into small, independent components — a search bar here, a product card there, a checkout button somewhere else — each one able to update on its own without dragging the whole page down with it. That's why a cart counter can tick up the second you add an item, with nothing else on the page so much as flickering. It's the same logic running underneath things like your Gmail inbox or an Instagram feed, where the page never seems to "reload" no matter how much changes on screen.
-                </p>
-                <p className="wdsc-article__p">
-                  And then there's Node.js, which is really what makes all of this possible — letting JavaScript, a language originally built only for browsers, run on a server instead. Its standout trait is being non-blocking: rather than handling one request, finishing it completely, then moving to the next, Node juggles thousands of requests at once, parking the slow ones (like a database lookup) while it keeps working through everything else. For a Chandigarh business bracing for an unpredictable rush — a festival sale, a post that suddenly goes viral — that's not a minor technical perk, it's the difference between a site that stays up and one that doesn't.
-                </p>
-                <p className="wdsc-article__p">
-                  Put it all together and MERN earns its keep on things like custom dashboards, marketplaces with multiple vendors, or booking systems juggling real-time availability — anywhere the underlying logic is genuinely complicated and likely to keep evolving. It's the wrong tool, though, for a five-page brochure site for a local clinic. You'd be paying for firepower you'll never actually use.
-                </p>
+              <div className="wdsc-split-card">
+                <div className="wdsc-split-card__title">Modern & Professional Design</div>
+                <div className="wdsc-split-card__desc">Refreshed layouts and stronger brand identity.</div>
               </div>
-
-              <div className="wdsc-article__divider" />
-
-              <div className="wdsc-article__section" id="nextjs">
-                <span className="wdsc-article__num">02</span>
-                <h3 className="wdsc-article__heading">Where Next.js Comes In</h3>
-                <p className="wdsc-article__p">
-                  React has one real weak spot: because it builds everything dynamically inside the browser, search engines (and sometimes real visitors) can momentarily hit a blank page while the JavaScript loads — not great for SEO, not great for first impressions either. Next.js was built on top of React specifically to fix this. It renders pages on the server first, or generates the HTML ahead of time, so a fully formed page reaches the browser immediately, with React stepping in afterward to handle interactivity. That's the reason so many agencies reach for Next.js when building blogs, marketing sites, or storefronts — you keep React's responsiveness without losing the search visibility that plain React tends to struggle with. For any Chandigarh business depending on someone typing "best dentist Sector 22" into Google, that SEO edge isn't a footnote — it's directly tied to whether people find you at all.
-                </p>
+              <div className="wdsc-split-card">
+                <div className="wdsc-split-card__title">Performance & Speed Optimisation</div>
+                <div className="wdsc-split-card__desc">Reduced loading times, better responsiveness.</div>
               </div>
-
-              <div className="wdsc-article__divider" />
-
-              <div className="wdsc-article__section" id="typescript">
-                <span className="wdsc-article__num">03</span>
-                <h3 className="wdsc-article__heading">TypeScript Isn't a Framework, It's Insurance</h3>
-                <p className="wdsc-article__p">
-                  TypeScript deserves its own bucket because it isn't really competing with React or Node — it's a layer you add on top of plain JavaScript. The problem with regular JavaScript is that it won't check whether you're passing the right kind of data — a number where a number's expected, text where text's expected — until the code actually runs. So a sloppy mistake, like accidentally sending a customer's name into a field meant for a price, might sit there undetected until a real user stumbles onto it in production. TypeScript catches that kind of error the moment the code is written, long before it ever reaches a live site. For a tiny one-person project, this extra layer can feel like unnecessary ceremony. But for anything meant to last, grow, or change hands between developers over the years, it quietly prevents a huge number of bugs that would otherwise show up as broken features for your customers.
-                </p>
+              <div className="wdsc-split-card">
+                <div className="wdsc-split-card__title">Enhanced User Experience</div>
+                <div className="wdsc-split-card__desc">Improved navigation and content organisation.</div>
               </div>
-
-              <div className="wdsc-article__divider" />
-
-              <div className="wdsc-article__section" id="wordpress">
-                <span className="wdsc-article__num">04</span>
-                <h3 className="wdsc-article__heading">WordPress Still Wins for Content-Heavy Sites</h3>
-                <p className="wdsc-article__p">
-                  WordPress operates on a completely different logic from everything above — it's a content management system first and foremost, meaning the whole point is letting someone with zero coding ability log in and update text, swap photos, or publish a blog post. Its dominance online comes down to its plugin ecosystem: need a booking form, an SEO toolkit, multilingual support? There's almost certainly a plugin already built for it, no custom development required. That's exactly why it suits a clinic, a school, a restaurant, or a consultancy in Chandigarh so well — these businesses need to tweak hours, update menus, or refresh staff bios constantly, and WordPress lets office staff handle that directly instead of phoning a developer every time something minor changes. The catch is that piling on plugins can slow a site down and creates ongoing security upkeep, so it's a poor fit once you need genuinely custom, interactive functionality.
-                </p>
+              <div className="wdsc-split-card">
+                <div className="wdsc-split-card__title">Responsive Across All Devices</div>
+                <div className="wdsc-split-card__desc">Flawless performance on every screen.</div>
               </div>
-
-              <div className="wdsc-article__divider" />
-
-              <div className="wdsc-article__section" id="wix">
-                <span className="wdsc-article__num">05</span>
-                <h3 className="wdsc-article__heading">Wix for Getting Something Live Fast</h3>
-                <p className="wdsc-article__p">
-                  Wix takes coding out of the picture entirely with its drag-and-drop builder, which makes it the quickest route from nothing to a working website for someone with no technical team behind them at all — a freelance photographer, a single boutique owner, a consultant who just needs a page to point people toward. Its limitation isn't about polish, it's structural: everything lives inside Wix's own closed system, so there's a hard ceiling on customization and scale, and walking away from Wix later if you outgrow it is far messier than migrating off a custom-built site would be. It's the right call when the goal is "get something online this week," not "build something we'll still be running in five years."
-                </p>
-              </div>
-
-              <div className="wdsc-article__divider" />
-
-              <div className="wdsc-article__section" id="shopify">
-                <span className="wdsc-article__num">06</span>
-                <h3 className="wdsc-article__heading">Shopify, Built Purely to Sell</h3>
-                <p className="wdsc-article__p">
-                  Shopify earns its own category because, unlike the broader tools above, it was designed from day one to do exactly one job: run an online store. That focus shows up in the details a general-purpose builder usually fumbles — secure payment handling, inventory that updates automatically as stock sells out, shipping calculations, abandoned-cart emails, and a checkout experience customers already trust because they've used it on countless other stores already. For retailers, handicraft sellers, and fashion brands in Chandigarh moving online, that means the riskiest part of e-commerce — handling payment data, taxes, fraud — is already solved and maintained by Shopify, rather than something a local team has to build and secure from scratch.
-                </p>
-              </div>
-
-              <div className="wdsc-article__divider" />
-
-              <div className="wdsc-article__section wdsc-article__section--highlight" id="fits">
-                <span className="wdsc-article__num">07</span>
-                <h3 className="wdsc-article__heading">So, Which One Actually Fits?</h3>
-                <p className="wdsc-article__p">
-                  It comes down to three honest questions: what does the site actually need to do — display info, manage content regularly, process payments, or run something genuinely custom? Who's going to maintain it day to day — non-technical staff, or a developer? And realistically, how much will the business grow over the next couple of years?
-                </p>
-                <p className="wdsc-article__p">
-                  A small boutique selling a couple dozen products doesn't need custom engineering — Shopify or Wix handles the heavy lifting just fine. A clinic or school updating content weekly but never processing payments is well served by WordPress. A startup building something closer to an app than a website — logins, dashboards, live data — needs the flexibility that MERN or Next.js offers, ideally written in TypeScript if the team plans to be maintaining this thing for years.
-                </p>
-                <p className="wdsc-article__p">
-                  Whether what you need is a straightforward business site or something far more custom, working with best web development services in Chandigarh that actually understand these tradeoffs means the technology gets chosen around where your business is headed, not just what's convenient right now. Getting that match right early on is what saves you from the much costlier scenario — rebuilding the whole thing eighteen months in because the platform you started with simply couldn't keep up.
-                </p>
-              </div>
-
             </div>
           </div>
         </div>
@@ -597,18 +727,35 @@ export default function WebDesignChandigarh() {
       <section className="wdsc-section wdsc-section--gray">
         <div className="wdsc-section__inner wdsc-section__inner--narrow">
           <div className="wdsc-section__head">
-            <span className="wdsc-eyebrow">Who We Serve</span>
-            <h2 className="wdsc-section__title">Industries We Serve</h2>
-            <p className="wdsc-section__sub">We build websites for all kinds of businesses. No matter your industry, we can help.</p>
+            <span className="wdsc-eyebrow">Industries We Serve</span>
+            <h2 className="wdsc-section__title">At Social Theka, we design and develop websites for businesses across a wide range of industries</h2>
+            <p className="wdsc-section__sub">Every solution is tailored to your unique goals, helping you establish a strong online presence.  Build a website that really sets your business apart. We do everything to make this happen from coming up with a strategy and designing it to actually building the website and helping you with any problems that come up later on. Our goal is to create a website that helps your business stand</p>
           </div>
           <div className="wdsc-industries__grid">
-            {INDUSTRIES.map((industry, i) => (
-              <div key={i} className="wdsc-industry-card">
-                <IconTarget />
-                {industry}
-              </div>
-            ))}
+            <div className="wdsc-industry-card">
+              <IconTarget />
+              Local Businesses
+            </div>
+            <div className="wdsc-industry-card">
+              <IconTarget />
+              Startups
+            </div>
+            <div className="wdsc-industry-card">
+              <IconTarget />
+              E-commerce Brands
+            </div>
+            <div className="wdsc-industry-card">
+              <IconTarget />
+              Service-Based Businesses
+            </div>
+            <div className="wdsc-industry-card">
+              <IconTarget />
+              Agencies
+            </div>
           </div>
+          {/* <p className="wdsc-section__sub" style={{marginTop: "2rem", textAlign: "center"}}>
+            Build a website that really sets your business apart. We do everything to make this happen from coming up with a strategy and designing it to actually building the website and helping you with any problems that come up later on. Our goal is to create a website that helps your business stand out and do well.
+          </p> */}
         </div>
       </section>
 
@@ -620,15 +767,41 @@ export default function WebDesignChandigarh() {
             <h2 className="wdsc-section__title">Frequently Asked Questions</h2>
           </div>
           <div className="wdsc-faq__list">
-            {FAQS.map((faq, i) => (
-              <div key={i} className={`wdsc-faq__item ${openFaq === i ? "wdsc-faq__item--open" : ""}`}>
-                <button className="wdsc-faq__q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
-                  <span>{faq.q}</span>
-                  <span className="wdsc-faq__icon">{openFaq === i ? "−" : "+"}</span>
-                </button>
-                {openFaq === i && <div className="wdsc-faq__a">{faq.a}</div>}
-              </div>
-            ))}
+            <div className={`wdsc-faq__item ${openFaq === 0 ? "wdsc-faq__item--open" : ""}`}>
+              <button className="wdsc-faq__q" onClick={() => setOpenFaq(openFaq === 0 ? null : 0)}>
+                <span>1. How long does it take website designing?</span>
+                <span className="wdsc-faq__icon">{openFaq === 0 ? "−" : "+"}</span>
+              </button>
+              {openFaq === 0 && <div className="wdsc-faq__a">A standard business website takes around 2–6 weeks whereas larger or custom websites may need more time.</div>}
+            </div>
+            <div className={`wdsc-faq__item ${openFaq === 1 ? "wdsc-faq__item--open" : ""}`}>
+              <button className="wdsc-faq__q" onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}>
+                <span>2. Can I use my website on my mobile?</span>
+                <span className="wdsc-faq__icon">{openFaq === 1 ? "−" : "+"}</span>
+              </button>
+              {openFaq === 1 && <div className="wdsc-faq__a">Yes, every website is fully responsive on mobile phones and other devices.</div>}
+            </div>
+            <div className={`wdsc-faq__item ${openFaq === 2 ? "wdsc-faq__item--open" : ""}`}>
+              <button className="wdsc-faq__q" onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}>
+                <span>3. Can I update my website after launching it?</span>
+                <span className="wdsc-faq__icon">{openFaq === 2 ? "−" : "+"}</span>
+              </button>
+              {openFaq === 2 && <div className="wdsc-faq__a">Yes, especially on WordPress, with ongoing support available if needed.</div>}
+            </div>
+            <div className={`wdsc-faq__item ${openFaq === 3 ? "wdsc-faq__item--open" : ""}`}>
+              <button className="wdsc-faq__q" onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}>
+                <span>4. Is my website built with SEO in mind?</span>
+                <span className="wdsc-faq__icon">{openFaq === 3 ? "−" : "+"}</span>
+              </button>
+              {openFaq === 3 && <div className="wdsc-faq__a">Yes, following SEO best practices including clean code and structured layouts.</div>}
+            </div>
+            <div className={`wdsc-faq__item ${openFaq === 4 ? "wdsc-faq__item--open" : ""}`}>
+              <button className="wdsc-faq__q" onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}>
+                <span>5. Do you redesign existing websites?</span>
+                <span className="wdsc-faq__icon">{openFaq === 4 ? "−" : "+"}</span>
+              </button>
+              {openFaq === 4 && <div className="wdsc-faq__a">Yes, we offer redesign services to improve design, speed, and performance.</div>}
+            </div>
           </div>
         </div>
       </section>

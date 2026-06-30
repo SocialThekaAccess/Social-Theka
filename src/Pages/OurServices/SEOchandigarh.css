@@ -821,16 +821,79 @@
 /* ── RESPONSIVE ──────────────────────────── */
 @media (max-width: 1100px) {
   .seoc-hero__inner { grid-template-columns: 1fr; gap: 45px; }
+  .seoc-hero__left { max-width: 100%; }
+  .seoc-hero__right { max-width: 600px; margin: 0 auto; }
   .seoc-pricing__grid { grid-template-columns: 1fr; }
+  .seoc-performance__grid,
+  .seoc-platforms__grid,
+  .seoc-process__grid,
+  .seoc-excellence__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .seoc-hero { padding: 48px 32px 56px; }
+  .seoc-hero__badge { font-size: 12px; margin-bottom: 24px; }
+  .seoc-hero__title { margin-bottom: 20px; }
+  .seoc-hero__desc { font-size: 14.5px; margin-bottom: 16px; }
+  .seoc-hero__stats-wrapper { margin-top: 42px; padding: 0 32px; }
+  .seoc-hero__stat { padding: 18px 14px; }
+  .seoc-hero__stat-val { font-size: 26px; }
+  .seoc-hero__stat-label { font-size: 11.5px; }
+  .seoc-performance,
+  .seoc-platforms,
+  .seoc-process,
+  .seoc-pricing-section,
+  .seoc-excellence { padding: 48px 32px; }
+  .seoc-btn-primary,
+  .seoc-btn-outline { padding: 13px 28px; font-size: 13.5px; }
+  .seoc-btn-primary--lg { padding: 15px 36px; font-size: 14.5px; }
+  .seoc-faq { padding: 64px 32px; }
+  .seoc-faq__header { margin-bottom: 48px; }
+  .seoc-faq__list { gap: 14px; }
+  .seoc-cta { padding: 50px 32px; }
 }
 @media (max-width: 768px) {
   .seoc-hero { padding: 45px 24px 50px; }
-  .seoc-hero__right { grid-template-columns: 1fr; }
+  .seoc-hero__inner { gap: 40px; }
+  .seoc-hero__right { grid-template-columns: 1fr; max-width: 100%; }
+  .seoc-hero__badge { font-size: 11.5px; margin-bottom: 22px; }
+  .seoc-hero__title { margin-bottom: 18px; }
+  .seoc-hero__desc { font-size: 14px; margin-bottom: 14px; }
+  .seoc-hero__card { padding: 22px 18px; }
+  .seoc-hero__card-icon { width: 40px; height: 40px; }
+  .seoc-hero__card-title { font-size: 15px; }
+  .seoc-hero__card-subtitle { font-size: 12.5px; }
+  .seoc-hero__stats-wrapper { margin-top: 38px; padding: 0 24px; }
+  .seoc-hero__stat { padding: 16px 12px; gap: 5px; }
+  .seoc-hero__stat-val { font-size: 24px; }
+  .seoc-hero__stat-label { font-size: 11px; }
+  .seoc-hero__stat-divider { height: 55px; }
   .seoc-performance,
   .seoc-platforms,
   .seoc-process,
   .seoc-pricing-section,
   .seoc-excellence { padding: 40px 24px; }
+  .seoc-performance__header,
+  .seoc-platforms__header,
+  .seoc-process__header,
+  .seoc-pricing-section__header,
+  .seoc-excellence__header { margin-bottom: 28px; }
+  .seoc-performance__grid,
+  .seoc-platforms__grid,
+  .seoc-process__grid,
+  .seoc-pricing__grid,
+  .seoc-excellence__grid { grid-template-columns: 1fr; gap: 14px; }
+  .seoc-performance__card,
+  .seoc-platform-card,
+  .seoc-excellence__card,
+  .seoc-pricing-card { padding: 22px 20px; }
+  .seoc-process__card { padding: 20px 18px; }
+  .seoc-btn-primary,
+  .seoc-btn-outline { padding: 12px 26px; font-size: 13px; }
+  .seoc-btn-primary--lg { padding: 14px 32px; font-size: 14px; }
+  .seoc-badge { font-size: 10.5px; padding: 7px 18px; }
   .seoc-faq { padding: 60px 24px; }
   .seoc-faq__header { margin-bottom: 40px; }
   .seoc-faq__q { padding: 20px 20px; }
@@ -838,26 +901,81 @@
   .seoc-faq__a { padding: 0 20px 20px; font-size: 14px; }
   .seoc-faq__icon { width: 32px; height: 32px; font-size: 18px; }
   .seoc-cta { padding: 45px 24px; }
-  .seoc-cta__inner { flex-direction: column; text-align: center; }
+  .seoc-cta__inner { flex-direction: column; text-align: center; gap: 24px; }
   .seoc-platforms__grid,
   .seoc-excellence__grid { grid-template-columns: 1fr; }
   .seoc-pricing__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .seoc-hero { padding: 35px 20px 40px; }
-  .seoc-hero__title { font-size: 28px; }
-  .seoc-hero__desc { font-size: 14px; }
+  .seoc-hero__inner { gap: 36px; }
+  .seoc-hero__badge { font-size: 11px; margin-bottom: 20px; gap: 8px; }
+  .seoc-hero__badge-dot { width: 7px; height: 7px; }
+  .seoc-hero__title { font-size: 28px; margin-bottom: 16px; }
+  .seoc-hero__desc { font-size: 13.5px; margin-bottom: 12px; }
   .seoc-hero__right { gap: 12px; }
-  .seoc-hero__card { padding: 20px 16px; }
-  .seoc-hero__stats { flex-direction: column; }
+  .seoc-hero__card { padding: 20px 16px; gap: 12px; }
+  .seoc-hero__card-icon { width: 38px; height: 38px; }
+  .seoc-hero__card-title { font-size: 14.5px; }
+  .seoc-hero__card-subtitle { font-size: 12px; }
+  .seoc-hero__stats-wrapper { margin-top: 32px; padding: 0 20px; }
+  .seoc-hero__stats { flex-direction: column; border-radius: 10px; }
+  .seoc-hero__stat { padding: 16px 14px; }
+  .seoc-hero__stat-val { font-size: 22px; }
+  .seoc-hero__stat-label { font-size: 10.5px; }
   .seoc-hero__stat-divider { width: 100%; height: 1px; }
   .seoc-performance,
   .seoc-platforms,
   .seoc-process,
   .seoc-pricing-section,
   .seoc-excellence { padding: 35px 20px; }
+  .seoc-performance__header,
+  .seoc-platforms__header,
+  .seoc-process__header,
+  .seoc-pricing-section__header,
+  .seoc-excellence__header { margin-bottom: 24px; }
+  .seoc-performance__title,
+  .seoc-platforms__title,
+  .seoc-process__title,
+  .seoc-pricing-section__title,
+  .seoc-excellence__title { font-size: 26px; margin: 8px 0 5px; }
+  .seoc-performance__subtitle,
+  .seoc-platforms__subtitle,
+  .seoc-process__subtitle,
+  .seoc-pricing-section__subtitle { font-size: 14px; }
+  .seoc-performance__grid,
+  .seoc-platforms__grid,
+  .seoc-process__grid,
+  .seoc-pricing__grid,
+  .seoc-excellence__grid { gap: 12px; }
+  .seoc-performance__card,
+  .seoc-platform-card,
+  .seoc-excellence__card,
+  .seoc-pricing-card { padding: 20px 18px; border-radius: 10px; }
+  .seoc-process__card { padding: 18px 16px; gap: 14px; border-radius: 10px; }
+  .seoc-performance__icon,
+  .seoc-excellence__icon { width: 36px; height: 36px; margin-bottom: 12px; }
+  .seoc-platform-card__icon { width: 42px; height: 42px; }
+  .seoc-pricing-card { padding: 28px 24px; }
+  .seoc-pricing-card__name { font-size: 20px; margin-bottom: 10px; }
+  .seoc-pricing-card__features { gap: 12px; margin-bottom: 24px; }
+  .seoc-pricing-card__features li { font-size: 13.5px; }
+  .seoc-pricing-card__check { width: 20px; height: 20px; }
+  .seoc-btn-primary,
+  .seoc-btn-outline { width: 100%; justify-content: center; padding: 13px 24px; font-size: 13px; }
+  .seoc-btn-primary--lg { padding: 14px 28px; font-size: 13.5px; }
+  .seoc-badge { font-size: 10px; padding: 6px 16px; }
   .seoc-faq { padding: 48px 20px; }
+  .seoc-faq__header { margin-bottom: 36px; }
   .seoc-faq__title { font-size: 28px; }
   .seoc-faq__list { gap: 12px; }
+  .seoc-faq__item { border-radius: 14px; }
+  .seoc-faq__q { padding: 18px 18px; gap: 16px; }
+  .seoc-faq__q span:first-child { font-size: 14.5px; }
+  .seoc-faq__a { padding: 0 18px 18px; font-size: 13.5px; }
+  .seoc-faq__icon { width: 30px; height: 30px; font-size: 17px; }
   .seoc-cta { padding: 40px 20px; }
+  .seoc-cta__inner { gap: 20px; }
+  .seoc-cta__title { font-size: 24px; margin-bottom: 7px; }
+  .seoc-cta__subtitle { font-size: 14px; }
 }
