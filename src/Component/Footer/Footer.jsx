@@ -1,18 +1,29 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import footerLogo from "../../assets/FooterLogo.png";
 
-const FOOTER_SERVICES = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Website Development", "Content Writing", "Link Building"];
-const FOOTER_COMPANY  = ["About Us", "Theka Story", "Case Studies", "Blog", "Careers"];
-const FOOTER_CONTACT  = [
-  "hello@socialtheka.com", 
-  "+91 78887 35337",
-  "+91 6280 614518",
-  "D-151, Second Floor, Phase-8, Industrial Area, Sector 73, Sahibzada Ajit Singh Nagar, Punjab 160071"
+const FOOTER_SERVICES = [
+  { label: "SEO Services",          to: "/services/seo" },
+  { label: "Social Media Marketing",to: "/services/social-media" },
+  { label: "PPC Advertising",       to: "/services/ppc" },
+  { label: "Website Development",   to: "/services/web-development" },
+  { label: "Web Design",            to: "/services/web-design" },
+  { label: "Video Editing",         to: "/services/video-editing" },
 ];
-const FOOTER_COLS = [
-  { title: "Services", links: FOOTER_SERVICES },
-  { title: "Company",  links: FOOTER_COMPANY  },
-  { title: "Contact",  links: FOOTER_CONTACT  },
+
+const FOOTER_COMPANY = [
+  { label: "About Us",     to: "/theka-story" },
+  { label: "Theka Story",  to: "/theka-story" },
+  { label: "Case Studies", to: "/" },
+  { label: "Blog",         to: "/" },
+  { label: "Careers",      to: "/contact" },
+];
+
+const FOOTER_CONTACT = [
+  { label: "hello@socialtheka.com",                                          href: "mailto:hello@socialtheka.com" },
+  { label: "+91 78887 35337",                                                href: "tel:+917888735337" },
+  { label: "+91 6280 614518",                                                href: "tel:+916280614518" },
+  { label: "D-151, Second Floor, Phase-8, Industrial Area, Sector 73, SAS Nagar, Punjab 160071", href: null },
 ];
 
 export default function Footer() {
@@ -21,7 +32,9 @@ export default function Footer() {
       <div className="footer__top">
         <div>
           <div className="footer__logo-wrap">
-            <img src={footerLogo} alt="Social Theka" className="footer__logo-img" />
+            <Link to="/">
+              <img src={footerLogo} alt="Social Theka" className="footer__logo-img" />
+            </Link>
           </div>
           <p className="footer__tagline">Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.</p>
           <div className="footer__socials">
@@ -39,23 +52,48 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        {FOOTER_COLS.map((col) => (
-          <div key={col.title}>
-            <div className="footer__col-title">{col.title}</div>
-            <div className="footer__links">
-              {col.links.map((link) => (
-                <a key={link} href="#" className="footer__link">{link}</a>
-              ))}
-            </div>
+
+        {/* Services column */}
+        <div>
+          <div className="footer__col-title">Services</div>
+          <div className="footer__links">
+            {FOOTER_SERVICES.map((item) => (
+              <Link key={item.label} to={item.to} className="footer__link">{item.label}</Link>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Company column */}
+        <div>
+          <div className="footer__col-title">Company</div>
+          <div className="footer__links">
+            {FOOTER_COMPANY.map((item) => (
+              <Link key={item.label} to={item.to} className="footer__link">{item.label}</Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact column */}
+        <div>
+          <div className="footer__col-title">Contact</div>
+          <div className="footer__links">
+            {FOOTER_CONTACT.map((item) =>
+              item.href ? (
+                <a key={item.label} href={item.href} className="footer__link">{item.label}</a>
+              ) : (
+                <span key={item.label} className="footer__link footer__link--text">{item.label}</span>
+              )
+            )}
+          </div>
+        </div>
       </div>
+
       <div className="footer__bottom container">
         <span>© 2026 Social Theka. All rights reserved.</span>
         <div className="footer__bottom-links">
-          {["Privacy Policy", "Terms", "Cookies"].map((l) => (
-            <a key={l} href="#">{l}</a>
-          ))}
+          <Link to="/contact">Privacy Policy</Link>
+          <Link to="/contact">Terms</Link>
+          <Link to="/contact">Cookies</Link>
         </div>
       </div>
     </footer>

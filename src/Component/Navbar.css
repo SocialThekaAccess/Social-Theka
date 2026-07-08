@@ -539,3 +539,32 @@
   .nb-top { flex-direction: column; text-align: center; gap: 6px; padding: 8px 16px; }
   .nb-top__right { justify-content: center; flex-wrap: wrap; }
 }
+
+/* ── BUTTON-STYLE NAV LINK (replaces <a> for dropdown trigger) ── */
+.nb__link--btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+/* ── DISABLED / COMING-SOON LINK ── */
+.nb__link--disabled,
+.nb__mobile-link--disabled {
+  opacity: 0.45;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ── MOBILE SECTION LABEL ── */
+.nb__mobile-link--section {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  pointer-events: none;
+  cursor: default;
+}

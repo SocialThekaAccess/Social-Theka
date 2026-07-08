@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./PPCServicePage.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 
@@ -142,8 +143,8 @@ export default function PPCServicePage() {
               Creating ads is not the hard part — getting real results is where most businesses face challenges. At Social Theka, we offer PPC services in Chandigarh focused on real business growth, not just traffic.
             </p>
             <div className="ppc-hero__ctas">
-              <a href="#contact" className="ppc-btn-primary">Get Free PPC Audit <IconArrow /></a>
-              <a href="#platforms" className="ppc-btn-outline">View Platforms</a>
+              <Link to="/contact" className="ppc-btn-primary">Get Free PPC Audit <IconArrow /></Link>
+              <Link to="/" className="ppc-btn-outline">View Platforms</Link>
             </div>
             {/* Mini stats */}
             <div className="ppc-hero__stats">
@@ -405,9 +406,9 @@ export default function PPCServicePage() {
           <p className="ppc-cta-banner__sub">
             Let's build campaigns that don't just bring clicks — but bring real results. Free PPC audit included.
           </p>
-          <a href="#contact" className="ppc-btn-primary ppc-btn-primary--lg">
+          <Link to="/contact" className="ppc-btn-primary ppc-btn-primary--lg">
             Book a Free Consultation <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

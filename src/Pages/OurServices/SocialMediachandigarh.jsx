@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./SocialMediachandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 
@@ -123,8 +124,8 @@ export default function SocialMediaChandigarh() {
             <p className="smc-hero__sub">If your page looks inactive or random, they just move on. No second thought. That's why social media marketing is no longer optional. It's a big part of how your business is seen online.</p>
             <p className="smc-hero__sub">At Social Theka, we handle social media marketing in Chandigarh in a way that actually makes sense for real businesses. Not overcomplicated strategies. Not big promises. Just proper work that helps you stay visible, build trust, and slowly turn attention into customers.</p>
             <div className="smc-hero__ctas">
-              <a href="#contact" className="smc-btn-primary">Get Started <IconArrow /></a>
-              <a href="#services" className="smc-btn-outline">How We Work</a>
+              <Link to="/contact" className="smc-btn-primary">Get Started <IconArrow /></Link>
+              <Link to="/" className="smc-btn-outline">How We Work</Link>
             </div>
             <div className="smc-hero__stats">
               <div className="smc-hero__stat">
@@ -395,9 +396,9 @@ export default function SocialMediaChandigarh() {
           <p className="smc-cta-banner__sub">
             No pressure, no long process. Just reach out, we'll understand your business, and suggest what actually makes sense. If you're looking for the best social media marketing agency in Chandigarh that keeps things real — you already know where to go.
           </p>
-          <a href="#contact" className="smc-btn-primary smc-btn-primary--lg">
+          <Link to="/contact" className="smc-btn-primary smc-btn-primary--lg">
             Start the Conversation <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

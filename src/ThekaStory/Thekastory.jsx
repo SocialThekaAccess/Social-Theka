@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Thekastory.css";
-import footerLogo from "../assets/FooterLogo.png";
+import Footer from "../Component/Footer/Footer";
 
 /* ── SVG Icons ────────────────────────────────── */
 const IconStar = () => (
@@ -105,65 +106,6 @@ const TEAM = [
   },
 ];
 
-/* ── FOOTER ───────────────────────────────────── */
-const FOOTER_SERVICES = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Website Development", "Content Writing", "Link Building"];
-const FOOTER_COMPANY  = ["About Us", "Theka Story", "Case Studies", "Blog", "Careers"];
-const FOOTER_CONTACT  = ["hello@socialtheka.com", "+91 XXXXX XXXXX", "Chandigarh, India"];
-const FOOTER_COLS = [
-  { title: "Services", links: FOOTER_SERVICES },
-  { title: "Company",  links: FOOTER_COMPANY  },
-  { title: "Contact",  links: FOOTER_CONTACT  },
-];
-
-function Footer() {
-  return (
-    <footer className="ts-footer">
-      <div className="ts-footer__top">
-        <div className="ts-footer__brand">
-          <div className="ts-footer__logo-wrap">
-            <img src={footerLogo} alt="Social Theka" className="ts-footer__logo-img" />
-          </div>
-          <p className="ts-footer__tagline">
-            Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.
-          </p>
-          <div className="ts-footer__socials">
-            <a href="https://www.linkedin.com/company/socialtheka/" target="_blank" rel="noreferrer" className="ts-footer__soc" aria-label="LinkedIn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="https://instagram.com/socialtheka" target="_blank" rel="noreferrer" className="ts-footer__soc" aria-label="Instagram">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="https://www.facebook.com/officialsocialtheka" target="_blank" rel="noreferrer" className="ts-footer__soc" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-            </a>
-            <a href="https://x.com/SocialTheka" target="_blank" rel="noreferrer" className="ts-footer__soc" aria-label="Twitter / X">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-          </div>
-        </div>
-        {FOOTER_COLS.map((col) => (
-          <div key={col.title} className="ts-footer__col">
-            <div className="ts-footer__col-title">{col.title}</div>
-            <div className="ts-footer__links">
-              {col.links.map((link) => (
-                <a key={link} href="#" className="ts-footer__link">{link}</a>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="ts-footer__bottom">
-        <span>© 2026 Social Theka. All rights reserved.</span>
-        <div className="ts-footer__bottom-links">
-          {["Privacy Policy", "Terms", "Cookies"].map((l) => (
-            <a key={l} href="#">{l}</a>
-          ))}
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 /* ── SCROLL TO TOP ────────────────────────────── */
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -255,7 +197,7 @@ export default function ThekaStory() {
       </section>
 
       {/* ══ ORIGIN STORY ══════════════════════════ */}
-      <section className="ts-section ts-section--white">
+      <section className="ts-section ts-section--white" id="story">
         <div className="ts-section__inner ts-story">
           <div className="ts-story__left">
             <div className="ts-eyebrow">Social Theka Story</div>
@@ -381,9 +323,9 @@ export default function ThekaStory() {
               It's not just about providing a service, but about developing connections and working
               together towards a common purpose.
             </p>
-            <a href="#contact" className="ts-aim__cta">
+            <Link to="/contact" className="ts-aim__cta">
               Start Your Journey <IconArrow />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

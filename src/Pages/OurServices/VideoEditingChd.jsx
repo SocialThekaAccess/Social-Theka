@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./VideoEditingChd.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 
@@ -177,8 +178,8 @@ export default function VideoEditingChd() {
               At Social Theka we edit videos to make your video content look clean, natural and useful for your brand. We do not think it is a good idea to add effects to a video just to make it look busy. Every video should have a reason behind it. The video should tell your story, promote your service, build trust or bring attention to your business.
             </p>
             <div className="vec-hero__ctas">
-              <a href="#contact" className="vec-btn-primary">Start Your Project <IconArrow /></a>
-              <a href="#services" className="vec-btn-outline">View Services</a>
+              <Link to="/contact" className="vec-btn-primary">Start Your Project <IconArrow /></Link>
+              <Link to="/" className="vec-btn-outline">View Services</Link>
             </div>
             <div className="vec-hero__stats">
               <div className="vec-hero__stat">
@@ -521,9 +522,9 @@ export default function VideoEditingChd() {
           <p className="vec-cta-banner__sub">
             If you need a Video Editing Agency in Chandigarh, Social Theka is here to help. Send us your footage and we will turn it into clean, professional videos that your audience will connect with.
           </p>
-          <a href="#contact" className="vec-btn-primary vec-btn-primary--lg">
+          <Link to="/contact" className="vec-btn-primary vec-btn-primary--lg">
             Start Your Project <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

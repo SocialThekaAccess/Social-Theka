@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./ServicesSection.css";
 
 const services = [
@@ -81,9 +82,9 @@ function ServiceRow({ service, index }) {
             <h3 className="svc-text__title">{service.title}</h3>
             <div className="svc-text__line" />
             <p className="svc-text__desc">{service.desc}</p>
-            <a href="#contact" className="svc-text__btn">
+            <Link to="/contact" className="svc-text__btn">
               Get Started <span className="svc-text__arrow">↗</span>
-            </a>
+            </Link>
           </div>
         )}
       </div>
@@ -110,9 +111,9 @@ function ServiceRow({ service, index }) {
             <h3 className="svc-text__title">{service.title}</h3>
             <div className="svc-text__line" />
             <p className="svc-text__desc">{service.desc}</p>
-            <a href="#contact" className="svc-text__btn">
+            <Link to="/contact" className="svc-text__btn">
               Get Started <span className="svc-text__arrow">↗</span>
-            </a>
+            </Link>
           </div>
         )}
       </div>
@@ -141,10 +142,10 @@ export default function ServicesSection() {
             Six focused services. One team. Zero confusion.
             We handle everything so you can focus on running your business.
           </p>
-          <a href="#contact" className="svc-header__cta">
+          <Link to="/contact" className="svc-header__cta">
             All Services
             <span className="svc-header__cta-circle">↗</span>
-          </a>
+          </Link>
         </div>
       </div>
 

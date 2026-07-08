@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./SEOchandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 
@@ -170,8 +171,8 @@ export default function SEOChandigarh() {
               Networking can help identify relevant SEO agencies and provide examples of successful campaigns in similar verticals.
             </p>
             <div className="seoc-hero__ctas">
-              <a href="#contact" className="seoc-btn-primary">Get Started <IconArrow /></a>
-              <a href="#services" className="seoc-btn-outline">Our Services</a>
+              <Link to="/contact" className="seoc-btn-primary">Get Started <IconArrow /></Link>
+              <Link to="/" className="seoc-btn-outline">Our Services</Link>
             </div>
             <div className="seoc-hero__stats">
               <div className="seoc-hero__stat">
@@ -324,9 +325,9 @@ export default function SEOChandigarh() {
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className={plan.highlight ? "seoc-btn-primary" : "seoc-btn-outline"}>
+                <Link to="/contact" className={plan.highlight ? "seoc-btn-primary" : "seoc-btn-outline"}>
                   Get Started <IconArrow />
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -378,9 +379,9 @@ export default function SEOChandigarh() {
           <p className="seoc-cta-banner__sub">
             Social Theka is the digital marketing agency businesses go with for tangible SEO success that lasts long after your investment. Let's build your strategy today.
           </p>
-          <a href="#contact" className="seoc-btn-primary seoc-btn-primary--lg">
+          <Link to="/contact" className="seoc-btn-primary seoc-btn-primary--lg">
             Start Your SEO Journey <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

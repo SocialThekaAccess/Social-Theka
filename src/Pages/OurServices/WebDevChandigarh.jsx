@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./WebDevChandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 
@@ -138,8 +139,8 @@ export default function WebDevChandigarh() {
               We don't build cookie-cutter websites. We create websites that truly benefit our clients — attractive designs, fast load times, and user-friendly experiences that work for your business.
             </p>
             <div className="wdc-hero__ctas">
-              <a href="#contact" className="wdc-btn-primary">Start Your Project <IconArrow /></a>
-              <a href="#services" className="wdc-btn-outline">View Services</a>
+              <Link to="/contact" className="wdc-btn-primary">Start Your Project <IconArrow /></Link>
+              <Link to="/" className="wdc-btn-outline">View Services</Link>
             </div>
             <div className="wdc-hero__stats">
               <div className="wdc-hero__stat">
@@ -369,9 +370,9 @@ export default function WebDevChandigarh() {
           <p className="wdc-cta-banner__sub">
             If you're looking for a web development company in Chandigarh that actually understands your needs, Social Theka is here to help. Let's create a website that not only looks good but also works properly for your business.
           </p>
-          <a href="#contact" className="wdc-btn-primary wdc-btn-primary--lg">
+          <Link to="/contact" className="wdc-btn-primary wdc-btn-primary--lg">
             Start Your Project <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

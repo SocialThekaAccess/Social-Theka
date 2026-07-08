@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/SocialThekaLogo.png";
 import "./Navbar.css";
 
@@ -50,35 +51,42 @@ const SVG_ICONS = {
 };
 
 const CHANDIGARH_SERVICES = [
-  { icon: SVG_ICONS.seo,       label: "SEO Services Chandigarh",           to: "seo-chandigarh" },
-  { icon: SVG_ICONS.ppc,       label: "PPC Advertising Chandigarh",        to: "ppc" },
-  { icon: SVG_ICONS.webdev,    label: "Web Development Chandigarh",        to: "webdev-chandigarh" },
-  { icon: SVG_ICONS.webdesign, label: "Web Design Chandigarh",             to: "webdesign-chandigarh" },
-  { icon: SVG_ICONS.social,    label: "Social Media Marketing Chandigarh", to: "social-chandigarh" },
-  { icon: SVG_ICONS.video,     label: "Video Editing Chandigarh",          to: "video-chandigarh" },
+  { icon: SVG_ICONS.seo,       label: "SEO Services Chandigarh",           to: "/services/seo" },
+  { icon: SVG_ICONS.ppc,       label: "PPC Advertising Chandigarh",        to: "/services/ppc" },
+  { icon: SVG_ICONS.webdev,    label: "Web Development Chandigarh",        to: "/services/web-development" },
+  { icon: SVG_ICONS.webdesign, label: "Web Design Chandigarh",             to: "/services/web-design" },
+  { icon: SVG_ICONS.social,    label: "Social Media Marketing Chandigarh", to: "/services/social-media" },
+  { icon: SVG_ICONS.video,     label: "Video Editing Chandigarh",          to: "/services/video-editing" },
 ];
 
 const NAV_LINKS = [
-  { label: "Home",         href: "#home",     active: true },
-  { label: "Our Services", href: "#services", dropdown: "services" },
-  { label: "Theka Story",  href: "#story",    to: "theka-story" },
-  { label: "Blogs",        href: "#blog",     dropdown: true },
-  { label: "Contact Us",   href: "#contact",  to: "contact" },
+  { label: "Home",         to: "/" },
+  { label: "Our Services", to: null, dropdown: "services" },
+  { label: "Theka Story",  to: "/theka-story" },
+  { label: "Blogs",        to: null, comingSoon: true },
+  { label: "Contact Us",   to: "/contact" },
 ];
 
-export default function Navbar({ onNavigate, currentPage }) {
+export default function Navbar() {
   const [scrolled,     setScrolled]     = useState(false);
-  const [active,       setActive]       = useState("Home");
   const [menuOpen,     setMenuOpen]     = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
   const timeoutRef  = useRef(null);
+  const navigate    = useNavigate();
+  const location    = useLocation();
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+    setServicesOpen(false);
+  }, [location.pathname]);
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
@@ -88,11 +96,10 @@ export default function Navbar({ onNavigate, currentPage }) {
     timeoutRef.current = setTimeout(() => setServicesOpen(false), 120);
   };
 
-  const navigateTo = (page, label) => {
-    setActive(label);
+  const handleServiceClick = (to) => {
     setMenuOpen(false);
     setServicesOpen(false);
-    if (page) onNavigate?.(page);
+    navigate(to);
   };
 
   const leftCol  = CHANDIGARH_SERVICES.filter((_, i) => i % 2 === 0);
@@ -107,7 +114,7 @@ export default function Navbar({ onNavigate, currentPage }) {
           <span>SEO Agency of the Year 2024, 25</span>
         </div>
         <div className="nb-top__right">
-          <span> &nbsp;<strong>info@socialtheka.com</strong></span>
+          <span>&nbsp;<strong>info@socialtheka.com</strong></span>
           <span className="nb-top__sep">|</span>
           <a href="tel:+917888735337" className="nb-top__phone">
             <span className="nb-top__phone-icon">
@@ -125,14 +132,13 @@ export default function Navbar({ onNavigate, currentPage }) {
         <div className="nb__inner">
 
           {/* Logo */}
-          <a href="#home" className="nb__logo" onClick={() => navigateTo("home", "Home")}>
+          <Link to="/" className="nb__logo">
             <img
               src={logo}
               alt="Social Theka"
-              key={currentPage}
               className="nb__logo-img nb__logo-img--reveal"
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="nb__links nb__links--reveal">
@@ -145,33 +151,31 @@ export default function Navbar({ onNavigate, currentPage }) {
                   onMouseLeave={handleMouseLeave}
                   ref={dropdownRef}
                 >
-                  <a
-                    href={link.href}
-                    className={`nb__link ${active === link.label || servicesOpen ? "nb__link--active" : ""}`}
-                    onClick={() => navigateTo(null, link.label)}
+                  <button
+                    className={`nb__link nb__link--btn ${servicesOpen ? "nb__link--active" : ""}`}
+                    onClick={() => setServicesOpen((o) => !o)}
+                    aria-expanded={servicesOpen}
+                    aria-haspopup="true"
                   >
                     {link.label}
                     <span className={`nb__chevron ${servicesOpen ? "nb__chevron--open" : ""}`}>^</span>
-                  </a>
+                  </button>
 
                   {/* ── MEGA DROPDOWN ── */}
                   {servicesOpen && (
                     <div className="nb__mega">
-                      {/* "OUR SERVICES" label + red accent */}
                       <div className="nb__mega-head">
                         <span className="nb__mega-label">OUR SERVICES</span>
                         <span className="nb__mega-accent" />
                       </div>
 
-                      {/* 2-column grid — exactly like screenshot */}
                       <div className="nb__mega-grid">
-                        {/* Left column */}
                         <div className="nb__mega-col nb__mega-col--left">
                           {leftCol.map((service) => (
                             <button
                               key={service.label}
                               className="nb__mega-card"
-                              onClick={() => navigateTo(service.to, "Our Services")}
+                              onClick={() => handleServiceClick(service.to)}
                             >
                               <span className="nb__mega-card-icon">{service.icon}</span>
                               <span className="nb__mega-card-title">{service.label}</span>
@@ -180,13 +184,12 @@ export default function Navbar({ onNavigate, currentPage }) {
                           ))}
                         </div>
 
-                        {/* Right column */}
                         <div className="nb__mega-col nb__mega-col--right">
                           {rightCol.map((service) => (
                             <button
                               key={service.label}
                               className="nb__mega-card"
-                              onClick={() => navigateTo(service.to, "Our Services")}
+                              onClick={() => handleServiceClick(service.to)}
                             >
                               <span className="nb__mega-card-icon">{service.icon}</span>
                               <span className="nb__mega-card-title">{service.label}</span>
@@ -196,27 +199,32 @@ export default function Navbar({ onNavigate, currentPage }) {
                         </div>
                       </div>
 
-                      {/* View all footer */}
-                      <button
+                      <Link
+                        to="/services/seo"
                         className="nb__mega-viewall"
-                        onClick={() => navigateTo(null, "Our Services")}
+                        onClick={() => setServicesOpen(false)}
                       >
                         View all Chandigarh services
                         <span className="nb__mega-viewall-arrow">→</span>
-                      </button>
+                      </Link>
                     </div>
                   )}
                 </div>
+              ) : link.comingSoon ? (
+                <span key={link.label} className="nb__link nb__link--disabled" title="Coming soon">
+                  {link.label}
+                </span>
               ) : (
-                <a
+                <NavLink
                   key={link.label}
-                  href={link.href}
-                  className={`nb__link ${active === link.label ? "nb__link--active" : ""}`}
-                  onClick={() => navigateTo(link.label === "Home" ? "home" : link.to, link.label)}
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `nb__link${isActive ? " nb__link--active" : ""}`
+                  }
+                  end={link.to === "/"}
                 >
                   {link.label}
-                  {link.dropdown && <span className="nb__chevron">^</span>}
-                </a>
+                </NavLink>
               )
             )}
           </nav>
@@ -229,7 +237,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                 <path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.563 4.14 1.535 5.875L.057 23.996l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.374l-.359-.213-3.722.976.994-3.632-.234-.373A9.818 9.818 0 1112 21.818z" />
               </svg>
             </a>
-            <a href="https://wa.me/91XXXXXXXXXX" className="nb__btn-solid" target="_blank" rel="noreferrer">
+            <Link to="/contact" className="nb__btn-solid">
               <svg className="nb__btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M8 2v4" /><path d="M16 2v4" />
                 <rect x="3" y="4" width="18" height="18" rx="2" />
@@ -237,7 +245,7 @@ export default function Navbar({ onNavigate, currentPage }) {
                 <path d="M8 14h.01" /><path d="M12 14h.01" /><path d="M16 14h.01" />
               </svg>
               Book a Meeting
-            </a>
+            </Link>
           </div>
 
           {/* Hamburger */}
@@ -253,32 +261,47 @@ export default function Navbar({ onNavigate, currentPage }) {
         {/* ── MOBILE MENU ── */}
         {menuOpen && (
           <div className="nb__mobile">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={`nb__mobile-link ${active === link.label ? "nb__mobile-link--active" : ""}`}
-                onClick={() => navigateTo(link.label === "Home" ? "home" : link.to, link.label)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="nb__mobile-cities">
-              <div className="nb__mobile-city-group">
-                <div className="nb__mobile-city-label">Chandigarh</div>
-                {CHANDIGARH_SERVICES.map((service) => (
-                  <button
-                    key={service.label}
-                    className="nb__mobile-service-link"
-                    onClick={() => navigateTo(service.to, "Our Services")}
-                  >
-                    {service.icon} {service.label}
-                  </button>
-                ))}
-              </div>
-            </div>
+            {NAV_LINKS.map((link) =>
+              link.comingSoon ? (
+                <span key={link.label} className="nb__mobile-link nb__mobile-link--disabled">
+                  {link.label}
+                </span>
+              ) : link.dropdown === "services" ? (
+                <div key={link.label}>
+                  <span className="nb__mobile-link nb__mobile-link--section">Our Services</span>
+                  <div className="nb__mobile-cities">
+                    <div className="nb__mobile-city-group">
+                      <div className="nb__mobile-city-label">Chandigarh</div>
+                      {CHANDIGARH_SERVICES.map((service) => (
+                        <button
+                          key={service.label}
+                          className="nb__mobile-service-link"
+                          onClick={() => handleServiceClick(service.to)}
+                        >
+                          {service.icon} {service.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <NavLink
+                  key={link.label}
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `nb__mobile-link${isActive ? " nb__mobile-link--active" : ""}`
+                  }
+                  end={link.to === "/"}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </NavLink>
+              )
+            )}
             <div className="nb__mobile-ctas">
-              <a href="#contact" className="nb__btn-solid" onClick={() => setMenuOpen(false)}>Book a Meeting</a>
+              <Link to="/contact" className="nb__btn-solid" onClick={() => setMenuOpen(false)}>
+                Book a Meeting
+              </Link>
             </div>
           </div>
         )}

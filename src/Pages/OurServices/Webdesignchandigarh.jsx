@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Webdesignchandigarh.css" 
 import ServiceLayout from "../../Component/ServiceLayout";
 
@@ -146,8 +147,8 @@ export default function WebDesignChandigarh() {
               Your site could be someone's first impression of your business. Will they stay? Or will they go? It is up to you. Social Theka, a trusted Website Designing Company in Chandigarh, builds websites that keep visitors engaged and work for your business.
             </p>
             <div className="wdsc-hero__ctas">
-              <a href="#contact" className="wdsc-btn-primary">Start Your Project <IconArrow /></a>
-              <a href="#services" className="wdsc-btn-outline">View Services</a>
+              <Link to="/contact" className="wdsc-btn-primary">Start Your Project <IconArrow /></Link>
+              <Link to="/" className="wdsc-btn-outline">View Services</Link>
             </div>
             <div className="wdsc-hero__stats">
               <div className="wdsc-hero__stat">
@@ -484,9 +485,9 @@ export default function WebDesignChandigarh() {
           <p className="wdsc-cta-banner__sub">
             When you choose Social Theka, you choose quality and support. We work with you like a partner, not just a service provider.
           </p>
-          <a href="#contact" className="wdsc-btn-primary wdsc-btn-primary--lg">
+          <Link to="/contact" className="wdsc-btn-primary wdsc-btn-primary--lg">
             Start Your Project <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

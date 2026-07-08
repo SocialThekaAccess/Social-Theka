@@ -1,5 +1,6 @@
 import './App.css'
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './Component/Navbar'
 import Home from './Component/Home'
 import PPCServicePage from './Pages/OurServices/PPCServicePage'
 import WebDevChandigarh from './Pages/OurServices/WebDevChandigarh'
@@ -9,23 +10,24 @@ import VideoEditingChd from './Pages/OurServices/VideoEditingChd'
 import SocialMediachandigarh from './Pages/OurServices/SocialMediachandigarh'
 import ThekaStory from './ThekaStory/Thekastory'
 import ContactUs from './ContactUs/ContactUs'
-import Navbar from './Component/Navbar'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
-
   return (
     <>
-      <Navbar onNavigate={setCurrentPage} currentPage={currentPage} />
-      {currentPage === 'home'                 && <Home />}
-      {currentPage === 'theka-story'          && <ThekaStory />}
-      {currentPage === 'contact'              && <ContactUs />}
-      {currentPage === 'ppc'                  && <PPCServicePage />}
-      {currentPage === 'webdev-chandigarh'    && <WebDevChandigarh />}
-      {currentPage === 'webdesign-chandigarh' && <Webdesignchandigarh />}
-      {currentPage === 'seo-chandigarh'       && <SEOchandigarh />}
-      {currentPage === 'video-chandigarh'     && <VideoEditingChd />}
-      {currentPage === 'social-chandigarh'    && <SocialMediachandigarh />}
+      <Navbar />
+      <Routes>
+        <Route path="/"                           element={<Home />} />
+        <Route path="/theka-story"                element={<ThekaStory />} />
+        <Route path="/contact"                    element={<ContactUs />} />
+        <Route path="/services/ppc"               element={<PPCServicePage />} />
+        <Route path="/services/web-development"   element={<WebDevChandigarh />} />
+        <Route path="/services/web-design"        element={<Webdesignchandigarh />} />
+        <Route path="/services/seo"               element={<SEOchandigarh />} />
+        <Route path="/services/video-editing"     element={<VideoEditingChd />} />
+        <Route path="/services/social-media"      element={<SocialMediachandigarh />} />
+        {/* catch-all → home */}
+        <Route path="*"                           element={<Home />} />
+      </Routes>
     </>
   )
 }
