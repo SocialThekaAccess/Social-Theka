@@ -66,7 +66,7 @@ export default function CorePrinciples() {
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
               <div className="cp-card-icon">
-                <img src={p.icon} alt={p.title} />
+                <img src={p.icon} alt={p.title} loading="lazy" decoding="async" />
               </div>
               <div>
                 <h3 className="cp-card-title">{p.title}</h3>

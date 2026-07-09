@@ -141,7 +141,7 @@ export default function RegionalPresence() {
 
             <div className="rp-detail-right">
               <div className="rp-image-wrap">
-                <img src={active.image} alt={active.heading} className="rp-image" />
+                <img src={active.image} alt={active.heading} className="rp-image" loading="lazy" decoding="async" />
               </div>
               <div className="rp-transit">
                 <div className="rp-transit-label">

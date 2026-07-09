@@ -123,7 +123,7 @@ function Footer() {
       <div className="ts-footer__top">
         <div className="ts-footer__brand">
           <div className="ts-footer__logo-wrap">
-            <img src={footerLogo} alt="Social Theka" className="ts-footer__logo-img" />
+            <img src={footerLogo} alt="Social Theka" className="ts-footer__logo-img" loading="lazy" decoding="async" />
           </div>
           <p className="ts-footer__tagline">
             Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.

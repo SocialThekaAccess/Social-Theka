@@ -136,7 +136,7 @@ export default function PhotoFan() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >
-                <img src={p.src} alt={`Social Theka ${i + 1}`} loading="lazy" />
+                <img src={p.src} alt={`Social Theka ${i + 1}`} loading="lazy" decoding="async" />
                 {p.tag && <div className="pf-photo-tag">{p.tag}</div>}
               </div>
             ))}
@@ -149,7 +149,7 @@ export default function PhotoFan() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >
-                <img src={p.src} alt={`Social Theka ${i + 1}`} loading="lazy" />
+                <img src={p.src} alt={`Social Theka ${i + 1}`} loading="lazy" decoding="async" />
                 {p.tag && <div className="pf-photo-tag">{p.tag}</div>}
               </div>
             ))}
@@ -171,7 +171,7 @@ export default function PhotoFan() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >
-                <img src={p.src} alt={`Social Theka ${i + 1}`} loading="lazy" />
+                <img src={p.src} alt={`Social Theka ${i + 1}`} loading="lazy" decoding="async" />
                 {p.tag && <div className="pf-photo-tag">{p.tag}</div>}
               </div>
             ))}

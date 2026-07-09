@@ -73,7 +73,7 @@ export default function AwardsSection() {
                 aria-hidden={i >= AWARDS.length}
               >
                 <div className="aw-tile__logo">
-                  <img src={a.img} alt={`Award recognition ${(i % AWARDS.length) + 1}`} loading="lazy" className="aw-tile__img" />
+                  <img src={a.img} alt={`Award recognition ${(i % AWARDS.length) + 1}`} loading="lazy" decoding="async" className="aw-tile__img" />
                   <div className="aw-tile__shine"></div>
                 </div>
               </div>

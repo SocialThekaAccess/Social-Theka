@@ -105,7 +105,7 @@ export default function ResultsSlider() {
                   onClick={() => !isActive && goTo(i)}
                 >
                   <div className="rs-slide-img-wrap">
-                    <img src={s.img} alt={s.label} draggable={false} />
+                    <img src={s.img} alt={s.label} draggable={false} loading={isActive ? "eager" : "lazy"} decoding="async" fetchPriority={isActive ? "high" : "auto"} />
                     <div className="rs-slide-tag">{s.tag}</div>
                   </div>
                   {isActive && (

@@ -494,6 +494,7 @@ export default function VideoEditingChd() {
                 loop 
                 muted 
                 playsInline
+                preload="metadata"
               >
                 <source src={heroVideo} type="video/mp4" />
               </video>

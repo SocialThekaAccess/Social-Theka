@@ -210,7 +210,7 @@ export default function SocialMediaServicePage() {
 
           <div className="sms-hero__right">
             <div className="sms-hero__image-wrapper">
-              <img src={smmHeroImg} alt="Social Media Marketing Services" className="sms-hero__image" />
+              <img src={smmHeroImg} alt="Social Media Marketing Services" className="sms-hero__image" loading="eager" decoding="async" fetchPriority="high" />
 
               {/* Floating Cards - matches WebDevChandigarh style */}
               <div className="sms-hero__floating-card sms-hero__floating-card--top">

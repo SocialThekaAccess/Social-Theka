@@ -109,6 +109,7 @@ export default function TeamSection() {
                 muted
                 playsInline
                 controls
+                preload="metadata"
               />
             </div>
           </div>

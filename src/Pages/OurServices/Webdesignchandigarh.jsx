@@ -109,7 +109,7 @@ export default function WebDesignChandigarh() {
 
           <div className="wdsc-hero__right">
             <div className="wdsc-hero__image-wrapper">
-              <img src={websiteHeroImg} alt="Website Design Services" className="wdsc-hero__image" />
+              <img src={websiteHeroImg} alt="Website Design Services" className="wdsc-hero__image" loading="eager" decoding="async" fetchPriority="high" />
             </div>
             
             {/* Hero Feature Cards - Below Image */}

@@ -185,7 +185,7 @@ export default function PPCServicePage() {
 
           <div className="ppc-hero__right">
             <div className="ppc-hero__image-wrapper">
-              <img src={ppcHeroImg} alt="PPC Advertising Services" className="ppc-hero__image" />
+              <img src={ppcHeroImg} alt="PPC Advertising Services" className="ppc-hero__image" loading="eager" decoding="async" fetchPriority="high" />
               
               {/* Floating Stats Cards */}
               <div className="ppc-hero__floating-card ppc-hero__floating-card--top">

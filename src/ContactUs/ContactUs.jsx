@@ -61,7 +61,7 @@ function Footer() {
       <div className="cu-footer__top">
         <div className="cu-footer__brand">
           <div className="cu-footer__logo-wrap">
-            <img src={footerLogo} alt="Social Theka" className="cu-footer__logo-img" />
+            <img src={footerLogo} alt="Social Theka" className="cu-footer__logo-img" loading="lazy" decoding="async" />
           </div>
           <p className="cu-footer__tagline">
             Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.
@@ -156,9 +156,9 @@ export default function ContactUs() {
       <section className="cu-hero">
         {/* Background Pattern Images */}
         <div className="cu-hero__bg-pattern">
-          <img src="https://www.pngall.com/wp-content/uploads/5/Digital-Marketing-PNG-Free-Download.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--1" />
-          <img src="https://purepng.com/public/uploads/large/purepng.com-social-media-marketing-iconsocial-mediasocial-networking-serviceweb-iconsymbolssetcollection-1421526557682qoesp.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--2" />
-          <img src="https://www.pngall.com/wp-content/uploads/12/SEO-PNG-Clipart.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--3" />
+          <img src="https://www.pngall.com/wp-content/uploads/5/Digital-Marketing-PNG-Free-Download.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--1" loading="lazy" decoding="async" />
+          <img src="https://purepng.com/public/uploads/large/purepng.com-social-media-marketing-iconsocial-mediasocial-networking-serviceweb-iconsymbolssetcollection-1421526557682qoesp.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--2" loading="lazy" decoding="async" />
+          <img src="https://www.pngall.com/wp-content/uploads/12/SEO-PNG-Clipart.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--3" loading="lazy" decoding="async" />
         </div>
         
         {/* Background Illustration */}

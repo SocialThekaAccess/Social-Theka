@@ -139,6 +139,9 @@ export default function Navbar() {
               src={logo}
               alt="Social Theka"
               className="nb__logo-img nb__logo-img--reveal"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
           </Link>
 

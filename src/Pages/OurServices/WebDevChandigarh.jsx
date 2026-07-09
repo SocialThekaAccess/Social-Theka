@@ -241,7 +241,7 @@ export default function WebDevChandigarh() {
 
             <div className="wdc-hero__right">
               <div className="wdc-hero__image-wrapper">
-                <img src={webHeroImg} alt="Web Development Services" className="wdc-hero__image" />
+                <img src={webHeroImg} alt="Web Development Services" className="wdc-hero__image" loading="eager" decoding="async" fetchPriority="high" />
                 
                 {/* Floating Cards */}
                 <div className="wdc-hero__floating-card wdc-hero__floating-card--top">

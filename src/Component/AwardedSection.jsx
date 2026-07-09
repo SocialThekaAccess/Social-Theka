@@ -35,7 +35,7 @@ export default function AwardedSection() {
         <div className="as-grid">
           {LOGOS.map((src, i) => (
             <div key={i} className="as-card">
-              <img src={src} alt={`Brand ${i + 1}`} loading="lazy" />
+              <img src={src} alt={`Brand ${i + 1}`} loading="lazy" decoding="async" />
             </div>
           ))}
         </div>

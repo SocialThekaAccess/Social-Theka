@@ -72,7 +72,7 @@ function ServiceRow({ service, index }) {
         {isLeft ? (
           <div className="svc-card">
             <div className="svc-card__img-wrap">
-              <img src={service.img} alt={service.title} className="svc-card__img" loading="lazy" />
+              <img src={service.img} alt={service.title} className="svc-card__img" loading="lazy" decoding="async" />
               <span className="svc-card__tag">{service.tag}</span>
             </div>
           </div>
@@ -101,7 +101,7 @@ function ServiceRow({ service, index }) {
         {!isLeft ? (
           <div className="svc-card">
             <div className="svc-card__img-wrap">
-              <img src={service.img} alt={service.title} className="svc-card__img" loading="lazy" />
+              <img src={service.img} alt={service.title} className="svc-card__img" loading="lazy" decoding="async" />
               <span className="svc-card__tag">{service.tag}</span>
             </div>
           </div>

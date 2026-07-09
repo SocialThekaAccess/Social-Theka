@@ -131,6 +131,9 @@ function Hero() {
               src={heroImg}
               alt="Social Theka"
               className="hero2__img"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
 
             {/* 10 Years badge */}
@@ -309,7 +312,7 @@ function TrustMarquee() {
         })}
 
         <div className="trust__char-wrap">
-          <img src={manjulSirImg} alt="Social Theka" className="trust__char-img" />
+          <img src={manjulSirImg} alt="Social Theka" className="trust__char-img" loading="lazy" decoding="async" />
           <div className="trust__glass-glow" />
           {activeDrop !== null && (
             <span
@@ -337,6 +340,7 @@ function TrustMarquee() {
                   src={src}
                   alt={`Brand ${(i % BRAND_LOGOS.length) + 1}`}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
@@ -564,7 +568,7 @@ function OurVerticals() {
                     zIndex: i === 2 ? 10 : i < 2 ? i + 1 : 9 - i,
                   }}
                 >
-                  <img src={p.url} alt="" loading="lazy" />
+                  <img src={p.url} alt="" loading="lazy" decoding="async" />
                   {p.tag && (
                     <div className={`verticals__tag ${i < 2 ? "verticals__tag--light" : "verticals__tag--dark"}`}>
                       {p.tag}
@@ -682,7 +686,7 @@ function ClientGallery() {
                     : "0 8px 32px rgba(0,0,0,0.13), 0 2px 8px rgba(0,0,0,0.08)",
                 }}
               >
-                <img src={card.url} alt={card.label} loading="lazy" />
+                <img src={card.url} alt={card.label} loading="lazy" decoding="async" />
                 <div className="lux__card-overlay" />
               </div>
               <div className="lux__card-footer">
@@ -758,7 +762,7 @@ function WhyUs() {
           {WHY_CARDS.map((c, i) => (
             <div key={i} className="why__card">
               <div className="why__card-icon">
-                <img src={c.icon} alt={c.title} />
+                <img src={c.icon} alt={c.title} loading="lazy" decoding="async" />
               </div>
               <h3 className="why__card-title">{c.title}</h3>
               <p className="why__card-desc">{c.desc}</p>
@@ -806,7 +810,7 @@ function ProcessStep({ step, index }) {
       {/* Left — icon image */}
       <div className="proc-step-new__circle-wrap">
         <div className="proc-step-new__icon-box">
-          <img src={step.icon} alt={step.title} className="proc-step-new__icon" />
+          <img src={step.icon} alt={step.title} className="proc-step-new__icon" loading="lazy" decoding="async" />
         </div>
       </div>
 

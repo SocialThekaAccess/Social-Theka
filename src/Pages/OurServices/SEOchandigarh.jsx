@@ -249,7 +249,7 @@ export default function SEOChandigarh() {
 
             <div className="seoc-hero__right">
               <div className="seoc-hero__image-wrapper">
-                <img src={seoHeroImg} alt="SEO Services Chandigarh" className="seoc-hero__image" />
+                <img src={seoHeroImg} alt="SEO Services Chandigarh" className="seoc-hero__image" loading="eager" decoding="async" fetchPriority="high" />
               </div>
               
               {/* Hero Feature Cards - Below Image */}

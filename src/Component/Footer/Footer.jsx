@@ -39,7 +39,7 @@ export default function Footer() {
         <div>
           <div className="footer__logo-wrap">
             <Link to="/">
-              <img src={footerLogo} alt="Social Theka" className="footer__logo-img" />
+              <img src={footerLogo} alt="Social Theka" className="footer__logo-img" loading="lazy" decoding="async" />
             </Link>
           </div>
           <p className="footer__tagline">Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.</p>
