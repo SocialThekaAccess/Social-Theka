@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./OrbitSocialTheka.css";
@@ -7,14 +8,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ── SERVICE DATA ─────────────────────────────── */
 const SERVICES = [
-  { name: "SEO",             price: "₹24,000",  color: "#C1121F", icon: "🔍", link: "/seo" },
-  { name: "Content Writing", price: "₹29,999",  color: "#C1121F", icon: "✍️", link: "/content" },
-  { name: "Web Design",      price: "₹22,999", color: "#C1121F", icon: "🎨", link: "/web-design" },
-  { name: "Web Dev",         price: "₹35,000", color: "#C1121F", icon: "💻", link: "/web-dev" },
-  { name: "PPC Ads",         price: "₹20,000", color: "#C1121F", icon: "📊", link: "/ppc" },
-  { name: "Social Media",    price: "₹29,999", color: "#C1121F", icon: "📱", link: "/social" },
-  { name: "Video Editing",   price: "₹10,999", color: "#C1121F", icon: "🎬", link: "/video" },
-  { name: "Email Marketing", price: "₹23,000", color: "#C1121F", icon: "📧", link: "/email" },
+  { name: "SEO",             price: "₹24,000",  color: "#C1121F", icon: "🔍", link: "/services/seo" },
+  { name: "Content Writing", price: "₹29,999",  color: "#C1121F", icon: "✍️", link: "/contact" },
+  { name: "Web Design",      price: "₹22,999", color: "#C1121F", icon: "🎨", link: "/services/web-design" },
+  { name: "Web Dev",         price: "₹35,000", color: "#C1121F", icon: "💻", link: "/services/web-development" },
+  { name: "PPC Ads",         price: "₹20,000", color: "#C1121F", icon: "📊", link: "/services/ppc" },
+  { name: "Social Media",    price: "₹29,999", color: "#C1121F", icon: "📱", link: "/services/social-media" },
+  { name: "Video Editing",   price: "₹10,999", color: "#C1121F", icon: "🎬", link: "/services/video-editing" },
+  { name: "Email Marketing", price: "₹23,000", color: "#C1121F", icon: "📧", link: "/contact" },
 ];
 
 const BADGES = [
@@ -32,6 +33,7 @@ const DRAG_INERTIA    = 0.965;
 const MOUSE_INFLUENCE = 0.000075;
 
 export default function OrbitSocialTheka() {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const sceneRef   = useRef(null);
   const orbitRef   = useRef(null);
@@ -212,12 +214,12 @@ export default function OrbitSocialTheka() {
           </p>
 
           <div className="ost3-cta-row">
-            <a href="/contact" className="ost3-btn-primary">
+            <Link to="/contact" className="ost3-btn-primary">
               Book Free Consultation <span className="ost3-btn-arrow">→</span>
-            </a>
-            <a href="/pricing" className="ost3-btn-ghost">
+            </Link>
+            <Link to="/#pricing" className="ost3-btn-ghost">
               View All Plans
-            </a>
+            </Link>
           </div>
 
           <p className="ost3-recog-label">Recognized for Core Digital Marketing Services</p>
@@ -274,7 +276,7 @@ export default function OrbitSocialTheka() {
                     <button
                       className="ost3-card-btn-primary"
                       style={{ background: svc.color }}
-                      onClick={() => window.location.href = svc.link}
+                      onClick={() => navigate(svc.link)}
                     >
                       Explore →
                     </button>

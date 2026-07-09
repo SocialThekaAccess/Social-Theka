@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./PPCServicePage.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import ppcHeroImg from "../../assets/ppcSocialTheka.png";
@@ -160,9 +161,9 @@ export default function PPCServicePage() {
               Most businesses waste money on PPC ads that don't convert. At Social Theka, we run PPC campaigns in Chandigarh that are built around one goal: turning your ad spend into actual revenue. We focus on the metrics that matter—conversions, cost per lead, and ROI.
             </p>
             <div className="ppc-hero__buttons">
-              <a href="/contact" className="ppc-btn-primary">
+              <Link to="/contact" className="ppc-btn-primary">
                 Book a Free Call <IconArrow />
-              </a>
+              </Link>
             </div>
 
             {/* Stats Boxes - moved under the button */}
@@ -402,9 +403,9 @@ export default function PPCServicePage() {
               Partner with Chandigarh's premier PPC agency. Complimentary strategy audit included.
             </p>
           </div>
-          <a href="/contact" className="ppc-btn-primary ppc-btn-primary--lg">
+          <Link to="/contact" className="ppc-btn-primary ppc-btn-primary--lg">
             Schedule Consultation <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

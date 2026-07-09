@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./WebDevChandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import webHeroImg from "../../assets/websiteSocialTheka.png";
@@ -216,9 +217,9 @@ export default function WebDevChandigarh() {
                 No templates. No cookie-cutter designs. Every project starts from scratch and is tailored to your brand, your audience, and your goals.
               </p>
               <div style={{ marginTop: "28px" }}>
-                <a href="/contact" className="wdc-btn-primary">
+                <Link to="/contact" className="wdc-btn-primary">
                   Start Your Project <IconArrowRight />
-                </a>
+                </Link>
               </div>
 
               {/* Stats Boxes */}
@@ -448,9 +449,9 @@ export default function WebDevChandigarh() {
                 Tell us about your project — we'll come back with ideas, a timeline, and a clear proposal.
               </p>
             </div>
-            <a href="/contact" className="wdc-btn-primary wdc-btn-primary--lg">
+            <Link to="/contact" className="wdc-btn-primary wdc-btn-primary--lg">
               Get a Free Quote <IconArrowRight />
-            </a>
+            </Link>
           </div>
         </section>
 

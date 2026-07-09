@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./SocialMediachandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import smmHeroImg from "../../assets/smmSocialTheka.png";
@@ -201,9 +202,9 @@ export default function SocialMediaServicePage() {
             </p>
 
             <div style={{ marginTop: "28px" }}>
-              <a href="/contact" className="sms-btn-primary">
+              <Link to="/contact" className="sms-btn-primary">
                 Start the Conversation <IconArrow />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -461,9 +462,9 @@ export default function SocialMediaServicePage() {
               No pressure, no long process. Just reach out — we'll understand your business and suggest what actually makes sense.
             </p>
           </div>
-          <a href="/contact" className="sms-btn-primary sms-btn-primary--lg">
+          <Link to="/contact" className="sms-btn-primary sms-btn-primary--lg">
             Start the Conversation <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

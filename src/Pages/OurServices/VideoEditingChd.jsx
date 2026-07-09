@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./VideoEditingChd.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import heroVideo from "../../assets/SocialThekaVideo.mp4";
@@ -470,9 +471,9 @@ export default function VideoEditingChd() {
               </div>
             </div>
             <div className="vec-hero__ctas" ref={ctasRef}>
-              <a href="/contact" className="vec-btn-primary">
+              <Link to="/contact" className="vec-btn-primary">
                 Start Your Project <IconArrow />
-              </a>
+              </Link>
               <a href="#services" className="vec-btn-outline">
                 View Services
               </a>
@@ -806,9 +807,9 @@ export default function VideoEditingChd() {
           <p className="vec-cta-banner__sub">
             If you need a Video Editing Agency in Chandigarh, Social Theka is here to help. Send us your footage and we will turn it into clean, professional videos that your audience will connect with.
           </p>
-          <a href="/contact" className="vec-btn-primary vec-btn-primary--lg">
+          <Link to="/contact" className="vec-btn-primary vec-btn-primary--lg">
             Start Your Project <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 

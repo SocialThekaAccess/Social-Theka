@@ -215,9 +215,9 @@ export default function SEOChandigarh() {
                 Whether you're a startup in Chandigarh, a small business in Punjab, or a brand scaling globally — we build an SEO strategy specifically around your goals.
               </p>
               <div style={{ marginTop: "28px", display: "flex", gap: "14px", flexWrap: "wrap" }}>
-                <a href="/contact" className="seoc-btn-primary">
+                <Link to="/contact" className="seoc-btn-primary">
                   Get Started <IconArrowRight />
-                </a>
+                </Link>
                 <a href="#services" className="seoc-btn-outline">
                   Our Services
                 </a>
@@ -469,9 +469,9 @@ export default function SEOChandigarh() {
                 Let's build your SEO strategy today — for results that last long after your investment.
               </p>
             </div>
-            <a href="/contact" className="seoc-btn-primary seoc-btn-primary--lg">
+            <Link to="/contact" className="seoc-btn-primary seoc-btn-primary--lg">
               Start Your SEO Journey <IconArrowRight />
-            </a>
+            </Link>
           </div>
         </section>
 

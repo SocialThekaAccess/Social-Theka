@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./ThekaStory.css";
 import footerLogo from "../../assets/FooterLogo.png";
 import SharedFooter from "../../Component/Footer/Footer";
@@ -382,9 +383,9 @@ export default function ThekaStory() {
               It's not just about providing a service, but about developing connections and working
               together towards a common purpose.
             </p>
-            <a href="/contact" className="ts-aim__cta">
+            <Link to="/contact" className="ts-aim__cta">
               Start Your Journey <IconArrow />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

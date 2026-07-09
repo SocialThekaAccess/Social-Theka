@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Webdesignchandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import websiteHeroImg from "../../assets/websiteSocialTheka.png";
@@ -85,7 +86,7 @@ export default function WebDesignChandigarh() {
               Picking the web development service in Chandigarh is a big decision because it will affect your website over time. A clinic and a fashion label are both running a website. Their needs are very different. So instead of comparing website technologies it makes more sense to look at what each technology is actually good for.
             </p> */}
             <div className="wdsc-hero__ctas">
-              <a href="/contact" className="wdsc-btn-primary">Start Your Project <IconArrow /></a>
+              <Link to="/contact" className="wdsc-btn-primary">Start Your Project <IconArrow /></Link>
               <a href="#services" className="wdsc-btn-outline">View Services</a>
             </div>
             <div className="wdsc-hero__stats">
@@ -825,9 +826,9 @@ export default function WebDesignChandigarh() {
               Partner with Chandigarh's trusted web design team. Quality, speed, and support — all in one place.
             </p>
           </div>
-          <a href="/contact" className="wdsc-btn-primary wdsc-btn-primary--lg">
+          <Link to="/contact" className="wdsc-btn-primary wdsc-btn-primary--lg">
             Start Your Project <IconArrow />
-          </a>
+          </Link>
         </div>
       </section>
 
