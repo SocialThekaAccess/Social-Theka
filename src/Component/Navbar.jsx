@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/SocialThekaLogo.png";
 import "./Navbar.css";
 
@@ -51,19 +51,19 @@ const SVG_ICONS = {
 };
 
 const CHANDIGARH_SERVICES = [
+  { icon: SVG_ICONS.video,     label: "Video Editing Chandigarh",          to: "/services/video-editing" },
   { icon: SVG_ICONS.seo,       label: "SEO Services Chandigarh",           to: "/services/seo" },
   { icon: SVG_ICONS.ppc,       label: "PPC Advertising Chandigarh",        to: "/services/ppc" },
   { icon: SVG_ICONS.webdev,    label: "Web Development Chandigarh",        to: "/services/web-development" },
   { icon: SVG_ICONS.webdesign, label: "Web Design Chandigarh",             to: "/services/web-design" },
   { icon: SVG_ICONS.social,    label: "Social Media Marketing Chandigarh", to: "/services/social-media" },
-  { icon: SVG_ICONS.video,     label: "Video Editing Chandigarh",          to: "/services/video-editing" },
 ];
 
 const NAV_LINKS = [
   { label: "Home",         to: "/" },
-  { label: "Our Services", to: null, dropdown: "services" },
+  { label: "Our Services", dropdown: "services" },
   { label: "Theka Story",  to: "/theka-story" },
-  { label: "Blogs",        to: null, comingSoon: true },
+  { label: "Blogs",        comingSoon: true },
   { label: "Contact Us",   to: "/contact" },
 ];
 
@@ -73,20 +73,14 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
   const timeoutRef  = useRef(null);
-  const navigate    = useNavigate();
-  const location    = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
-    setServicesOpen(false);
-  }, [location.pathname]);
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
@@ -96,14 +90,22 @@ export default function Navbar() {
     timeoutRef.current = setTimeout(() => setServicesOpen(false), 120);
   };
 
-  const handleServiceClick = (to) => {
+  const navigateTo = (path) => {
     setMenuOpen(false);
     setServicesOpen(false);
-    navigate(to);
+
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+
+    if (path) {
+      navigate(path);
+    }
   };
 
   const leftCol  = CHANDIGARH_SERVICES.filter((_, i) => i % 2 === 0);
   const rightCol = CHANDIGARH_SERVICES.filter((_, i) => i % 2 === 1);
+  const servicesActive = location.pathname.startsWith("/services/");
 
   return (
     <>
@@ -114,7 +116,7 @@ export default function Navbar() {
           <span>SEO Agency of the Year 2024, 25</span>
         </div>
         <div className="nb-top__right">
-          <span>&nbsp;<strong>info@socialtheka.com</strong></span>
+          <span> &nbsp;<strong>info@socialtheka.com</strong></span>
           <span className="nb-top__sep">|</span>
           <a href="tel:+917888735337" className="nb-top__phone">
             <span className="nb-top__phone-icon">
@@ -152,8 +154,9 @@ export default function Navbar() {
                   ref={dropdownRef}
                 >
                   <button
-                    className={`nb__link nb__link--btn ${servicesOpen ? "nb__link--active" : ""}`}
-                    onClick={() => setServicesOpen((o) => !o)}
+                    type="button"
+                    className={`nb__link nb__link--control ${servicesActive || servicesOpen ? "nb__link--active" : ""}`}
+                    onClick={() => setServicesOpen((open) => !open)}
                     aria-expanded={servicesOpen}
                     aria-haspopup="true"
                   >
@@ -164,18 +167,21 @@ export default function Navbar() {
                   {/* ── MEGA DROPDOWN ── */}
                   {servicesOpen && (
                     <div className="nb__mega">
+                      {/* "OUR SERVICES" label + red accent */}
                       <div className="nb__mega-head">
                         <span className="nb__mega-label">OUR SERVICES</span>
                         <span className="nb__mega-accent" />
                       </div>
 
+                      {/* 2-column grid — exactly like screenshot */}
                       <div className="nb__mega-grid">
+                        {/* Left column */}
                         <div className="nb__mega-col nb__mega-col--left">
                           {leftCol.map((service) => (
                             <button
                               key={service.label}
                               className="nb__mega-card"
-                              onClick={() => handleServiceClick(service.to)}
+                              onClick={() => navigateTo(service.to)}
                             >
                               <span className="nb__mega-card-icon">{service.icon}</span>
                               <span className="nb__mega-card-title">{service.label}</span>
@@ -184,12 +190,13 @@ export default function Navbar() {
                           ))}
                         </div>
 
+                        {/* Right column */}
                         <div className="nb__mega-col nb__mega-col--right">
                           {rightCol.map((service) => (
                             <button
                               key={service.label}
                               className="nb__mega-card"
-                              onClick={() => handleServiceClick(service.to)}
+                              onClick={() => navigateTo(service.to)}
                             >
                               <span className="nb__mega-card-icon">{service.icon}</span>
                               <span className="nb__mega-card-title">{service.label}</span>
@@ -198,33 +205,24 @@ export default function Navbar() {
                           ))}
                         </div>
                       </div>
-
-                      <Link
-                        to="/services/seo"
-                        className="nb__mega-viewall"
-                        onClick={() => setServicesOpen(false)}
-                      >
-                        View all Chandigarh services
-                        <span className="nb__mega-viewall-arrow">→</span>
-                      </Link>
                     </div>
                   )}
                 </div>
-              ) : link.comingSoon ? (
-                <span key={link.label} className="nb__link nb__link--disabled" title="Coming soon">
-                  {link.label}
-                </span>
               ) : (
-                <NavLink
-                  key={link.label}
-                  to={link.to}
-                  className={({ isActive }) =>
-                    `nb__link${isActive ? " nb__link--active" : ""}`
-                  }
-                  end={link.to === "/"}
-                >
-                  {link.label}
-                </NavLink>
+                link.comingSoon ? (
+                  <span key={link.label} className="nb__link nb__link--disabled" title="Coming soon">
+                    {link.label}
+                  </span>
+                ) : (
+                  <NavLink
+                    key={link.label}
+                    to={link.to}
+                    className={({ isActive }) => `nb__link ${isActive ? "nb__link--active" : ""}`}
+                    end={link.to === "/"}
+                  >
+                    {link.label}
+                  </NavLink>
+                )
               )
             )}
           </nav>
@@ -267,41 +265,37 @@ export default function Navbar() {
                   {link.label}
                 </span>
               ) : link.dropdown === "services" ? (
-                <div key={link.label}>
-                  <span className="nb__mobile-link nb__mobile-link--section">Our Services</span>
-                  <div className="nb__mobile-cities">
-                    <div className="nb__mobile-city-group">
-                      <div className="nb__mobile-city-label">Chandigarh</div>
-                      {CHANDIGARH_SERVICES.map((service) => (
-                        <button
-                          key={service.label}
-                          className="nb__mobile-service-link"
-                          onClick={() => handleServiceClick(service.to)}
-                        >
-                          {service.icon} {service.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <span key={link.label} className="nb__mobile-link nb__mobile-link--section">
+                  {link.label}
+                </span>
               ) : (
-                <NavLink
-                  key={link.label}
-                  to={link.to}
-                  className={({ isActive }) =>
-                    `nb__mobile-link${isActive ? " nb__mobile-link--active" : ""}`
-                  }
-                  end={link.to === "/"}
-                  onClick={() => setMenuOpen(false)}
-                >
+                  <NavLink
+                    key={link.label}
+                    to={link.to}
+                    className={({ isActive }) => `nb__mobile-link ${isActive ? "nb__mobile-link--active" : ""}`}
+                    end={link.to === "/"}
+                    onClick={() => setMenuOpen(false)}
+                  >
                   {link.label}
                 </NavLink>
               )
             )}
+            <div className="nb__mobile-cities">
+              <div className="nb__mobile-city-group">
+                <div className="nb__mobile-city-label">Chandigarh</div>
+                {CHANDIGARH_SERVICES.map((service) => (
+                  <button
+                    key={service.label}
+                    className="nb__mobile-service-link"
+                    onClick={() => navigateTo(service.to)}
+                  >
+                    {service.icon} {service.label}
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="nb__mobile-ctas">
-              <Link to="/contact" className="nb__btn-solid" onClick={() => setMenuOpen(false)}>
-                Book a Meeting
-              </Link>
+              <Link to="/contact" className="nb__btn-solid" onClick={() => setMenuOpen(false)}>Book a Meeting</Link>
             </div>
           </div>
         )}

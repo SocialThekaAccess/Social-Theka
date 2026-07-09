@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./OrbitSocialTheka.css";
@@ -8,14 +7,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ── SERVICE DATA ─────────────────────────────── */
 const SERVICES = [
-  { name: "SEO",             price: "₹24,000",  color: "#C1121F", icon: "🔍", link: "/services/seo" },
-  { name: "Content Writing", price: "₹29,999",  color: "#C1121F", icon: "✍️", link: "/contact" },
-  { name: "Web Design",      price: "₹22,999", color: "#C1121F", icon: "🎨", link: "/services/web-design" },
-  { name: "Web Dev",         price: "₹35,000", color: "#C1121F", icon: "💻", link: "/services/web-development" },
-  { name: "PPC Ads",         price: "₹20,000", color: "#C1121F", icon: "📊", link: "/services/ppc" },
-  { name: "Social Media",    price: "₹29,999", color: "#C1121F", icon: "📱", link: "/services/social-media" },
-  { name: "Video Editing",   price: "₹10,999", color: "#C1121F", icon: "🎬", link: "/services/video-editing" },
-  { name: "Email Marketing", price: "₹23,000", color: "#C1121F", icon: "📧", link: "/contact" },
+  { name: "SEO",             price: "₹24,000",  color: "#C1121F", icon: "🔍", link: "/seo" },
+  { name: "Content Writing", price: "₹29,999",  color: "#C1121F", icon: "✍️", link: "/content" },
+  { name: "Web Design",      price: "₹22,999", color: "#C1121F", icon: "🎨", link: "/web-design" },
+  { name: "Web Dev",         price: "₹35,000", color: "#C1121F", icon: "💻", link: "/web-dev" },
+  { name: "PPC Ads",         price: "₹20,000", color: "#C1121F", icon: "📊", link: "/ppc" },
+  { name: "Social Media",    price: "₹29,999", color: "#C1121F", icon: "📱", link: "/social" },
+  { name: "Video Editing",   price: "₹10,999", color: "#C1121F", icon: "🎬", link: "/video" },
+  { name: "Email Marketing", price: "₹23,000", color: "#C1121F", icon: "📧", link: "/email" },
 ];
 
 const BADGES = [
@@ -213,12 +212,12 @@ export default function OrbitSocialTheka() {
           </p>
 
           <div className="ost3-cta-row">
-            <Link to="/contact" className="ost3-btn-primary">
+            <a href="/contact" className="ost3-btn-primary">
               Book Free Consultation <span className="ost3-btn-arrow">→</span>
-            </Link>
-            <Link to="/services/seo" className="ost3-btn-ghost">
+            </a>
+            <a href="/pricing" className="ost3-btn-ghost">
               View All Plans
-            </Link>
+            </a>
           </div>
 
           <p className="ost3-recog-label">Recognized for Core Digital Marketing Services</p>
@@ -272,20 +271,19 @@ export default function OrbitSocialTheka() {
                   <p className="ost3-card-price" style={{ color: svc.color }}>{svc.price}</p>
                   <p className="ost3-card-mo">/ month</p>
                   <div className="ost3-card-actions">
-                    <Link
-                      to={svc.link}
+                    <button
                       className="ost3-card-btn-primary"
                       style={{ background: svc.color }}
+                      onClick={() => window.location.href = svc.link}
                     >
                       Explore →
-                    </Link>
-                    <Link
-                      to="/contact"
+                    </button>
+                    <button
                       className="ost3-card-btn-secondary"
                       style={{ color: svc.color, borderColor: svc.color }}
                     >
                       Contact Us
-                    </Link>
+                    </button>
                   </div>
                 </div>
               ))}

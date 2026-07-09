@@ -123,19 +123,20 @@
 }
 .wdsc-hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(32px, 3.5vw, 64px);
   font-weight: 900;
   color: #0a0a0a;
-  line-height: 1.2;
+  line-height: 1.15;
   margin: 0 0 24px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  max-width: 700px;
 }
 .wdsc-hero__title-accent {
   color: #BE123C;
   display: block;
 }
 .wdsc-hero__sub {
-  font-size: 15px;
+  font-size: 16px;
   color: #4a4a4a;
   line-height: 1.75;
   margin: 0 0 28px;
@@ -180,27 +181,141 @@
   flex-shrink: 0;
 }
 
-/* Right Column - Cards Grid */
+/* Right Column - Hero Image */
 .wdsc-hero__right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-top: 10px;
+  position: relative;
+  gap: 24px;
 }
+
+/* Decorative background elements */
+.wdsc-hero__right::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(190, 18, 60, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.3; }
+}
+
+.wdsc-hero__image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  animation: floatImage 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Decorative frame around image */
+.wdsc-hero__image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  background: linear-gradient(135deg, #BE123C 0%, #e91e63 50%, #BE123C 100%);
+  border-radius: 24px;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Corner accents */
+.wdsc-hero__image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, rgba(190, 18, 60, 0.4), rgba(233, 30, 98, 0.4)) border-box;
+  z-index: -1;
+}
+
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.wdsc-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 
+    0 20px 60px rgba(190, 18, 60, 0.2),
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.wdsc-hero__image:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 
+    0 30px 80px rgba(190, 18, 60, 0.25),
+    0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+/* Floating dots decoration */
+.wdsc-hero__right::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(circle, #BE123C 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.15;
+  top: -20px;
+  right: -20px;
+  border-radius: 50%;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(10px, -10px) rotate(120deg); }
+  66% { transform: translate(-10px, 10px) rotate(240deg); }
+}
+
+/* Hero Cards Grid - Below Image */
+.wdsc-hero__cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  z-index: 1;
+}
+
 .wdsc-hero__card {
   background: #ffffff;
   border: 1px solid #f3d9df;
-  border-radius: 16px;
-  padding: 24px 20px;
+  border-radius: 12px;
+  padding: 16px 14px;
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  align-items: center;
+  gap: 10px;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(190, 18, 60, 0.04);
 }
 .wdsc-hero__card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(190, 18, 60, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(190, 18, 60, 0.12);
   border-color: #BE123C;
 }
 .wdsc-hero__card--highlight {
@@ -208,13 +323,13 @@
   border-color: #BE123C;
 }
 .wdsc-hero__card--highlight:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(190, 18, 60, 0.25);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(190, 18, 60, 0.25);
 }
 .wdsc-hero__card-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   background: #fef7f8;
   border: 1px solid #f9d9e0;
   display: flex;
@@ -223,6 +338,10 @@
   color: #BE123C;
   flex-shrink: 0;
 }
+.wdsc-hero__card-icon svg {
+  width: 18px;
+  height: 18px;
+}
 .wdsc-hero__card--highlight .wdsc-hero__card-icon {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -230,23 +349,23 @@
 }
 .wdsc-hero__card-content {
   flex: 1;
-  padding-top: 4px;
+  min-width: 0;
 }
 .wdsc-hero__card-name {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   color: #0a0a0a;
-  margin: 0 0 4px;
-  line-height: 1.3;
+  margin: 0 0 2px;
+  line-height: 1.2;
 }
 .wdsc-hero__card--highlight .wdsc-hero__card-name {
   color: #ffffff;
 }
 .wdsc-hero__card-desc {
-  font-size: 12px;
+  font-size: 11px;
   color: #6a6a6a;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 .wdsc-hero__card--highlight .wdsc-hero__card-desc {
   color: rgba(255, 255, 255, 0.85);
@@ -307,9 +426,9 @@
   margin: 18px 0 0;
 }
 .wdsc-section__sub {
-  font-size: 15.5px;
+  font-size: 17px;
   color: #5a5a5a;
-  max-width: 1060px;
+  max-width: 900px;
   margin: 18px auto 0;
   line-height: 1.8;
 }
@@ -477,15 +596,15 @@
 /* ── PAIN / CHECK CARDS ────────────────────── */
 .wdsc-pain__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
   align-items: stretch;
 }
 /* 3-item grids — forces 3 equal columns */
 .wdsc-pain__grid--3 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 27px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
   align-items: stretch;
 }
 /* 2-col grids — for 2 or 4 items */
@@ -1062,6 +1181,10 @@
   }
   .wdsc-hero__right {
     grid-template-columns: 1fr;
+  }
+  .wdsc-hero__cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   .wdsc-section {
     padding: 56px 24px;

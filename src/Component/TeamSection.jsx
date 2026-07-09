@@ -50,7 +50,7 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section className={`team-section ${visible ? "team-visible" : ""}`} ref={sectionRef}>
+    <section className={`ts-section ${visible ? "ts-visible" : ""}`} ref={sectionRef}>
       {/* ── background decoration ── */}
       <div className="ts-bg-blob ts-blob-1" />
       <div className="ts-bg-blob ts-blob-2" />

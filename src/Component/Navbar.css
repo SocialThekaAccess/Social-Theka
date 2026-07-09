@@ -176,6 +176,14 @@
 .nb__link:hover       { background: rgba(190,18,60,.07); color: #BE123C; }
 .nb__link--active     { background: #BE123C !important; color: #fff !important; font-weight: 600; padding: 8px 22px; }
 .nb__link--active:hover { background: #9f0f33 !important; color: #fff !important; }
+.nb__link--disabled {
+  cursor: default;
+  color: #9ca3af;
+}
+.nb__link--disabled:hover {
+  background: transparent;
+  color: #9ca3af;
+}
 
 .nb__chevron {
   font-size: 12px;
@@ -481,6 +489,17 @@
 .nb__mobile-link:hover { background: #f9fafb; color: #111; }
 .nb__mobile-link--active { background: #111; color: #fff; font-weight: 600; }
 .nb__mobile-link--active:hover { background: #222; color: #fff; }
+.nb__mobile-link--disabled {
+  color: #9ca3af;
+}
+.nb__mobile-link--disabled:hover {
+  background: transparent;
+  color: #9ca3af;
+}
+.nb__mobile-link--section {
+  color: #111;
+  font-weight: 700;
+}
 
 .nb__mobile-cities {
   display: grid;
@@ -540,31 +559,27 @@
   .nb-top__right { justify-content: center; flex-wrap: wrap; }
 }
 
-/* ── BUTTON-STYLE NAV LINK (replaces <a> for dropdown trigger) ── */
-.nb__link--btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0;
+/* ===== Navigation hash/spacing safety fix ===== */
+.nb,
+.nb__inner,
+.nb__links,
+.nb__link-wrapper {
+  overflow: visible !important;
 }
 
-/* ── DISABLED / COMING-SOON LINK ── */
-.nb__link--disabled,
-.nb__mobile-link--disabled {
-  opacity: 0.45;
-  cursor: default;
-  pointer-events: none;
+.nb__link,
+.nb__mobile-link {
+  user-select: none;
 }
 
-/* ── MOBILE SECTION LABEL ── */
-.nb__mobile-link--section {
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.5);
-  pointer-events: none;
-  cursor: default;
+@media (max-width: 640px) {
+  .nb__inner {
+    height: 64px;
+    padding: 0 18px;
+  }
+
+  .nb__logo-img {
+    height: 62px;
+    max-width: 150px;
+  }
 }

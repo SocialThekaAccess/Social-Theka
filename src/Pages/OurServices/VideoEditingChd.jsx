@@ -1,7 +1,28 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { useState, useEffect, useRef } from "react";
 import "./VideoEditingChd.css";
 import ServiceLayout from "../../Component/ServiceLayout";
+import heroVideo from "../../assets/SocialThekaVideo.mp4";
+import { gsap } from "gsap";
+
+// Software/Platform Icons
+const IconPremiere = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+    <rect x="2" y="2" width="20" height="20" rx="2" fill="currentColor" opacity="0.9"/>
+    <text x="12" y="16" fontFamily="Arial" fontSize="14" fontWeight="bold" fill="white" textAnchor="middle">Pr</text>
+  </svg>
+);
+const IconAfterEffects = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+    <rect x="2" y="2" width="20" height="20" rx="2" fill="currentColor" opacity="0.9"/>
+    <text x="12" y="16" fontFamily="Arial" fontSize="14" fontWeight="bold" fill="white" textAnchor="middle">Ae</text>
+  </svg>
+);
+const IconPlay = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+    <polygon points="8 5 19 12 8 19 8 5" fill="currentColor"/>
+  </svg>
+);
 
 const IconVideo = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -51,6 +72,117 @@ const IconArrow = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 12h14M12 5l7 7-7 7"/></svg>
 );
+const IconFacebook = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+);
+const IconLinkedin = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+    <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+);
+const IconGlobe = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="2" y1="12" x2="22" y2="12"/>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+  </svg>
+);
+const IconCalendar = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+  </svg>
+);
+const IconUsers = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+    <circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg>
+);
+const IconCamera = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+    <circle cx="12" cy="13" r="4"/>
+  </svg>
+);
+const IconFileText = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+    <polyline points="10 9 9 9 8 9"/>
+  </svg>
+);
+const IconPlane = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+  </svg>
+);
+const IconHeart = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+  </svg>
+);
+const IconGraduationCap = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  </svg>
+);
+const IconCoffee = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/>
+    <line x1="6" y1="1" x2="6" y2="4"/>
+    <line x1="10" y1="1" x2="10" y2="4"/>
+    <line x1="14" y1="1" x2="14" y2="4"/>
+  </svg>
+);
+const IconScissors = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="6" cy="6" r="3"/>
+    <circle cx="6" cy="18" r="3"/>
+    <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+    <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+    <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+  </svg>
+);
+const IconHammer = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+    <path d="M17.64 15 22 10.64"/>
+    <path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"/>
+  </svg>
+);
+const IconScale = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="3" x2="12" y2="21"/>
+    <path d="m8 9-4 6.5c0 2.21 1.79 4 4 4s4-1.79 4-4L8 9z"/>
+    <path d="m16 9 4 6.5c0 2.21-1.79 4-4 4s-4-1.79-4-4L16 9z"/>
+  </svg>
+);
+const IconDumbbell = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m6.5 6.5 11 11"/>
+    <path d="m21 21-1-1"/>
+    <path d="m3 3 1 1"/>
+    <path d="m18 22 4-4"/>
+    <path d="m2 6 4-4"/>
+    <path d="m3 10 7-7"/>
+    <path d="m14 21 7-7"/>
+  </svg>
+);
+const IconBriefcase = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+  </svg>
+);
 
 const WHY_IMPORTANT = [
   ["Improve Engagement on Social Media",    "A edited video gets rid of unwanted pauses, makes the video flow better, adds the right music, highlights important points and makes your message clearer."],
@@ -69,6 +201,8 @@ const SERVICES = [
   { icon: <IconYoutube />,   title: "YouTube Videos",         desc: "For YouTube, editing needs a different approach. The video should not feel slow or boring. We work on cuts, audio, graphics, intro, outro, subtitles, and overall flow to keep the viewer engaged." },
   { icon: <IconStar />,      title: "Event Videos",           desc: "Events usually have long footage. We pick the best moments and turn them into short highlight videos that can be used on social media, websites, and presentations." },
   { icon: <IconShoppingBag />, title: "Product Videos",       desc: "Product videos should show the details clearly. We edit product videos for fashion brands, skincare brands, food businesses, gadgets, home décor brands, and more." },
+  { icon: <IconShoppingBag />, title: "UGC Style Videos",       desc: "We edit authentic user-generated content that feels natural, builds trust, and helps brands improve engagement and conversions across social media." },
+  { icon: <IconShoppingBag />, title: "Podcast Videos",       desc: "We edit podcast episodes into engaging long-form and short-form content with clean cuts, captions, audio enhancement, and branded visuals to keep viewers engaged." },
 ];
 
 const EDITING_STYLE = [
@@ -81,14 +215,14 @@ const EDITING_STYLE = [
 ];
 
 const PRODUCTION_SERVICES = [
-  "Video planning",
-  "Script ideas",
-  "Shoot concepts",
-  "Reel ideas",
-  "Product shoot direction",
-  "Corporate video planning",
-  "Final editing",
-  "Social media formatting",
+  { icon: <IconVideo />, label: "Video planning" },
+  { icon: <IconFileText />, label: "Script ideas" },
+  { icon: <IconCamera />, label: "Shoot concepts" },
+  { icon: <IconInstagram />, label: "Reel ideas" },
+  { icon: <IconShoppingBag />, label: "Product shoot direction" },
+  { icon: <IconBuilding />, label: "Corporate video planning" },
+  { icon: <IconFilm />, label: "Final editing" },
+  { icon: <IconZap />, label: "Social media formatting" },
 ];
 
 const WHY_BETTER_CONTENT = [
@@ -98,15 +232,15 @@ const WHY_BETTER_CONTENT = [
 ];
 
 const SOCIAL_MEDIA_FORMATS = [
-  "Instagram Reels",
-  "Facebook videos",
-  "YouTube Shorts",
-  "LinkedIn videos",
-  "Ad creatives",
-  "Website videos",
-  "Brand campaigns",
-  "Festival videos",
-  "Client testimonials",
+  { icon: <IconInstagram />, label: "Instagram Reels" },
+  { icon: <IconFacebook />, label: "Facebook videos" },
+  { icon: <IconYoutube />, label: "YouTube Shorts" },
+  { icon: <IconLinkedin />, label: "LinkedIn videos" },
+  { icon: <IconZap />, label: "Ad creatives" },
+  { icon: <IconGlobe />, label: "Website videos" },
+  { icon: <IconStar />, label: "Brand campaigns" },
+  { icon: <IconCalendar />, label: "Festival videos" },
+  { icon: <IconUsers />, label: "Client testimonials" },
 ];
 
 const MARKETING_QUESTIONS = [
@@ -135,9 +269,22 @@ const VIDEO_FORMATS = [
 ];
 
 const INDUSTRIES = [
-  "Real estate brands", "Immigration consultants", "Dental clinics", "Educational institutes",
-  "Restaurants", "Cafés", "Salons", "Beauty brands", "Gyms", "Fitness coaches",
-  "Interior designers", "Law firms", "E-commerce brands", "Doctors", "Healthcare clinics", "Corporate companies",
+  { icon: <IconHome />, label: "Real estate brands" },
+  { icon: <IconPlane />, label: "Immigration consultants" },
+  { icon: <IconHeart />, label: "Dental clinics" },
+  { icon: <IconGraduationCap />, label: "Educational institutes" },
+  { icon: <IconCoffee />, label: "Restaurants" },
+  { icon: <IconCoffee />, label: "Cafés" },
+  { icon: <IconScissors />, label: "Salons" },
+  { icon: <IconStar />, label: "Beauty brands" },
+  { icon: <IconDumbbell />, label: "Gyms" },
+  { icon: <IconTarget />, label: "Fitness coaches" },
+  { icon: <IconHammer />, label: "Interior designers" },
+  { icon: <IconScale />, label: "Law firms" },
+  { icon: <IconShoppingBag />, label: "E-commerce brands" },
+  { icon: <IconHeart />, label: "Doctors" },
+  { icon: <IconBuilding />, label: "Healthcare clinics" },
+  { icon: <IconBriefcase />, label: "Corporate companies" },
 ];
 
 const WHY_CHOOSE = [
@@ -158,111 +305,221 @@ const FAQS = [
 
 export default function VideoEditingChd() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [isVideoHovered, setIsVideoHovered] = useState(false);
+  
+  const videoContainerRef = useRef(null);
+  const videoRef = useRef(null);
+  const badgeRef = useRef(null);
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
+  const statsRef = useRef(null);
+  const ctasRef = useRef(null);
+  const glowRef = useRef(null);
+  
+  // Detect mobile
+  const isMobile = () => window.innerWidth <= 768;
+  
+  // Zoom Back Effect - Video starts VERY big then zooms back
+  useEffect(() => {
+    if (isMobile()) {
+      // Skip animation on mobile
+      gsap.set([badgeRef.current, titleRef.current, descRef.current, statsRef.current, ctasRef.current, videoContainerRef.current], {
+        opacity: 1,
+        y: 0,
+        x: 0
+      });
+      return;
+    }
+    
+    // Set initial state - video VERY zoomed in (full screen feel)
+    gsap.set(videoContainerRef.current, {
+      scale: 3.5,  // Much bigger for full screen effect
+      opacity: 1
+    });
+    
+    gsap.set([badgeRef.current, titleRef.current, descRef.current, ctasRef.current], {
+      opacity: 0,
+      x: -60  // Start from left side
+    });
+    
+    gsap.set(statsRef.current, {
+      opacity: 0,
+      x: -60
+    });
+    
+    // Animation Timeline
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Stop continuous zoom animation
+        if (videoRef.current) {
+          videoRef.current.style.animation = 'none';
+        }
+      }
+    });
+    
+    // Hold zoomed in (full screen feel)
+    tl.to({}, { duration: 1.5 })
+    
+    // Slowly zoom back to normal size
+    .to(videoContainerRef.current, {
+      scale: 1,
+      duration: 2.8,
+      ease: 'power3.out'
+    })
+    
+    // Content slides in from LEFT AFTER video settles
+    .to(badgeRef.current, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '+=0.2')  // Start AFTER video animation completes
+    
+    .to(titleRef.current, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.4')
+    
+    .to(descRef.current, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.4')
+    
+    .to(statsRef.current, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.4')
+    
+    .to(ctasRef.current, {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.4');
+    
+    return () => {
+      tl.kill();
+    };
+  }, []);
+  
+  // Scroll reveal animation for other sections
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('vec-reveal');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.vec-animate').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <ServiceLayout>
     <div className="vec-page">
+      {/* Background Elements */}
+      <div className="vec-bg-pattern" />
+      <div className="vec-bg-gradient" />
 
       {/* ── HERO ── */}
       <section className="vec-hero">
+        {/* Floating Icons */}
+        <div className="vec-float-icons">
+          <div className="vec-float-icon vec-float-icon--1"><IconInstagram /></div>
+          <div className="vec-float-icon vec-float-icon--2"><IconYoutube /></div>
+          <div className="vec-float-icon vec-float-icon--3"><IconPremiere /></div>
+          <div className="vec-float-icon vec-float-icon--4"><IconAfterEffects /></div>
+        </div>
+        
         <div className="vec-hero__inner">
           <div className="vec-hero__left">
-            <h1 className="vec-hero__title">Video Editing Agency in Chandigarh</h1>
-            <p className="vec-hero__sub">
-              Video is now a part of almost every business. This includes a café in Sector 35, a real estate brand in Mohali, a clinic in Chandigarh, a coaching institute, a fashion store or a startup. Every single one of these businesses needs video content to be seen online.
-            </p>
-            <p className="vec-hero__sub">
-              Making a video is only half of what you need to do. The hard work really starts after you have shot the video. You can make a simple video look very professional with the cuts, music, captions, color correction, transitions and story flow. On the other hand even if you have good footage it can look average if the editing is not good. This is why brands today are looking for a Video Editing Agency in Chandigarh that knows about both creativity and marketing.
-            </p>
-            <p className="vec-hero__sub">
-              At Social Theka we edit videos to make your video content look clean, natural and useful for your brand. We do not think it is a good idea to add effects to a video just to make it look busy. Every video should have a reason behind it. The video should tell your story, promote your service, build trust or bring attention to your business.
-            </p>
-            <div className="vec-hero__ctas">
-              <Link to="/contact" className="vec-btn-primary">Start Your Project <IconArrow /></Link>
-              <Link to="/" className="vec-btn-outline">View Services</Link>
+            <div className="vec-hero__badge" ref={badgeRef}>
+              <span className="vec-badge-dot" />
+              VIDEO EDITING AGENCY - CHANDIGARH
             </div>
-            <div className="vec-hero__stats">
-              <div className="vec-hero__stat">
-                <span className="vec-hero__stat-val">7+</span>
-                <span className="vec-hero__stat-label">Video Types</span>
+            <h1 className="vec-hero__title" ref={titleRef}>
+              Transform Raw Footage Into
+              <span className="vec-hero__title-accent"> Captivating Stories</span>
+            </h1>
+            <p className="vec-hero__desc" ref={descRef}>
+              Professional video editing that turns your content into scroll-stopping visuals. From Instagram Reels to corporate videos — we craft narratives that engage, inspire, and convert.
+            </p>
+            <div className="vec-hero__stats-inline" ref={statsRef}>
+              <div className="vec-stat-badge">
+                <span className="vec-stat-value">7+</span>
+                <span className="vec-stat-label">Video Types</span>
               </div>
-              <div className="vec-hero__stat-divider" />
-              <div className="vec-hero__stat">
-                <span className="vec-hero__stat-val">5</span>
-                <span className="vec-hero__stat-label">Format Options</span>
+              <div className="vec-stat-badge">
+                <span className="vec-stat-value">5</span>
+                <span className="vec-stat-label">Formats</span>
               </div>
-              <div className="vec-hero__stat-divider" />
-              <div className="vec-hero__stat">
-                <span className="vec-hero__stat-val">16+</span>
-                <span className="vec-hero__stat-label">Industries Served</span>
+              <div className="vec-stat-badge">
+                <span className="vec-stat-value">16+</span>
+                <span className="vec-stat-label">Industries</span>
               </div>
+            </div>
+            <div className="vec-hero__ctas" ref={ctasRef}>
+              <a href="#contact" className="vec-btn-primary">
+                Start Your Project <IconArrow />
+              </a>
+              <a href="#services" className="vec-btn-outline">
+                View Services
+              </a>
             </div>
           </div>
+          
           <div className="vec-hero__right">
-            <div className="vec-hero__cards">
-              <div className="vec-hero__card">
-                <div className="vec-hero__card-icon"><IconInstagram /></div>
-                <div>
-                  <div className="vec-hero__card-name">Reels</div>
-                  <div className="vec-hero__card-desc">Short & engaging</div>
-                </div>
-              </div>
-              <div className="vec-hero__card">
-                <div className="vec-hero__card-icon"><IconYoutube /></div>
-                <div>
-                  <div className="vec-hero__card-name">YouTube</div>
-                  <div className="vec-hero__card-desc">Full video editing</div>
-                </div>
-              </div>
-              <div className="vec-hero__card">
-                <div className="vec-hero__card-icon"><IconBuilding /></div>
-                <div>
-                  <div className="vec-hero__card-name">Corporate</div>
-                  <div className="vec-hero__card-desc">Professional look</div>
-                </div>
-              </div>
-              <div className="vec-hero__card">
-                <div className="vec-hero__card-icon"><IconHome /></div>
-                <div>
-                  <div className="vec-hero__card-name">Real Estate</div>
-                  <div className="vec-hero__card-desc">Walkthroughs & tours</div>
-                </div>
-              </div>
-              <div className="vec-hero__card">
-                <div className="vec-hero__card-icon"><IconShoppingBag /></div>
-                <div>
-                  <div className="vec-hero__card-name">Product Videos</div>
-                  <div className="vec-hero__card-desc">Clear & detailed</div>
-                </div>
-              </div>
-              <div className="vec-hero__card vec-hero__card--highlight">
-                <div className="vec-hero__card-icon"><IconFilm /></div>
-                <div>
-                  <div className="vec-hero__card-name">All Formats</div>
-                  <div className="vec-hero__card-desc">9:16, 1:1, 16:9 & more</div>
-                </div>
-              </div>
+            <div 
+              ref={videoContainerRef}
+              className="vec-video-preview vec-video-preview--cinematic"
+              onMouseEnter={() => setIsVideoHovered(true)}
+              onMouseLeave={() => setIsVideoHovered(false)}
+            >
+              <video 
+                ref={videoRef}
+                className="vec-video-preview__video"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+              >
+                <source src={heroVideo} type="video/mp4" />
+              </video>
+              
+              {/* Glow effect */}
+              <div ref={glowRef} className="vec-video-glow"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── WHY VIDEO EDITING IMPORTANT ── */}
-      <section className="vec-section vec-section--white">
+      <section className="vec-section vec-section--light vec-animate">
         <div className="vec-section__inner">
-          <div className="vec-section__head vec-section__head--left">
-            <h2 className="vec-section__title">Why Video Editing Is Important for Your Business</h2>
-            <p className="vec-section__sub vec-section__sub--left">When people scroll through their feeds they move fast. If your video does not grab their attention they will skip it. That is where good editing really helps. For businesses in Chandigarh this is more important. The market is very active and competitive. Restaurants, salons, real estate companies and education brands are all trying to reach the people online. A clear and engaging video helps your brand stand out.</p>
-            <p className="vec-section__sub vec-section__sub--left">Good video editing can help you do things:</p>
+          <div className="vec-section__header">
+            <span className="vec-badge">Why It Matters</span>
+            <h2 className="vec-section__title">Video Editing Transforms Your Business Presence</h2>
+            <p className="vec-section__subtitle">When people scroll through their feeds they move fast. Good editing grabs attention, delivers your message clearly, and makes your brand memorable.</p>
           </div>
-          <div className="vec-pain__grid">
+          <div className="vec-grid vec-grid--3">
             {WHY_IMPORTANT.map(([title, desc], i) => (
-              <div key={i} className="vec-pain-card">
-                <div className="vec-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="vec-pain-card__title">{title}</div>
-                  <div className="vec-pain-card__desc">{desc}</div>
+              <div key={i} className="vec-glass-card vec-animate">
+                <div className="vec-glass-card__icon">
+                  <IconCheck />
                 </div>
+                <h3 className="vec-glass-card__title">{title}</h3>
+                <p className="vec-glass-card__desc">{desc}</p>
               </div>
             ))}
           </div>
@@ -270,18 +527,24 @@ export default function VideoEditingChd() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="vec-section vec-section--white" id="services">
+      <section className="vec-section vec-section--white vec-animate" id="services">
         <div className="vec-section__inner">
-          <div className="vec-section__head">
-            <h2 className="vec-section__title">Video Editing Services in Chandigarh</h2>
-            <p className="vec-section__sub">Social Theka offers all the Video Editing Services in Chandigarh for businesses that want better content for their social media, websites, ads, and brand promotions. We edit different types of videos according to your brand need and platform.</p>
+          <div className="vec-section__header">
+            <span className="vec-badge">Our Services</span>
+            <h2 className="vec-section__title">Comprehensive Video Editing Solutions</h2>
+            <p className="vec-section__subtitle">From social media reels to corporate videos — we edit every type of content with precision and creativity.</p>
           </div>
-          <div className="vec-services__grid">
+          <div className="vec-grid vec-grid--services">
             {SERVICES.map((s, i) => (
-              <div key={i} className="vec-service-card">
-                <div className="vec-service-card__icon">{s.icon}</div>
-                <h3 className="vec-service-card__name">{s.title}</h3>
+              <div key={i} className="vec-service-card vec-animate">
+                <div className="vec-service-card__icon-wrapper">
+                  <div className="vec-service-card__icon">{s.icon}</div>
+                </div>
+                <h3 className="vec-service-card__title">{s.title}</h3>
                 <p className="vec-service-card__desc">{s.desc}</p>
+                <div className="vec-service-card__arrow">
+                  <IconArrow />
+                </div>
               </div>
             ))}
           </div>
@@ -292,6 +555,7 @@ export default function VideoEditingChd() {
       <section className="vec-trust-section">
         <div className="vec-trust__inner">
           <div className="vec-trust__left">
+            <span className="vec-badge" style={{marginBottom: "20px"}}>Why Choose Us</span>
             <h2 className="vec-trust__title">A Professional Video Editing Company Chandigarh Businesses Can Trust</h2>
             <p className="vec-trust__sub">Many businesses try to edit videos on mobile apps or basic software. That may work for personal content, but brand content needs a better finish.</p>
             <p className="vec-trust__sub">As a Professional Video Editing Company Chandigarh, Social Theka focuses on making videos that look neat, branded, and useful for marketing.</p>
@@ -314,9 +578,10 @@ export default function VideoEditingChd() {
       {/* ── EDITING STYLE ── */}
       <section className="vec-section vec-section--white">
         <div className="vec-section__inner">
-          <div className="vec-section__head">
+          <div className="vec-section__header">
+            <span className="vec-badge">Our Process</span>
             <h2 className="vec-section__title">Our Editing Style</h2>
-            <p className="vec-section__sub">We like it when our videos are edited in a way. Not fancy, not too boring. Our main goal is to tell a story that makes sense — and to make the video feel natural and consistent with the brand.</p>
+            <p className="vec-section__subtitle">We like it when our videos are edited in a way. Not fancy, not too boring. Our main goal is to tell a story that makes sense — and to make the video feel natural and consistent with the brand.</p>
           </div>
           <div className="vec-why__grid">
             {EDITING_STYLE.map(([title, desc], i) => (
@@ -343,8 +608,8 @@ export default function VideoEditingChd() {
             <div className="vec-prod__right">
               {PRODUCTION_SERVICES.map((item, i) => (
                 <div key={i} className="vec-prod-card">
-                  <div className="vec-prod-card__icon"><IconCheck /></div>
-                  <span className="vec-prod-card__text">{item}</span>
+                  <div className="vec-prod-card__icon">{item.icon}</div>
+                  <span className="vec-prod-card__text">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -353,19 +618,20 @@ export default function VideoEditingChd() {
       </section>
 
       {/* ── WHY BETTER CONTENT ── */}
-      <section className="vec-section vec-section--white">
-        <div className="vec-section__inner vec-section__inner--narrow">
-          <div className="vec-section__head">
-            <h2 className="vec-section__title">Why Chandigarh Businesses Need Better Video Content</h2>
+      <section className="vec-section vec-section--white vec-animate">
+        <div className="vec-section__inner">
+          <div className="vec-section__header">
+            <span className="vec-badge">Why It Matters</span>
+            <h2 className="vec-section__title">Why Chandigarh Businesses Need<br />Better Video Content</h2>
           </div>
-          <div className="vec-pain__grid">
+          <div className="vec-grid vec-grid--3">
             {WHY_BETTER_CONTENT.map(([title, desc], i) => (
-              <div key={i} className="vec-pain-card">
-                <div className="vec-pain-card__icon"><IconCheck /></div>
-                <div>
-                  <div className="vec-pain-card__title">{title}</div>
-                  <div className="vec-pain-card__desc">{desc}</div>
+              <div key={i} className="vec-glass-card vec-animate">
+                <div className="vec-glass-card__icon">
+                  <IconCheck />
                 </div>
+                <h3 className="vec-glass-card__title">{title}</h3>
+                <p className="vec-glass-card__desc">{desc}</p>
               </div>
             ))}
           </div>
@@ -384,7 +650,10 @@ export default function VideoEditingChd() {
             </div>
             <div className="vec-best__right">
               {SOCIAL_MEDIA_FORMATS.map((item, i) => (
-                <div key={i} className="vec-best-tag">{item}</div>
+                <div key={i} className="vec-best-tag">
+                  <span className="vec-best-tag__icon">{item.icon}</span>
+                  <span className="vec-best-tag__label">{item.label}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -394,28 +663,33 @@ export default function VideoEditingChd() {
       {/* ── WHAT MAKES US DIFFERENT ── */}
       <section className="vec-section vec-section--white">
         <div className="vec-section__inner">
-          <div className="vec-section__head">
+          <div className="vec-section__header">
+            <span className="vec-badge">Our Approach</span>
             <h2 className="vec-section__title">What Makes Social Theka Different?</h2>
-            <p className="vec-section__sub">We are not just video editors. We are a marketing team. That means we look at your video from a business point of view. We ask simple but important questions:</p>
+            <p className="vec-section__subtitle">We are not just video editors. We are a marketing team. That means we look at your video from a business point of view. We ask simple but important questions:</p>
           </div>
           <div className="vec-questions__grid">
             {MARKETING_QUESTIONS.map((item, i) => (
               <div key={i} className="vec-question-card">
-                <div className="vec-question-card__num">{String(i + 1).padStart(2, '0')}</div>
+                <div className="vec-question-card__icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
                 <div className="vec-question-card__text">{item}</div>
               </div>
             ))}
           </div>
-          <p className="vec-section__note">This approach helps us create content that looks good and also supports your marketing goals.</p>
         </div>
       </section>
 
       {/* ── PROCESS ── */}
       <section className="vec-section vec-section--gray">
         <div className="vec-section__inner">
-          <div className="vec-section__head">
+          <div className="vec-section__header">
+            <span className="vec-badge">How We Work</span>
             <h2 className="vec-section__title">Our Process</h2>
-            <p className="vec-section__sub">We make things easy.</p>
+            <p className="vec-section__subtitle">We make things easy.</p>
           </div>
           <div className="vec-process__grid">
             {PROCESS.map((p, i) => (
@@ -428,8 +702,8 @@ export default function VideoEditingChd() {
               </div>
             ))}
           </div>
-          <div className="vec-section__head" style={{marginTop: "32px", marginBottom: "20px"}}>
-            <p className="vec-section__sub">We can provide videos in sizes, such as:</p>
+          <div className="vec-section__header" style={{marginTop: "48px"}}>
+            <h3 className="vec-section__subtitle" style={{fontSize: "18px", fontWeight: "700", color: "#0a0a0a"}}>We can provide videos in sizes, such as:</h3>
           </div>
           <div className="vec-formats__grid">
             {VIDEO_FORMATS.map(([format, desc], i) => (
@@ -443,15 +717,23 @@ export default function VideoEditingChd() {
       </section>
 
       {/* ── INDUSTRIES ── */}
-      <section className="vec-section vec-section--white">
+      <section className="vec-section vec-section--light vec-animate">
         <div className="vec-section__inner">
-          <div className="vec-section__head">
+          <div className="vec-section__header">
+            <span className="vec-badge">Industries</span>
             <h2 className="vec-section__title">Industries We Work With</h2>
-            <p className="vec-section__sub">Social Theka works with lots of businesses in Chandigarh and the surrounding areas. Social Theka knows that each business is unique. So Social Theka makes sure the video editing is right for the business — not just what is popular at the moment.</p>
+            <p className="vec-section__subtitle">
+              Social Theka works with diverse businesses across Chandigarh and surrounding areas. Each industry gets a tailored editing approach — not generic templates.
+            </p>
           </div>
-          <div className="vec-tags vec-tags--industries">
+          <div className="vec-industries-grid">
             {INDUSTRIES.map((item, i) => (
-              <span key={i} className="vec-tag">{item}</span>
+              <div key={i} className="vec-industry-card vec-animate">
+                <div className="vec-industry-card__icon">
+                  {item.icon}
+                </div>
+                <span className="vec-industry-card__name">{item.label}</span>
+              </div>
             ))}
           </div>
         </div>
@@ -460,9 +742,10 @@ export default function VideoEditingChd() {
       {/* ── WHY CHOOSE ── */}
       <section className="vec-section vec-section--gray">
         <div className="vec-section__inner">
-          <div className="vec-section__head">
+          <div className="vec-section__header">
+            <span className="vec-badge">Why Us</span>
             <h2 className="vec-section__title">Why Choose Social Theka?</h2>
-            <p className="vec-section__sub">Choose Social Theka if you want videos that look professional but still feel real. Our goal is simple: we want to make video content easy for your business. You send us your footage. We help plan the shoot and then we turn it into videos that your audience can really watch and feel connected to.</p>
+            <p className="vec-section__subtitle">Choose Social Theka if you want videos that look professional but still feel real. Our goal is simple: we want to make video content easy for your business. You send us your footage. We help plan the shoot and then we turn it into videos that your audience can really watch and feel connected to.</p>
           </div>
           <div className="vec-why__grid">
             {WHY_CHOOSE.map(([title, desc], i) => (
@@ -498,7 +781,8 @@ export default function VideoEditingChd() {
       {/* ── FAQ ── */}
       <section className="vec-section vec-section--gray">
         <div className="vec-section__inner vec-section__inner--narrow">
-          <div className="vec-section__head">
+          <div className="vec-section__header">
+            <span className="vec-badge">FAQ</span>
             <h2 className="vec-section__title">Frequently Asked Questions</h2>
           </div>
           <div className="vec-faq__list">
@@ -522,9 +806,9 @@ export default function VideoEditingChd() {
           <p className="vec-cta-banner__sub">
             If you need a Video Editing Agency in Chandigarh, Social Theka is here to help. Send us your footage and we will turn it into clean, professional videos that your audience will connect with.
           </p>
-          <Link to="/contact" className="vec-btn-primary vec-btn-primary--lg">
+          <a href="#contact" className="vec-btn-primary vec-btn-primary--lg">
             Start Your Project <IconArrow />
-          </Link>
+          </a>
         </div>
       </section>
 

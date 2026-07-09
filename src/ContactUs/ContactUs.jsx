@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./ContactUs.css";
-import Footer from "../Component/Footer/Footer";
+import footerLogo from "../assets/FooterLogo.png";
 
 /* ── Icons ────────────────────────────────────── */
 const IconPhone = () => (
@@ -44,6 +43,65 @@ const IconCheck = () => (
   </svg>
 );
 
+/* ── Footer data ──────────────────────────────── */
+const FOOTER_SERVICES = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Website Development", "Content Writing", "Link Building"];
+const FOOTER_COMPANY  = ["About Us", "Theka Story", "Case Studies", "Blog", "Careers"];
+const FOOTER_CONTACT  = ["hello@socialtheka.com", "+91 XXXXX XXXXX", "Chandigarh, India"];
+const FOOTER_COLS = [
+  { title: "Services", links: FOOTER_SERVICES },
+  { title: "Company",  links: FOOTER_COMPANY  },
+  { title: "Contact",  links: FOOTER_CONTACT  },
+];
+
+function Footer() {
+  return (
+    <footer className="cu-footer">
+      <div className="cu-footer__top">
+        <div className="cu-footer__brand">
+          <div className="cu-footer__logo-wrap">
+            <img src={footerLogo} alt="Social Theka" className="cu-footer__logo-img" />
+          </div>
+          <p className="cu-footer__tagline">
+            Turning brands into market leaders. Based in Chandigarh. Serving India, USA, UK, Dubai &amp; Singapore.
+          </p>
+          <div className="cu-footer__socials">
+            <a href="https://www.linkedin.com/company/socialtheka/" target="_blank" rel="noreferrer" className="cu-footer__soc" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://instagram.com/socialtheka" target="_blank" rel="noreferrer" className="cu-footer__soc" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/officialsocialtheka" target="_blank" rel="noreferrer" className="cu-footer__soc" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://x.com/SocialTheka" target="_blank" rel="noreferrer" className="cu-footer__soc" aria-label="Twitter / X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        {FOOTER_COLS.map((col) => (
+          <div key={col.title} className="cu-footer__col">
+            <div className="cu-footer__col-title">{col.title}</div>
+            <div className="cu-footer__links">
+              {col.links.map((link) => (
+                <a key={link} href="#" className="cu-footer__link">{link}</a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="cu-footer__bottom">
+        <span>© 2026 Social Theka. All rights reserved.</span>
+        <div className="cu-footer__bottom-links">
+          {["Privacy Policy", "Terms", "Cookies"].map((l) => (
+            <a key={l} href="#">{l}</a>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 /* ── Scroll To Top ────────────────────────────── */
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -82,9 +140,82 @@ export default function ContactUs() {
   return (
     <>
     <div className="cu-page">
+      
+      {/* 3D Animated Background Shapes */}
+      <div className="cu-3d-shapes">
+        <div className="cu-3d-shape cu-3d-shape--1"></div>
+        <div className="cu-3d-shape cu-3d-shape--2"></div>
+        <div className="cu-3d-shape cu-3d-shape--3"></div>
+        <div className="cu-3d-shape cu-3d-shape--4"></div>
+        <div className="cu-3d-shape cu-3d-shape--5"></div>
+      </div>
 
       {/* ── HERO ────────────────────────────────── */}
       <section className="cu-hero">
+        {/* Background Pattern Images */}
+        <div className="cu-hero__bg-pattern">
+          <img src="https://www.pngall.com/wp-content/uploads/5/Digital-Marketing-PNG-Free-Download.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--1" />
+          <img src="https://purepng.com/public/uploads/large/purepng.com-social-media-marketing-iconsocial-mediasocial-networking-serviceweb-iconsymbolssetcollection-1421526557682qoesp.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--2" />
+          <img src="https://www.pngall.com/wp-content/uploads/12/SEO-PNG-Clipart.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--3" />
+        </div>
+        
+        {/* Background Illustration */}
+        <svg className="cu-hero__bg-illustration" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Digital Marketing Elements */}
+          <circle cx="400" cy="400" r="350" stroke="currentColor" strokeWidth="2" opacity="0.3"/>
+          <circle cx="400" cy="400" r="280" stroke="currentColor" strokeWidth="2" opacity="0.3"/>
+          <circle cx="400" cy="400" r="210" stroke="currentColor" strokeWidth="2" opacity="0.3"/>
+          
+          {/* Laptop/Screen */}
+          <rect x="250" y="320" width="300" height="180" rx="8" stroke="currentColor" strokeWidth="3" fill="none"/>
+          <rect x="270" y="340" width="260" height="130" rx="4" fill="currentColor" opacity="0.1"/>
+          <rect x="350" y="500" width="100" height="8" rx="4" fill="currentColor" opacity="0.3"/>
+          
+          {/* Chart/Analytics */}
+          <path d="M 290 380 L 320 360 L 350 370 L 380 340 L 410 350 L 440 330" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none"/>
+          <circle cx="290" cy="380" r="4" fill="currentColor"/>
+          <circle cx="320" cy="360" r="4" fill="currentColor"/>
+          <circle cx="350" cy="370" r="4" fill="currentColor"/>
+          <circle cx="380" cy="340" r="4" fill="currentColor"/>
+          <circle cx="410" cy="350" r="4" fill="currentColor"/>
+          <circle cx="440" cy="330" r="4" fill="currentColor"/>
+          
+          {/* Floating Icons - Email */}
+          <g transform="translate(580, 200)">
+            <rect x="0" y="0" width="60" height="45" rx="6" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <path d="M 5 5 L 30 25 L 55 5" stroke="currentColor" strokeWidth="2" fill="none"/>
+          </g>
+          
+          {/* Floating Icons - Phone */}
+          <g transform="translate(150, 220)">
+            <rect x="0" y="0" width="35" height="55" rx="8" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <circle cx="17.5" cy="47" r="3" fill="currentColor"/>
+            <line x1="10" y1="8" x2="25" y2="8" stroke="currentColor" strokeWidth="2"/>
+          </g>
+          
+          {/* Floating Icons - Message Bubble */}
+          <g transform="translate(620, 480)">
+            <rect x="0" y="0" width="70" height="50" rx="8" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <path d="M 35 50 L 35 65 L 50 50" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <line x1="15" y1="20" x2="55" y2="20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="15" y1="32" x2="45" y2="32" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          </g>
+          
+          {/* Floating Icons - Target/Marketing */}
+          <g transform="translate(120, 520)">
+            <circle cx="30" cy="30" r="28" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <circle cx="30" cy="30" r="20" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <circle cx="30" cy="30" r="12" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <circle cx="30" cy="30" r="4" fill="currentColor"/>
+          </g>
+          
+          {/* Connection Lines */}
+          <path d="M 400 200 Q 500 250 580 220" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5" opacity="0.3"/>
+          <path d="M 400 200 Q 300 250 170 240" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5" opacity="0.3"/>
+          <path d="M 400 550 Q 500 550 640 510" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5" opacity="0.3"/>
+          <path d="M 400 550 Q 300 550 150 540" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5" opacity="0.3"/>
+        </svg>
+        
         <div className="cu-hero__bg-grid" />
         <div className="cu-hero__inner">
           <div className="cu-hero__badge">
@@ -243,13 +374,13 @@ export default function ContactUs() {
                     </div>
                     <IconArrow />
                   </a>
-                  <a href="mailto:socialtheka@gmail.com" className="cu-contact-item cu-contact-item--mail">
+                  <a href="mailto:info@socialtheka.com" className="cu-contact-item cu-contact-item--mail">
                     <div className="cu-contact-item__icon">
                       <IconMail />
                     </div>
                     <div className="cu-contact-item__body">
                       <div className="cu-contact-item__label">Email Us</div>
-                      <div className="cu-contact-item__val">socialtheka@gmail.com</div>
+                      <div className="cu-contact-item__val">info@socialtheka.com</div>
                     </div>
                     <IconArrow />
                   </a>
