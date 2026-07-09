@@ -102,7 +102,7 @@ function Hero() {
   Social Theka is a digital marketing agency located in Chandigarh, India dedicated to providing effective and straightforward solutions to assist businesses in establishing themselves online. At our agency, our main objective is to help your target audience discover your business's services and products.</p>
 
           <div className="hero2__actions">
-            <a href="#contact" className="hero2__btn-ghost">
+            <a href="contact" className="hero2__btn-ghost">
               Book Free Audit
             </a>
           </div>
@@ -968,7 +968,7 @@ function CTA() {
               </svg>
             </span>
           </a>
-          <a href="mailto:hello@socialtheka.com" className="btn-glass">Send a Message</a>
+          <a href="mailto:info@socialtheka.com" className="btn-glass">Send a Message</a>
         </div>
       </div>
     </section>

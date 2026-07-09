@@ -51,12 +51,12 @@ const SVG_ICONS = {
 };
 
 const CHANDIGARH_SERVICES = [
-  { icon: SVG_ICONS.video,     label: "Video Editing Chandigarh",          to: "/services/video-editing" },
-  { icon: SVG_ICONS.seo,       label: "SEO Services Chandigarh",           to: "/services/seo" },
-  { icon: SVG_ICONS.ppc,       label: "PPC Advertising Chandigarh",        to: "/services/ppc" },
-  { icon: SVG_ICONS.webdev,    label: "Web Development Chandigarh",        to: "/services/web-development" },
-  { icon: SVG_ICONS.webdesign, label: "Web Design Chandigarh",             to: "/services/web-design" },
-  { icon: SVG_ICONS.social,    label: "Social Media Marketing Chandigarh", to: "/services/social-media" },
+  { icon: SVG_ICONS.video,     label: "Video Editing",          to: "/services/video-editing" },
+  { icon: SVG_ICONS.seo,       label: "SEO Services",           to: "/services/seo" },
+  { icon: SVG_ICONS.ppc,       label: "PPC Advertising",        to: "/services/ppc" },
+  { icon: SVG_ICONS.webdev,    label: "Web Development",        to: "/services/web-development" },
+  { icon: SVG_ICONS.webdesign, label: "Web Design",             to: "/services/web-design" },
+  { icon: SVG_ICONS.social,    label: "Social Media Marketing", to: "/services/social-media" },
 ];
 
 const NAV_LINKS = [

@@ -9,7 +9,7 @@ const services = [
       </svg>
     ),
     title: "SEO",
-    price: "$499+",
+    price: "$299+",
     popular: false,
   },
   {
@@ -21,7 +21,7 @@ const services = [
       </svg>
     ),
     title: "PPC Ads",
-    price: "$699+",
+    price: "$399+",
     popular: false,
   },
   {
@@ -33,7 +33,7 @@ const services = [
       </svg>
     ),
     title: "Social Media",
-    price: "$599+",
+    price: "$399+",
     popular: true,
   },
   {
@@ -45,7 +45,7 @@ const services = [
       </svg>
     ),
     title: "Web Design",
-    price: "$999+",
+    price: "$399+",
     popular: false,
   },
   {

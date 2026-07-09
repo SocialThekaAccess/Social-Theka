@@ -108,6 +108,24 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   justify-content: center;
   overflow: visible !important;
   position: relative;
+  text-align: center;
+}
+
+.cta-call-default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  line-height: 1.25;
+}
+
+.cta-call-default::after {
+  content: "+91 78887 35337";
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #111827;
 }
 
 /* Floating icon above button on hover */

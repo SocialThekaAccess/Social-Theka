@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import "./ThekaStory.css";
 import footerLogo from "../../assets/FooterLogo.png";
+import SharedFooter from "../../Component/Footer/Footer";
 /* ── SVG Icons ────────────────────────────────── */
 const IconStar = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -107,7 +109,7 @@ const TEAM = [
 /* ── FOOTER ───────────────────────────────────── */
 const FOOTER_SERVICES = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Website Development", "Content Writing", "Link Building"];
 const FOOTER_COMPANY  = ["About Us", "Theka Story", "Case Studies", "Blog", "Careers"];
-const FOOTER_CONTACT  = ["hello@socialtheka.com", "+91 XXXXX XXXXX", "Chandigarh, India"];
+const FOOTER_CONTACT  = ["info@socialtheka.com", "+91 XXXXX XXXXX", "Chandigarh, India"];
 const FOOTER_COLS = [
   { title: "Services", links: FOOTER_SERVICES },
   { title: "Company",  links: FOOTER_COMPANY  },
@@ -422,7 +424,7 @@ export default function ThekaStory() {
       </section>
 
     </div>
-    <Footer />
+    <SharedFooter />
     <ScrollToTop />
     </>
   );
