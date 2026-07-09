@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/SocialThekaLogo.png";
 import footerLogo from "../assets/FooterLogo.png";
 import heroImg from "../assets/SocialThekahero.png";
@@ -102,9 +103,9 @@ function Hero() {
   Social Theka is a digital marketing agency located in Chandigarh, India dedicated to providing effective and straightforward solutions to assist businesses in establishing themselves online. At our agency, our main objective is to help your target audience discover your business's services and products.</p>
 
           <div className="hero2__actions">
-            <a href="contact" className="hero2__btn-ghost">
+            <Link to="/contact" className="hero2__btn-ghost">
               Book Free Audit
-            </a>
+            </Link>
           </div>
 
           <p className="hero2__recog-label">
@@ -733,7 +734,7 @@ function WhyUs() {
               Why Businesses Choose<br />
               <span className="why__heading-accent">Social Theka</span>
             </h2>
-            <a href="#contact" className="why__cta">Get a Free Strategy Call →</a>
+            <Link to="/contact" className="why__cta">Get a Free Strategy Call →</Link>
           </div>
           <div className="why__top-right">
             <p className="why__intro">
@@ -931,7 +932,7 @@ function FAQ() {
           <span className="faq__eyebrow">GOT QUESTIONS?</span>
           <h2 className="faq__left-h2">Frequently<br />Asked<br />Questions</h2>
           <p className="faq__left-p">More questions about Social Theka or our services?</p>
-          <a href="#contact" className="faq__chat-btn">CHAT WITH US →</a>
+          <a href="https://wa.me/917888735337" className="faq__chat-btn" target="_blank" rel="noreferrer">CHAT WITH US →</a>
         </div>
         <div className="faq__list">
           {FAQ_ITEMS.map((item, i) => (
@@ -1057,3 +1058,5 @@ export default function SocialTheka() {
     </>
   );
 }
+
+
