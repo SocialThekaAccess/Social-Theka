@@ -382,7 +382,7 @@ export default function ThekaStory() {
               It's not just about providing a service, but about developing connections and working
               together towards a common purpose.
             </p>
-            <a href="#contact" className="ts-aim__cta">
+            <a href="/contact" className="ts-aim__cta">
               Start Your Journey <IconArrow />
             </a>
           </div>
@@ -429,3 +429,4 @@ export default function ThekaStory() {
     </>
   );
 }
+

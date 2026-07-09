@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./SEOchandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import seoHeroImg from "../../assets/seoSocialTheka.png";
@@ -214,7 +215,7 @@ export default function SEOChandigarh() {
                 Whether you're a startup in Chandigarh, a small business in Punjab, or a brand scaling globally — we build an SEO strategy specifically around your goals.
               </p>
               <div style={{ marginTop: "28px", display: "flex", gap: "14px", flexWrap: "wrap" }}>
-                <a href="#contact" className="seoc-btn-primary">
+                <a href="/contact" className="seoc-btn-primary">
                   Get Started <IconArrowRight />
                 </a>
                 <a href="#services" className="seoc-btn-outline">
@@ -408,9 +409,9 @@ export default function SEOChandigarh() {
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" className={plan.highlight ? "seoc-btn-primary" : "seoc-btn-outline"}>
+                  <Link to="/contact" className={plan.highlight ? "seoc-btn-primary" : "seoc-btn-outline"}>
                     Get Started <IconArrowRight />
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -468,7 +469,7 @@ export default function SEOChandigarh() {
                 Let's build your SEO strategy today — for results that last long after your investment.
               </p>
             </div>
-            <a href="#contact" className="seoc-btn-primary seoc-btn-primary--lg">
+            <a href="/contact" className="seoc-btn-primary seoc-btn-primary--lg">
               Start Your SEO Journey <IconArrowRight />
             </a>
           </div>
@@ -478,3 +479,4 @@ export default function SEOChandigarh() {
     </ServiceLayout>
   );
 }
+

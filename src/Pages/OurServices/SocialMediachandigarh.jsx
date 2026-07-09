@@ -201,7 +201,7 @@ export default function SocialMediaServicePage() {
             </p>
 
             <div style={{ marginTop: "28px" }}>
-              <a href="#contact" className="sms-btn-primary">
+              <a href="/contact" className="sms-btn-primary">
                 Start the Conversation <IconArrow />
               </a>
             </div>
@@ -461,7 +461,7 @@ export default function SocialMediaServicePage() {
               No pressure, no long process. Just reach out — we'll understand your business and suggest what actually makes sense.
             </p>
           </div>
-          <a href="#contact" className="sms-btn-primary sms-btn-primary--lg">
+          <a href="/contact" className="sms-btn-primary sms-btn-primary--lg">
             Start the Conversation <IconArrow />
           </a>
         </div>
@@ -471,3 +471,4 @@ export default function SocialMediaServicePage() {
     </ServiceLayout>
   );
 }
+

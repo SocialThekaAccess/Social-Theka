@@ -470,7 +470,7 @@ export default function VideoEditingChd() {
               </div>
             </div>
             <div className="vec-hero__ctas" ref={ctasRef}>
-              <a href="#contact" className="vec-btn-primary">
+              <a href="/contact" className="vec-btn-primary">
                 Start Your Project <IconArrow />
               </a>
               <a href="#services" className="vec-btn-outline">
@@ -806,7 +806,7 @@ export default function VideoEditingChd() {
           <p className="vec-cta-banner__sub">
             If you need a Video Editing Agency in Chandigarh, Social Theka is here to help. Send us your footage and we will turn it into clean, professional videos that your audience will connect with.
           </p>
-          <a href="#contact" className="vec-btn-primary vec-btn-primary--lg">
+          <a href="/contact" className="vec-btn-primary vec-btn-primary--lg">
             Start Your Project <IconArrow />
           </a>
         </div>
@@ -816,3 +816,4 @@ export default function VideoEditingChd() {
     </ServiceLayout>
   );
 }
+

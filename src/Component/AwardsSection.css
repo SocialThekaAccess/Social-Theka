@@ -100,14 +100,32 @@
   text-align: center;
 }
 
-/* ── Grid - 3 Columns with Generous Spacing ── */
+/* ── Endless Awards Marquee ── */
+.aw-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0 24px;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
 .aw-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 72px 56px;
-  padding: 0 32px;
-  max-width: 1140px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  padding: 0 28px;
+  animation: awMarquee 24s linear infinite;
+  will-change: transform;
+}
+
+.aw-marquee:hover .aw-grid {
+  animation-play-state: paused;
+}
+
+@keyframes awMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 /* ── Award Item - Floating 3D Glass Block ── */
@@ -117,10 +135,11 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  flex: 0 0 auto;
   
   /* Initial state for animation */
-  opacity: 0;
-  transform: translateY(50px);
+  opacity: 1;
+  transform: translateY(0);
   
   /* Transitions */
   transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -146,7 +165,7 @@
 
 /* Hover Effects */
 .aw-tile:hover {
-  transform: translateY(-16px) rotateX(3deg);
+  transform: translateY(-10px) rotateX(3deg);
 }
 
 /* ── 3D Glass Block with Depth ── */
@@ -157,7 +176,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
+  margin-bottom: 0;
   
   /* Light glass effect - subtle white tint */
   background: linear-gradient(135deg, 
@@ -226,48 +245,6 @@
   transform: scale(1.08);
 }
 
-/* ── Award Title - Below Glass Block ── */
-.aw-tile__title {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 800;
-  color: #CC1235;
-  letter-spacing: -0.01em;
-  line-height: 1.4;
-  margin-bottom: 6px;
-  padding: 0;
-  transition: transform 0.3s ease;
-  position: relative;
-}
-
-.aw-tile__title::before {
-  content: '★';
-  position: absolute;
-  left: -18px;
-  color: #CC1235;
-  font-size: 10px;
-}
-
-.aw-tile:hover .aw-tile__title {
-  transform: translateY(-2px);
-}
-
-/* ── Recognition Source - Below Title ── */
-.aw-tile__source {
-  font-size: 10px;
-  font-weight: 600;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0;
-  padding: 0;
-  transition: color 0.3s ease;
-}
-
-.aw-tile:hover .aw-tile__source {
-  color: #6b7280;
-}
-
 /* ── Shine Sweep Effect - On Glass Block ── */
 .aw-tile__shine {
   position: absolute;
@@ -293,8 +270,8 @@
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .aw-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 64px 48px;
+    gap: 40px;
+    animation-duration: 22s;
   }
 }
 
@@ -304,15 +281,14 @@
   }
   
   .aw-grid {
-    grid-template-columns: 1fr;
-    gap: 56px;
-    padding: 0;
+    gap: 28px;
+    padding: 0 14px;
+    animation-duration: 20s;
   }
   
   .aw-tile__logo {
     width: 220px;
     height: 150px;
-    margin-bottom: 28px;
   }
   
   .aw-tile__img {
@@ -320,7 +296,4 @@
     max-height: 110px;
   }
   
-  .aw-tile__title {
-    font-size: 15px;
-  }
 }
