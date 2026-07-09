@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Thekastory.css";
-import Footer from "../Component/Footer/Footer";
+import Footer from "../../Component/Footer/Footer";
 
 /* ── SVG Icons ────────────────────────────────── */
 const IconStar = () => (

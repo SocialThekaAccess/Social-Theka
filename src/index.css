@@ -53,3 +53,61 @@ ul { list-style: none; }
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
 ::-webkit-scrollbar-thumb { background: var(--cherry); border-radius: 3px; }
+
+
+/* ══════════════════════════════════════════════════
+   SCROLL TO TOP BUTTON (Global)
+══════════════════════════════════════════════════ */
+.scroll-top { 
+  position: fixed; 
+  bottom: 32px;
+  right: 32px;
+  z-index: 1000; 
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #BE123C 0%, #9f0f33 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(190, 18, 60, 0.3);
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.scroll-top:hover { 
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(190, 18, 60, 0.4);
+  background: linear-gradient(135deg, #9f0f33 0%, #BE123C 100%);
+}
+
+.scroll-top:active {
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .scroll-top {
+    bottom: 24px;
+    right: 24px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-top {
+    bottom: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+}
