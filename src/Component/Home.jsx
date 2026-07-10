@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/SocialThekaLogo.png";
 import footerLogo from "../assets/FooterLogo.png";
 import heroImg from "../assets/SocialThekahero.png";
+import heroVideo from "../assets/SocialThekaVideo.mp4";
 import manjulSirImg from "../assets/ManjulSirSocialTheka.png";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
@@ -123,16 +124,19 @@ function Hero() {
 
         </div>
 
-        {/* ── RIGHT — image card ───────────── */}
+        {/* ── RIGHT — video card ───────────── */}
         <div className={`hero2__right${visible ? " hero2__right--in" : ""}`}>
 
           <div className="hero2__img-frame">
-            <img
-              src={heroImg}
+            <video
+              src={heroVideo}
               alt="Social Theka"
               className="hero2__img"
+              autoPlay
+              loop
+              muted
+              playsInline
               loading="eager"
-              decoding="async"
               fetchPriority="high"
             />
 
