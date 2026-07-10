@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/SocialThekaLogo.png";
 import footerLogo from "../assets/FooterLogo.png";
 import heroImg from "../assets/SocialThekahero.png";
-import heroVideo from "../assets/SocialThekaVideo.mp4";
+import heroVideo from "../assets/SocialThekaHerovid.mp4";
 import manjulSirImg from "../assets/ManjulSirSocialTheka.png";
 import "./Home.css";
 import RegionalPresence from './RegionalPresence';
