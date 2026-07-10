@@ -70,13 +70,17 @@ function Hero() {
       
       // After 3 seconds, end intro
       const introTimer = setTimeout(() => {
-        console.log('Ending intro, removing fullscreen class');
+        console.log('3 seconds complete - removing fullscreen');
         setIntroPlaying(false);
         
-        // Force reflow to ensure transition happens
+        // Force DOM update
+        if (videoContainerRef.current) {
+          videoContainerRef.current.classList.remove('hero2__right--fullscreen');
+        }
+        
         setTimeout(() => {
           setVisible(true);
-        }, 100);
+        }, 50);
       }, 3000);
       
       return () => clearTimeout(introTimer);
