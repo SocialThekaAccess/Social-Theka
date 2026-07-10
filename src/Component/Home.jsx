@@ -70,8 +70,13 @@ function Hero() {
       
       // After 3 seconds, end intro
       const introTimer = setTimeout(() => {
+        console.log('Ending intro, removing fullscreen class');
         setIntroPlaying(false);
-        setVisible(true);
+        
+        // Force reflow to ensure transition happens
+        setTimeout(() => {
+          setVisible(true);
+        }, 100);
       }, 3000);
       
       return () => clearTimeout(introTimer);
