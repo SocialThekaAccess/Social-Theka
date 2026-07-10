@@ -658,7 +658,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   z-index: 1;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 24px;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 48px;
