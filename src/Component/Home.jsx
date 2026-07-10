@@ -53,41 +53,11 @@ const ISOIcon = () => (
 
 function Hero() {
   const sectionRef = useRef(null);
-  const videoContainerRef = useRef(null);
   const [visible, setVisible] = useState(false);
-  const [introPlaying, setIntroPlaying] = useState(false);
 
   useEffect(() => {
-    // Check if this is a fresh page load (not navigation from another page)
-    const isPageRefresh = !sessionStorage.getItem('hasNavigated');
-    
-    if (isPageRefresh) {
-      // Fresh page load - show intro
-      setIntroPlaying(true);
-      
-      // Mark that user has navigated (will persist until tab closes)
-      sessionStorage.setItem('hasNavigated', 'true');
-      
-      // After 3 seconds, end intro
-      const introTimer = setTimeout(() => {
-        console.log('3 seconds complete - removing fullscreen');
-        setIntroPlaying(false);
-        
-        // Force DOM update
-        if (videoContainerRef.current) {
-          videoContainerRef.current.classList.remove('hero2__right--fullscreen');
-        }
-        
-        setTimeout(() => {
-          setVisible(true);
-        }, 50);
-      }, 3000);
-      
-      return () => clearTimeout(introTimer);
-    } else {
-      // Navigation from another page - skip intro
-      setVisible(true);
-    }
+    // Simple visibility
+    setVisible(true);
   }, []);
 
   const certBadges = [
@@ -142,11 +112,8 @@ function Hero() {
 
         </div>
 
-        {/* ── RIGHT — video with full screen intro ───────────── */}
-        <div 
-          ref={videoContainerRef}
-          className={`hero2__right${introPlaying ? " hero2__right--fullscreen" : ""}${visible ? " hero2__right--in" : ""}`}
-        >
+        {/* ── RIGHT — simple video ───────────── */}
+        <div className={`hero2__right${visible ? " hero2__right--in" : ""}`}>
 
           <div className="hero2__img-frame">
             <video
@@ -159,13 +126,11 @@ function Hero() {
               playsInline
             />
 
-            {/* 10 Years badge - show after intro */}
-            {!introPlaying && (
-              <div className="hero2__corner-badge">
-                <span className="hero2__corner-num">10</span>
-                <span className="hero2__corner-text">Years</span>
-              </div>
-            )}
+            {/* 10 Years badge */}
+            <div className="hero2__corner-badge">
+              <span className="hero2__corner-num">10</span>
+              <span className="hero2__corner-text">Years</span>
+            </div>
           </div>
 
         </div>
