@@ -54,11 +54,16 @@ const ISOIcon = () => (
 function Hero() {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
-  const [introPlaying, setIntroPlaying] = useState(false); // Disable intro for now
+  const [introPlaying, setIntroPlaying] = useState(true);
 
   useEffect(() => {
-    // Simple visibility after mount
-    setVisible(true);
+    // 3 seconds full screen, then zoom out
+    const introTimer = setTimeout(() => {
+      setIntroPlaying(false);
+      setVisible(true);
+    }, 3500); // 3.5 seconds total
+
+    return () => clearTimeout(introTimer);
   }, []);
 
   const certBadges = [
@@ -113,8 +118,8 @@ function Hero() {
 
         </div>
 
-        {/* ── RIGHT — video card ───────────── */}
-        <div className={`hero2__right${visible ? " hero2__right--in" : ""}`}>
+        {/* ── RIGHT — video with full screen intro ───────────── */}
+        <div className={`hero2__right${introPlaying ? " hero2__right--fullscreen" : ""}${visible ? " hero2__right--in" : ""}`}>
 
           <div className="hero2__img-frame">
             <video
@@ -127,13 +132,13 @@ function Hero() {
               playsInline
             />
 
-            {/* 10 Years badge */}
-            <div className="hero2__corner-badge">
-              <span className="hero2__corner-num">10</span>
-              <span className="hero2__corner-text">Years</span>
-            </div>
-
-            {/* Stats badge removed */}
+            {/* 10 Years badge - show after intro */}
+            {!introPlaying && (
+              <div className="hero2__corner-badge">
+                <span className="hero2__corner-num">10</span>
+                <span className="hero2__corner-text">Years</span>
+              </div>
+            )}
           </div>
 
         </div>
