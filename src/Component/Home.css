@@ -623,15 +623,23 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 /* Intro Animations */
 @keyframes videoIntroZoom {
   0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
     transform: scale(2.8);
     opacity: 1;
   }
-  65% {
+  85% {
     transform: scale(2.8);
     opacity: 1;
   }
   100% {
-    transform: scale(1) translateX(0);
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -896,18 +904,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   transform: translateX(0);
 }
 
-/* Intro animation for video - zoom from center then slide from left */
+/* Intro animation for video - starts normal then zooms full screen */
 .hero2__right--intro-anim {
-  animation: videoIntroZoom 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: videoIntroZoom 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 1 !important;
-  transform: scale(2.8) !important;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(2.8);
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999;
 }
 
 @media (max-width: 768px) {
@@ -945,16 +945,22 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   z-index: 1;
 }
 
-/* Video specific styling */
+/* Video specific styling - full screen during zoom */
 .hero2__right--intro-anim .hero2__img-frame {
-  border-radius: 0;
-  box-shadow: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100vw;
   height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 9999;
+  transition: all 0.6s ease;
 }
 
 .hero2__right--intro-anim .hero2__img {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   border-radius: 0;
   border: none;

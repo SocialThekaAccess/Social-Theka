@@ -57,11 +57,11 @@ function Hero() {
   const [introPlaying, setIntroPlaying] = useState(true);
 
   useEffect(() => {
-    // Intro animation complete hone ke baad
+    // Show video at normal size first, then intro animation, then content
     const introTimer = setTimeout(() => {
       setIntroPlaying(false);
       setVisible(true);
-    }, 3200); // 3.2 seconds after zoom completes
+    }, 4200); // 4.2 seconds - after full animation
 
     return () => clearTimeout(introTimer);
   }, []);
