@@ -58,13 +58,15 @@ function Hero() {
   const [introPlaying, setIntroPlaying] = useState(false);
 
   useEffect(() => {
-    // Check if user has visited before (localStorage persists even after closing browser)
-    const hasVisited = localStorage.getItem('hasVisitedSocialTheka');
+    // Check if this is a fresh page load (not navigation from another page)
+    const isPageRefresh = !sessionStorage.getItem('hasNavigated');
     
-    if (!hasVisited) {
-      // First time ever - show intro
+    if (isPageRefresh) {
+      // Fresh page load - show intro
       setIntroPlaying(true);
-      localStorage.setItem('hasVisitedSocialTheka', 'true');
+      
+      // Mark that user has navigated (will persist until tab closes)
+      sessionStorage.setItem('hasNavigated', 'true');
       
       // After 3 seconds, end intro
       const introTimer = setTimeout(() => {
@@ -74,7 +76,7 @@ function Hero() {
       
       return () => clearTimeout(introTimer);
     } else {
-      // User has visited before - skip intro completely
+      // Navigation from another page - skip intro
       setVisible(true);
     }
   }, []);
