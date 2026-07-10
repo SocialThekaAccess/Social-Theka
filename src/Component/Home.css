@@ -617,8 +617,47 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 }
 
 /* ══════════════════════════════════════════════════
-   HERO 2 — White two-column layout
+   HERO 2 — White two-column layout with intro animation
 ══════════════════════════════════════════════════ */
+
+/* Intro Animations */
+@keyframes videoIntroZoom {
+  0% {
+    transform: scale(2.8);
+    opacity: 1;
+  }
+  65% {
+    transform: scale(2.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes videoSlideFromLeft {
+  0% {
+    transform: translateX(-120vw) scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes contentFadeInDelayed {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .hero2 {
   position: relative;
   background: #ffffff;
@@ -676,6 +715,12 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 .hero2__left--in {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Intro animation for left content */
+.hero2__left--intro-anim {
+  animation: contentFadeInDelayed 1.2s ease forwards;
+  animation-delay: 3.8s;
 }
 
 .hero2__tag {
@@ -851,10 +896,38 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   transform: translateX(0);
 }
 
+/* Intro animation for video - zoom from center then slide from left */
+.hero2__right--intro-anim {
+  animation: videoIntroZoom 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  opacity: 1 !important;
+  transform: scale(2.8) !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2.8);
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .hero2__right--intro-anim {
+    animation: none;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    opacity: 1 !important;
+  }
+}
+
 .hero2__img-frame {
   position: relative;
   border-radius: 28px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow:
     0 24px 80px rgba(0,0,0,0.12),
     0 8px 24px rgba(0,0,0,0.07);
@@ -864,12 +937,27 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   width: 100%;
   height: 480px;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
   display: block;
   border-radius: 28px;
   border: 1px solid rgba(0,0,0,0.06);
   position: relative;
   z-index: 1;
+}
+
+/* Video specific styling */
+.hero2__right--intro-anim .hero2__img-frame {
+  border-radius: 0;
+  box-shadow: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero2__right--intro-anim .hero2__img {
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+  border: none;
 }
 
 /* Floating service pills on image */

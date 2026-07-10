@@ -54,22 +54,16 @@ const ISOIcon = () => (
 function Hero() {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
+  const [introPlaying, setIntroPlaying] = useState(true);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          section.classList.add("hero--icons-visible");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.08 }
-    );
-    observer.observe(section);
-    return () => observer.disconnect();
+    // Intro animation complete hone ke baad
+    const introTimer = setTimeout(() => {
+      setIntroPlaying(false);
+      setVisible(true);
+    }, 3200); // 3.2 seconds after zoom completes
+
+    return () => clearTimeout(introTimer);
   }, []);
 
   const certBadges = [
@@ -94,7 +88,7 @@ function Hero() {
       <div className="hero2__inner">
 
         {/* ── LEFT ────────────────────────── */}
-        <div className={`hero2__left${visible ? " hero2__left--in" : ""}`}>
+        <div className={`hero2__left${introPlaying ? " hero2__left--intro-anim" : ""}${visible ? " hero2__left--in" : ""}`}>
 
           <h1 className="hero2__h1">
            <span className="hero2__h1-accent">Building Brands</span> That Stand Out in the Digital World
@@ -124,8 +118,8 @@ function Hero() {
 
         </div>
 
-        {/* ── RIGHT — video card ───────────── */}
-        <div className={`hero2__right${visible ? " hero2__right--in" : ""}`}>
+        {/* ── RIGHT — video card with intro animation ───────────── */}
+        <div className={`hero2__right${introPlaying ? " hero2__right--intro-anim" : ""}${visible ? " hero2__right--in" : ""}`}>
 
           <div className="hero2__img-frame">
             <video
@@ -140,11 +134,13 @@ function Hero() {
               fetchPriority="high"
             />
 
-            {/* 10 Years badge */}
-            <div className="hero2__corner-badge">
-              <span className="hero2__corner-num">10</span>
-              <span className="hero2__corner-text">Years</span>
-            </div>
+            {/* 10 Years badge - only show after intro */}
+            {!introPlaying && (
+              <div className="hero2__corner-badge">
+                <span className="hero2__corner-num">10</span>
+                <span className="hero2__corner-text">Years</span>
+              </div>
+            )}
 
             {/* Stats badge removed */}
           </div>
