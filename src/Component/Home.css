@@ -624,7 +624,8 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   position: relative;
   background: #ffffff;
   overflow: hidden;
-  padding: 16px 0 48px;
+  padding: 0 0 48px;
+  margin-top: 0;
 }
 
 /* Soft ambient blobs */
@@ -1071,7 +1072,14 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
     0 0 0 5px rgba(193,18,31,0.2),
     inset 0 2px 8px rgba(255,255,255,0.2);
   z-index: 30;
-  animation: hero2BadgePulse 3s ease-in-out infinite;
+  opacity: 0;
+  animation: hero2BadgeFadeIn 0.5s ease forwards;
+  animation-delay: 5s;
+}
+
+@keyframes hero2BadgeFadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .hero2__corner-badge::before {
