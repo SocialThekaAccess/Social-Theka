@@ -53,12 +53,18 @@ const ISOIcon = () => (
 
 function Hero() {
   const sectionRef = useRef(null);
+  const videoRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     // Delay visibility for 5 seconds to let video animation complete
     const timer = setTimeout(() => {
       setVisible(true);
+      
+      // Stop video after animation completes
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
     }, 5000);
 
     return () => clearTimeout(timer);
@@ -121,13 +127,14 @@ function Hero() {
 
           <div className="hero2__img-frame">
             <video
+              ref={videoRef}
               src={heroVideo}
               alt="Social Theka"
               className="hero2__img"
               autoPlay
-              loop
               muted
               playsInline
+              controls
             />
 
             {/* 10 Years badge */}

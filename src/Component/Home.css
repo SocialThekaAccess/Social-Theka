@@ -624,7 +624,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   position: relative;
   background: #ffffff;
   overflow: hidden;
-  padding: 0 0 48px;
+  padding: 48px 0 48px;
   margin-top: 0;
 }
 
