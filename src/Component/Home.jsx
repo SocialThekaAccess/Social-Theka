@@ -135,32 +135,13 @@ function Hero() {
         <div 
           ref={videoContainerRef}
           className={`hero2__right${introPlaying ? " hero2__right--fullscreen" : ""}${visible ? " hero2__right--in" : ""}`}
-          style={introPlaying ? {
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            zIndex: 9999
-          } : {}}
         >
 
-          <div className="hero2__img-frame" style={introPlaying ? {
-            width: '100vw',
-            height: '100vh',
-            borderRadius: 0,
-            boxShadow: 'none'
-          } : {}}>
+          <div className="hero2__img-frame">
             <video
               src={heroVideo}
               alt="Social Theka"
               className="hero2__img"
-              style={introPlaying ? {
-                width: '100vw',
-                height: '100vh',
-                borderRadius: 0,
-                border: 'none'
-              } : {}}
               autoPlay
               loop
               muted
