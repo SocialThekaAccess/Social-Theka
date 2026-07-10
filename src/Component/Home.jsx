@@ -54,16 +54,30 @@ const ISOIcon = () => (
 function Hero() {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
-  const [introPlaying, setIntroPlaying] = useState(true);
+  const [introPlaying, setIntroPlaying] = useState(false);
 
   useEffect(() => {
-    // 3 seconds full screen, then zoom out
-    const introTimer = setTimeout(() => {
-      setIntroPlaying(false);
+    // Check if intro has already been shown in this session
+    const introShown = sessionStorage.getItem('heroIntroShown');
+    
+    if (!introShown) {
+      // First time visit - show intro
+      setIntroPlaying(true);
+      
+      // Mark intro as shown
+      sessionStorage.setItem('heroIntroShown', 'true');
+      
+      // 3 seconds full screen, then zoom out
+      const introTimer = setTimeout(() => {
+        setIntroPlaying(false);
+        setVisible(true);
+      }, 3500);
+      
+      return () => clearTimeout(introTimer);
+    } else {
+      // Already shown - skip intro
       setVisible(true);
-    }, 3500); // 3.5 seconds total
-
-    return () => clearTimeout(introTimer);
+    }
   }, []);
 
   const certBadges = [
