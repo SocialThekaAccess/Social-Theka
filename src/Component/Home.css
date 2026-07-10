@@ -660,8 +660,8 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
   align-items: center;
 }
 
@@ -915,7 +915,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 
 .hero2__img-frame {
   position: relative;
-  border-radius: 28px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow:
     0 24px 80px rgba(0,0,0,0.12),
@@ -924,11 +924,11 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 
 .hero2__img {
   width: 100%;
-  height: 520px;
+  height: 480px;
   object-fit: cover;
   object-position: center;
   display: block;
-  border-radius: 28px;
+  border-radius: 24px;
   border: 1px solid rgba(0,0,0,0.06);
   position: relative;
   z-index: 1;
