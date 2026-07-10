@@ -53,6 +53,7 @@ const ISOIcon = () => (
 
 function Hero() {
   const sectionRef = useRef(null);
+  const videoContainerRef = useRef(null);
   const [visible, setVisible] = useState(false);
   const [introPlaying, setIntroPlaying] = useState(false);
 
@@ -67,11 +68,11 @@ function Hero() {
       // Mark intro as shown
       sessionStorage.setItem('heroIntroShown', 'true');
       
-      // 3 seconds full screen, then zoom out
+      // After 3 seconds, remove fullscreen class
       const introTimer = setTimeout(() => {
         setIntroPlaying(false);
         setVisible(true);
-      }, 3500);
+      }, 3000);
       
       return () => clearTimeout(introTimer);
     } else {
@@ -133,13 +134,35 @@ function Hero() {
         </div>
 
         {/* ── RIGHT — video with full screen intro ───────────── */}
-        <div className={`hero2__right${introPlaying ? " hero2__right--fullscreen" : ""}${visible ? " hero2__right--in" : ""}`}>
+        <div 
+          ref={videoContainerRef}
+          className={`hero2__right${introPlaying ? " hero2__right--fullscreen" : ""}${visible ? " hero2__right--in" : ""}`}
+          style={introPlaying ? {
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            zIndex: 9999
+          } : {}}
+        >
 
-          <div className="hero2__img-frame">
+          <div className="hero2__img-frame" style={introPlaying ? {
+            width: '100vw',
+            height: '100vh',
+            borderRadius: 0,
+            boxShadow: 'none'
+          } : {}}>
             <video
               src={heroVideo}
               alt="Social Theka"
               className="hero2__img"
+              style={introPlaying ? {
+                width: '100vw',
+                height: '100vh',
+                borderRadius: 0,
+                border: 'none'
+              } : {}}
               autoPlay
               loop
               muted
