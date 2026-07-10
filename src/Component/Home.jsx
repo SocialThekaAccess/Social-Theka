@@ -58,17 +58,15 @@ function Hero() {
   const [introPlaying, setIntroPlaying] = useState(false);
 
   useEffect(() => {
-    // Check if intro has already been shown in this session
-    const introShown = sessionStorage.getItem('heroIntroShown');
+    // Check if user has visited before (localStorage persists even after closing browser)
+    const hasVisited = localStorage.getItem('hasVisitedSocialTheka');
     
-    if (!introShown) {
-      // First time visit - show intro
+    if (!hasVisited) {
+      // First time ever - show intro
       setIntroPlaying(true);
+      localStorage.setItem('hasVisitedSocialTheka', 'true');
       
-      // Mark intro as shown
-      sessionStorage.setItem('heroIntroShown', 'true');
-      
-      // After 3 seconds, remove fullscreen class
+      // After 3 seconds, end intro
       const introTimer = setTimeout(() => {
         setIntroPlaying(false);
         setVisible(true);
@@ -76,7 +74,7 @@ function Hero() {
       
       return () => clearTimeout(introTimer);
     } else {
-      // Already shown - skip intro
+      // User has visited before - skip intro completely
       setVisible(true);
     }
   }, []);
