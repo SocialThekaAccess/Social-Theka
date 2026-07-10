@@ -672,7 +672,19 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   flex-direction: column;
   opacity: 0;
   transform: translateX(-40px);
-  transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1);
+  animation: hero2LeftFadeIn 0.85s cubic-bezier(0.22,1,0.36,1) forwards;
+  animation-delay: 5s;
+}
+
+@keyframes hero2LeftFadeIn {
+  0% { 
+    opacity: 0;
+    transform: translateX(-40px); 
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0); 
+  }
 }
 
 .hero2__left--in {

@@ -15,7 +15,7 @@
   flex-wrap: wrap;
   opacity: 0;
   animation: navbarFadeIn 0.5s ease forwards;
-  animation-delay: 5s;
+  animation-delay: 3s;
 }
 .nb-top__left {
   display: flex;
@@ -95,16 +95,16 @@
   z-index: 1000;
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
-  transition: box-shadow .3s ease;
+  transition: opacity .3s ease, box-shadow .3s ease;
   overflow: visible !important;
   opacity: 0;
   animation: navbarFadeIn 0.5s ease forwards;
-  animation-delay: 5s;
+  animation-delay: 3s;
 }
 
 @keyframes navbarFadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 .nb--scrolled { box-shadow: 0 4px 24px rgba(0,0,0,.09); }
 

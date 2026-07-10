@@ -56,8 +56,12 @@ function Hero() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Simple visibility
-    setVisible(true);
+    // Delay visibility for 5 seconds to let video animation complete
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const certBadges = [
