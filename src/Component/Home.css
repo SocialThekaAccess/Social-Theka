@@ -727,8 +727,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 
 /* Intro animation for left content */
 .hero2__left--intro-anim {
+  opacity: 0;
   animation: contentFadeInDelayed 1.2s ease forwards;
-  animation-delay: 3.8s;
+  animation-delay: 4.5s;
 }
 
 .hero2__tag {
@@ -894,8 +895,8 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 /* ── RIGHT ─────────────────────────────────────── */
 .hero2__right {
   position: relative;
-  opacity: 0;
-  transform: translateX(40px);
+  opacity: 1;
+  transform: translateX(0);
   transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s,
               transform 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s;
 }
