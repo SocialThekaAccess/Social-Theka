@@ -854,48 +854,74 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 
 /* Full screen intro state - pehle 3 seconds */
 .hero2__right--fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
   opacity: 1;
+  transition: all 1s ease !important;
 }
 
 .hero2__right--fullscreen .hero2__img-frame {
-  width: 100vw;
-  height: 100vh;
-  border-radius: 0;
-  box-shadow: none;
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: all 1s ease !important;
 }
 
 .hero2__right--fullscreen .hero2__img {
-  width: 100vw;
-  height: 100vh;
-  border-radius: 0;
-  border: none;
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
+  border: none !important;
   object-fit: cover;
+}
+
+/* When intro ends - back to normal */
+.hero2__right:not(.hero2__right--fullscreen) {
+  position: relative !important;
+  width: auto !important;
+  height: auto !important;
+  top: auto !important;
+  left: auto !important;
+  z-index: 1 !important;
+}
+
+.hero2__right:not(.hero2__right--fullscreen) .hero2__img-frame {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 24px !important;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.07) !important;
+}
+
+.hero2__right:not(.hero2__right--fullscreen) .hero2__img {
+  width: 100% !important;
+  height: 480px !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(0,0,0,0.06) !important;
 }
 
 @media (max-width: 768px) {
   .hero2__right--fullscreen {
-    position: relative;
-    width: auto;
-    height: auto;
-    z-index: 1;
+    position: relative !important;
+    width: auto !important;
+    height: auto !important;
+    z-index: 1 !important;
   }
   
   .hero2__right--fullscreen .hero2__img-frame {
-    width: 100%;
-    height: 480px;
-    border-radius: 28px;
+    width: 100% !important;
+    height: 480px !important;
+    border-radius: 28px !important;
   }
   
   .hero2__right--fullscreen .hero2__img {
-    width: 100%;
-    height: 480px;
-    border-radius: 28px;
+    width: 100% !important;
+    height: 480px !important;
+    border-radius: 28px !important;
   }
 }
 
