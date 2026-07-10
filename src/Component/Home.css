@@ -891,6 +891,20 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   transform: translateX(0);
 }
 
+/* Hide controls during intro animation */
+.hero2__right .hero2__img::-webkit-media-controls,
+.hero2__right .hero2__img::-webkit-media-controls-enclosure {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.hero2__right--in .hero2__img::-webkit-media-controls,
+.hero2__right--in .hero2__img::-webkit-media-controls-enclosure {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media (max-width: 768px) {
   .hero2__right--intro-anim {
     animation: none;
@@ -947,6 +961,54 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
   position: relative;
   z-index: 1;
   animation: imgZoomOut 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  cursor: pointer;
+}
+
+/* Hide default video controls completely */
+.hero2__img::-webkit-media-controls {
+  display: none !important;
+}
+
+.hero2__img::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.hero2__img::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+/* Custom play button overlay */
+.hero2__play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hero2__img-frame:hover .hero2__play-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero2__play-icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+  transition: transform 0.2s ease;
+}
+
+.hero2__play-overlay:hover .hero2__play-icon {
+  transform: scale(1.1);
+}
+
+/* Hide play button during intro animation */
+.hero2__right:not(.hero2__right--in) .hero2__play-overlay {
+  display: none;
 }
 
 @keyframes imgZoomOut {

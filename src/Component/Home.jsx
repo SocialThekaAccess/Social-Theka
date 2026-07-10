@@ -134,8 +134,33 @@ function Hero() {
               autoPlay
               muted
               playsInline
-              controls
+              onClick={(e) => {
+                if (e.target.paused) {
+                  e.target.play();
+                } else {
+                  e.target.pause();
+                }
+              }}
             />
+            
+            {/* Custom play button overlay */}
+            <div 
+              className="hero2__play-overlay"
+              onClick={() => {
+                if (videoRef.current) {
+                  if (videoRef.current.paused) {
+                    videoRef.current.play();
+                  } else {
+                    videoRef.current.pause();
+                  }
+                }
+              }}
+            >
+              <svg className="hero2__play-icon" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" fill="rgba(255,255,255,0.9)" />
+                <path d="M10 8l6 4-6 4V8z" fill="#C1121F" />
+              </svg>
+            </div>
 
             {/* 10 Years badge */}
             <div className="hero2__corner-badge">
