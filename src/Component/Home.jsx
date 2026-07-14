@@ -61,13 +61,37 @@ function Hero() {
     const timer = setTimeout(() => {
       setVisible(true);
       
-      // Stop video after animation completes
+      // Keep video playing (don't pause)
       if (videoRef.current) {
-        videoRef.current.pause();
+        videoRef.current.play();
       }
     }, 5000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Ensure video never pauses - restart immediately if paused
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handlePause = () => {
+      video.play().catch(err => console.log('Video play failed:', err));
+    };
+
+    const handleEnded = () => {
+      video.currentTime = 0;
+      video.play().catch(err => console.log('Video play failed:', err));
+    };
+
+    // Listen for pause events and restart
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('ended', handleEnded);
+
+    return () => {
+      video.removeEventListener('pause', handlePause);
+      video.removeEventListener('ended', handleEnded);
+    };
   }, []);
 
   const certBadges = [
@@ -132,35 +156,10 @@ function Hero() {
               alt="Social Theka"
               className="hero2__img"
               autoPlay
+              loop
               muted
               playsInline
-              onClick={(e) => {
-                if (e.target.paused) {
-                  e.target.play();
-                } else {
-                  e.target.pause();
-                }
-              }}
             />
-            
-            {/* Custom play button overlay */}
-            <div 
-              className="hero2__play-overlay"
-              onClick={() => {
-                if (videoRef.current) {
-                  if (videoRef.current.paused) {
-                    videoRef.current.play();
-                  } else {
-                    videoRef.current.pause();
-                  }
-                }
-              }}
-            >
-              <svg className="hero2__play-icon" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="10" fill="rgba(255,255,255,0.9)" />
-                <path d="M10 8l6 4-6 4V8z" fill="#C1121F" />
-              </svg>
-            </div>
 
             {/* 10 Years badge */}
             <div className="hero2__corner-badge">
