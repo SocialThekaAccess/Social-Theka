@@ -474,9 +474,17 @@ export default function VideoEditingChd() {
               <Link to="/contact" className="vec-btn-primary">
                 Start Your Project <IconArrow />
               </Link>
-              <a href="#services" className="vec-btn-outline">
+              <button 
+                onClick={() => {
+                  const servicesSection = document.getElementById('services');
+                  if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="vec-btn-outline"
+              >
                 View Services
-              </a>
+              </button>
             </div>
           </div>
           

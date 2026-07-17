@@ -224,7 +224,7 @@ export default function ThekaStory() {
             {/* Mini stat strip */}
             <div className="ts-hero__stats-strip">
               <div className="ts-hero__stat-item">
-                <span className="ts-hero__stat-num">5+</span>
+                <span className="ts-hero__stat-num">10</span>
                 <span className="ts-hero__stat-lbl">Years</span>
               </div>
               <div className="ts-hero__stat-divider" />

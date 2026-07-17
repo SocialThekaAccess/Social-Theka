@@ -218,9 +218,17 @@ export default function SEOChandigarh() {
                 <Link to="/contact" className="seoc-btn-primary">
                   Get Started <IconArrowRight />
                 </Link>
-                <a href="#services" className="seoc-btn-outline">
+                <button 
+                  onClick={() => {
+                    const servicesSection = document.getElementById('services');
+                    if (servicesSection) {
+                      servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className="seoc-btn-outline"
+                >
                   Our Services
-                </a>
+                </button>
               </div>
 
               {/* Stats bar - now inside left column, matches wdsc reference alignment */}

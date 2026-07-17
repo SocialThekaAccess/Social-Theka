@@ -87,7 +87,17 @@ export default function WebDesignChandigarh() {
             </p> */}
             <div className="wdsc-hero__ctas">
               <Link to="/contact" className="wdsc-btn-primary">Start Your Project <IconArrow /></Link>
-              <a href="#services" className="wdsc-btn-outline">View Services</a>
+              <button 
+                onClick={() => {
+                  const servicesSection = document.getElementById('services');
+                  if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="wdsc-btn-outline"
+              >
+                View Services
+              </button>
             </div>
             <div className="wdsc-hero__stats">
               <div className="wdsc-hero__stat">

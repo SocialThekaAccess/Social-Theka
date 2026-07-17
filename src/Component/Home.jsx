@@ -1085,5 +1085,3 @@ export default function SocialTheka() {
     </>
   );
 }
-
-

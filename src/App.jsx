@@ -12,6 +12,7 @@ const VideoEditingChd = lazy(() => import('./Pages/OurServices/VideoEditingChd')
 const SocialMediachandigarh = lazy(() => import('./Pages/OurServices/SocialMediachandigarh'))
 const ThekaStory = lazy(() => import('./Pages/ThekaStory/ThekaStory'))
 const ContactUs = lazy(() => import('./ContactUs/ContactUs'))
+const NotFound = lazy(() => import('./Pages/NotFound/NotFound'))
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation()
@@ -39,7 +40,8 @@ function App() {
           <Route path="/services/seo" element={<SEOchandigarh />} />
           <Route path="/services/video-editing" element={<VideoEditingChd />} />
           <Route path="/services/social-media" element={<SocialMediachandigarh />} />
-          <Route path="*" element={<Home />} />
+          {/* 404 Catch-all Route - Must be last */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </>
