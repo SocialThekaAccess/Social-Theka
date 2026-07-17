@@ -996,7 +996,14 @@ function CTA() {
               </svg>
             </span>
           </a>
-          <a href="mailto:info@socialtheka.com" className="btn-glass">Send a Message</a>
+          <a 
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@socialtheka.com&su=Inquiry from Social Theka Website&body=Hi Social Theka Team,%0D%0A%0D%0AI would like to discuss:" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-glass"
+          >
+            Send a Message
+          </a>
         </div>
       </div>
     </section>
