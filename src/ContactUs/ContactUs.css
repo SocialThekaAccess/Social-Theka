@@ -47,14 +47,18 @@
 .cu-hero {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.6) 100%),
-    url('https://png.pngtree.com/thumb_back/fh260/background/20230712/pngtree-innovative-3d-renderings-for-web-development-promotions-marketing-collateral-business-presentations-image_3856387.jpg');
+    var(--contact-bg-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 100px 40px 120px;
+  padding: 120px 40px 140px;
+  min-height: 550px;
   position: relative;
   overflow: hidden;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hero Background Pattern Images */
@@ -929,11 +933,16 @@
   .cu-footer__brand {
     grid-column: 1 / -1;
   }
+  .cu-hero {
+    min-height: 500px;
+    padding: 100px 40px 120px;
+  }
 }
 
 @media (max-width: 768px) {
   .cu-hero {
-    padding: 72px 20px 88px;
+    padding: 90px 20px 100px;
+    min-height: 450px;
   }
   .cu-section {
     padding: 0 20px 72px;
@@ -957,6 +966,10 @@
 }
 
 @media (max-width: 640px) {
+  .cu-hero {
+    min-height: 400px;
+    padding: 80px 20px 90px;
+  }
   .cu-hero__h1 {
     font-size: 36px;
   }

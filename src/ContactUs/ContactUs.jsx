@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import "./ContactUs.css";
 import footerLogo from "../assets/FooterLogo.png";
+import contactBg from "../assets/ContactUs.png";
 import SharedFooter from "../Component/Footer/Footer";
 
 /* ── Icons ────────────────────────────────────── */
@@ -176,7 +177,7 @@ export default function ContactUs() {
     <div className="cu-page">
       
       {/* ── HERO ────────────────────────────────── */}
-      <section className="cu-hero">
+      <section className="cu-hero" style={{'--contact-bg-image': `url(${contactBg})`}}>
         {/* Background Pattern Images */}
         <div className="cu-hero__bg-pattern">
           <img src="https://www.pngall.com/wp-content/uploads/5/Digital-Marketing-PNG-Free-Download.png" alt="" className="cu-hero__pattern-img cu-hero__pattern-img--1" loading="lazy" decoding="async" />

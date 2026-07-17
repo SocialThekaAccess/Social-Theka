@@ -57,9 +57,15 @@ function Hero() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Hide navbar initially
+    document.body.classList.add('video-animating');
+    
     // Delay visibility for 5 seconds to let video animation complete
     const timer = setTimeout(() => {
       setVisible(true);
+      
+      // Show navbar after animation completes
+      document.body.classList.remove('video-animating');
       
       // Keep video playing (don't pause)
       if (videoRef.current) {
@@ -67,7 +73,10 @@ function Hero() {
       }
     }, 5000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.body.classList.remove('video-animating');
+    };
   }, []);
 
   // Ensure video never pauses - restart immediately if paused
