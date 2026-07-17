@@ -126,17 +126,49 @@ function ScrollToTop() {
 /* ── Main Component ───────────────────────────── */
 export default function ContactUs() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "", email: "", phone: "", service: "", budget: "", message: "",
   });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setError(""); // Clear error when user starts typing
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    const formData = new FormData(e.target);
+    formData.append("access_key", "0f62e32c-e8c3-4667-bfa1-4019589e2d8e");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", phone: "", service: "", budget: "", message: "" });
+      } else {
+        setError("Something went wrong. Please try again or contact us directly.");
+      }
+    } catch (err) {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSendAnother = () => {
+    setSubmitted(false);
+    setError("");
   };
 
   return (
@@ -248,12 +280,25 @@ export default function ContactUs() {
                   <p className="cu-success__sub">
                     Thanks for reaching out. We'll get back to you within 24 hours.
                   </p>
-                  <button className="cu-btn-primary" onClick={() => setSubmitted(false)}>
+                  <button className="cu-btn-primary" onClick={handleSendAnother}>
                     Send Another
                   </button>
                 </div>
               ) : (
                 <form className="cu-form" onSubmit={handleSubmit}>
+                  
+                  {/* Error message */}
+                  {error && (
+                    <div className="cu-error">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                      </svg>
+                      {error}
+                    </div>
+                  )}
+
                   <div className="cu-form__row">
                     <div className="cu-form__group">
                       <label className="cu-form__label">FULL NAME *</label>
@@ -265,6 +310,7 @@ export default function ContactUs() {
                         value={form.name}
                         onChange={handleChange}
                         required
+                        disabled={loading}
                       />
                     </div>
                     <div className="cu-form__group">
@@ -277,6 +323,7 @@ export default function ContactUs() {
                         value={form.email}
                         onChange={handleChange}
                         required
+                        disabled={loading}
                       />
                     </div>
                   </div>
@@ -291,6 +338,7 @@ export default function ContactUs() {
                         value={form.phone}
                         onChange={handleChange}
                         required
+                        disabled={loading}
                       />
                     </div>
                     <div className="cu-form__group">
@@ -300,6 +348,7 @@ export default function ContactUs() {
                         className="cu-form__input"
                         value={form.service}
                         onChange={handleChange}
+                        disabled={loading}
                       >
                         <option value="">Select a service</option>
                         <option>SEO Services</option>
@@ -319,6 +368,7 @@ export default function ContactUs() {
                       className="cu-form__input"
                       value={form.budget}
                       onChange={handleChange}
+                      disabled={loading}
                     >
                       <option value="">Select budget range</option>
                       <option>₹10k – ₹25k</option>
@@ -337,10 +387,24 @@ export default function ContactUs() {
                       value={form.message}
                       onChange={handleChange}
                       required
+                      disabled={loading}
                     />
                   </div>
-                  <button type="submit" className="cu-btn-primary cu-btn-primary--full">
-                    Send Message <IconSend />
+                  <button 
+                    type="submit" 
+                    className="cu-btn-primary cu-btn-primary--full"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <>
+                        <span className="cu-spinner" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message <IconSend />
+                      </>
+                    )}
                   </button>
                 </form>
               )}

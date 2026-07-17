@@ -360,6 +360,56 @@
   margin-top: 8px;
 }
 
+.cu-btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── ERROR MESSAGE ─────────────────────────── */
+.cu-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 600;
+  animation: errorShake 0.4s ease;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+.cu-error svg {
+  flex-shrink: 0;
+}
+
+/* ── LOADING SPINNER ───────────────────────── */
+.cu-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cu-form__input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* ── SUCCESS STATE ─────────────────────────── */
 .cu-success {
   display: flex;
