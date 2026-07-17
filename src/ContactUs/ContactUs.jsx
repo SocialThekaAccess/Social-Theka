@@ -143,15 +143,6 @@ export default function ContactUs() {
     <>
     <div className="cu-page">
       
-      {/* 3D Animated Background Shapes */}
-      <div className="cu-3d-shapes">
-        <div className="cu-3d-shape cu-3d-shape--1"></div>
-        <div className="cu-3d-shape cu-3d-shape--2"></div>
-        <div className="cu-3d-shape cu-3d-shape--3"></div>
-        <div className="cu-3d-shape cu-3d-shape--4"></div>
-        <div className="cu-3d-shape cu-3d-shape--5"></div>
-      </div>
-
       {/* ── HERO ────────────────────────────────── */}
       <section className="cu-hero">
         {/* Background Pattern Images */}

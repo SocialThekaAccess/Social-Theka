@@ -4,20 +4,18 @@
 
 .footer { 
   background: #0A0A0A; 
-  padding: 72px 24px 24px; 
+  padding: 72px 0 24px; 
 }
 
 .footer__top { 
-  max-width: 1440px; 
   margin: 0 auto; 
+  padding-bottom: 48px; 
   display: grid; 
   grid-template-columns: 2fr 1fr 1fr 1fr; 
   gap: 48px; 
-  padding-bottom: 48px; 
   border-bottom: 1px solid rgba(255,255,255,.08); 
   margin-bottom: 24px; 
 }
-
 .footer__logo-wrap { 
   margin-bottom: 16px; 
 }
@@ -109,6 +107,8 @@
 .footer__bottom { 
   max-width: 1440px; 
   margin: 0 auto; 
+  padding-left: 40px;
+  padding-right: 40px;
   display: flex; 
   align-items: center; 
   justify-content: space-between; 

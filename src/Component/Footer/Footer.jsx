@@ -35,7 +35,7 @@ const FOOTER_COLS = [
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__top">
+      <div className="footer__top container">
         <div>
           <div className="footer__logo-wrap">
             <Link to="/">
