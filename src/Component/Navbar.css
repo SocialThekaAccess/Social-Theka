@@ -102,15 +102,6 @@
   animation-delay: 0.15s;
 }
 
-/* Hide navbar during video animation - instant hide, no transition */
-body.video-animating .nb {
-  display: none !important;
-}
-
-body.video-animating .nb-top {
-  display: none !important;
-}
-
 @keyframes navbarFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
