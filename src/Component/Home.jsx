@@ -503,7 +503,17 @@ function ClientGallery() {
     const videoElement = videoRefs.current[index];
     if (videoElement) {
       if (isHovering) {
-        videoElement.play().catch(err => console.log('Play failed:', err));
+        videoElement.muted = false; // Unmute
+        videoElement.volume = 1.0; // Full volume
+        const playPromise = videoElement.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(err => {
+            console.log('Play with sound failed, trying muted:', err);
+            // If play with sound fails, try muted
+            videoElement.muted = true;
+            videoElement.play().catch(e => console.log('Muted play also failed:', e));
+          });
+        }
       } else {
         videoElement.pause();
         videoElement.currentTime = 0; // Reset to start
