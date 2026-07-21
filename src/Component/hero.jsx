@@ -400,7 +400,6 @@ export default function Hero() {
           >
             <video
               ref={videoRef}
-              src={heroVideo}
               className="hero2__img"
               aria-label="Social Theka digital marketing showcase"
               autoPlay
@@ -410,7 +409,10 @@ export default function Hero() {
               preload="auto"
               onLoadedData={(e) => e.target.play().catch(() => {})}
               onCanPlay={(e) => e.target.play().catch(() => {})}
-            />
+            >
+              <source src={heroVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
 
             <div
               className="hero2__corner-badge"
