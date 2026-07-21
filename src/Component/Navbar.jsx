@@ -116,7 +116,9 @@ export default function Navbar() {
           <span>SEO Agency of the Year 2024, 25</span>
         </div>
         <div className="nb-top__right">
-          <span> &nbsp;<strong>info@socialtheka.com</strong></span>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@socialtheka.com" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: 'inherit'}}>
+            <span> &nbsp;<strong>info@socialtheka.com</strong></span>
+          </a>
           <span className="nb-top__sep">|</span>
           <a href="tel:+917888735337" className="nb-top__phone">
             <span className="nb-top__phone-icon">

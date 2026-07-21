@@ -497,6 +497,19 @@ function ClientGallery() {
   const sectionRef = useRef(null);
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [videoPopup, setVideoPopup] = useState(null);
+  const videoRefs = useRef({});
+
+  const handleVideoHover = (index, isHovering) => {
+    const videoElement = videoRefs.current[index];
+    if (videoElement) {
+      if (isHovering) {
+        videoElement.play().catch(err => console.log('Play failed:', err));
+      } else {
+        videoElement.pause();
+        videoElement.currentTime = 0; // Reset to start
+      }
+    }
+  };
 
   // Carousel animation disabled - will enable when more videos are added
   // useEffect(() => {
@@ -541,9 +554,15 @@ function ClientGallery() {
               }}
               onMouseEnter={() => {
                 setHoveredIdx(i);
+                if (card.type === "video") {
+                  handleVideoHover(i, true);
+                }
               }}
               onMouseLeave={() => {
                 setHoveredIdx(null);
+                if (card.type === "video") {
+                  handleVideoHover(i, false);
+                }
               }}
             >
               <div
@@ -560,9 +579,9 @@ function ClientGallery() {
                 {card.type === "video" ? (
                   <>
                     <video 
+                      ref={el => videoRefs.current[i] = el}
                       src={card.videoSrc} 
                       className="lux__card-video-preview"
-                      muted
                       loop
                       playsInline
                     />

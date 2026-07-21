@@ -432,7 +432,7 @@ export default function ContactUs() {
                     </div>
                     <IconArrow />
                   </a>
-                  <a href="mailto:info@socialtheka.com" className="cu-contact-item cu-contact-item--mail">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@socialtheka.com" target="_blank" rel="noopener noreferrer" className="cu-contact-item cu-contact-item--mail">
                     <div className="cu-contact-item__icon">
                       <IconMail />
                     </div>
