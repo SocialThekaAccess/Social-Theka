@@ -2283,20 +2283,25 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 /* ── SCROLL TO TOP ──────────────────────────────── */
 .scroll-top {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 32px;
+  right: 32px;
   z-index: 1000;
-  width: 80px;
-  height: 80px;
-  background: transparent;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #BE123C 0%, #9f0f33 100%);
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  display: flex; /* Always visible (when scrolled) */
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(190, 18, 60, 0.3);
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px) scale(0.8);
@@ -2309,14 +2314,13 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 }
 
 .scroll-top:hover {
-  transform: translateY(-4px) scale(1.1);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(190, 18, 60, 0.4);
+  background: linear-gradient(135deg, #9f0f33 0%, #BE123C 100%);
 }
 
-.scroll-top img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+.scroll-top:active {
+  transform: translateY(-2px) scale(1);
 }
 
 @keyframes fadeInUp {
@@ -2333,19 +2337,21 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 /* Mobile responsive */
 @media (max-width: 768px) {
   .scroll-top {
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
   .scroll-top {
-    bottom: 16px;
-    right: 16px;
-    width: 45px;
-    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 }
 
@@ -2532,14 +2538,13 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 .lux__title--outline { -webkit-text-stroke: 2.5px var(--dark); color: transparent; }
 .lux__dot { width: 10px; height: 10px; background: var(--cherry); border-radius: 50%; margin: 16px auto; }
 .lux__sub { font-size: 15px; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.75; }
-.lux__viewport { width: 100%; overflow: hidden; padding: 20px 0 40px; }
+.lux__viewport { width: 100%; overflow: visible; padding: 20px 0 40px; display: flex; justify-content: center; }
 .lux__track { display: flex;
   align-items: flex-start;
   gap: 16px;
   width: max-content;
   padding: 0 60px;
-  transition: none;
-  will-change: transform; }
+  transition: none; }
 .lux__card { flex-shrink: 0; width: 240px; display: flex; flex-direction: column; gap: 10px; }
 .lux__card-img { position: relative; border-radius: 20px; overflow: hidden; background: var(--bg3); }
 .lux__card-img img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.5s ease; }
@@ -3603,4 +3608,177 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { font-family: inherit; fon
 
 .process-step__hint-icon {
   font-size: 14px;
+}
+
+
+/* ══════════════════════════════════════════════════
+   VIDEO CARD & POPUP STYLES
+══════════════════════════════════════════════════ */
+
+/* Video card styles */
+.lux__card-video-preview {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.lux__card-play-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  border: 2px solid rgba(193, 18, 31, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 6px 24px rgba(0, 0, 0, 0.15),
+    0 0 0 6px rgba(255, 255, 255, 0.1),
+    inset 0 2px 6px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.lux__card:hover .lux__card-play-btn {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, #C1121F 0%, #a00f1a 100%);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 12px 36px rgba(193, 18, 31, 0.5),
+    0 0 0 8px rgba(193, 18, 31, 0.15),
+    inset 0 2px 6px rgba(255, 255, 255, 0.3);
+}
+
+.lux__card-play-btn svg {
+  margin-left: 3px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.lux__card:hover .lux__card-play-btn svg {
+  fill: white;
+}
+
+.lux__card-play-btn::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 2px solid rgba(193, 18, 31, 0.2);
+  border-radius: 50%;
+  animation: playPulse 2s ease-in-out infinite;
+}
+
+@keyframes playPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* Video Modal Popup */
+.lux__video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: modalFadeIn 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lux__video-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.lux__video-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lux__video-modal-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+.lux__video-modal-player {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  display: block;
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .lux__card-play-btn {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .lux__video-modal {
+    padding: 12px;
+  }
+  
+  .lux__video-modal-player {
+    max-height: 70vh;
+  }
 }

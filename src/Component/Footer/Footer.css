@@ -8,7 +8,10 @@
 }
 
 .footer__top { 
+  max-width: 1440px;
   margin: 0 auto; 
+  padding-left: 40px;
+  padding-right: 40px;
   padding-bottom: 48px; 
   display: grid; 
   grid-template-columns: 2fr 1fr 1fr 1fr; 

@@ -2,6 +2,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import manjulSirImg from "../assets/ManjulSirSocialTheka.png";
+// Client videos from Cloudinary
+const clientVideo = "https://res.cloudinary.com/oaaxsftf/video/upload/v1784617108/0720_e3ezjl.mp4";
+const clientVideo2 = "https://res.cloudinary.com/oaaxsftf/video/upload/v1784615990/ST_TEST.._2_V2_jo6aq0.mp4";
 import "./Home.css";
 import Hero from './hero';
 import RegionalPresence from './RegionalPresence';
@@ -482,7 +485,8 @@ const SHOWCASE_CARDS = [
   { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=90", label: "Brand Strategy",   tag: "@strategy",  offset: 100 },
   { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=90", label: "Campaign Design",  tag: "@campaigns", offset: 60  },
   { url: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=90", label: "Social Growth",    tag: "@social",    offset: 20  },
-  { url: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&q=90", label: "Content Creation", tag: "@content",   offset: 0   },
+  { type: "video", videoSrc: clientVideo, label: "Client Success Story", tag: "@clients",   offset: 0   },
+  { type: "video", videoSrc: clientVideo2, label: "Client Testimonial", tag: "@testimonial", offset: 40  },
   { url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=90", label: "Performance SEO",  tag: "@seo",       offset: 20  },
   { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=90", label: "Web Development",  tag: "@webdev",    offset: 60  },
   { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=90", label: "PPC Advertising",  tag: "@ppc",       offset: 100 },
@@ -492,24 +496,24 @@ function ClientGallery() {
   const trackRef   = useRef(null);
   const sectionRef = useRef(null);
   const [hoveredIdx, setHoveredIdx] = useState(null);
-  const animRef = useRef(null);
-  const posRef  = useRef(0);
+  const [videoPopup, setVideoPopup] = useState(null);
 
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    const totalWidth = track.scrollWidth / 2;
-    const animate = () => {
-      posRef.current += 0.5;
-      if (posRef.current >= totalWidth) posRef.current = 0;
-      track.style.transform = `translateX(-${posRef.current}px)`;
-      animRef.current = requestAnimationFrame(animate);
-    };
-    animRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animRef.current);
-  }, []);
+  // Carousel animation disabled - will enable when more videos are added
+  // useEffect(() => {
+  //   const track = trackRef.current;
+  //   if (!track) return;
+  //   const totalWidth = track.scrollWidth / 2;
+  //   const animate = () => {
+  //     posRef.current += 0.3;
+  //     if (posRef.current >= totalWidth) posRef.current = 0;
+  //     track.style.transform = `translateX(-${posRef.current}px)`;
+  //     animRef.current = requestAnimationFrame(animate);
+  //   };
+  //   animRef.current = requestAnimationFrame(animate);
+  //   return () => cancelAnimationFrame(animRef.current);
+  // }, []);
 
-  const CARDS = [...SHOWCASE_CARDS, ...SHOWCASE_CARDS];
+  const CARDS = SHOWCASE_CARDS; // Use original array, not duplicated
 
   return (
     <section className="lux" ref={sectionRef}>
@@ -530,21 +534,16 @@ function ClientGallery() {
               key={i}
               className="lux__card"
               style={{ marginTop: `${card.offset}px` }}
+              onClick={() => {
+                if (card.type === "video") {
+                  setVideoPopup(card.videoSrc);
+                }
+              }}
               onMouseEnter={() => {
                 setHoveredIdx(i);
-                cancelAnimationFrame(animRef.current);
               }}
               onMouseLeave={() => {
                 setHoveredIdx(null);
-                const track = trackRef.current;
-                const totalWidth = track.scrollWidth / 2;
-                const animate = () => {
-                  posRef.current += 0.5;
-                  if (posRef.current >= totalWidth) posRef.current = 0;
-                  track.style.transform = `translateX(-${posRef.current}px)`;
-                  animRef.current = requestAnimationFrame(animate);
-                };
-                animRef.current = requestAnimationFrame(animate);
               }}
             >
               <div
@@ -555,9 +554,27 @@ function ClientGallery() {
                   boxShadow: hoveredIdx === i
                     ? "0 20px 56px rgba(0,0,0,0.20), 0 6px 16px rgba(0,0,0,0.12)"
                     : "0 8px 32px rgba(0,0,0,0.13), 0 2px 8px rgba(0,0,0,0.08)",
+                  cursor: card.type === "video" ? "pointer" : "default",
                 }}
               >
-                <img src={card.url} alt={card.label} loading="lazy" decoding="async" />
+                {card.type === "video" ? (
+                  <>
+                    <video 
+                      src={card.videoSrc} 
+                      className="lux__card-video-preview"
+                      muted
+                      loop
+                      playsInline
+                    />
+                    <div className="lux__card-play-btn">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="#C1121F">
+                        <path d="M8 5.14v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </>
+                ) : (
+                  <img src={card.url} alt={card.label} loading="lazy" decoding="async" />
+                )}
                 <div className="lux__card-overlay" />
               </div>
               <div className="lux__card-footer">
@@ -568,6 +585,30 @@ function ClientGallery() {
           ))}
         </div>
       </div>
+
+      {/* Video Popup Modal */}
+      {videoPopup && (
+        <div className="lux__video-modal" onClick={() => {
+          setVideoPopup(null);
+        }}>
+          <div className="lux__video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="lux__video-modal-close" 
+              onClick={() => {
+                setVideoPopup(null);
+              }}
+            >
+              ✕
+            </button>
+            <video 
+              src={videoPopup} 
+              controls 
+              autoPlay
+              className="lux__video-modal-player"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -883,15 +924,15 @@ function ScrollToTop() {
     });
   };
   
-  return visible ? (
+  return (
     <button 
-      className="scroll-top"
+      className={`scroll-top ${visible ? "visible" : ""}`}
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >
       ↑
     </button>
-  ) : null;
+  );
 }
 
 /* ── FLOATING WHATSAPP ────────────────────────────── */

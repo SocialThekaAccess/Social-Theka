@@ -1,4 +1,4 @@
-import { useLayoutEffect, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
@@ -65,21 +65,18 @@ const ISOIcon = () => (
 );
 
 /*
-  "socialtheka_hero_intro_played" ab localStorage mein save hota hai.
+  "socialtheka_hero_intro_played" sessionStorage mein hai —
+  isliye sirf isi TAB SESSION mein animation ek baar chalegi.
+  Agar user Home pe wapas aaye (route change/scroll) toh
+  yeh dobara full-screen nahi chalegi.
 
-  FARAK sessionStorage vs localStorage:
-  - sessionStorage: sirf USI TAB ke liye yaad rehta hai. Naya tab
-    kholte hi (chahe wahi site ho) flag reset ho jaata hai —
-    isliye video dobara full-screen chal jaati thi.
-  - localStorage: poore BROWSER mein, HAMESHA ke liye yaad rehta
-    hai (naya tab ho, reload ho, kal wapas aao) — jab tak user
-    khud browser data clear na kare ya incognito use na kare.
-
-  Isliye ab yeh sach mein sirf "user ki pehli hi visit" par chalegi,
-  chahe wo kisi bhi tab/route se Home page pe aaye.
+  Agar bilkul hamesha ke liye — naye tab/naye visit mein bhi —
+  sirf ek hi baar (poori website life mein sirf pehli dafa)
+  chalani ho, toh neeche "sessionStorage" ko "localStorage"
+  se replace kar dena.
 */
 const HERO_ANIM_KEY = "socialtheka_hero_intro_played";
-const STORAGE = window.localStorage;
+const STORAGE = window.sessionStorage; // <-- badalke window.localStorage karo agar chahiye
 
 export default function Hero() {
   const sectionRef = useRef(null);
@@ -88,23 +85,7 @@ export default function Hero() {
   const leftRef = useRef(null);
   const badgeRef = useRef(null);
 
-  /*
-    IMPORTANT: useLayoutEffect (useEffect nahi) use kar rahe hain.
-
-    Farak: useEffect DOM commit + PAINT ke baad chalta hai — isliye
-    browser pehle "final/normal" layout paint kar deta tha (content
-    visible, video chhoti frame me), phir yeh effect chal ke sab
-    hide/full karta tha. Yehi wo 1-second wala flash tha.
-
-    useLayoutEffect DOM commit ke turant baad, PAINT SE PEHLE
-    synchronously chalta hai. Isliye hum content hide karke video
-    ko full-frame banate hain isse pehle ki browser kuch bhi screen
-    par dikhaye — result: koi flash nahi, seedha video se start.
-
-    (Note: koi requestAnimationFrame wrapper bhi nahi use kar rahe,
-    kyunki wo bhi ek extra paint cycle allow kar deta tha.)
-  */
-  useLayoutEffect(() => {
+  useEffect(() => {
     const section = sectionRef.current;
     const frame = frameRef.current;
     const leftContent = leftRef.current;
@@ -114,6 +95,7 @@ export default function Hero() {
     if (!section || !frame || !leftContent || !badge) return undefined;
 
     let timeline;
+    let animationFrameId;
     let resizeHandler;
 
     const showFinalLayout = () => {
@@ -162,130 +144,132 @@ export default function Hero() {
     }
 
     /*
-      Final (chhoti, right-column wali) frame ki position measure
-      karo — "intro-full" class add karne se PEHLE. Agar class
-      pehle add ki to rect poore section ka aa jayega, chhoti
-      frame ka nahi — isliye order zaroori hai.
+      requestAnimationFrame React StrictMode ke blank-screen
+      issue ko prevent karta hai.
     */
-    const sectionRect = section.getBoundingClientRect();
-    const frameRect = frame.getBoundingClientRect();
+    animationFrameId = window.requestAnimationFrame(() => {
+      const sectionRect = section.getBoundingClientRect();
+      const frameRect = frame.getBoundingClientRect();
 
-    const finalLeft = frameRect.left - sectionRect.left;
-    const finalTop = frameRect.top - sectionRect.top;
-    const finalWidth = frameRect.width;
-    const finalHeight = frameRect.height;
+      /*
+        Yeh sirf SHRINK animation ke liye target values hain —
+        yeh element ki actual rendered position se aati hain,
+        isliye hamesha section ke andar hi hongi.
+      */
+      const finalLeft = frameRect.left - sectionRect.left;
+      const finalTop = frameRect.top - sectionRect.top;
+      const finalWidth = frameRect.width;
+      const finalHeight = frameRect.height;
 
-    /*
-      Effect ko turant played mark kar rahe hain.
-      User doosre page par jaakar wapas aaye to repeat nahi hoga.
-    */
-    STORAGE.setItem(HERO_ANIM_KEY, "true");
+      /*
+        Effect ko turant played mark kar rahe hain.
+        User doosre page par jaakar wapas aaye to repeat nahi hoga.
+      */
+      STORAGE.setItem(HERO_ANIM_KEY, "true");
 
-    /*
-      Yeh sab ab SYNC (turant, isi paint se pehle) ho raha hai —
-      isliye browser ko "final layout" dikhane ka mauka hi nahi
-      milega, seedha hidden-content + full-video state hi paint hogi.
-    */
-    document.body.classList.add("hero-intro-active");
+      document.body.classList.add("hero-intro-active");
 
-    gsap.set(leftContent, {
-      opacity: 0,
-      x: -50,
+      gsap.set(leftContent, {
+        opacity: 0,
+        x: -50,
+      });
+
+      gsap.set(badge, {
+        opacity: 0,
+        scale: 0.8,
+      });
+
+      /*
+        FULL-SECTION STATE — ab yeh CSS class se aata hai
+        (position:absolute; inset:0;), koi pixel width/height
+        JS se set nahi hoti. Isliye video kabhi bhi section ke
+        box se bahar nahi ja sakti, navbar overlap nahi hoga.
+      */
+      frame.classList.add("hero2__img-frame--intro-full");
+
+      video?.play().catch(() => {});
+
+      timeline = gsap.timeline({
+        onComplete: showFinalLayout,
+      });
+
+      timeline
+        /*
+          Video 3 seconds tak full Hero section mein rahegi
+          (koi tween nahi — bas className se hold hai).
+        */
+        .to(frame, { duration: 3 })
+
+        /*
+          Video right-side frame mein shrink hogi.
+          Yahan className hata ke position:absolute + explicit
+          top/left/width/height pe switch karte hain taaki
+          smoothly animate ho sake, phir target tak tween karte hain.
+        */
+        .call(() => {
+          frame.classList.remove("hero2__img-frame--intro-full");
+
+          gsap.set(frame, {
+            position: "absolute",
+            top: 0,
+            left: 0,
+            x: 0,
+            y: 0,
+            width: sectionRect.width,
+            height: sectionRect.height,
+            borderRadius: 0,
+            zIndex: 5,
+          });
+        })
+        .to(frame, {
+          duration: 1.2,
+          x: finalLeft,
+          y: finalTop,
+          width: finalWidth,
+          height: finalHeight,
+          borderRadius: 24,
+          ease: "power3.inOut",
+        })
+
+        /*
+          Left-side content show hoga.
+        */
+        .to(
+          leftContent,
+          {
+            duration: 0.8,
+            opacity: 1,
+            x: 0,
+            ease: "power2.out",
+          },
+          "-=0.65"
+        )
+
+        /*
+          10 Years badge show hoga.
+        */
+        .to(
+          badge,
+          {
+            duration: 0.45,
+            opacity: 1,
+            scale: 1,
+            ease: "back.out(1.7)",
+          },
+          "-=0.2"
+        );
+
+      resizeHandler = () => {
+        timeline?.kill();
+        showFinalLayout();
+      };
+
+      window.addEventListener("resize", resizeHandler);
     });
-
-    gsap.set(badge, {
-      opacity: 0,
-      scale: 0.8,
-    });
-
-    /*
-      FULL-SECTION STATE — yeh CSS class se aata hai
-      (position:absolute; inset:0;), koi pixel width/height
-      JS se set nahi hoti. Isliye video kabhi bhi section ke
-      box se bahar nahi ja sakti, navbar overlap nahi hoga.
-    */
-    frame.classList.add("hero2__img-frame--intro-full");
-
-    video?.play().catch(() => {});
-
-    timeline = gsap.timeline({
-      onComplete: showFinalLayout,
-    });
-
-    timeline
-      /*
-        Video 3 seconds tak full Hero section mein rahegi
-        (koi tween nahi — bas className se hold hai).
-      */
-      .to(frame, { duration: 3 })
-
-      /*
-        Video right-side frame mein shrink hogi.
-        Yahan className hata ke position:absolute + explicit
-        top/left/width/height pe switch karte hain taaki
-        smoothly animate ho sake, phir target tak tween karte hain.
-      */
-      .call(() => {
-        frame.classList.remove("hero2__img-frame--intro-full");
-
-        gsap.set(frame, {
-          position: "absolute",
-          top: 0,
-          left: 0,
-          x: 0,
-          y: 0,
-          width: sectionRect.width,
-          height: sectionRect.height,
-          borderRadius: 0,
-          zIndex: 5,
-        });
-      })
-      .to(frame, {
-        duration: 1.2,
-        x: finalLeft,
-        y: finalTop,
-        width: finalWidth,
-        height: finalHeight,
-        borderRadius: 24,
-        ease: "power3.inOut",
-      })
-
-      /*
-        Left-side content show hoga.
-      */
-      .to(
-        leftContent,
-        {
-          duration: 0.8,
-          opacity: 1,
-          x: 0,
-          ease: "power2.out",
-        },
-        "-=0.65"
-      )
-
-      /*
-        10 Years badge show hoga.
-      */
-      .to(
-        badge,
-        {
-          duration: 0.45,
-          opacity: 1,
-          scale: 1,
-          ease: "back.out(1.7)",
-        },
-        "-=0.2"
-      );
-
-    resizeHandler = () => {
-      timeline?.kill();
-      showFinalLayout();
-    };
-
-    window.addEventListener("resize", resizeHandler);
 
     return () => {
+      window.cancelAnimationFrame(animationFrameId);
+
       if (resizeHandler) {
         window.removeEventListener("resize", resizeHandler);
       }
