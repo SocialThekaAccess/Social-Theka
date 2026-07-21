@@ -206,7 +206,7 @@
 
 /* ── SECTION ───────────────────────────────── */
 .cu-section {
-  padding: 0 40px 100px;
+  padding: 80px 40px 100px;
   background: #ffffff;
   position: relative;
 }
@@ -945,7 +945,7 @@
     min-height: 450px;
   }
   .cu-section {
-    padding: 0 20px 72px;
+    padding: 60px 20px 72px;
   }
   .cu-form__row {
     grid-template-columns: 1fr;
