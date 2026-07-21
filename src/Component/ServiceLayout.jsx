@@ -10,15 +10,15 @@ function ScrollToTop() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  return visible ? (
+  return (
     <button
-      className="scroll-top"
+      className={`scroll-top ${visible ? "visible" : ""}`}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Scroll to top"
     >
-      &uarr;
+      ↑
     </button>
-  ) : null;
+  );
 }
 
 export default function ServiceLayout({ children }) {
