@@ -20,7 +20,7 @@ const FOOTER_COMPANY = [
 ];
 
 const FOOTER_CONTACT = [
-  { label: "info@socialtheka.com", href: "mailto:info@socialtheka.com" },
+  { label: "info@socialtheka.com", href: "https://mail.google.com/mail/?view=cm&fs=1&to=info@socialtheka.com" },
   { label: "+91 78887 35337", href: "tel:+917888735337" },
   { label: "+91 6280 614518", href: "tel:+916280614518" },
   { label: "D-151, Second Floor, Phase-8, Industrial Area, Sector 73, Sahibzada Ajit Singh Nagar, Punjab 160071", href: "https://maps.app.goo.gl/t8n6i5sPyoAjz1Xv6" },
