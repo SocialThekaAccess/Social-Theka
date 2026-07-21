@@ -499,6 +499,15 @@ function ClientGallery() {
   const [videoPopup, setVideoPopup] = useState(null);
   const videoRefs = useRef({});
 
+  // Ensure videos start muted
+  useEffect(() => {
+    Object.values(videoRefs.current).forEach(video => {
+      if (video) {
+        video.muted = true;
+      }
+    });
+  }, []);
+
   const handleVideoHover = (index, isHovering) => {
     const videoElement = videoRefs.current[index];
     if (videoElement) {
@@ -590,7 +599,6 @@ function ClientGallery() {
                       ref={el => videoRefs.current[i] = el}
                       src={card.videoSrc} 
                       className="lux__card-video-preview"
-                      muted
                       loop
                       playsInline
                     />
