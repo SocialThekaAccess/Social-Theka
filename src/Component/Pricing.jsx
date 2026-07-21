@@ -65,6 +65,18 @@ const services = [
     path: "/services/video-editing",
     popular: false,
   },
+  {
+    id: "web-development",
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      </svg>
+    ),
+    title: "Web Development",
+    price: "$300+",
+    path: "/services/web-development",
+    popular: false,
+  },
 ];
 
 export default function Pricing() {
