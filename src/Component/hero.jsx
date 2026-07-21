@@ -408,6 +408,8 @@ export default function Hero() {
               muted
               playsInline
               preload="auto"
+              onLoadedData={(e) => e.target.play().catch(() => {})}
+              onCanPlay={(e) => e.target.play().catch(() => {})}
             />
 
             <div
