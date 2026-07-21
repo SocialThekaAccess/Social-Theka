@@ -503,10 +503,18 @@ function ClientGallery() {
     const videoElement = videoRefs.current[index];
     if (videoElement) {
       if (isHovering) {
-        videoElement.play().catch(err => console.log('Play failed:', err));
+        videoElement.muted = false; // Enable sound
+        videoElement.volume = 0.8; // 80% volume
+        videoElement.play().catch(err => {
+          console.log('Play with sound failed:', err);
+          // Fallback to muted if browser blocks
+          videoElement.muted = true;
+          videoElement.play().catch(e => console.log('Play failed:', e));
+        });
       } else {
         videoElement.pause();
         videoElement.currentTime = 0; // Reset to start
+        videoElement.muted = true; // Mute again when hover ends
       }
     }
   };
