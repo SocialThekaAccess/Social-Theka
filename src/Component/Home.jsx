@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars, react-hooks/exhaustive-deps */
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import manjulSirImg from "../assets/ManjulSirSocialTheka.png";
+import arshdeepSinghImg from "../assets/ArshdeepSingh.png";
 import harkiratThumbnail from "../assets/HarkiratSingh.png";
+import arshdeepThumbnail from "../assets/ArshdeepSingh.png";
 // Client videos from Cloudinary
 const clientVideo = "https://res.cloudinary.com/oaaxsftf/video/upload/v1784617108/0720_e3ezjl.mp4";
 const clientVideo2 = "https://res.cloudinary.com/oaaxsftf/video/upload/v1784615990/ST_TEST.._2_V2_jo6aq0.mp4";
@@ -187,7 +188,7 @@ function TrustMarquee() {
         })}
 
         <div className="trust__char-wrap">
-          <img src={manjulSirImg} alt="Social Theka" className="trust__char-img" loading="lazy" decoding="async" />
+          <img src={arshdeepSinghImg} alt="Social Theka" className="trust__char-img" loading="lazy" decoding="async" />
           <div className="trust__glass-glow" />
           {activeDrop !== null && (
             <span
@@ -486,8 +487,8 @@ const SHOWCASE_CARDS = [
   { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=90", label: "Brand Strategy",   tag: "@strategy",  offset: 100 },
   { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=90", label: "Campaign Design",  tag: "@campaigns", offset: 60  },
   { url: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=90", label: "Social Growth",    tag: "@social",    offset: 20  },
-  { type: "video", videoSrc: clientVideo, label: "Client Success Story", tag: "@clients", offset: 0, hasThumbnail: true },
-  { type: "video", videoSrc: clientVideo2, label: "Client Testimonial", tag: "@testimonial", offset: 40, hasThumbnail: false },
+  { type: "video", videoSrc: clientVideo, label: "Client Success Story", tag: "@clients", offset: 0, thumbnail: harkiratThumbnail },
+  { type: "video", videoSrc: clientVideo2, label: "Client Testimonial", tag: "@testimonial", offset: 40, thumbnail: arshdeepThumbnail },
   { url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=90", label: "Performance SEO",  tag: "@seo",       offset: 20  },
   { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=90", label: "Web Development",  tag: "@webdev",    offset: 60  },
   { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=90", label: "PPC Advertising",  tag: "@ppc",       offset: 100 },
@@ -604,10 +605,10 @@ function ClientGallery() {
                       loop
                       playsInline
                     />
-                    {/* Thumbnail overlay - only show if hasThumbnail is true */}
-                    {card.hasThumbnail && (
+                    {/* Thumbnail overlay - show if thumbnail is provided */}
+                    {card.thumbnail && (
                       <div className={`lux__card-thumbnail ${hoveredIdx === i ? 'lux__card-thumbnail--hidden' : ''}`}>
-                        <img src={harkiratThumbnail} alt="Video thumbnail" />
+                        <img src={card.thumbnail} alt="Video thumbnail" />
                       </div>
                     )}
                     <div className="lux__card-play-btn">
