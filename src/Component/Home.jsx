@@ -650,7 +650,7 @@ function WhyUs() {
               Why Businesses Choose<br />
               <span className="why__heading-accent">Social Theka</span>
             </h2>
-            <Link to="/contact" className="why__cta">Get a Free Strategy Call →</Link>
+            <a href="tel:+917888735337" className="why__cta">Get a Free Strategy Call →</a>
           </div>
           <div className="why__top-right">
             <p className="why__intro">
