@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import manjulSirImg from "../assets/ManjulSirSocialTheka.png";
+import harkiratThumbnail from "../assets/HarkiratSingh.png";
 // Client videos from Cloudinary
 const clientVideo = "https://res.cloudinary.com/oaaxsftf/video/upload/v1784617108/0720_e3ezjl.mp4";
 const clientVideo2 = "https://res.cloudinary.com/oaaxsftf/video/upload/v1784615990/ST_TEST.._2_V2_jo6aq0.mp4";
@@ -485,8 +486,8 @@ const SHOWCASE_CARDS = [
   { url: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=90", label: "Brand Strategy",   tag: "@strategy",  offset: 100 },
   { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=90", label: "Campaign Design",  tag: "@campaigns", offset: 60  },
   { url: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=90", label: "Social Growth",    tag: "@social",    offset: 20  },
-  { type: "video", videoSrc: clientVideo, label: "Client Success Story", tag: "@clients",   offset: 0   },
-  { type: "video", videoSrc: clientVideo2, label: "Client Testimonial", tag: "@testimonial", offset: 40  },
+  { type: "video", videoSrc: clientVideo, label: "Client Success Story", tag: "@clients", offset: 0, hasThumbnail: true },
+  { type: "video", videoSrc: clientVideo2, label: "Client Testimonial", tag: "@testimonial", offset: 40, hasThumbnail: false },
   { url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=90", label: "Performance SEO",  tag: "@seo",       offset: 20  },
   { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=90", label: "Web Development",  tag: "@webdev",    offset: 60  },
   { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=90", label: "PPC Advertising",  tag: "@ppc",       offset: 100 },
@@ -599,11 +600,18 @@ function ClientGallery() {
                       ref={el => videoRefs.current[i] = el}
                       src={card.videoSrc} 
                       className="lux__card-video-preview"
+                      muted
                       loop
                       playsInline
                     />
+                    {/* Thumbnail overlay - only show if hasThumbnail is true */}
+                    {card.hasThumbnail && (
+                      <div className={`lux__card-thumbnail ${hoveredIdx === i ? 'lux__card-thumbnail--hidden' : ''}`}>
+                        <img src={harkiratThumbnail} alt="Video thumbnail" />
+                      </div>
+                    )}
                     <div className="lux__card-play-btn">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="#C1121F">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="#C1121F">
                         <path d="M8 5.14v14l11-7z"/>
                       </svg>
                     </div>
