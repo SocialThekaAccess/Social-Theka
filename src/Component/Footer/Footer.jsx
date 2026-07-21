@@ -23,7 +23,7 @@ const FOOTER_CONTACT = [
   { label: "info@socialtheka.com", href: "mailto:info@socialtheka.com" },
   { label: "+91 78887 35337", href: "tel:+917888735337" },
   { label: "+91 6280 614518", href: "tel:+916280614518" },
-  { label: "D-151, Second Floor, Phase-8, Industrial Area, Sector 73, Sahibzada Ajit Singh Nagar, Punjab 160071" },
+  { label: "D-151, Second Floor, Phase-8, Industrial Area, Sector 73, Sahibzada Ajit Singh Nagar, Punjab 160071", href: "https://maps.app.goo.gl/t8n6i5sPyoAjz1Xv6" },
 ];
 
 const FOOTER_COLS = [
@@ -65,7 +65,15 @@ export default function Footer() {
             <div className="footer__links">
               {col.links.map((link) =>
                 link.href ? (
-                  <a key={link.label} href={link.href} className="footer__link">{link.label}</a>
+                  <a 
+                    key={link.label} 
+                    href={link.href} 
+                    className="footer__link"
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  >
+                    {link.label}
+                  </a>
                 ) : link.to ? (
                   <Link key={link.label} to={link.to} className="footer__link">{link.label}</Link>
                 ) : (

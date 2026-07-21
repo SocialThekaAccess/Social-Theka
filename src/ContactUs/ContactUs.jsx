@@ -35,7 +35,7 @@ const IconWhatsApp = () => (
   </svg>
 );
 const IconSend = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg className="cu-btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="22" y1="2" x2="11" y2="13"/>
     <polygon points="22 2 15 22 11 13 2 9 22 2"/>
   </svg>
@@ -49,7 +49,12 @@ const IconCheck = () => (
 /* ── Footer data ──────────────────────────────── */
 const FOOTER_SERVICES = ["SEO Services", "Social Media Marketing", "PPC Advertising", "Website Development", "Content Writing", "Link Building"];
 const FOOTER_COMPANY  = ["About Us", "Theka Story", "Case Studies", "Blog", "Careers"];
-const FOOTER_CONTACT  = ["info@socialtheka.com", "+91 XXXXX XXXXX", "Chandigarh, India"];
+const FOOTER_CONTACT  = [
+  { label: "info@socialtheka.com", href: "mailto:info@socialtheka.com" },
+  { label: "+91 78887 35337", href: "tel:+917888735337" },
+  { label: "+91 6280 614518", href: "tel:+916280614518" },
+  { label: "D-151, Second Floor, Phase-8, Industrial Area, Sector 73, Sahibzada Ajit Singh Nagar, Punjab 160071", href: "https://maps.app.goo.gl/t8n6i5sPyoAjz1Xv6" }
+];
 const FOOTER_COLS = [
   { title: "Services", links: FOOTER_SERVICES },
   { title: "Company",  links: FOOTER_COMPANY  },
@@ -86,9 +91,17 @@ function Footer() {
           <div key={col.title} className="cu-footer__col">
             <div className="cu-footer__col-title">{col.title}</div>
             <div className="cu-footer__links">
-              {col.links.map((link) => (
-                <a key={link} href="#" className="cu-footer__link">{link}</a>
-              ))}
+              {col.links.map((link) => {
+                const isObject = typeof link === 'object';
+                const href = isObject ? link.href : '#';
+                const label = isObject ? link.label : link;
+                const target = isObject && link.href.startsWith('http') ? '_blank' : undefined;
+                const rel = target === '_blank' ? 'noopener noreferrer' : undefined;
+                
+                return (
+                  <a key={label} href={href} target={target} rel={rel} className="cu-footer__link">{label}</a>
+                );
+              })}
             </div>
           </div>
         ))}
@@ -452,16 +465,17 @@ export default function ContactUs() {
                     </div>
                     <IconArrow />
                   </a>
-                </div>
-              </div>
-
-              {/* Office location card */}
-              <div className="cu-office-card">
-                <div className="cu-office-card__icon"><IconMap /></div>
-                <div>
-                  <div className="cu-office-card__title">Our Office</div>
-                  <div className="cu-office-card__val">Chandigarh, India</div>
-                  <div className="cu-office-card__sub">Serving clients across India, USA, UK & Dubai</div>
+                  <a href="https://maps.app.goo.gl/t8n6i5sPyoAjz1Xv6" target="_blank" rel="noopener noreferrer" className="cu-contact-item cu-contact-item--directions">
+                    <div className="cu-contact-item__icon">
+                      <IconMap />
+                    </div>
+                    <div className="cu-contact-item__body">
+                      <div className="cu-contact-item__label">Get Directions</div>
+                      <div className="cu-contact-item__val">D-151, Second Floor, Phase-8, Industrial Area</div>
+                      <div className="cu-contact-item__address">Sector 73, Sahibzada Ajit Singh Nagar, Punjab 160071</div>
+                    </div>
+                    <IconArrow />
+                  </a>
                 </div>
               </div>
 

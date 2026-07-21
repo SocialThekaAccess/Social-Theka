@@ -228,37 +228,82 @@
 
 /* ── FORM SIDE ─────────────────────────────── */
 .cu-form-side {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 28px;
-  padding: 48px 44px;
-  box-shadow: 0 20px 60px rgba(10, 10, 10, 0.08);
-  transition: all 0.4s ease;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 32px;
+  padding: 56px 48px;
+  box-shadow: 
+    0 25px 70px rgba(190, 18, 60, 0.08),
+    0 10px 30px rgba(10, 10, 10, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cu-form-side::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(190, 18, 60, 0.08) 0%, transparent 70%);
+  filter: blur(60px);
+  animation: floatFormGradient 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes floatFormGradient {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 30px) scale(1.1); }
 }
 
 .cu-form-side:hover {
-  box-shadow: 0 30px 80px rgba(10, 10, 10, 0.12);
+  box-shadow: 
+    0 35px 90px rgba(190, 18, 60, 0.12),
+    0 15px 40px rgba(10, 10, 10, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-4px);
 }
 
 .cu-form-header {
-  margin-bottom: 36px;
+  margin-bottom: 40px;
+  position: relative;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.cu-form-header::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 2px;
 }
 
 .cu-form-title {
   font-family: var(--font-heading);
-  font-size: clamp(26px, 3vw, 36px);
+  font-size: clamp(28px, 3vw, 38px);
   font-weight: 900;
-  color: #0a0a0a;
-  letter-spacing: -0.02em;
-  margin: 0 0 14px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+  line-height: 1.2;
 }
 
 .cu-form-sub {
   font-size: 15px;
-  color: #4a4a4a;
+  color: #5a5a5a;
   line-height: 1.75;
   margin: 0;
+  font-weight: 400;
 }
 
 .cu-form {
@@ -277,39 +322,102 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  position: relative;
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.cu-form__group:nth-child(1) { animation-delay: 0.1s; }
+.cu-form__group:nth-child(2) { animation-delay: 0.15s; }
+.cu-form__group:nth-child(3) { animation-delay: 0.2s; }
+.cu-form__group:nth-child(4) { animation-delay: 0.25s; }
+.cu-form__group:nth-child(5) { animation-delay: 0.3s; }
+.cu-form__group:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cu-form__label {
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #0a0a0a;
+  background: linear-gradient(135deg, var(--accent) 0%, #9f0f33 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2px;
+  display: inline-block;
+  position: relative;
+}
+
+.cu-form__label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), #9f0f33);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cu-form__group:focus-within .cu-form__label::after {
+  width: 100%;
 }
 
 .cu-form__input {
-  padding: 14px 18px;
-  background: rgba(250, 250, 250, 0.8);
-  border: 2px solid rgba(190, 18, 60, 0.1);
-  border-radius: 14px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(250, 250, 250, 0.8));
+  border: 2px solid rgba(190, 18, 60, 0.12);
+  border-radius: 16px;
   font-size: 15px;
   color: #0a0a0a;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
   width: 100%;
   resize: none;
+  box-shadow: 
+    0 2px 8px rgba(10, 10, 10, 0.03),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  position: relative;
 }
 
 .cu-form__input::placeholder {
   color: #9ca3af;
+  transition: all 0.3s ease;
+}
+
+.cu-form__input:hover {
+  border-color: rgba(190, 18, 60, 0.25);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(252, 252, 252, 0.95));
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 12px rgba(10, 10, 10, 0.05),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .cu-form__input:focus {
   border-color: var(--accent);
-  background: #fff;
-  box-shadow: 0 0 0 4px rgba(190, 18, 60, 0.08);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #ffffff, #fefefe);
+  box-shadow: 
+    0 0 0 5px rgba(190, 18, 60, 0.1),
+    0 8px 20px rgba(190, 18, 60, 0.15),
+    inset 0 1px 3px rgba(255, 255, 255, 1);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.cu-form__input:focus::placeholder {
+  opacity: 0.5;
+  transform: translateX(4px);
 }
 
 .cu-form__textarea {
@@ -336,7 +444,7 @@
   box-shadow: 0 10px 30px rgba(190, 18, 60, 0.3);
   font-family: inherit;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to visible so arrow can fly out */
 }
 
 .cu-btn-primary::before {
@@ -357,6 +465,40 @@
 .cu-btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 40px rgba(190, 18, 60, 0.4);
+}
+
+/* Arrow icon animation */
+.cu-btn-arrow {
+  transition: transform 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.cu-btn-primary:hover .cu-btn-arrow {
+  transform: translateX(8px);
+}
+
+.cu-btn-primary:active .cu-btn-arrow {
+  animation: arrowFlyOut 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes arrowFlyOut {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(40px) translateY(-15px) rotate(25deg) scale(1.3);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translateX(80px) translateY(-35px) rotate(45deg) scale(1.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(150px) translateY(-60px) rotate(60deg) scale(0.8);
+    opacity: 0;
+  }
 }
 
 .cu-btn-primary--full {
@@ -582,6 +724,26 @@
   box-shadow: 0 8px 20px rgba(37,211,102,0.3);
 }
 
+.cu-contact-item--directions {
+  background: rgba(59,130,246,0.15);
+  border: 1px solid rgba(59,130,246,0.3);
+  color: #fff;
+  padding: 20px 20px;
+}
+
+.cu-contact-item--directions:hover {
+  background: rgba(59,130,246,0.25);
+  transform: translateX(6px);
+  box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+}
+
+.cu-contact-item--directions .cu-contact-item__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .cu-contact-item__icon {
   width: 48px;
   height: 48px;
@@ -591,11 +753,30 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Phone icon bounce animation on hover */
+.cu-contact-item--phone:hover .cu-contact-item__icon {
+  animation: phoneBounce 0.6s ease-in-out;
+}
+
+@keyframes phoneBounce {
+  0%, 100% { transform: translateY(0); }
+  10%, 30%, 50% { transform: translateY(-8px); }
+  20%, 40% { transform: translateY(0); }
+  60% { transform: translateY(-4px); }
+  80% { transform: translateY(0); }
 }
 
 .cu-contact-item--wa .cu-contact-item__icon {
   background: rgba(37,211,102,0.2);
   color: #25d366;
+}
+
+.cu-contact-item--directions .cu-contact-item__icon {
+  background: rgba(59,130,246,0.2);
+  color: #3b82f6;
 }
 
 .cu-contact-item__body {
@@ -615,6 +796,15 @@
   font-size: 15px;
   font-weight: 700;
   color: #fff;
+  line-height: 1.4;
+}
+
+.cu-contact-item__address {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  margin-top: 4px;
 }
 
 /* Office card */
