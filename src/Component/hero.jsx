@@ -126,13 +126,8 @@ export default function Hero() {
       document.body.classList.remove("hero-intro-active");
     };
 
-    const alreadyPlayed = STORAGE.getItem(HERO_ANIM_KEY) === "true";
-
-    /*
-      Mobile/tablet par animation skip hogi.
-    */
-    const shouldSkipAnimation =
-      alreadyPlayed || window.innerWidth <= 960;
+    const alreadyPlayed = false; // Always play animation
+    const shouldSkipAnimation = window.innerWidth <= 960; // Skip only on mobile
 
     if (shouldSkipAnimation) {
       showFinalLayout();
