@@ -5,6 +5,9 @@ import "./VideoEditingChd.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import heroVideo from "../../assets/SocialThekaVideo.mp4";
 import { gsap } from "gsap";
+import SEO from "../../utils/SEO";
+import { serviceSchema, breadcrumbSchema } from "../../utils/schemaData";
+import { pageConfigs } from "../../utils/seoConfig";
 
 // Software/Platform Icons
 const IconPremiere = () => (
@@ -426,8 +429,34 @@ export default function VideoEditingChd() {
     return () => observer.disconnect();
   }, []);
 
+  const config = pageConfigs.videoEditing;
+
+  const schema = serviceSchema(
+    "Video Editing",
+    config.description,
+    "https://socialtheka.com" + config.slug
+  );
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://socialtheka.com/" },
+    { name: "Video Editing", url: "https://socialtheka.com" + config.slug }
+  ]);
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [schema, breadcrumbs]
+  };
+
   return (
     <ServiceLayout>
+      <SEO
+        title={config.title}
+        description={config.description}
+        keywords={config.keywords}
+        image={config.image}
+        type="website"
+        schema={combinedSchema}
+      />
     <div className="vec-page">
       {/* Background Elements */}
       <div className="vec-bg-pattern" />

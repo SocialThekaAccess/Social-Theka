@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import "./WebDevChandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import webHeroImg from "../../assets/websiteSocialTheka.png";
+import SEO from "../../utils/SEO";
+import { serviceSchema, breadcrumbSchema } from "../../utils/schemaData";
+import { pageConfigs } from "../../utils/seoConfig";
 
 // ── ICONS ──────────────────────────────────────────────────────────────
 const IconCode = () => (
@@ -194,8 +197,34 @@ const FAQS = [
 export default function WebDevChandigarh() {
   const [openFaq, setOpenFaq] = useState(null);
 
+  const config = pageConfigs.webDevelopment;
+
+  const schema = serviceSchema(
+    "Web Development",
+    config.description,
+    "https://socialtheka.com" + config.slug
+  );
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://socialtheka.com/" },
+    { name: "Web Development", url: "https://socialtheka.com" + config.slug }
+  ]);
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [schema, breadcrumbs]
+  };
+
   return (
     <ServiceLayout>
+      <SEO
+        title={config.title}
+        description={config.description}
+        keywords={config.keywords}
+        image={config.image}
+        type="website"
+        schema={combinedSchema}
+      />
       <div className="wdc-page">
 
         {/* ── HERO ── */}

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./Webdesignchandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import websiteHeroImg from "../../assets/websiteSocialTheka.png";
+import SEO from "../../utils/SEO";
+import { serviceSchema, breadcrumbSchema } from "../../utils/schemaData";
+import { pageConfigs } from "../../utils/seoConfig";
 
 const IconCode = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -60,8 +63,34 @@ const IconArrow = () => (
 export default function WebDesignChandigarh() {
   const [openFaq, setOpenFaq] = useState(null);
 
+  const config = pageConfigs.webDesign;
+
+  const schema = serviceSchema(
+    "Web Design",
+    config.description,
+    "https://socialtheka.com" + config.slug
+  );
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://socialtheka.com/" },
+    { name: "Web Design", url: "https://socialtheka.com" + config.slug }
+  ]);
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [schema, breadcrumbs]
+  };
+
   return (
     <ServiceLayout>
+      <SEO
+        title={config.title}
+        description={config.description}
+        keywords={config.keywords}
+        image={config.image}
+        type="website"
+        schema={combinedSchema}
+      />
     <div className="wdsc-page">
 
       {/* ── HERO ── */}

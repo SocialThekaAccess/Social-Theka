@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import "./SocialMediachandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import smmHeroImg from "../../assets/smmSocialTheka.png";
+import SEO from "../../utils/SEO";
+import { serviceSchema, breadcrumbSchema } from "../../utils/schemaData";
+import { pageConfigs } from "../../utils/seoConfig";
 
 /* ── ICONS ── */
 const IconInstagram = () => (
@@ -175,8 +178,36 @@ const FAQS = [
 export default function SocialMediaServicePage() {
   const [openFaq, setOpenFaq] = useState(null);
 
+  // Get config for this page
+  const config = pageConfigs.socialMedia;
+
+  // Create schemas
+  const schema = serviceSchema(
+    "Social Media Marketing",
+    config.description,
+    "https://socialtheka.com" + config.slug
+  );
+
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://socialtheka.com/" },
+    { name: "Social Media Marketing", url: "https://socialtheka.com" + config.slug }
+  ]);
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [schema, breadcrumbs]
+  };
+
   return (
     <ServiceLayout>
+      <SEO
+        title={config.title}
+        description={config.description}
+        keywords={config.keywords}
+        image={config.image}
+        type="website"
+        schema={combinedSchema}
+      />
     <div className="sms-page">
 
       {/* ── HERO ── */}
