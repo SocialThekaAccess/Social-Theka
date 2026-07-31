@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./SEOchandigarh.css";
 import ServiceLayout from "../../Component/ServiceLayout";
 import seoHeroImg from "../../assets/seoSocialTheka.png";
+import SEO from "../../utils/SEO";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "../../utils/schemaData";
 
 // ── ICONS ──────────────────────────────────────────────────────────────
 const IconSearch = () => (
@@ -192,8 +194,46 @@ const FAQS = [
 export default function SEOChandigarh() {
   const [openFaq, setOpenFaq] = useState(null);
 
+  // Service-specific schema
+  const seoServiceSchema = serviceSchema(
+    "SEO Services",
+    "Professional SEO services that improve Google rankings, attract quality organic traffic, and help businesses grow sales without spending heavily on paid ads. We offer local SEO, technical SEO, e-commerce SEO, and enterprise SEO solutions.",
+    "https://socialtheka.com/services/seo"
+  );
+
+  // Breadcrumb schema
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://socialtheka.com/" },
+    { name: "Services", url: "https://socialtheka.com/services/seo" },
+    { name: "SEO Services", url: "https://socialtheka.com/services/seo" }
+  ]);
+
+  // FAQ schema
+  const faqSchemaData = faqSchema(FAQS.map(item => ({
+    question: item.q,
+    answer: item.a
+  })));
+
+  // Combine schemas
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      seoServiceSchema,
+      breadcrumbs,
+      faqSchemaData
+    ]
+  };
+
   return (
     <ServiceLayout>
+      <SEO
+        title="Best SEO Company in Chandigarh | Top SEO Agency & SEO Services India"
+        description="Social Theka is the best SEO company in Chandigarh offering top SEO services, on page, off page and local SEO to boost rankings and organic website traffic fast."
+        keywords="best SEO company Chandigarh, top SEO agency, SEO services India, on page SEO, off page SEO, local SEO, organic traffic, SEO rankings"
+        image="https://socialtheka.com/seo-services-og.jpg"
+        type="website"
+        schema={combinedSchema}
+      />
       <div className="seoc-page">
 
         {/* ── HERO ── */}

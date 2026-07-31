@@ -17,14 +17,6 @@
   isolation: isolate;
   overflow: hidden;
 
-  /*
-    IMPORTANT FIX:
-    "contain: paint" browser ko force karta hai ki is section
-    ke andar ka koi bhi child (video, badge, blob) kabhi bhi
-    is box ke bahar paint na ho — chahe koi z-index/position
-    bug ho ya JS measurement thodi si off ho jaye.
-    Isi wajah se navbar ke upar overlap hona band ho jayega.
-  */
   contain: paint;
 
   width: 100%;
@@ -36,10 +28,7 @@
   background: #ffffff;
 }
 
-/*
-  Animation ke time hero navbar ke upar nahi jayega.
-  Hero ka apna stacking context rahega.
-*/
+
 body.hero-intro-active .hero2 {
   overflow: hidden;
 }

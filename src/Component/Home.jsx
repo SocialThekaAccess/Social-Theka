@@ -19,6 +19,8 @@ import ResultsSlider from './ResultsSlider';
 import ServiceTabs from './ServiceTabs';
 import CorePrinciples from './CorePrinciples';
 import Footer from './Footer/Footer';
+import SEO from '../utils/SEO';
+import { organizationSchema, websiteSchema, localBusinessSchema } from '../utils/schemaData';
 
 /* ── SHARED COMPONENTS ───────────────────────────── */
 function Tag({ children }) {
@@ -999,8 +1001,26 @@ function FloatingWhatsApp() {
 
 /* ── APP ─────────────────────────────────────────── */
 export default function SocialTheka() {
+  // Combine organization, website, and local business schemas
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema,
+      websiteSchema,
+      localBusinessSchema
+    ]
+  };
+
   return (
     <>
+      <SEO
+        title="Social Theka: Best Digital Marketing & Top SEO Agency Chandigarh"
+        description="Social Theka is the best digital marketing agency in Chandigarh offering top SEO, PPC, social media, web design and web development services for businesses today."
+        keywords="digital marketing agency Chandigarh, best SEO agency Chandigarh, top digital marketing company, PPC services, social media marketing, web design, web development"
+        image="https://socialtheka.com/og-image.jpg"
+        type="website"
+        schema={combinedSchema}
+      />
       <Hero />
       <AwardedSection />
       <PhotoFan />

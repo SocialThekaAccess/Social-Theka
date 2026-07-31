@@ -12,5 +12,16 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        // Ensure sitemap.xml and robots.txt are copied to dist
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'sitemap.xml' || assetInfo.name === 'robots.txt') {
+            return '[name][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
+      },
+    },
   },
 })
