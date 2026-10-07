@@ -63,7 +63,7 @@ const NAV_LINKS = [
   { label: "Home",         to: "/" },
   { label: "Our Services", dropdown: "services" },
   { label: "Theka Story",  to: "/theka-story" },
-  { label: "Blogs",        comingSoon: true },
+  { label: "Blog",         to: "/blog" },
   { label: "Contact Us",   to: "/contact" },
 ];
 
@@ -265,22 +265,18 @@ export default function Navbar() {
         {menuOpen && (
           <div className="nb__mobile">
             {NAV_LINKS.map((link) =>
-              link.comingSoon ? (
-                <span key={link.label} className="nb__mobile-link nb__mobile-link--disabled">
-                  {link.label}
-                </span>
-              ) : link.dropdown === "services" ? (
+              link.dropdown === "services" ? (
                 <span key={link.label} className="nb__mobile-link nb__mobile-link--section">
                   {link.label}
                 </span>
               ) : (
-                  <NavLink
-                    key={link.label}
-                    to={link.to}
-                    className={({ isActive }) => `nb__mobile-link ${isActive ? "nb__mobile-link--active" : ""}`}
-                    end={link.to === "/"}
-                    onClick={() => setMenuOpen(false)}
-                  >
+                <NavLink
+                  key={link.label}
+                  to={link.to}
+                  className={({ isActive }) => `nb__mobile-link ${isActive ? "nb__mobile-link--active" : ""}`}
+                  end={link.to === "/"}
+                  onClick={() => setMenuOpen(false)}
+                >
                   {link.label}
                 </NavLink>
               )
