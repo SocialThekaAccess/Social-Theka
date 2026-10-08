@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
@@ -78,7 +78,19 @@ const ISOIcon = () => (
 const HERO_ANIM_KEY = "socialtheka_hero_intro_played";
 const STORAGE = window.sessionStorage; // <-- badalke window.localStorage karo agar chahiye
 
+/* Is width ya usse chhoti screen = mobile/tablet layout */
+const MOBILE_BP = 960;
+
 export default function Hero() {
+  /*
+    DESKTOP pe pehle hi paint se video full-screen state mein hoti hai
+    (aur content hidden), taaki website start hote waqt koi flash /
+    jump / blank layout na dikhe. Yeh value sirf ek baar set hoti hai.
+  */
+  const [startFull] = useState(
+    () => typeof window !== "undefined" && window.innerWidth > MOBILE_BP
+  );
+
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
   const frameRef = useRef(null);
@@ -97,6 +109,16 @@ export default function Hero() {
     let timeline;
     let animationFrameId;
     let resizeHandler;
+    let cancelled = false;
+    let beginHandler;
+    let beginTimeout;
+
+    /*
+      Resize handler sirf WIDTH change par chalega.
+      Mobile browser mein scroll karte waqt address-bar ki wajah se
+      sirf height badalti hai — usse animation/layout kharab nahi hona chahiye.
+    */
+    let lastWidth = window.innerWidth;
 
     const showFinalLayout = () => {
       /*
@@ -107,7 +129,7 @@ export default function Hero() {
 
       gsap.set(frame, {
         clearProps:
-          "position,top,left,width,height,zIndex,borderRadius,x,y,transform",
+          "position,top,left,width,height,zIndex,borderRadius,x,y,transform,scale",
         opacity: 1,
       });
 
@@ -115,6 +137,7 @@ export default function Hero() {
         clearProps: "transform",
         opacity: 1,
         x: 0,
+        y: 0,
       });
 
       gsap.set(badge, {
@@ -127,24 +150,73 @@ export default function Hero() {
     };
 
     const alreadyPlayed = false; // Always play animation
-    const shouldSkipAnimation = window.innerWidth <= 960; // Skip only on mobile
+    const isMobile = window.innerWidth <= MOBILE_BP;
 
-    if (shouldSkipAnimation) {
+    /*
+      ═══════════════ MOBILE / TABLET (≤960px) ═══════════════
+
+      Mobile pe KOI animation/transition/transform nahi hai.
+      Video top par seedhi static dikhti hai (CSS "flex column" se),
+      content uske neeche. Sab kuch turant visible hota hai.
+
+      Desktop animation ke koi bhi bache hue inline styles saaf kar dete hain.
+    */
+    if (isMobile) {
+      gsap.killTweensOf([frame, leftContent, badge]);
       showFinalLayout();
+
       video?.play().catch(() => {});
 
+      resizeHandler = () => {
+        if (window.innerWidth === lastWidth) return;
+        lastWidth = window.innerWidth;
+
+        showFinalLayout();
+      };
+
+      window.addEventListener("resize", resizeHandler);
+
       return () => {
+        window.removeEventListener("resize", resizeHandler);
+
         document.body.classList.remove("hero-intro-active");
       };
     }
 
     /*
+      ═══════════════ DESKTOP (>960px) ═══════════════
+      Pehle video full section mein, phir right container mein shrink.
+
       requestAnimationFrame React StrictMode ke blank-screen
       issue ko prevent karta hai.
     */
+    /*
+      Turant (paint se pehle) full-screen state + hidden content lagao,
+      taaki beech mein normal layout ka flash na aaye.
+    */
+    document.body.classList.add("hero-intro-active");
+    frame.classList.add("hero2__img-frame--intro-full");
+    gsap.set(leftContent, { opacity: 0, x: -50 });
+    gsap.set(badge, { opacity: 0, scale: 0.8 });
+
     animationFrameId = window.requestAnimationFrame(() => {
+      /* Safety: agar is beech screen mobile size ho gayi, toh animation skip */
+      if (window.innerWidth <= MOBILE_BP) {
+        showFinalLayout();
+        return;
+      }
+
+      /*
+        Final (chhoti) position measure karne ke liye class
+        temporarily hatate hain, phir turant wapas lagate hain
+        (same frame mein, isliye screen pe koi flicker nahi).
+      */
+      frame.classList.remove("hero2__img-frame--intro-full");
+
       const sectionRect = section.getBoundingClientRect();
       const frameRect = frame.getBoundingClientRect();
+
+      frame.classList.add("hero2__img-frame--intro-full");
 
       /*
         Yeh sirf SHRINK animation ke liye target values hain —
@@ -185,7 +257,25 @@ export default function Hero() {
       video?.play().catch(() => {});
 
       timeline = gsap.timeline({
+        /*
+          Paused start: video load hone ke baad hi 3 second ka hold
+          shuru hoga (loading ke dauran blank white screen ka time
+          waste na ho).
+        */
+        paused: true,
+
         onComplete: showFinalLayout,
+
+        /*
+          Safety: animation ke dauran agar screen mobile size ho jaye
+          (DevTools toggle / rotate), toh turant rok do aur layout reset karo.
+        */
+        onUpdate: () => {
+          if (window.innerWidth <= MOBILE_BP) {
+            timeline.kill();
+            showFinalLayout();
+          }
+        },
       });
 
       timeline
@@ -254,7 +344,27 @@ export default function Hero() {
           "-=0.2"
         );
 
+      const begin = () => {
+        if (cancelled || !timeline) return;
+        if (beginHandler) video?.removeEventListener("canplay", beginHandler);
+        window.clearTimeout(beginTimeout);
+        timeline.play();
+      };
+
+      if (!video || video.readyState >= 3) {
+        begin();
+      } else {
+        beginHandler = begin;
+        video.addEventListener("canplay", beginHandler);
+
+        /* Fallback: video late ho toh bhi 2.5 sec baad shuru */
+        beginTimeout = window.setTimeout(begin, 2500);
+      }
+
       resizeHandler = () => {
+        if (window.innerWidth === lastWidth) return;
+        lastWidth = window.innerWidth;
+
         timeline?.kill();
         showFinalLayout();
       };
@@ -263,6 +373,10 @@ export default function Hero() {
     });
 
     return () => {
+      cancelled = true;
+      window.clearTimeout(beginTimeout);
+      if (beginHandler) video?.removeEventListener("canplay", beginHandler);
+
       window.cancelAnimationFrame(animationFrameId);
 
       if (resizeHandler) {
@@ -346,6 +460,7 @@ export default function Hero() {
         <div
           className="hero2__left"
           ref={leftRef}
+          style={startFull ? { opacity: 0 } : undefined}
         >
           <h1 className="hero2__h1">
             <span className="hero2__h1-accent">
@@ -395,7 +510,9 @@ export default function Hero() {
 
         <div className="hero2__right">
           <div
-            className="hero2__img-frame"
+            className={`hero2__img-frame${
+              startFull ? " hero2__img-frame--intro-full" : ""
+            }`}
             ref={frameRef}
           >
             <video
@@ -417,6 +534,7 @@ export default function Hero() {
             <div
               className="hero2__corner-badge"
               ref={badgeRef}
+              style={startFull ? { opacity: 0 } : undefined}
             >
               <span className="hero2__corner-num">
                 10
