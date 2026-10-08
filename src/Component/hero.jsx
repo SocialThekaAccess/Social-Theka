@@ -1,9 +1,29 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 import heroVideo from "../assets/SocialThekaHerovid.mp4";
 import "./hero.css";
+
+/*
+  OPTIONAL poster: src/assets/SocialThekaPoster.jpg rakh do (video ka
+  pehla frame). File na ho tab bhi error nahi aayega.
+*/
+const posterModules = import.meta.glob("../assets/SocialThekaPoster.{jpg,jpeg,webp,png}", {
+  eager: true,
+  import: "default",
+});
+const heroPoster = Object.values(posterModules)[0];
+
+/* Video ko module load hote hi preload kar do (Hero mount hone se pehle) */
+if (typeof document !== "undefined" && !document.getElementById("hero-video-preload")) {
+  const l = document.createElement("link");
+  l.id = "hero-video-preload";
+  l.rel = "preload";
+  l.as = "video";
+  l.href = heroVideo;
+  document.head.appendChild(l);
+}
 
 /* ── ICON COMPONENTS ───────────────────────────── */
 
@@ -13,17 +33,14 @@ const GoogleIcon = () => (
       d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
       fill="#4285F4"
     />
-
     <path
       d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
       fill="#34A853"
     />
-
     <path
       d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
       fill="#FBBC05"
     />
-
     <path
       d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
       fill="#EA4335"
@@ -54,7 +71,6 @@ const ISOIcon = () => (
       stroke="#22c55e"
       fill="rgba(34, 197, 94, 0.15)"
     />
-
     <path
       d="M9 12l2 2 4-4"
       stroke="#22c55e"
@@ -64,29 +80,15 @@ const ISOIcon = () => (
   </svg>
 );
 
-/*
-  "socialtheka_hero_intro_played" sessionStorage mein hai —
-  isliye sirf isi TAB SESSION mein animation ek baar chalegi.
-  Agar user Home pe wapas aaye (route change/scroll) toh
-  yeh dobara full-screen nahi chalegi.
-
-  Agar bilkul hamesha ke liye — naye tab/naye visit mein bhi —
-  sirf ek hi baar (poori website life mein sirf pehli dafa)
-  chalani ho, toh neeche "sessionStorage" ko "localStorage"
-  se replace kar dena.
-*/
 const HERO_ANIM_KEY = "socialtheka_hero_intro_played";
-const STORAGE = window.sessionStorage; // <-- badalke window.localStorage karo agar chahiye
+const STORAGE = window.sessionStorage;
 
 /* Is width ya usse chhoti screen = mobile/tablet layout */
 const MOBILE_BP = 960;
 
+const FULL_CLASS = "hero2__img-frame--intro-full";
+
 export default function Hero() {
-  /*
-    DESKTOP pe pehle hi paint se video full-screen state mein hoti hai
-    (aur content hidden), taaki website start hote waqt koi flash /
-    jump / blank layout na dikhe. Yeh value sirf ek baar set hoti hai.
-  */
   const [startFull] = useState(
     () => typeof window !== "undefined" && window.innerWidth > MOBILE_BP
   );
@@ -97,7 +99,7 @@ export default function Hero() {
   const leftRef = useRef(null);
   const badgeRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const section = sectionRef.current;
     const frame = frameRef.current;
     const leftContent = leftRef.current;
@@ -106,309 +108,175 @@ export default function Hero() {
 
     if (!section || !frame || !leftContent || !badge) return undefined;
 
-    let timeline;
-    let animationFrameId;
-    let resizeHandler;
-    let cancelled = false;
-    let beginHandler;
-    let beginTimeout;
+    const items = Array.from(leftContent.children);
 
     /*
-      Resize handler sirf WIDTH change par chalega.
-      Mobile browser mein scroll karte waqt address-bar ki wajah se
-      sirf height badalti hai — usse animation/layout kharab nahi hona chahiye.
+      matchMedia: breakpoint cross hone par (resize / DevTools toggle)
+      purani animation + inline styles apne aap revert hoti hain
+      aur sahi wala layout dobara setup hota hai.
     */
-    let lastWidth = window.innerWidth;
+    const mm = gsap.matchMedia();
 
-    const showFinalLayout = () => {
-      /*
-        Intro-full class hatao — frame apni normal CSS position
-        (right column ke andar, chhota) mein wapas aa jayega.
-      */
-      frame.classList.remove("hero2__img-frame--intro-full");
-
-      gsap.set(frame, {
-        clearProps:
-          "position,top,left,width,height,zIndex,borderRadius,x,y,transform,scale",
-        opacity: 1,
-      });
-
-      gsap.set(leftContent, {
-        clearProps: "transform",
-        opacity: 1,
-        x: 0,
-        y: 0,
-      });
-
-      gsap.set(badge, {
-        clearProps: "transform",
-        opacity: 1,
-        scale: 1,
-      });
-
+    /* ═══════════ MOBILE / TABLET (≤960px) ═══════════
+       Video apni position pe STATIC rehti hai (koi animation nahi),
+       bas chalti rehti hai. Badge + text halka sa animate hote hain. */
+    mm.add(`(max-width: ${MOBILE_BP}px)`, () => {
       document.body.classList.remove("hero-intro-active");
-    };
+      frame.classList.remove(FULL_CLASS);
 
-    const alreadyPlayed = false; // Always play animation
-    const isMobile = window.innerWidth <= MOBILE_BP;
-
-    /*
-      ═══════════════ MOBILE / TABLET (≤960px) ═══════════════
-
-      Mobile pe KOI animation/transition/transform nahi hai.
-      Video top par seedhi static dikhti hai (CSS "flex column" se),
-      content uske neeche. Sab kuch turant visible hota hai.
-
-      Desktop animation ke koi bhi bache hue inline styles saaf kar dete hain.
-    */
-    if (isMobile) {
-      gsap.killTweensOf([frame, leftContent, badge]);
-      showFinalLayout();
-
-      video?.play().catch(() => {});
-
-      resizeHandler = () => {
-        if (window.innerWidth === lastWidth) return;
-        lastWidth = window.innerWidth;
-
-        showFinalLayout();
-      };
-
-      window.addEventListener("resize", resizeHandler);
-
-      return () => {
-        window.removeEventListener("resize", resizeHandler);
-
-        document.body.classList.remove("hero-intro-active");
-      };
-    }
-
-    /*
-      ═══════════════ DESKTOP (>960px) ═══════════════
-      Pehle video full section mein, phir right container mein shrink.
-
-      requestAnimationFrame React StrictMode ke blank-screen
-      issue ko prevent karta hai.
-    */
-    /*
-      Turant (paint se pehle) full-screen state + hidden content lagao,
-      taaki beech mein normal layout ka flash na aaye.
-    */
-    document.body.classList.add("hero-intro-active");
-    frame.classList.add("hero2__img-frame--intro-full");
-    gsap.set(leftContent, { opacity: 0, x: -50 });
-    gsap.set(badge, { opacity: 0, scale: 0.8 });
-
-    animationFrameId = window.requestAnimationFrame(() => {
-      /* Safety: agar is beech screen mobile size ho gayi, toh animation skip */
-      if (window.innerWidth <= MOBILE_BP) {
-        showFinalLayout();
-        return;
+      /* Video decode na hui ho to force-load + play retry */
+      if (video) {
+        video.muted = true;
+        if (video.readyState === 0) video.load();
+        video.play().catch(() => {});
       }
 
-      /*
-        Final (chhoti) position measure karne ke liye class
-        temporarily hatate hain, phir turant wapas lagate hain
-        (same frame mein, isliye screen pe koi flicker nahi).
-      */
-      frame.classList.remove("hero2__img-frame--intro-full");
+      /* Video frame ko bilkul touch nahi karte — hamesha visible */
+      gsap.set(frame, { clearProps: "all" });
+      gsap.set(leftContent, { opacity: 1, x: 0, y: 0 });
 
-      const sectionRect = section.getBoundingClientRect();
-      const frameRect = frame.getBoundingClientRect();
-
-      frame.classList.add("hero2__img-frame--intro-full");
-
-      /*
-        Yeh sirf SHRINK animation ke liye target values hain —
-        yeh element ki actual rendered position se aati hain,
-        isliye hamesha section ke andar hi hongi.
-      */
-      const finalLeft = frameRect.left - sectionRect.left;
-      const finalTop = frameRect.top - sectionRect.top;
-      const finalWidth = frameRect.width;
-      const finalHeight = frameRect.height;
-
-      /*
-        Effect ko turant played mark kar rahe hain.
-        User doosre page par jaakar wapas aaye to repeat nahi hoga.
-      */
-      STORAGE.setItem(HERO_ANIM_KEY, "true");
-
-      document.body.classList.add("hero-intro-active");
-
-      gsap.set(leftContent, {
-        opacity: 0,
-        x: -50,
-      });
-
-      gsap.set(badge, {
-        opacity: 0,
-        scale: 0.8,
-      });
-
-      /*
-        FULL-SECTION STATE — ab yeh CSS class se aata hai
-        (position:absolute; inset:0;), koi pixel width/height
-        JS se set nahi hoti. Isliye video kabhi bhi section ke
-        box se bahar nahi ja sakti, navbar overlap nahi hoga.
-      */
-      frame.classList.add("hero2__img-frame--intro-full");
-
-      video?.play().catch(() => {});
-
-      timeline = gsap.timeline({
-        /*
-          Paused start: video load hone ke baad hi 3 second ka hold
-          shuru hoga (loading ke dauran blank white screen ka time
-          waste na ho).
-        */
-        paused: true,
-
-        onComplete: showFinalLayout,
-
-        /*
-          Safety: animation ke dauran agar screen mobile size ho jaye
-          (DevTools toggle / rotate), toh turant rok do aur layout reset karo.
-        */
-        onUpdate: () => {
-          if (window.innerWidth <= MOBILE_BP) {
-            timeline.kill();
-            showFinalLayout();
-          }
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out" },
+        onComplete: () => {
+          gsap.set([badge, ...items], {
+            clearProps: "transform,opacity,scale,rotate,y",
+          });
         },
       });
 
-      timeline
-        /*
-          Video 3 seconds tak full Hero section mein rahegi
-          (koi tween nahi — bas className se hold hai).
-        */
-        .to(frame, { duration: 3 })
+      tl.fromTo(
+        badge,
+        { scale: 0, rotate: -90, opacity: 0 },
+        {
+          scale: 1,
+          rotate: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "back.out(1.8)",
+        },
+        0.1
+      ).fromTo(
+        items,
+        { y: 28, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, stagger: 0.1 },
+        0.15
+      );
 
-        /*
-          Video right-side frame mein shrink hogi.
-          Yahan className hata ke position:absolute + explicit
-          top/left/width/height pe switch karte hain taaki
-          smoothly animate ho sake, phir target tak tween karte hain.
-        */
-        .call(() => {
-          frame.classList.remove("hero2__img-frame--intro-full");
+      return () => {
+        tl.kill();
+        gsap.set([badge, leftContent, ...items], {
+          clearProps: "transform,opacity,scale,rotate,x,y",
+        });
+      };
+    });
 
-          gsap.set(frame, {
-            position: "absolute",
-            top: 0,
-            left: 0,
-            x: 0,
-            y: 0,
-            width: sectionRect.width,
-            height: sectionRect.height,
-            borderRadius: 0,
-            zIndex: 5,
-          });
-        })
-        .to(frame, {
-          duration: 1.2,
-          x: finalLeft,
-          y: finalTop,
-          width: finalWidth,
-          height: finalHeight,
-          borderRadius: 24,
-          ease: "power3.inOut",
-        })
+    /* ═══════════ DESKTOP (>960px) ═══════════ */
+    mm.add(`(min-width: ${MOBILE_BP + 1}px)`, () => {
+      let timeline;
+      let rafId;
 
-        /*
-          Left-side content show hoga.
-        */
-        .to(
-          leftContent,
-          {
-            duration: 0.8,
-            opacity: 1,
-            x: 0,
-            ease: "power2.out",
-          },
-          "-=0.65"
-        )
+      frame.style.aspectRatio = "";
+      document.body.classList.add("hero-intro-active");
+      frame.classList.add(FULL_CLASS);
+      gsap.set(leftContent, { opacity: 0, x: -50 });
+      gsap.set(badge, { opacity: 0, scale: 0.8 });
 
-        /*
-          10 Years badge show hoga.
-        */
-        .to(
-          badge,
-          {
-            duration: 0.45,
-            opacity: 1,
-            scale: 1,
-            ease: "back.out(1.7)",
-          },
-          "-=0.2"
-        );
+      const showFinalLayout = () => {
+        frame.classList.remove(FULL_CLASS);
 
-      const begin = () => {
-        if (cancelled || !timeline) return;
-        if (beginHandler) video?.removeEventListener("canplay", beginHandler);
-        window.clearTimeout(beginTimeout);
+        gsap.set(frame, {
+          clearProps:
+            "position,top,left,width,height,zIndex,borderRadius,x,y,transform,scale",
+          opacity: 1,
+        });
+        gsap.set(leftContent, {
+          clearProps: "transform",
+          opacity: 1,
+          x: 0,
+          y: 0,
+        });
+        gsap.set(badge, { clearProps: "transform", opacity: 1, scale: 1 });
+
+        document.body.classList.remove("hero-intro-active");
+      };
+
+      rafId = window.requestAnimationFrame(() => {
+        frame.classList.remove(FULL_CLASS);
+
+        const sectionRect = section.getBoundingClientRect();
+        const frameRect = frame.getBoundingClientRect();
+
+        frame.classList.add(FULL_CLASS);
+
+        const finalLeft = frameRect.left - sectionRect.left;
+        const finalTop = frameRect.top - sectionRect.top;
+        const finalWidth = frameRect.width;
+        const finalHeight = frameRect.height;
+
+        STORAGE.setItem(HERO_ANIM_KEY, "true");
+
+        video?.play().catch(() => {});
+
+        timeline = gsap.timeline({ paused: true, onComplete: showFinalLayout });
+
+        timeline
+          .to(frame, { duration: 2.5 })
+          .call(() => {
+            frame.classList.remove(FULL_CLASS);
+
+            gsap.set(frame, {
+              position: "absolute",
+              top: 0,
+              left: 0,
+              x: 0,
+              y: 0,
+              width: sectionRect.width,
+              height: sectionRect.height,
+              borderRadius: 0,
+              zIndex: 5,
+            });
+          })
+          .to(frame, {
+            duration: 1.2,
+            x: finalLeft,
+            y: finalTop,
+            width: finalWidth,
+            height: finalHeight,
+            borderRadius: 24,
+            ease: "power3.inOut",
+          })
+          .to(
+            leftContent,
+            { duration: 0.8, opacity: 1, x: 0, ease: "power2.out" },
+            "-=0.65"
+          )
+          .to(
+            badge,
+            { duration: 0.45, opacity: 1, scale: 1, ease: "back.out(1.7)" },
+            "-=0.2"
+          );
+
         timeline.play();
-      };
+      });
 
-      if (!video || video.readyState >= 3) {
-        begin();
-      } else {
-        beginHandler = begin;
-        video.addEventListener("canplay", beginHandler);
-
-        /* Fallback: video late ho toh bhi 2.5 sec baad shuru */
-        beginTimeout = window.setTimeout(begin, 2500);
-      }
-
-      resizeHandler = () => {
-        if (window.innerWidth === lastWidth) return;
-        lastWidth = window.innerWidth;
-
+      return () => {
+        window.cancelAnimationFrame(rafId);
         timeline?.kill();
-        showFinalLayout();
-      };
 
-      window.addEventListener("resize", resizeHandler);
+        document.body.classList.remove("hero-intro-active");
+        frame.classList.remove(FULL_CLASS);
+
+        gsap.set([frame, leftContent, badge], { clearProps: "all" });
+      };
     });
 
     return () => {
-      cancelled = true;
-      window.clearTimeout(beginTimeout);
-      if (beginHandler) video?.removeEventListener("canplay", beginHandler);
-
-      window.cancelAnimationFrame(animationFrameId);
-
-      if (resizeHandler) {
-        window.removeEventListener("resize", resizeHandler);
-      }
-
-      timeline?.kill();
-
+      mm.revert();
       document.body.classList.remove("hero-intro-active");
-      frame.classList.remove("hero2__img-frame--intro-full");
-
-      /*
-        Route change ya StrictMode cleanup ke time
-        inline GSAP styles remove honge.
-      */
-      gsap.set(frame, {
-        clearProps: "all",
-      });
-
-      gsap.set(leftContent, {
-        clearProps: "all",
-      });
-
-      gsap.set(badge, {
-        clearProps: "all",
-      });
     };
   }, []);
 
-  /*
-    Video ko continuously play karne ke liye.
-  */
+  /* Video ko continuously play karne ke liye */
   useEffect(() => {
     const video = videoRef.current;
 
@@ -433,26 +301,13 @@ export default function Hero() {
   }, []);
 
   const certBadges = [
-    {
-      label: "Google Partner",
-      icon: <GoogleIcon />,
-    },
-    {
-      label: "Meta Business",
-      icon: <MetaIcon />,
-    },
-    {
-      label: "ISO Certified",
-      icon: <ISOIcon />,
-    },
+    { label: "Google Partner", icon: <GoogleIcon /> },
+    { label: "Meta Business", icon: <MetaIcon /> },
+    { label: "ISO Certified", icon: <ISOIcon /> },
   ];
 
   return (
-    <section
-      id="home"
-      className="hero2"
-      ref={sectionRef}
-    >
+    <section id="home" className="hero2" ref={sectionRef}>
       <div className="hero2__blob hero2__blob--1" />
       <div className="hero2__blob hero2__blob--2" />
 
@@ -463,9 +318,7 @@ export default function Hero() {
           style={startFull ? { opacity: 0 } : undefined}
         >
           <h1 className="hero2__h1">
-            <span className="hero2__h1-accent">
-              Building Brands
-            </span>{" "}
+            <span className="hero2__h1-accent">Building Brands</span>{" "}
             That Stand Out in the Digital World
           </h1>
 
@@ -478,10 +331,7 @@ export default function Hero() {
           </p>
 
           <div className="hero2__actions">
-            <Link
-              to="/contact"
-              className="hero2__btn-ghost"
-            >
+            <Link to="/contact" className="hero2__btn-ghost">
               Book Free Audit
             </Link>
           </div>
@@ -492,17 +342,9 @@ export default function Hero() {
 
           <div className="hero2__logos">
             {certBadges.map((item) => (
-              <div
-                key={item.label}
-                className="hero2__logo-card"
-              >
-                <span className="hero2__logo-icon">
-                  {item.icon}
-                </span>
-
-                <span className="hero2__logo-label">
-                  {item.label}
-                </span>
+              <div key={item.label} className="hero2__logo-card">
+                <span className="hero2__logo-icon">{item.icon}</span>
+                <span className="hero2__logo-label">{item.label}</span>
               </div>
             ))}
           </div>
@@ -510,9 +352,7 @@ export default function Hero() {
 
         <div className="hero2__right">
           <div
-            className={`hero2__img-frame${
-              startFull ? " hero2__img-frame--intro-full" : ""
-            }`}
+            className={`hero2__img-frame${startFull ? " " + FULL_CLASS : ""}`}
             ref={frameRef}
           >
             <video
@@ -524,7 +364,10 @@ export default function Hero() {
               muted
               playsInline
               preload="auto"
+              poster={heroPoster}
               onLoadedData={(e) => e.target.play().catch(() => {})}
+              onStalled={(e) => e.target.load()}
+              onSuspend={(e) => e.target.play().catch(() => {})}
               onCanPlay={(e) => e.target.play().catch(() => {})}
             >
               <source src={heroVideo} type="video/mp4" />
@@ -536,13 +379,8 @@ export default function Hero() {
               ref={badgeRef}
               style={startFull ? { opacity: 0 } : undefined}
             >
-              <span className="hero2__corner-num">
-                10
-              </span>
-
-              <span className="hero2__corner-text">
-                Years
-              </span>
+              <span className="hero2__corner-num">10</span>
+              <span className="hero2__corner-text">Years</span>
             </div>
           </div>
         </div>

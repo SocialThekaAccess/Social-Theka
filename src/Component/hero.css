@@ -9,11 +9,7 @@
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI",
     system-ui, sans-serif;
 
-  /*
-    Mobile/tablet pe navbar ki height.
-    Agar video navbar ke neeche chhup rahi ho ya zyada gap ho,
-    toh yeh value navbar ki asli height ke hisaab se badal do.
-  */
+  /* Mobile/tablet pe navbar ki height */
   --nav-h: 72px;
 }
 
@@ -34,7 +30,6 @@
 
   background: #ffffff;
 }
-
 
 body.hero-intro-active .hero2 {
   overflow: hidden;
@@ -102,10 +97,6 @@ body.hero-intro-active .hero2__left {
 /* ── INNER GRID ────────────────────────────────── */
 
 .hero2__inner {
-  /*
-    Static position important hai.
-    Isse absolute video ka parent .hero2 section banega.
-  */
   position: static;
 
   width: 100%;
@@ -130,10 +121,6 @@ body.hero-intro-active .hero2__left {
   display: flex;
   flex-direction: column;
 
-  /*
-    Default visible rakha hai.
-    Isliye JS error aaye tab bhi blank screen nahi hogi.
-  */
   opacity: 1;
 }
 
@@ -293,10 +280,6 @@ body.hero-intro-active .hero2__left {
 
   border-radius: 24px;
 
-  /*
-    Default visible rakha hai.
-    Blank screen prevent hogi.
-  */
   opacity: 1;
 
   transform-origin: center center;
@@ -312,21 +295,13 @@ body.hero-intro-active .hero2__left {
     0 8px 24px rgba(0, 0, 0, 0.07);
 }
 
-/*
-  INTRO "FULL SECTION" STATE
-  ──────────────────────────
-  Yeh class JS se sirf toggle hoti hai (koi pixel math nahi).
-  "inset: 0" ka matlab hai frame apne positioned parent (.hero2)
-  ke exact box ko fill karega — na usse zyada, na kam.
-  Isliye video kabhi bhi section se bahar/navbar ke upar
-  nahi ja sakti, chahe JS measurement mein koi bhi glitch ho.
-*/
+/* INTRO "FULL SECTION" STATE (desktop) */
 .hero2__img-frame--intro-full {
   position: absolute !important;
   inset: 0 !important;
   width: auto !important;
   height: auto !important;
-  border-radius: 0 !important;
+  border-radius: 24px !important;
   transform: none !important;
   z-index: 5 !important;
 }
@@ -370,6 +345,7 @@ body.hero-intro-active .hero2__left {
 .hero2__img::-webkit-media-controls-start-playback-button {
   display: none !important;
 }
+
 
 /* ── 10 YEARS BADGE ────────────────────────────── */
 
@@ -438,43 +414,36 @@ body.hero-intro-active .hero2__left {
 
 /*
   TABLET + MOBILE (≤960px)
-  VIDEO PEHLE (top par), CONTENT USKE NEECHE.
+  VIDEO PEHLE (top), CONTENT NEECHE.
+  Transform/opacity/animation yahan block NAHI kiye — GSAP mobile
+  animation chalti hai.
 */
 @media (max-width: 960px) {
   .hero2 {
     min-height: auto;
-
-    /*
-      Navbar ke neeche se start hoga, taaki video aur
-      "10 Years" badge navbar ke peeche na chhupe.
-    */
     padding: calc(var(--nav-h) + 16px) 0 56px;
   }
 
-  /*
-    Mobile: simple vertical STACK (flex column).
-    Pehle video, uske neeche content. Dono apni apni height lete hain,
-    isliye kabhi overlap nahi honge.
-  */
   section.hero2 .hero2__inner {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 28px !important;
+    gap: 24px !important;
 
     grid-template-columns: none !important;
     min-height: auto !important;
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
   section.hero2 .hero2__right {
     left: 0 !important;
     right: 0 !important;
     top: 0 !important;
-    overflow: hidden !important;
-    border-radius: 20px;
     order: 1 !important;
     flex: none !important;
+
+    /* visible: taaki frame ka shadow clip na ho */
+    overflow: visible !important;
 
     position: relative !important;
     display: block !important;
@@ -491,10 +460,7 @@ body.hero-intro-active .hero2__left {
     text-align: center;
   }
 
-  /*
-    MOBILE LOCK: GSAP/desktop animation ke koi bhi position/size/
-    transform/translate/scale mobile pe apply nahi honge.
-  */
+  /* MOBILE VIDEO FRAME */
   section.hero2 .hero2__img-frame {
     display: block !important;
     position: relative !important;
@@ -507,52 +473,43 @@ body.hero-intro-active .hero2__left {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+    aspect-ratio: 3 / 4;
     margin: 0 !important;
 
-    border-radius: 20px !important;
+    /* light bg: black box kabhi nahi dikhega */
+    background: #000000;
+    overflow: hidden;
 
-    transform: none !important;
-    translate: none !important;
-    scale: none !important;
-    rotate: none !important;
+    border-radius: 24px !important;
 
     z-index: 1 !important;
-
-    opacity: 1 !important;
-    transition: none !important;
-    animation: none !important;
     will-change: auto;
 
     box-shadow:
-      0 16px 48px rgba(0, 0, 0, 0.12),
-      0 6px 16px rgba(0, 0, 0, 0.07);
-  }
-
-  section.hero2 .hero2__left {
-    transform: none !important;
-    translate: none !important;
-    scale: none !important;
-
-    opacity: 1 !important;
-    transition: none !important;
-    animation: none !important;
+      0 20px 50px rgba(193, 18, 31, 0.18),
+      0 8px 20px rgba(0, 0, 0, 0.12);
   }
 
   .hero2__corner-badge {
-    transform: none !important;
-    opacity: 1 !important;
-    transition: none !important;
-    animation: none !important;
+    top: 10px;
+    right: 10px;
+    width: 62px;
+    height: 62px;
   }
 
-  /*
-    Mobile pe video ka POORA frame dikhao (side se crop nahi).
-    Height video ke apne aspect ratio se aayegi.
-  */
+  /* Video poore frame ko fill kare */
   section.hero2 .hero2__img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+
     object-fit: cover;
+    object-position: center;
+
+    border: 0;
+    border-radius: 0;
+    transform-origin: center;
   }
 
   .hero2__h1 {
@@ -579,9 +536,17 @@ body.hero-intro-active .hero2__left {
   }
 }
 
+@media (min-width: 601px) and (max-width: 960px) {
+  section.hero2 .hero2__img-frame {
+    aspect-ratio: 16 / 10;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+  }
+}
+
 @media (max-width: 768px) {
   .hero2__inner {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   .hero2__h1 {
@@ -600,17 +565,17 @@ body.hero-intro-active .hero2__left {
 
   section.hero2 .hero2__img-frame {
     height: auto !important;
-    border-radius: 18px !important;
+    border-radius: 24px !important;
   }
 
   .hero2__corner-badge {
-    width: 60px;
-    height: 60px;
-    top: 10px;
-    right: 10px;
+    width: 56px;
+    height: 56px;
+    top: 8px;
+    right: 8px;
   }
 
   .hero2__corner-num {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
