@@ -301,7 +301,7 @@ body.hero-intro-active .hero2__left {
   inset: 0 !important;
   width: auto !important;
   height: auto !important;
-  border-radius: 24px !important;
+  border-radius: 0 !important;
   transform: none !important;
   z-index: 5 !important;
 }
@@ -447,9 +447,9 @@ body.hero-intro-active .hero2__left {
 
     position: relative !important;
     display: block !important;
-    width: 100% !important;
+    width: calc(100% + 32px) !important;
     height: auto !important;
-    margin: 0 !important;
+    margin: 0 -16px !important;
   }
 
   section.hero2 .hero2__left {
@@ -471,16 +471,16 @@ body.hero-intro-active .hero2__left {
     inset: auto !important;
 
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
     height: auto !important;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 16 / 9;
     margin: 0 !important;
 
     /* light bg: black box kabhi nahi dikhega */
-    background: #000000;
+    background: #faf9ff;
     overflow: hidden;
 
-    border-radius: 24px !important;
+    border-radius: 0 !important;
 
     z-index: 1 !important;
     will-change: auto;
@@ -504,7 +504,7 @@ body.hero-intro-active .hero2__left {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 
     border: 0;
@@ -538,9 +538,9 @@ body.hero-intro-active .hero2__left {
 
 @media (min-width: 601px) and (max-width: 960px) {
   section.hero2 .hero2__img-frame {
-    aspect-ratio: 16 / 10;
     max-width: 720px !important;
     margin: 0 auto !important;
+    border-radius: 22px !important;
   }
 }
 
@@ -565,7 +565,7 @@ body.hero-intro-active .hero2__left {
 
   section.hero2 .hero2__img-frame {
     height: auto !important;
-    border-radius: 24px !important;
+    border-radius: 0 !important;
   }
 
   .hero2__corner-badge {
@@ -577,5 +577,23 @@ body.hero-intro-active .hero2__left {
 
   .hero2__corner-num {
     font-size: 19px;
+  }
+}
+
+/* OPTIONAL: vertical mobile video (SocialThekaHeroMobile.mp4) mile to */
+@media (max-width: 960px) {
+  section.hero2.hero2--mobile-video .hero2__img-frame {
+    aspect-ratio: 4 / 5;
+    max-width: 100% !important;
+    border-radius: 22px !important;
+  }
+
+  section.hero2.hero2--mobile-video .hero2__right {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  section.hero2.hero2--mobile-video .hero2__img {
+    object-fit: cover;
   }
 }

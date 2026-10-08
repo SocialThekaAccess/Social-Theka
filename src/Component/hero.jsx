@@ -15,6 +15,16 @@ const posterModules = import.meta.glob("../assets/SocialThekaPoster.{jpg,jpeg,we
 });
 const heroPoster = Object.values(posterModules)[0];
 
+/*
+  OPTIONAL: mobile ke liye alag vertical (4:5) video —
+  src/assets/SocialThekaHeroMobile.mp4. File na ho to normal video chalegi.
+*/
+const mobileVideoModules = import.meta.glob("../assets/SocialThekaHeroMobile.mp4", {
+  eager: true,
+  import: "default",
+});
+const heroMobileVideo = Object.values(mobileVideoModules)[0];
+
 /* Video ko module load hote hi preload kar do (Hero mount hone se pehle) */
 if (typeof document !== "undefined" && !document.getElementById("hero-video-preload")) {
   const l = document.createElement("link");
@@ -92,6 +102,15 @@ export default function Hero() {
   const [startFull] = useState(
     () => typeof window !== "undefined" && window.innerWidth > MOBILE_BP
   );
+
+  const [videoSrc] = useState(() =>
+    heroMobileVideo &&
+    typeof window !== "undefined" &&
+    window.innerWidth <= MOBILE_BP
+      ? heroMobileVideo
+      : heroVideo
+  );
+  const hasMobileVideo = videoSrc === heroMobileVideo && !!heroMobileVideo;
 
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
@@ -307,7 +326,11 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="hero2" ref={sectionRef}>
+    <section
+      id="home"
+      className={`hero2${hasMobileVideo ? " hero2--mobile-video" : ""}`}
+      ref={sectionRef}
+    >
       <div className="hero2__blob hero2__blob--1" />
       <div className="hero2__blob hero2__blob--2" />
 
@@ -363,6 +386,7 @@ export default function Hero() {
               loop
               muted
               playsInline
+              key={videoSrc}
               preload="auto"
               poster={heroPoster}
               onLoadedData={(e) => e.target.play().catch(() => {})}
@@ -370,7 +394,7 @@ export default function Hero() {
               onSuspend={(e) => e.target.play().catch(() => {})}
               onCanPlay={(e) => e.target.play().catch(() => {})}
             >
-              <source src={heroVideo} type="video/mp4" />
+              <source src={videoSrc} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
