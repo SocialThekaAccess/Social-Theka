@@ -473,7 +473,8 @@ body.hero-intro-active .hero2__left {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    aspect-ratio: 3 / 4;
+    min-height: 380px;
+    aspect-ratio: 16 / 9;
     margin: 0 !important;
 
     /* light bg: black box kabhi nahi dikhega */
@@ -497,7 +498,7 @@ body.hero-intro-active .hero2__left {
     height: 58px;
   }
 
-  /* Video poore frame ko fill kare */
+  /* Video poore frame ko fill kare with proper centering */
   section.hero2 .hero2__img {
     position: absolute;
     inset: 0;
@@ -538,10 +539,15 @@ body.hero-intro-active .hero2__left {
 
 @media (min-width: 601px) and (max-width: 960px) {
   section.hero2 .hero2__img-frame {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
+    min-height: 360px;
     max-width: 640px !important;
     margin: 0 auto !important;
     border-radius: 24px !important;
+  }
+
+  section.hero2 .hero2__img {
+    object-fit: cover !important;
   }
 }
 
@@ -566,7 +572,14 @@ body.hero-intro-active .hero2__left {
 
   section.hero2 .hero2__img-frame {
     height: auto !important;
-    border-radius: 22px !important;
+    min-height: 320px !important;
+    aspect-ratio: 16 / 9 !important;
+    border-radius: 20px !important;
+  }
+
+  section.hero2 .hero2__img {
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 
   .hero2__corner-badge {
