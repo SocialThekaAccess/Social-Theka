@@ -135,7 +135,11 @@ export default function Hero() {
 
     if (!frame || !video || !video.videoWidth || !video.videoHeight) return;
 
-    if (window.innerWidth > MOBILE_BP) {
+    /*
+      Sirf tab video ke ratio se frame banao jab alag mobile (vertical)
+      video ho. Landscape video ke case me CSS ka --hero-video-ratio chalta hai.
+    */
+    if (window.innerWidth > MOBILE_BP || !hasMobileVideo) {
       frame.style.removeProperty("aspect-ratio");
       return;
     }

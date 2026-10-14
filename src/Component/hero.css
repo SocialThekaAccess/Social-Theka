@@ -4,6 +4,17 @@
 
 :root {
   --max: 1400px;
+
+  /*
+    MOBILE VIDEO FRAME KA RATIO (width / height).
+    Height badhani ho to yahi change karo:
+      1 / 1     = square
+      5 / 6     = thoda lamba
+      4 / 5     = aur lamba
+      3 / 4     = bahut lamba
+    Video landscape hai, isliye lamba karne par side se thoda crop hoga.
+  */
+  --hero-video-ratio: 5 / 6;
   --brand-red: #c1121f;
   --brand-red-dark: #a00f1a;
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -473,7 +484,7 @@ body.hero-intro-active .hero2__left {
     max-width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
-    aspect-ratio: 16 / 9 !important;
+    aspect-ratio: var(--hero-video-ratio) !important;
     margin: 0 !important;
 
     /* light bg: black box kabhi nahi dikhega */
@@ -538,7 +549,7 @@ body.hero-intro-active .hero2__left {
 
 @media (min-width: 601px) and (max-width: 960px) {
   section.hero2 .hero2__img-frame {
-    aspect-ratio: 16 / 9 !important;
+    aspect-ratio: 4 / 3 !important;
     min-height: 0 !important;
     max-width: 640px !important;
     margin: 0 auto !important;
@@ -572,7 +583,7 @@ body.hero-intro-active .hero2__left {
   section.hero2 .hero2__img-frame {
     height: auto !important;
     min-height: 0 !important;
-    aspect-ratio: 16 / 9 !important;
+    aspect-ratio: var(--hero-video-ratio) !important;
     border-radius: 20px !important;
   }
 
