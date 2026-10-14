@@ -119,6 +119,7 @@ export default function Hero() {
 
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
+  const bgVideoRef = useRef(null);
   const frameRef = useRef(null);
   const leftRef = useRef(null);
   const badgeRef = useRef(null);
@@ -343,6 +344,14 @@ export default function Hero() {
     video.setAttribute("muted", "");
     video.play().catch(() => {});
 
+    /* Blurred background video (sirf mobile pe render hoti hai) */
+    const bgVideo = bgVideoRef.current;
+    if (bgVideo) {
+      bgVideo.muted = true;
+      bgVideo.defaultMuted = true;
+      bgVideo.play().catch(() => {});
+    }
+
     const handlePause = () => {
       video.play().catch(() => {});
     };
@@ -420,6 +429,22 @@ export default function Hero() {
             className={`hero2__img-frame${startFull ? " " + FULL_CLASS : ""}`}
             ref={frameRef}
           >
+            {!startFull && !hasMobileVideo && (
+              <video
+                ref={bgVideoRef}
+                className="hero2__img-bg"
+                src={videoSrc}
+                aria-hidden="true"
+                tabIndex={-1}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                poster={heroPoster}
+              />
+            )}
+
             <video
               ref={videoRef}
               className="hero2__img"
