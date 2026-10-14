@@ -346,7 +346,6 @@ body.hero-intro-active .hero2__left {
   display: none !important;
 }
 
-
 /* ── 10 YEARS BADGE ────────────────────────────── */
 
 .hero2__corner-badge {
@@ -415,8 +414,8 @@ body.hero-intro-active .hero2__left {
 /*
   TABLET + MOBILE (≤960px)
   VIDEO PEHLE (top), CONTENT NEECHE.
-  Transform/opacity/animation yahan block NAHI kiye — GSAP mobile
-  animation chalti hai.
+  Frame ki height sirf aspect-ratio se aati hai (min-height NAHI),
+  taaki video crop na ho.
 */
 @media (max-width: 960px) {
   .hero2 {
@@ -473,8 +472,8 @@ body.hero-intro-active .hero2__left {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    min-height: 380px;
-    aspect-ratio: 16 / 9;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
     margin: 0 !important;
 
     /* light bg: black box kabhi nahi dikhega */
@@ -498,7 +497,7 @@ body.hero-intro-active .hero2__left {
     height: 58px;
   }
 
-  /* Video poore frame ko fill kare with proper centering */
+  /* Video poore frame ko fill kare */
   section.hero2 .hero2__img {
     position: absolute;
     inset: 0;
@@ -539,8 +538,8 @@ body.hero-intro-active .hero2__left {
 
 @media (min-width: 601px) and (max-width: 960px) {
   section.hero2 .hero2__img-frame {
-    aspect-ratio: 16 / 9;
-    min-height: 360px;
+    aspect-ratio: 16 / 9 !important;
+    min-height: 0 !important;
     max-width: 640px !important;
     margin: 0 auto !important;
     border-radius: 24px !important;
@@ -572,7 +571,7 @@ body.hero-intro-active .hero2__left {
 
   section.hero2 .hero2__img-frame {
     height: auto !important;
-    min-height: 320px !important;
+    min-height: 0 !important;
     aspect-ratio: 16 / 9 !important;
     border-radius: 20px !important;
   }
@@ -594,10 +593,21 @@ body.hero-intro-active .hero2__left {
   }
 }
 
+/* Browser ka default gol play / loading icon video ke upar kabhi na dikhe */
+.hero2__img::-webkit-media-controls-overlay-play-button,
+.hero2__img::-webkit-media-controls-overlay-enclosure,
+.hero2__img::-webkit-media-controls-loading-panel,
+.hero2__img::-webkit-media-controls-timeline,
+.hero2__img::-webkit-media-controls-current-time-display {
+  display: none !important;
+  opacity: 0 !important;
+  -webkit-appearance: none;
+}
+
 /* OPTIONAL: vertical mobile video (SocialThekaHeroMobile.mp4) mile to */
 @media (max-width: 960px) {
   section.hero2.hero2--mobile-video .hero2__img-frame {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 5 !important;
     max-width: 100% !important;
     border-radius: 22px !important;
   }

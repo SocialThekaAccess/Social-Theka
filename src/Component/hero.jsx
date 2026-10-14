@@ -25,13 +25,18 @@ const mobileVideoModules = import.meta.glob("../assets/SocialThekaHeroMobile.mp4
 });
 const heroMobileVideo = Object.values(mobileVideoModules)[0];
 
-/* Video ko module load hote hi preload kar do (Hero mount hone se pehle) */
+/*
+  Video ko module load hote hi preload kar do (Hero mount hone se pehle).
+  IMPORTANT: mobile pe MOBILE video preload hoti hai (agar hai), warna
+  desktop wali bhari video mobile ka bandwidth kha jaati hai.
+*/
 if (typeof document !== "undefined" && !document.getElementById("hero-video-preload")) {
+  const isSmall = window.innerWidth <= 960;
   const l = document.createElement("link");
   l.id = "hero-video-preload";
   l.rel = "preload";
   l.as = "video";
-  l.href = heroVideo;
+  l.href = isSmall && heroMobileVideo ? heroMobileVideo : heroVideo;
   document.head.appendChild(l);
 }
 
@@ -118,6 +123,30 @@ export default function Hero() {
   const leftRef = useRef(null);
   const badgeRef = useRef(null);
 
+  /*
+    MOBILE: frame ko video ke asli ratio ke hisaab se size do, taaki
+    video na crop ho na chhota/khaali dikhe. (Ratio 0.75–1.8 ke beech
+    clamp hai, taaki bahut lamba/chhota frame na bane.)
+    Desktop pe fixed 480px height hi rehti hai.
+  */
+  const fitFrameToVideo = () => {
+    const frame = frameRef.current;
+    const video = videoRef.current;
+
+    if (!frame || !video || !video.videoWidth || !video.videoHeight) return;
+
+    if (window.innerWidth > MOBILE_BP) {
+      frame.style.removeProperty("aspect-ratio");
+      return;
+    }
+
+    const ratio = Math.min(
+      1.8,
+      Math.max(0.75, video.videoWidth / video.videoHeight)
+    );
+    frame.style.setProperty("aspect-ratio", String(ratio), "important");
+  };
+
   useLayoutEffect(() => {
     const section = sectionRef.current;
     const frame = frameRef.current;
@@ -143,15 +172,15 @@ export default function Hero() {
       document.body.classList.remove("hero-intro-active");
       frame.classList.remove(FULL_CLASS);
 
-      /* Video decode na hui ho to force-load + play retry */
+      /* Muted ensure karo (autoplay ke liye zaroori) + play try */
       if (video) {
         video.muted = true;
-        if (video.readyState === 0) video.load();
         video.play().catch(() => {});
       }
 
       /* Video frame ko bilkul touch nahi karte — hamesha visible */
       gsap.set(frame, { clearProps: "all" });
+      fitFrameToVideo();
       gsap.set(leftContent, { opacity: 1, x: 0, y: 0 });
 
       const tl = gsap.timeline({
@@ -301,6 +330,15 @@ export default function Hero() {
 
     if (!video) return undefined;
 
+    /*
+      React ka `muted` attribute kabhi kabhi DOM pe set nahi hota, aur
+      muted ke bina mobile autoplay block kar deta hai — isliye manually.
+    */
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("muted", "");
+    video.play().catch(() => {});
+
     const handlePause = () => {
       video.play().catch(() => {});
     };
@@ -386,12 +424,14 @@ export default function Hero() {
               loop
               muted
               playsInline
+              disablePictureInPicture
+              disableRemotePlayback
               key={videoSrc}
               preload="auto"
               poster={heroPoster}
+              controls={false}
+              onLoadedMetadata={fitFrameToVideo}
               onLoadedData={(e) => e.target.play().catch(() => {})}
-              onStalled={(e) => e.target.load()}
-              onSuspend={(e) => e.target.play().catch(() => {})}
               onCanPlay={(e) => e.target.play().catch(() => {})}
             >
               <source src={videoSrc} type="video/mp4" />
