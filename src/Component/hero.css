@@ -640,8 +640,25 @@ body.hero-intro-active .hero2__left {
     pointer-events: none;
   }
 
+  /*
+    Main video: poori 16:9 video frame ke BEECH me (upar-neeche barabar),
+    neeche ya upar nahi khisakti. Text cut hone ka kaaran yahi position tha.
+  */
   section.hero2:not(.hero2--mobile-video) .hero2__img {
+    position: absolute !important;
+    inset: auto !important;
+    top: 50% !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: auto !important;
+    max-height: 100% !important;
+    aspect-ratio: 16 / 9;
+
+    transform: translateY(-50%) !important;
+
     object-fit: contain !important;
+    object-position: center center !important;
     z-index: 1;
   }
 }
