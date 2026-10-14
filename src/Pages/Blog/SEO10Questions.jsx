@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../../Component/Footer/Footer';
+import ScrollToTop from '../../Component/ScrollToTop';
 import './SEO10Questions.css';
 import SEO10QuestionsImg from '../../assets/SEO Agency Hiring Guide in Chandigarh.png';
 
@@ -489,6 +490,7 @@ const SEO10Questions = () => {
 
       </article>
 
+      <ScrollToTop />
       <Footer />
     </>
   );

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../../Component/Footer/Footer';
+import ScrollToTop from '../../Component/ScrollToTop';
 import './SocialMediaPlaybook.css';
 import SocialMediaPlaybookImg from '../../assets/Best Seo Agency in Chandigarh.png';
 
@@ -552,6 +553,7 @@ const SocialMediaPlaybook = () => {
 
       </article>
 
+      <ScrollToTop />
       <Footer />
     </>
   );

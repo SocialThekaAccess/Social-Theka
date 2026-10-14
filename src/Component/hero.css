@@ -473,14 +473,14 @@ body.hero-intro-active .hero2__left {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 4;
     margin: 0 !important;
 
     /* light bg: black box kabhi nahi dikhega */
     background: #faf9ff;
     overflow: hidden;
 
-    border-radius: 22px !important;
+    border-radius: 24px !important;
 
     z-index: 1 !important;
     will-change: auto;
@@ -504,7 +504,7 @@ body.hero-intro-active .hero2__left {
     width: 100%;
     height: 100%;
 
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 
     border: 0;
@@ -538,9 +538,10 @@ body.hero-intro-active .hero2__left {
 
 @media (min-width: 601px) and (max-width: 960px) {
   section.hero2 .hero2__img-frame {
-    max-width: 720px !important;
+    aspect-ratio: 4 / 3;
+    max-width: 640px !important;
     margin: 0 auto !important;
-    border-radius: 22px !important;
+    border-radius: 24px !important;
   }
 }
 

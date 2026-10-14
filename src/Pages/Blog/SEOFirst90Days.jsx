@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../../Component/Footer/Footer';
+import ScrollToTop from '../../Component/ScrollToTop';
 import './SEOFirst90Days.css';
 import SEOFirst90DaysImg from '../../assets/SEO Agency in Chandigarh_ First 90 Days.png';
 
@@ -558,6 +559,7 @@ const SEOFirst90Days = () => {
 
       </article>
 
+      <ScrollToTop />
       <Footer />
     </>
   );

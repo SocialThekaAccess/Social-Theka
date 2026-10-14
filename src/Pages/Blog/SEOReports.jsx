@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../../Component/Footer/Footer';
+import ScrollToTop from '../../Component/ScrollToTop';
 import './SEOReports.css';
 import TopSEOAgencyImg from '../../assets/Top SEO Agency in Chandigarh.png';
 
@@ -548,6 +549,7 @@ const SEOReports = () => {
 
       </article>
 
+      <ScrollToTop />
       <Footer />
     </>
   );
