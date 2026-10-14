@@ -26,19 +26,10 @@ const mobileVideoModules = import.meta.glob("../assets/SocialThekaHeroMobile.mp4
 const heroMobileVideo = Object.values(mobileVideoModules)[0];
 
 /*
-  Video ko module load hote hi preload kar do (Hero mount hone se pehle).
-  IMPORTANT: mobile pe MOBILE video preload hoti hai (agar hai), warna
-  desktop wali bhari video mobile ka bandwidth kha jaati hai.
+  NOTE: <link rel="preload" as="video"> Chrome me supported nahi hai
+  (console warning deta tha), isliye hata diya. Video ka <video preload="auto">
+  hi kaafi hai.
 */
-if (typeof document !== "undefined" && !document.getElementById("hero-video-preload")) {
-  const isSmall = window.innerWidth <= 960;
-  const l = document.createElement("link");
-  l.id = "hero-video-preload";
-  l.rel = "preload";
-  l.as = "video";
-  l.href = isSmall && heroMobileVideo ? heroMobileVideo : heroVideo;
-  document.head.appendChild(l);
-}
 
 /* ── ICON COMPONENTS ───────────────────────────── */
 

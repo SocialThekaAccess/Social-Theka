@@ -15,6 +15,14 @@
     Video landscape hai, isliye lamba karne par side se thoda crop hoga.
   */
   --hero-video-ratio: 5 / 6;
+
+  /*
+    MOBILE VIDEO FRAME KE CORNERS KA RADIUS.
+    Video ke andar ka card jitna rounded hai, utna hi rakho, taaki video
+    ke corners kate nahi. Kate hue lagen to isse kam karo (jaise 12px),
+    kaafi gol dikhen to badhao.
+  */
+  --hero-video-radius: 24px;
   --brand-red: #c1121f;
   --brand-red-dark: #a00f1a;
   --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -491,7 +499,7 @@ body.hero-intro-active .hero2__left {
     background: #faf9ff;
     overflow: hidden;
 
-    border-radius: 24px !important;
+    border-radius: var(--hero-video-radius) !important;
 
     z-index: 1 !important;
     will-change: auto;
@@ -515,7 +523,7 @@ body.hero-intro-active .hero2__left {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 
     border: 0;
@@ -553,11 +561,11 @@ body.hero-intro-active .hero2__left {
     min-height: 0 !important;
     max-width: 640px !important;
     margin: 0 auto !important;
-    border-radius: 24px !important;
+    border-radius: var(--hero-video-radius) !important;
   }
 
   section.hero2 .hero2__img {
-    object-fit: cover !important;
+    object-fit: contain !important;
   }
 }
 
@@ -584,11 +592,11 @@ body.hero-intro-active .hero2__left {
     height: auto !important;
     min-height: 0 !important;
     aspect-ratio: var(--hero-video-ratio) !important;
-    border-radius: 20px !important;
+    border-radius: var(--hero-video-radius) !important;
   }
 
   section.hero2 .hero2__img {
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: center center !important;
   }
 
@@ -615,10 +623,9 @@ body.hero-intro-active .hero2__left {
   -webkit-appearance: none;
 }
 
-/* ── MOBILE: VIDEO POORI DIKHE (text cut na ho) ─────────
-   Landscape video ko lambe frame me cover se bharne par text kat jata hai.
-   Isliye: main video = contain (poori dikhti hai), aur peeche usi video
-   ka blurred copy (hero2__img-bg) khaali jagah bharta hai. */
+/* ── MOBILE: VIDEO POORI DIKHE (cut na ho) ──────────────
+   Main video = contain + frame ke beech me (poori 16:9 dikhti hai).
+   Peeche usi video ka blurred copy (hero2__img-bg) khaali jagah bharta hai. */
 .hero2__img-bg {
   display: none;
 }
@@ -640,10 +647,6 @@ body.hero-intro-active .hero2__left {
     pointer-events: none;
   }
 
-  /*
-    Main video: poori 16:9 video frame ke BEECH me (upar-neeche barabar),
-    neeche ya upar nahi khisakti. Text cut hone ka kaaran yahi position tha.
-  */
   section.hero2:not(.hero2--mobile-video) .hero2__img {
     position: absolute !important;
     inset: auto !important;
