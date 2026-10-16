@@ -18,6 +18,8 @@ const SEO10Questions = lazy(() => import('./Pages/Blog/SEO10Questions'))
 const SEOReports = lazy(() => import('./Pages/Blog/SEOReports'))
 const SocialMediaPlaybook = lazy(() => import('./Pages/Blog/SocialMediaPlaybook'))
 const LeadFunnel = lazy(() => import('./Pages/Blog/LeadFunnel'))
+const WebDevelopmentCompany = lazy(() => import('./Pages/Blog/WebDevelopmentCompany'))
+const DigitalMarketingCourse = lazy(() => import('./Pages/Blog/DigitalMarketingCourse'))
 const NotFound = lazy(() => import('./Pages/NotFound/NotFound'))
 
 function ScrollToTopOnRouteChange() {
@@ -52,6 +54,8 @@ function App() {
           <Route path="/blog/seo-reports" element={<SEOReports />} />
           <Route path="/blog/social-media-playbook" element={<SocialMediaPlaybook />} />
           <Route path="/blog/lead-funnel" element={<LeadFunnel />} />
+          <Route path="/blog/web-development-company-chandigarh" element={<WebDevelopmentCompany />} />
+          <Route path="/blog/digital-marketing-course-chandigarh" element={<DigitalMarketingCourse />} />
           {/* 404 Catch-all Route - Must be last */}
           <Route path="*" element={<NotFound />} />
         </Routes>

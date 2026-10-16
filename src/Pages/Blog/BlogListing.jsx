@@ -9,8 +9,32 @@ import TopSEOAgencyImg from '../../assets/Top SEO Agency in Chandigarh.png';
 import SEOHiringGuideImg from '../../assets/SEO Agency Hiring Guide in Chandigarh.png';
 import LeadFunnelImg from '../../assets/Best Digital Marketing Agency in Chandigarh Build a Lead Funnel.png';
 import SocialMediaImg from '../../assets/Best Seo Agency in Chandigarh.png';
+import DigitalMarketingCareersImg from '../../assets/Digital Marketing Careers in Chandigarh.png';
+import WebDevelopmentBannerImg from '../../assets/Web Development in Chandigarh Banner.png';
 
 const blogPosts = [
+  {
+    id: 7,
+    slug: 'digital-marketing-course-chandigarh',
+    title: 'Digital marketing course in Chandigarh: How to Choose a Programme That Leads to a Real Career',
+    excerpt: 'Thinking of a Digital marketing course in Chandigarh? Learn what to study, which skills employers want and how real agency exposure helps you. Start your career today.',
+    category: 'Digital Marketing',
+    readTime: '15 min read',
+    date: 'October 16, 2026',
+    image: DigitalMarketingCareersImg,
+    tags: ['Digital Marketing', 'Career', 'Training']
+  },
+  {
+    id: 6,
+    slug: 'web-development-company-chandigarh',
+    title: 'Best Web Development Company in Chandigarh: What to Look For Before You Hire',
+    excerpt: 'Choosing the Best Web Development Company in Chandigarh? Learn what to check, from speed to SEO, and see how Social Theka builds websites that rank and convert. Read on.',
+    category: 'Web Development',
+    readTime: '14 min read',
+    date: 'October 16, 2026',
+    image: WebDevelopmentBannerImg,
+    tags: ['Web Development', 'SEO', 'Business']
+  },
   {
     id: 5,
     slug: 'lead-funnel',
