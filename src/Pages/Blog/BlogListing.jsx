@@ -10,9 +10,68 @@ import SEOHiringGuideImg from '../../assets/SEO Agency Hiring Guide in Chandigar
 import LeadFunnelImg from '../../assets/Best Digital Marketing Agency in Chandigarh Build a Lead Funnel.png';
 import SocialMediaImg from '../../assets/Best Seo Agency in Chandigarh.png';
 import DigitalMarketingCareersImg from '../../assets/Digital Marketing Careers in Chandigarh.png';
-import WebDevelopmentBannerImg from '../../assets/Web Development in Chandigarh Banner.png';
+import WebDevelopmentBannerImg from '../../assets/Best Website Development Company in Chandigarh for Growth.png';
+import VideoEditingImg from '../../assets/Chandigarh Video Editing Agency Banner.png';
+import DigitalMarketingAgencyImg from '../../assets/Chandigarh Digital Growth Agency.png';
+import BestSocialMediaServicesImg from '../../assets/Best Social Media Marketing Services in Chandigarh for Brands.png';
+import BestSEOServicesImg from '../../assets/Best SEO Services in Chandigarh for Sustainable Business Growth.png';
 
 const blogPosts = [
+  {
+    id: 12,
+    slug: 'video-editing-agency-chandigarh',
+    title: 'Video Editing Agency in Chandigarh for Better Brand Stories Today',
+    excerpt: 'Learn how a Video Editing Agency in Chandigarh can shape clear brand stories, improve short-form content and help businesses communicate with stronger visuals clearly.',
+    category: 'Video Editing',
+    readTime: '18 min read',
+    date: 'November 20, 2026',
+    image: VideoEditingImg,
+    tags: ['Video Editing', 'Brand Storytelling', 'Content Creation']
+  },
+  {
+    id: 11,
+    slug: 'best-digital-marketing-agency-chandigarh',
+    title: 'Best Digital Marketing Agency in Chandigarh for Growth Brands',
+    excerpt: 'See how the Best Digital Marketing Agency in Chandigarh can connect SEO, social media, content and paid campaigns to create a consistent customer journey with clear goals.',
+    category: 'Digital Marketing',
+    readTime: '17 min read',
+    date: 'November 20, 2026',
+    image: DigitalMarketingAgencyImg,
+    tags: ['Digital Marketing', 'Growth Strategy', 'Integrated Marketing']
+  },
+  {
+    id: 10,
+    slug: 'best-website-development-chandigarh',
+    title: 'Best Website Development Company in Chandigarh for Growth Today',
+    excerpt: 'Learn what to look for in the Best Website Development Company in Chandigarh, from user experience and mobile design to speed, security and SEO-ready structure.',
+    category: 'Website Development',
+    readTime: '16 min read',
+    date: 'November 20, 2026',
+    image: WebDevelopmentBannerImg,
+    tags: ['Website Development', 'Web Design', 'Business Growth']
+  },
+  {
+    id: 9,
+    slug: 'best-social-media-services-chandigarh',
+    title: 'Best Social Media Marketing Services in Chandigarh for Brands',
+    excerpt: 'Explore how the Best Social Media Marketing Services in Chandigarh help businesses build communities, create useful content and turn engagement into growth every day.',
+    category: 'Social Media',
+    readTime: '14 min read',
+    date: 'November 20, 2026',
+    image: BestSocialMediaServicesImg,
+    tags: ['Social Media', 'Brand Building', 'Content Strategy']
+  },
+  {
+    id: 8,
+    slug: 'best-seo-services-chandigarh',
+    title: 'Best SEO Services in Chandigarh for Sustainable Business Growth',
+    excerpt: 'Discover how the Best SEO Services in Chandigarh improve visibility, attract relevant visitors and support long-term business growth with a practical search strategy.',
+    category: 'SEO Services',
+    readTime: '15 min read',
+    date: 'November 20, 2026',
+    image: BestSEOServicesImg,
+    tags: ['SEO', 'Business Growth', 'Digital Marketing']
+  },
   {
     id: 7,
     slug: 'digital-marketing-course-chandigarh',

@@ -20,6 +20,11 @@ const SocialMediaPlaybook = lazy(() => import('./Pages/Blog/SocialMediaPlaybook'
 const LeadFunnel = lazy(() => import('./Pages/Blog/LeadFunnel'))
 const WebDevelopmentCompany = lazy(() => import('./Pages/Blog/WebDevelopmentCompany'))
 const DigitalMarketingCourse = lazy(() => import('./Pages/Blog/DigitalMarketingCourse'))
+const BestSEOServices = lazy(() => import('./Pages/Blog/BestSEOServices'))
+const BestSocialMediaServices = lazy(() => import('./Pages/Blog/BestSocialMediaServices'))
+const BestWebsiteDevelopment = lazy(() => import('./Pages/Blog/BestWebsiteDevelopment'))
+const BestDigitalMarketingAgency = lazy(() => import('./Pages/Blog/BestDigitalMarketingAgency'))
+const VideoEditingAgency = lazy(() => import('./Pages/Blog/VideoEditingAgency'))
 const NotFound = lazy(() => import('./Pages/NotFound/NotFound'))
 
 function ScrollToTopOnRouteChange() {
@@ -56,6 +61,11 @@ function App() {
           <Route path="/blog/lead-funnel" element={<LeadFunnel />} />
           <Route path="/blog/web-development-company-chandigarh" element={<WebDevelopmentCompany />} />
           <Route path="/blog/digital-marketing-course-chandigarh" element={<DigitalMarketingCourse />} />
+          <Route path="/blog/best-seo-services-chandigarh" element={<BestSEOServices />} />
+          <Route path="/blog/best-social-media-services-chandigarh" element={<BestSocialMediaServices />} />
+          <Route path="/blog/best-website-development-chandigarh" element={<BestWebsiteDevelopment />} />
+          <Route path="/blog/best-digital-marketing-agency-chandigarh" element={<BestDigitalMarketingAgency />} />
+          <Route path="/blog/video-editing-agency-chandigarh" element={<VideoEditingAgency />} />
           {/* 404 Catch-all Route - Must be last */}
           <Route path="*" element={<NotFound />} />
         </Routes>
