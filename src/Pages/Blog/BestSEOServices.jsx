@@ -105,14 +105,13 @@ const BestSEOServices = () => {
                   </p>
                 </div>
 
-                {/* Content Sections */}
+                {/* Section 1 */}
                 <div className="blog-content__section" id="why-seo-matters">
                   <h2 className="blog-content__heading">Why SEO Matters for Businesses Today</h2>
                   <p>
                     Customers have become more independent in their buying decisions. Before contacting a company, they often research its services, compare alternatives and look for evidence that the business can meet their needs.
                   </p>
-                  <p>A strong search presence helps your business become part of this research process.</p>
-                  <p>Some important benefits of SEO include:</p>
+                  <p>A strong search presence helps your business become part of this research process. Some important benefits of SEO include:</p>
 
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">1. Better online visibility</h3>
@@ -150,6 +149,7 @@ const BestSEOServices = () => {
                   </div>
                 </div>
 
+                {/* Section 2 */}
                 <div className="blog-content__section" id="effective-seo-strategy">
                   <h2 className="blog-content__heading">What Makes an SEO Strategy Effective?</h2>
                   <p>
@@ -161,8 +161,7 @@ const BestSEOServices = () => {
                     <p>
                       Keyword research helps identify the phrases people use when searching for products and services. But choosing keywords only because they have high search volume is not enough.
                     </p>
-                    <p>Businesses should understand the intent behind each search.</p>
-                    <p>For example:</p>
+                    <p>Businesses should understand the intent behind each search. For example:</p>
                     <ul className="blog-content__list">
                       <li>Informational searches are made by people looking for answers or guidance.</li>
                       <li>Commercial searches are made by people comparing different providers.</li>
@@ -198,10 +197,8 @@ const BestSEOServices = () => {
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">3. Technical SEO</h3>
                     <p>
-                      Even useful content may struggle to perform if search engines cannot properly crawl, access or understand a website.
+                      Even useful content may struggle to perform if search engines cannot properly crawl, access or understand a website. Technical SEO focuses on the website's underlying structure and performance. It can include:
                     </p>
-                    <p>Technical SEO focuses on the website's underlying structure and performance.</p>
-                    <p>It can include:</p>
                     <ul className="blog-content__list">
                       <li>Checking indexing and crawlability</li>
                       <li>Reviewing XML sitemaps</li>
@@ -236,9 +233,8 @@ const BestSEOServices = () => {
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">5. Local SEO</h3>
                     <p>
-                      Local SEO helps businesses become more visible to customers searching within a particular geographical area.
+                      Local SEO helps businesses become more visible to customers searching within a particular geographical area. For businesses in Chandigarh, Mohali and Panchkula, local optimisation may involve:
                     </p>
-                    <p>For businesses in Chandigarh, Mohali and Panchkula, local optimisation may involve:</p>
                     <ul className="blog-content__list">
                       <li>Maintaining an accurate Google Business Profile</li>
                       <li>Using consistent business contact information</li>
@@ -255,15 +251,15 @@ const BestSEOServices = () => {
                   </div>
                 </div>
 
+                {/* Section 3 */}
                 <div className="blog-content__section" id="choosing-seo-partner">
                   <h2 className="blog-content__heading">How to Choose the Right SEO Partner</h2>
                   <p>
                     Finding the right SEO partner is an important decision because search optimisation involves technical, creative and analytical work.
                   </p>
                   <p>
-                    When evaluating the Best SEO Agency in Chandigarh, businesses should look beyond promotional promises. A reliable agency should understand the business model, target audience, competition and objectives before recommending a strategy.
+                    When evaluating the Best SEO Agency in Chandigarh, businesses should look beyond promotional promises. A reliable agency should understand the business model, target audience, competition and objectives before recommending a strategy. Consider these factors:
                   </p>
-                  <p>Consider these factors:</p>
 
                   <div className="blog-content__grid">
                     <div className="blog-content__card">
@@ -333,13 +329,13 @@ const BestSEOServices = () => {
                   </p>
                 </div>
 
+                {/* Section 4 */}
                 <div className="blog-content__section" id="ongoing-process">
                   <h2 className="blog-content__heading">SEO Is an Ongoing Process, Not a One-Time Task</h2>
                   <p>
-                    SEO requires regular monitoring and improvement. Search behaviour changes, competitors update their websites and search engines continue refining how they display results.
+                    SEO requires regular monitoring and improvement. Search behaviour changes, competitors update their websites and search engines continue refining how they display results. A practical SEO cycle usually includes:
                   </p>
-                  <p>A practical SEO cycle usually includes:</p>
-                  <ol className="blog-content__list">
+                  <ol className="blog-content__numbered-list">
                     <li>Audit the existing website and identify major issues.</li>
                     <li>Research relevant keywords and understand search intent.</li>
                     <li>Prioritise important pages and technical improvements.</li>
@@ -348,32 +344,48 @@ const BestSEOServices = () => {
                     <li>Track results and identify new opportunities.</li>
                     <li>Review the strategy based on actual performance.</li>
                   </ol>
-                  <p>
+                  <p className="blog-content__insight">
                     This approach helps businesses focus on improvements that have a clear purpose instead of making random changes.
                   </p>
                 </div>
 
+                {/* Section 5 */}
                 <div className="blog-content__section" id="common-mistakes">
                   <h2 className="blog-content__heading">Common SEO Mistakes Businesses Should Avoid</h2>
                   <p>
-                    Some businesses invest in SEO but do not see meaningful progress because their strategy is built around shortcuts.
+                    Some businesses invest in SEO but do not see meaningful progress because their strategy is built around shortcuts. Common mistakes include:
                   </p>
-                  <p>Common mistakes include:</p>
-                  <ul className="blog-content__list">
-                    <li>Repeating the same keyword unnaturally throughout a page</li>
-                    <li>Publishing copied or low-quality articles</li>
-                    <li>Ignoring mobile users</li>
-                    <li>Creating pages without a clear purpose</li>
-                    <li>Buying irrelevant backlinks</li>
-                    <li>Neglecting website speed and technical issues</li>
-                    <li>Ignoring local search opportunities</li>
-                    <li>Measuring success only through keyword rankings</li>
-                  </ul>
-                  <p>
+
+                  <div className="blog-content__red-flags">
+                    {[
+                      'Repeating the same keyword unnaturally throughout a page',
+                      'Publishing copied or low-quality articles',
+                      'Ignoring mobile users',
+                      'Creating pages without a clear purpose',
+                      'Buying irrelevant backlinks',
+                      'Neglecting website speed and technical issues',
+                      'Ignoring local search opportunities',
+                      'Measuring success only through keyword rankings',
+                    ].map((text) => (
+                      <div className="blog-content__flag" key={text}>
+                        <span className="blog-content__flag-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                          </svg>
+                        </span>
+                        <div>{text}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="blog-content__success">
                     SEO performance should be evaluated through a combination of visibility, traffic quality, user engagement and business outcomes.
                   </p>
                 </div>
 
+                {/* Section 6 */}
                 <div className="blog-content__section blog-content__section--highlight" id="social-theka-approach">
                   <h2 className="blog-content__heading">How Social Theka Approaches Digital Visibility</h2>
                   <p>
@@ -387,7 +399,8 @@ const BestSEOServices = () => {
                   </p>
                 </div>
 
-                <div className="blog-content__section" id="conclusion">
+                {/* Conclusion */}
+                <div className="blog-content__section blog-content__section--conclusion" id="conclusion">
                   <h2 className="blog-content__heading">Conclusion</h2>
                   <p>
                     SEO gives businesses an opportunity to reach people at the moment they are actively searching for relevant information, products or services. But meaningful results require more than keyword placement. They depend on technical quality, helpful content, local relevance, user experience and consistent analysis.
@@ -400,7 +413,7 @@ const BestSEOServices = () => {
                   </p>
                 </div>
 
-                {/* CTA Section */}
+                {/* CTA */}
                 <div className="blog-content__cta">
                   <div className="blog-content__cta-content">
                     <h3 className="blog-content__cta-title">Looking to improve your website's search visibility?</h3>
@@ -420,40 +433,52 @@ const BestSEOServices = () => {
               </div>
 
               {/* Sidebar */}
-              <aside className="blog-content__sidebar">
-                <div className="blog-sidebar">
-                  <div className="blog-sidebar__section">
+              <aside className="blog-sidebar">
+                <div className="blog-sidebar__sticky">
+
+                  {/* Table of Contents */}
+                  <div className="blog-sidebar__card">
                     <h3 className="blog-sidebar__title">Table of Contents</h3>
                     <nav className="blog-sidebar__toc">
-                      <a href="#why-seo-matters" className="blog-sidebar__toc-link">Why SEO Matters for Businesses Today</a>
-                      <a href="#effective-seo-strategy" className="blog-sidebar__toc-link">What Makes an SEO Strategy Effective?</a>
-                      <a href="#choosing-seo-partner" className="blog-sidebar__toc-link">How to Choose the Right SEO Partner</a>
-                      <a href="#ongoing-process" className="blog-sidebar__toc-link">SEO Is an Ongoing Process</a>
-                      <a href="#common-mistakes" className="blog-sidebar__toc-link">Common SEO Mistakes to Avoid</a>
+                      <a href="#why-seo-matters" className="blog-sidebar__toc-link">Why SEO Matters</a>
+                      <a href="#effective-seo-strategy" className="blog-sidebar__toc-link">Effective SEO Strategy</a>
+                      <a href="#choosing-seo-partner" className="blog-sidebar__toc-link">Choosing an SEO Partner</a>
+                      <a href="#ongoing-process" className="blog-sidebar__toc-link">SEO Is Ongoing</a>
+                      <a href="#common-mistakes" className="blog-sidebar__toc-link">Common Mistakes</a>
                       <a href="#social-theka-approach" className="blog-sidebar__toc-link">Social Theka's Approach</a>
                       <a href="#conclusion" className="blog-sidebar__toc-link">Conclusion</a>
                     </nav>
                   </div>
 
-                  <div className="blog-sidebar__section blog-sidebar__section--highlight">
-                    <h3 className="blog-sidebar__title">Need Help with SEO?</h3>
-                    <p className="blog-sidebar__text">
-                      Get a free consultation to discuss your website's search visibility and growth opportunities.
-                    </p>
-                    <Link to="/contact" className="blog-sidebar__button">
-                      Contact Us
-                    </Link>
+                  {/* Key Takeaways */}
+                  <div className="blog-sidebar__card blog-sidebar__card--takeaways">
+                    <h3 className="blog-sidebar__title">Key Takeaways</h3>
+                    <ul className="blog-sidebar__list">
+                      <li>Target search intent, not just keywords</li>
+                      <li>Combine on-page, technical and local SEO</li>
+                      <li>Avoid guaranteed-ranking promises</li>
+                      <li>Treat SEO as an ongoing process</li>
+                      <li>Measure traffic quality and enquiries</li>
+                    </ul>
                   </div>
+
+                  {/* CTA Card */}
+                  <div className="blog-sidebar__card blog-sidebar__card--cta">
+                    <h3 className="blog-sidebar__title">Need Help with SEO?</h3>
+                    <p className="blog-sidebar__text">Get a free consultation on your website's search visibility.</p>
+                    <Link to="/contact" className="blog-sidebar__button">Contact Us</Link>
+                  </div>
+
                 </div>
               </aside>
 
             </div>
           </div>
         </section>
-
-        <Footer />
-        <ScrollToTop />
       </article>
+
+      <ScrollToTop />
+      <Footer />
     </>
   );
 };

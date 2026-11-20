@@ -105,13 +105,12 @@ const BestWebsiteDevelopment = () => {
                   </p>
                 </div>
 
-                {/* Content Sections */}
+                {/* Section 1 */}
                 <div className="blog-content__section" id="why-need-website">
                   <h2 className="blog-content__heading">Why Does Your Business Need a Professional Website?</h2>
                   <p>
-                    Social media platforms are useful for discovery and communication, but a website gives a business greater control over how its information is organised and presented.
+                    Social media platforms are useful for discovery and communication, but a website gives a business greater control over how its information is organised and presented. Here are some important benefits.
                   </p>
-                  <p>Here are some important benefits.</p>
 
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">1. Establish a Professional Online Presence</h3>
@@ -164,6 +163,7 @@ const BestWebsiteDevelopment = () => {
                   </div>
                 </div>
 
+                {/* Section 2 */}
                 <div className="blog-content__section" id="effective-website">
                   <h2 className="blog-content__heading">What Makes a Business Website Effective?</h2>
                   <p>
@@ -173,9 +173,8 @@ const BestWebsiteDevelopment = () => {
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">1. Clear Website Structure</h3>
                     <p>
-                      A website should have an organised navigation system. Visitors should be able to understand where they are and how to reach important information.
+                      A website should have an organised navigation system. Visitors should be able to understand where they are and how to reach important information. Common pages include:
                     </p>
-                    <p>Common pages include:</p>
                     <ul className="blog-content__list">
                       <li>Home</li>
                       <li>About</li>
@@ -206,9 +205,8 @@ const BestWebsiteDevelopment = () => {
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">3. Fast Loading Performance</h3>
                     <p>
-                      Website speed affects how easily visitors can access information. Large images, unnecessary scripts, inefficient code and unsuitable hosting configurations can contribute to slow performance.
+                      Website speed affects how easily visitors can access information. Large images, unnecessary scripts, inefficient code and unsuitable hosting configurations can contribute to slow performance. Performance improvements may include:
                     </p>
-                    <p>Performance improvements may include:</p>
                     <ul className="blog-content__list">
                       <li>Compressing and resizing images</li>
                       <li>Using modern image formats where appropriate</li>
@@ -250,13 +248,11 @@ const BestWebsiteDevelopment = () => {
                   </div>
                 </div>
 
+                {/* Section 3 */}
                 <div className="blog-content__section" id="selecting-partner">
                   <h2 className="blog-content__heading">How to Select a Website Development Partner</h2>
                   <p>
-                    Choosing the right development partner can influence the quality, usability and maintainability of a website.
-                  </p>
-                  <p>
-                    Businesses evaluating the Best Web Development Company in Chandigarh should consider more than design samples.
+                    Choosing the right development partner can influence the quality, usability and maintainability of a website. Businesses evaluating the Best Web Development Company in Chandigarh should consider more than design samples.
                   </p>
 
                   <div className="blog-content__grid">
@@ -330,32 +326,42 @@ const BestWebsiteDevelopment = () => {
                   </p>
                 </div>
 
+                {/* Section 4 */}
                 <div className="blog-content__section" id="design-vs-development">
                   <h2 className="blog-content__heading">Website Design and Website Development: What Is the Difference?</h2>
                   <p>
                     These terms are connected, but they refer to different parts of the process.
                   </p>
-                  <p>
-                    Website design focuses on the visual presentation and user experience. It includes layouts, typography, colours, navigation, content hierarchy and the way visitors interact with the website.
-                  </p>
-                  <p>
-                    Website development focuses on making the design functional. It may involve front-end development, back-end systems, databases, integrations, forms, authentication and other technical features.
-                  </p>
+
+                  <div className="blog-content__subsection">
+                    <h3 className="blog-content__subheading">Website Design</h3>
+                    <p>
+                      Website design focuses on the visual presentation and user experience. It includes layouts, typography, colours, navigation, content hierarchy and the way visitors interact with the website.
+                    </p>
+                  </div>
+
+                  <div className="blog-content__subsection">
+                    <h3 className="blog-content__subheading">Website Development</h3>
+                    <p>
+                      Website development focuses on making the design functional. It may involve front-end development, back-end systems, databases, integrations, forms, authentication and other technical features.
+                    </p>
+                  </div>
+
                   <p>
                     Some projects require a simple informational website, while others need advanced functionality such as user accounts, dashboards, payment systems or custom integrations.
                   </p>
-                  <p>
+                  <p className="blog-content__insight">
                     Understanding the difference helps businesses define their requirements and budget more accurately.
                   </p>
                 </div>
 
+                {/* Section 5 */}
                 <div className="blog-content__section" id="important-questions">
                   <h2 className="blog-content__heading">Important Questions to Ask Before Starting a Website Project</h2>
                   <p>
-                    Before hiring a development company, prepare a clear project brief.
+                    Before hiring a development company, prepare a clear project brief. Consider these questions:
                   </p>
-                  <p>Consider these questions:</p>
-                  <ol className="blog-content__list">
+                  <ol className="blog-content__numbered-list">
                     <li>What is the main purpose of the website?</li>
                     <li>Who is the target audience?</li>
                     <li>What pages and features are required?</li>
@@ -367,39 +373,55 @@ const BestWebsiteDevelopment = () => {
                     <li>How will the website be tested before launch?</li>
                     <li>Who will manage updates after launch?</li>
                   </ol>
-                  <p>
+                  <p className="blog-content__success">
                     A clear brief reduces misunderstandings and helps the development team provide a more accurate proposal.
                   </p>
                 </div>
 
+                {/* Section 6 */}
                 <div className="blog-content__section" id="common-mistakes">
                   <h2 className="blog-content__heading">Common Website Development Mistakes</h2>
                   <p>
                     Businesses should avoid several common mistakes when planning a website.
                   </p>
-                  <ul className="blog-content__list">
-                    <li>Designing only for desktop screens</li>
-                    <li>Using too much text without a clear content hierarchy</li>
-                    <li>Choosing visuals that do not represent the business</li>
-                    <li>Ignoring website speed</li>
-                    <li>Creating confusing navigation</li>
-                    <li>Launching forms without testing them</li>
-                    <li>Neglecting security and backups</li>
-                    <li>Forgetting SEO fundamentals</li>
-                    <li>Failing to plan ongoing maintenance</li>
-                  </ul>
-                  <p>
+
+                  <div className="blog-content__red-flags">
+                    {[
+                      'Designing only for desktop screens',
+                      'Using too much text without a clear content hierarchy',
+                      'Choosing visuals that do not represent the business',
+                      'Ignoring website speed',
+                      'Creating confusing navigation',
+                      'Launching forms without testing them',
+                      'Neglecting security and backups',
+                      'Forgetting SEO fundamentals',
+                      'Failing to plan ongoing maintenance',
+                    ].map((text) => (
+                      <div className="blog-content__flag" key={text}>
+                        <span className="blog-content__flag-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                          </svg>
+                        </span>
+                        <div>{text}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="blog-content__callout">
                     A website should be tested before launch, including its links, forms, buttons, page layouts and key user journeys.
                   </p>
                 </div>
 
+                {/* Section 7 */}
                 <div className="blog-content__section" id="website-maintenance">
                   <h2 className="blog-content__heading">Why Website Maintenance Matters</h2>
                   <p>
-                    Launching a website is not the end of the development process. Software updates, security checks, backups and content improvements help keep it reliable.
+                    Launching a website is not the end of the development process. Software updates, security checks, backups and content improvements help keep it reliable. Businesses should periodically review:
                   </p>
-                  <p>Businesses should periodically review:</p>
-                  <ul className="blog-content__list">
+                  <ul className="blog-content__checklist">
                     <li>Whether all pages are working</li>
                     <li>Whether contact forms deliver enquiries correctly</li>
                     <li>Whether important information is up to date</li>
@@ -408,11 +430,12 @@ const BestWebsiteDevelopment = () => {
                     <li>Whether backups are available</li>
                     <li>Whether analytics show unexpected changes</li>
                   </ul>
-                  <p>
+                  <p className="blog-content__insight">
                     Regular maintenance can help identify issues before they affect a larger number of visitors.
                   </p>
                 </div>
 
+                {/* Section 8 */}
                 <div className="blog-content__section blog-content__section--highlight" id="social-theka-help">
                   <h2 className="blog-content__heading">How Social Theka Can Help with Your Online Presence</h2>
                   <p>
@@ -426,7 +449,8 @@ const BestWebsiteDevelopment = () => {
                   </p>
                 </div>
 
-                <div className="blog-content__section" id="conclusion">
+                {/* Conclusion */}
+                <div className="blog-content__section blog-content__section--conclusion" id="conclusion">
                   <h2 className="blog-content__heading">Conclusion</h2>
                   <p>
                     A professional website is a valuable business asset. It gives customers a place to learn about the company, understand its services and make contact. But achieving these benefits requires thoughtful planning, responsive design, reliable development, strong performance and ongoing maintenance.
@@ -439,7 +463,7 @@ const BestWebsiteDevelopment = () => {
                   </p>
                 </div>
 
-                {/* CTA Section */}
+                {/* CTA */}
                 <div className="blog-content__cta">
                   <div className="blog-content__cta-content">
                     <h3 className="blog-content__cta-title">Planning a new website?</h3>
@@ -459,42 +483,54 @@ const BestWebsiteDevelopment = () => {
               </div>
 
               {/* Sidebar */}
-              <aside className="blog-content__sidebar">
-                <div className="blog-sidebar">
-                  <div className="blog-sidebar__section">
+              <aside className="blog-sidebar">
+                <div className="blog-sidebar__sticky">
+
+                  {/* Table of Contents */}
+                  <div className="blog-sidebar__card">
                     <h3 className="blog-sidebar__title">Table of Contents</h3>
                     <nav className="blog-sidebar__toc">
-                      <a href="#why-need-website" className="blog-sidebar__toc-link">Why Your Business Needs a Website</a>
+                      <a href="#why-need-website" className="blog-sidebar__toc-link">Why You Need a Website</a>
                       <a href="#effective-website" className="blog-sidebar__toc-link">What Makes a Website Effective</a>
-                      <a href="#selecting-partner" className="blog-sidebar__toc-link">Selecting a Development Partner</a>
+                      <a href="#selecting-partner" className="blog-sidebar__toc-link">Selecting a Partner</a>
                       <a href="#design-vs-development" className="blog-sidebar__toc-link">Design vs Development</a>
-                      <a href="#important-questions" className="blog-sidebar__toc-link">Important Questions to Ask</a>
-                      <a href="#common-mistakes" className="blog-sidebar__toc-link">Common Mistakes to Avoid</a>
+                      <a href="#important-questions" className="blog-sidebar__toc-link">Questions to Ask</a>
+                      <a href="#common-mistakes" className="blog-sidebar__toc-link">Common Mistakes</a>
                       <a href="#website-maintenance" className="blog-sidebar__toc-link">Website Maintenance</a>
                       <a href="#social-theka-help" className="blog-sidebar__toc-link">How Social Theka Can Help</a>
                       <a href="#conclusion" className="blog-sidebar__toc-link">Conclusion</a>
                     </nav>
                   </div>
 
-                  <div className="blog-sidebar__section blog-sidebar__section--highlight">
-                    <h3 className="blog-sidebar__title">Need a Professional Website?</h3>
-                    <p className="blog-sidebar__text">
-                      Get a free consultation to discuss your website development and online presence goals.
-                    </p>
-                    <Link to="/contact" className="blog-sidebar__button">
-                      Contact Us
-                    </Link>
+                  {/* Key Takeaways */}
+                  <div className="blog-sidebar__card blog-sidebar__card--takeaways">
+                    <h3 className="blog-sidebar__title">Key Takeaways</h3>
+                    <ul className="blog-sidebar__list">
+                      <li>Plan around real business goals</li>
+                      <li>Design for mobile from the start</li>
+                      <li>Build speed, SEO and security in early</li>
+                      <li>Confirm ownership of domain and files</li>
+                      <li>Budget for ongoing maintenance</li>
+                    </ul>
                   </div>
+
+                  {/* CTA Card */}
+                  <div className="blog-sidebar__card blog-sidebar__card--cta">
+                    <h3 className="blog-sidebar__title">Need a Professional Website?</h3>
+                    <p className="blog-sidebar__text">Get a free consultation on your website goals.</p>
+                    <Link to="/contact" className="blog-sidebar__button">Contact Us</Link>
+                  </div>
+
                 </div>
               </aside>
 
             </div>
           </div>
         </section>
-
-        <Footer />
-        <ScrollToTop />
       </article>
+
+      <ScrollToTop />
+      <Footer />
     </>
   );
 };

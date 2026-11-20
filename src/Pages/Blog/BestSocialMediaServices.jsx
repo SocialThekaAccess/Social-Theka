@@ -105,13 +105,12 @@ const BestSocialMediaServices = () => {
                   </p>
                 </div>
 
-                {/* Content Sections */}
+                {/* Section 1 */}
                 <div className="blog-content__section" id="why-social-media-important">
                   <h2 className="blog-content__heading">Why Social Media Marketing Is Important for Modern Businesses</h2>
                   <p>
-                    Customers often interact with a brand several times before deciding to contact or purchase from it. Social media helps businesses remain visible during this decision-making process.
+                    Customers often interact with a brand several times before deciding to contact or purchase from it. Social media helps businesses remain visible during this decision-making process. Here are some important reasons to invest in social media marketing.
                   </p>
-                  <p>Here are some important reasons to invest in social media marketing.</p>
 
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">1. Build Brand Awareness</h3>
@@ -164,6 +163,7 @@ const BestSocialMediaServices = () => {
                   </div>
                 </div>
 
+                {/* Section 2 */}
                 <div className="blog-content__section" id="strong-social-media-strategy">
                   <h2 className="blog-content__heading">What Should a Strong Social Media Strategy Include?</h2>
                   <p>
@@ -172,10 +172,7 @@ const BestSocialMediaServices = () => {
 
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">1. Define Your Target Audience</h3>
-                    <p>
-                      The first step is identifying the people the business wants to reach.
-                    </p>
-                    <p>A useful audience profile may consider:</p>
+                    <p>The first step is identifying the people the business wants to reach. A useful audience profile may consider:</p>
                     <ul className="blog-content__list">
                       <li>Age groups and general demographics</li>
                       <li>Location and service area</li>
@@ -191,21 +188,23 @@ const BestSocialMediaServices = () => {
 
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">2. Select the Right Platforms</h3>
-                    <p>
-                      Every platform has its own audience behaviour and content formats.
-                    </p>
+                    <p>Every platform has its own audience behaviour and content formats.</p>
                     <div className="blog-content__platform-grid">
                       <div className="blog-content__platform">
-                        <strong>Instagram:</strong> Useful for visual storytelling, reels, product showcases, creator collaborations and lifestyle content.
+                        <strong>Instagram</strong>
+                        Useful for visual storytelling, reels, product showcases, creator collaborations and lifestyle content.
                       </div>
                       <div className="blog-content__platform">
-                        <strong>Facebook:</strong> Can support local community engagement, business updates, events and advertising campaigns.
+                        <strong>Facebook</strong>
+                        Can support local community engagement, business updates, events and advertising campaigns.
                       </div>
                       <div className="blog-content__platform">
-                        <strong>LinkedIn:</strong> Suitable for professional communication, B2B marketing, industry insights, company updates and recruitment-related content.
+                        <strong>LinkedIn</strong>
+                        Suitable for professional communication, B2B marketing, industry insights, company updates and recruitment-related content.
                       </div>
                       <div className="blog-content__platform">
-                        <strong>YouTube:</strong> Supports longer videos, tutorials, demonstrations, interviews and searchable video resources.
+                        <strong>YouTube</strong>
+                        Supports longer videos, tutorials, demonstrations, interviews and searchable video resources.
                       </div>
                     </div>
                     <p>
@@ -216,9 +215,8 @@ const BestSocialMediaServices = () => {
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">3. Create a Content Strategy</h3>
                     <p>
-                      A content strategy provides direction and prevents social media communication from becoming repetitive.
+                      A content strategy provides direction and prevents social media communication from becoming repetitive. A balanced monthly content plan may include:
                     </p>
-                    <p>A balanced monthly content plan may include:</p>
                     <ul className="blog-content__list">
                       <li>Educational posts</li>
                       <li>Product or service highlights</li>
@@ -251,9 +249,8 @@ const BestSocialMediaServices = () => {
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">5. Use Reels and Short-Form Videos</h3>
                     <p>
-                      Short-form video has become an important content format because it can communicate information quickly and visually.
+                      Short-form video has become an important content format because it can communicate information quickly and visually. Businesses can use reels to:
                     </p>
-                    <p>Businesses can use reels to:</p>
                     <ul className="blog-content__list">
                       <li>Introduce a product</li>
                       <li>Demonstrate how a service works</li>
@@ -269,15 +266,15 @@ const BestSocialMediaServices = () => {
                   </div>
                 </div>
 
+                {/* Section 3 */}
                 <div className="blog-content__section" id="professional-management">
                   <h2 className="blog-content__heading">Why Professional Social Media Management Can Help</h2>
                   <p>
                     Managing social media consistently takes time. Businesses must plan content, write captions, design creatives, edit videos, schedule posts, monitor comments and review performance.
                   </p>
                   <p>
-                    A professional Social Media Marketing Agency in Chandigarh can help organise these activities into a structured process.
+                    A professional Social Media Marketing Agency in Chandigarh can help organise these activities into a structured process. When evaluating an agency, consider the following:
                   </p>
-                  <p>When evaluating an agency, consider the following:</p>
 
                   <div className="blog-content__grid">
                     <div className="blog-content__card">
@@ -344,6 +341,7 @@ const BestSocialMediaServices = () => {
                   </p>
                 </div>
 
+                {/* Section 4 */}
                 <div className="blog-content__section" id="organic-vs-paid">
                   <h2 className="blog-content__heading">Organic Social Media and Paid Advertising</h2>
                   <p>
@@ -368,49 +366,68 @@ const BestSocialMediaServices = () => {
                     <p>
                       Paid campaigns should have a defined objective, suitable creative, relevant audience targeting and a clear destination for interested users.
                     </p>
-                    <p>
-                      A business should not assume that more ad spending automatically means better results. Campaigns need testing, monitoring and optimisation.
-                    </p>
                   </div>
+
+                  <p className="blog-content__insight">
+                    A business should not assume that more ad spending automatically means better results. Campaigns need testing, monitoring and optimisation.
+                  </p>
                 </div>
 
+                {/* Section 5 */}
                 <div className="blog-content__section" id="content-ideas">
                   <h2 className="blog-content__heading">Content Ideas for Chandigarh-Based Businesses</h2>
                   <p>
                     Local businesses can use content that reflects their products, services and customer needs.
                   </p>
-                  <ul className="blog-content__list">
+                  <ul className="blog-content__checklist">
                     <li><strong>Restaurants and cafes:</strong> Menu highlights, chef introductions, ambience videos, customer favourites and preparation clips.</li>
                     <li><strong>Salons and beauty businesses:</strong> Service explanations, haircare tips, transformations and frequently asked questions.</li>
                     <li><strong>Real estate businesses:</strong> Property walkthroughs, location information, project features and buyer education.</li>
                     <li><strong>Educational institutes:</strong> Course introductions, campus facilities, student experiences and career guidance.</li>
                     <li><strong>Professional services:</strong> Expert tips, process explainers, common mistakes and answers to customer questions.</li>
                   </ul>
-                  <p>
-                    These examples demonstrate why content should be planned around the business rather than relying on generic social media templates.
+                  <p className="blog-content__success">
+                    Content should be planned around the business rather than relying on generic social media templates.
                   </p>
                 </div>
 
+                {/* Section 6 */}
                 <div className="blog-content__section" id="common-mistakes">
                   <h2 className="blog-content__heading">Common Social Media Marketing Mistakes</h2>
                   <p>
                     Businesses can weaken their social media presence by making avoidable mistakes.
                   </p>
-                  <ul className="blog-content__list">
-                    <li>Posting only when a sale or promotion is happening</li>
-                    <li>Using unrelated trends without a clear brand connection</li>
-                    <li>Publishing inconsistent visual designs</li>
-                    <li>Ignoring comments and messages</li>
-                    <li>Sharing the same content across every platform without adaptation</li>
-                    <li>Focusing only on likes and follower counts</li>
-                    <li>Using unclear calls to action</li>
-                    <li>Failing to review content performance</li>
-                  </ul>
-                  <p>
+
+                  <div className="blog-content__red-flags">
+                    {[
+                      'Posting only when a sale or promotion is happening',
+                      'Using unrelated trends without a clear brand connection',
+                      'Publishing inconsistent visual designs',
+                      'Ignoring comments and messages',
+                      'Sharing the same content across every platform without adaptation',
+                      'Focusing only on likes and follower counts',
+                      'Using unclear calls to action',
+                      'Failing to review content performance',
+                    ].map((text) => (
+                      <div className="blog-content__flag" key={text}>
+                        <span className="blog-content__flag-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                          </svg>
+                        </span>
+                        <div>{text}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="blog-content__callout">
                     A good strategy focuses on the quality of communication and the relevance of the audience.
                   </p>
                 </div>
 
+                {/* Section 7 */}
                 <div className="blog-content__section" id="choosing-partner">
                   <h2 className="blog-content__heading">How to Choose the Right Social Media Partner</h2>
                   <p>
@@ -427,6 +444,7 @@ const BestSocialMediaServices = () => {
                   </p>
                 </div>
 
+                {/* Section 8 */}
                 <div className="blog-content__section blog-content__section--highlight" id="social-theka-support">
                   <h2 className="blog-content__heading">How Social Theka Can Support Your Brand</h2>
                   <p>
@@ -437,7 +455,8 @@ const BestSocialMediaServices = () => {
                   </p>
                 </div>
 
-                <div className="blog-content__section" id="conclusion">
+                {/* Conclusion */}
+                <div className="blog-content__section blog-content__section--conclusion" id="conclusion">
                   <h2 className="blog-content__heading">Conclusion</h2>
                   <p>
                     Social media marketing is about much more than publishing attractive posts. It is a way for businesses to communicate, build recognition, answer customer questions and create opportunities for meaningful engagement.
@@ -450,7 +469,7 @@ const BestSocialMediaServices = () => {
                   </p>
                 </div>
 
-                {/* CTA Section */}
+                {/* CTA */}
                 <div className="blog-content__cta">
                   <div className="blog-content__cta-content">
                     <h3 className="blog-content__cta-title">Want to build a more consistent social media presence?</h3>
@@ -470,42 +489,54 @@ const BestSocialMediaServices = () => {
               </div>
 
               {/* Sidebar */}
-              <aside className="blog-content__sidebar">
-                <div className="blog-sidebar">
-                  <div className="blog-sidebar__section">
+              <aside className="blog-sidebar">
+                <div className="blog-sidebar__sticky">
+
+                  {/* Table of Contents */}
+                  <div className="blog-sidebar__card">
                     <h3 className="blog-sidebar__title">Table of Contents</h3>
                     <nav className="blog-sidebar__toc">
-                      <a href="#why-social-media-important" className="blog-sidebar__toc-link">Why Social Media Marketing Is Important</a>
-                      <a href="#strong-social-media-strategy" className="blog-sidebar__toc-link">What Should a Strong Strategy Include?</a>
-                      <a href="#professional-management" className="blog-sidebar__toc-link">Professional Social Media Management</a>
-                      <a href="#organic-vs-paid" className="blog-sidebar__toc-link">Organic vs Paid Social Media</a>
-                      <a href="#content-ideas" className="blog-sidebar__toc-link">Content Ideas for Local Businesses</a>
-                      <a href="#common-mistakes" className="blog-sidebar__toc-link">Common Mistakes to Avoid</a>
-                      <a href="#choosing-partner" className="blog-sidebar__toc-link">Choosing the Right Partner</a>
+                      <a href="#why-social-media-important" className="blog-sidebar__toc-link">Why Social Media Matters</a>
+                      <a href="#strong-social-media-strategy" className="blog-sidebar__toc-link">Strong Strategy</a>
+                      <a href="#professional-management" className="blog-sidebar__toc-link">Professional Management</a>
+                      <a href="#organic-vs-paid" className="blog-sidebar__toc-link">Organic vs Paid</a>
+                      <a href="#content-ideas" className="blog-sidebar__toc-link">Local Content Ideas</a>
+                      <a href="#common-mistakes" className="blog-sidebar__toc-link">Common Mistakes</a>
+                      <a href="#choosing-partner" className="blog-sidebar__toc-link">Choosing a Partner</a>
                       <a href="#social-theka-support" className="blog-sidebar__toc-link">Social Theka's Support</a>
                       <a href="#conclusion" className="blog-sidebar__toc-link">Conclusion</a>
                     </nav>
                   </div>
 
-                  <div className="blog-sidebar__section blog-sidebar__section--highlight">
-                    <h3 className="blog-sidebar__title">Need Social Media Help?</h3>
-                    <p className="blog-sidebar__text">
-                      Get a free consultation to discuss your social media strategy and content planning.
-                    </p>
-                    <Link to="/contact" className="blog-sidebar__button">
-                      Contact Us
-                    </Link>
+                  {/* Key Takeaways */}
+                  <div className="blog-sidebar__card blog-sidebar__card--takeaways">
+                    <h3 className="blog-sidebar__title">Key Takeaways</h3>
+                    <ul className="blog-sidebar__list">
+                      <li>Know your audience before posting</li>
+                      <li>Pick platforms that fit your customers</li>
+                      <li>Keep branding consistent</li>
+                      <li>Use reels with a clear purpose</li>
+                      <li>Track quality, not just likes</li>
+                    </ul>
                   </div>
+
+                  {/* CTA Card */}
+                  <div className="blog-sidebar__card blog-sidebar__card--cta">
+                    <h3 className="blog-sidebar__title">Need Social Media Help?</h3>
+                    <p className="blog-sidebar__text">Get a free consultation on your social media strategy.</p>
+                    <Link to="/contact" className="blog-sidebar__button">Contact Us</Link>
+                  </div>
+
                 </div>
               </aside>
 
             </div>
           </div>
         </section>
-
-        <Footer />
-        <ScrollToTop />
       </article>
+
+      <ScrollToTop />
+      <Footer />
     </>
   );
 };

@@ -108,7 +108,7 @@ const VideoEditingAgency = () => {
                   </p>
                 </div>
 
-                {/* Content Sections */}
+                {/* Section 1 */}
                 <div className="blog-content__section" id="why-video-matters">
                   <h2 className="blog-content__heading">Why Video Content Matters for Businesses</h2>
                   <p>
@@ -166,13 +166,11 @@ const VideoEditingAgency = () => {
                   </div>
                 </div>
 
+                {/* Section 2 */}
                 <div className="blog-content__section" id="professional-editing">
                   <h2 className="blog-content__heading">Why Professional Video Editing Makes a Difference</h2>
                   <p>
-                    Raw footage often contains unnecessary pauses, repeated takes, background distractions and sections that do not contribute to the main message.
-                  </p>
-                  <p>
-                    Editing helps organise this material into a clear sequence.
+                    Raw footage often contains unnecessary pauses, repeated takes, background distractions and sections that do not contribute to the main message. Editing helps organise this material into a clear sequence.
                   </p>
                   <p>
                     A professional Video Editing Agency in Chandigarh can support businesses with different parts of the editing process, depending on the project requirements.
@@ -239,12 +237,13 @@ const VideoEditingAgency = () => {
                   </div>
                 </div>
 
+                {/* Section 3 */}
                 <div className="blog-content__section" id="types-of-videos">
                   <h2 className="blog-content__heading">Types of Videos Businesses Can Create</h2>
                   <p>
                     A strong video strategy includes different formats based on business goals.
                   </p>
-                  <ul className="blog-content__list">
+                  <ul className="blog-content__checklist">
                     <li><strong>Brand introduction videos:</strong> Explain what the business does, who it serves and what customers can expect.</li>
                     <li><strong>Product videos:</strong> Showcase product features, packaging, usage and benefits.</li>
                     <li><strong>Service explanation videos:</strong> Help customers understand how a service works and what the process involves.</li>
@@ -254,11 +253,12 @@ const VideoEditingAgency = () => {
                     <li><strong>Event videos:</strong> Capture important moments from launches, workshops, celebrations and other business events.</li>
                     <li><strong>Short-form social videos:</strong> Deliver one focused idea through a concise reel, short or vertical video.</li>
                   </ul>
-                  <p>
+                  <p className="blog-content__insight">
                     Selecting the right format is more important than producing a large number of videos without a clear purpose.
                   </p>
                 </div>
 
+                {/* Section 4 */}
                 <div className="blog-content__section" id="plan-video">
                   <h2 className="blog-content__heading">How to Plan a Video Before Editing</h2>
                   <p>
@@ -288,9 +288,8 @@ const VideoEditingAgency = () => {
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">Step 3: Write a Script or Outline</h3>
                     <p>
-                      A script helps organise the message and avoid unnecessary footage.
+                      A script helps organise the message and avoid unnecessary footage. For a short video, a simple structure can be:
                     </p>
-                    <p>For a short video, a simple structure can be:</p>
                     <ul className="blog-content__list">
                       <li>Opening hook</li>
                       <li>Main message</li>
@@ -344,12 +343,12 @@ const VideoEditingAgency = () => {
                   </div>
                 </div>
 
+                {/* Section 5 */}
                 <div className="blog-content__section" id="editing-partner">
                   <h2 className="blog-content__heading">What to Look for in a Video Editing Partner</h2>
                   <p>
-                    Choosing an editing partner should involve more than reviewing flashy transitions or visual effects.
+                    Choosing an editing partner should involve more than reviewing flashy transitions or visual effects. Consider these factors:
                   </p>
-                  <p>Consider these factors:</p>
 
                   <div className="blog-content__grid">
                     <div className="blog-content__card">
@@ -422,6 +421,7 @@ const VideoEditingAgency = () => {
                   </p>
                 </div>
 
+                {/* Section 6 */}
                 <div className="blog-content__section" id="video-social-seo">
                   <h2 className="blog-content__heading">The Connection Between Video, Social Media and SEO</h2>
                   <p>
@@ -436,11 +436,12 @@ const VideoEditingAgency = () => {
                   <p>
                     Businesses should also provide context around videos. Relevant titles, descriptions, captions and supporting website text can help viewers understand what the video covers.
                   </p>
-                  <p>
+                  <p className="blog-content__insight">
                     Video does not automatically improve search rankings, but it can support a richer website experience when used appropriately.
                   </p>
                 </div>
 
+                {/* Section 7 */}
                 <div className="blog-content__section" id="digital-marketing-skills">
                   <h2 className="blog-content__heading">Digital Marketing Skills and the Value of Learning</h2>
                   <p>
@@ -452,32 +453,49 @@ const VideoEditingAgency = () => {
                   <p>
                     A Digital marketing institute in Chandigarh may cover areas such as SEO, social media, paid advertising, content strategy, analytics and website fundamentals. Learners should review the curriculum, practical assignments, trainer experience and opportunities to work on real projects before choosing a programme.
                   </p>
-                  <p>
+                  <p className="blog-content__success">
                     Practical learning can help students understand how to plan campaigns, create content and evaluate results. These skills can be useful for agency roles, in-house marketing teams and independent projects.
                   </p>
                 </div>
 
+                {/* Section 8 */}
                 <div className="blog-content__section" id="common-mistakes">
                   <h2 className="blog-content__heading">Common Video Editing Mistakes to Avoid</h2>
                   <p>
                     Some editing choices can make a video less effective.
                   </p>
-                  <ul className="blog-content__list">
-                    <li>Using too many transitions and effects</li>
-                    <li>Adding music that overpowers dialogue</li>
-                    <li>Keeping unnecessary footage</li>
-                    <li>Using small or difficult-to-read captions</li>
-                    <li>Ignoring platform-specific dimensions</li>
-                    <li>Adding too much text on screen</li>
-                    <li>Using visuals that do not support the message</li>
-                    <li>Forgetting to include a clear ending</li>
-                    <li>Publishing without checking product or brand details</li>
-                  </ul>
-                  <p>
+
+                  <div className="blog-content__red-flags">
+                    {[
+                      'Using too many transitions and effects',
+                      'Adding music that overpowers dialogue',
+                      'Keeping unnecessary footage',
+                      'Using small or difficult-to-read captions',
+                      'Ignoring platform-specific dimensions',
+                      'Adding too much text on screen',
+                      'Using visuals that do not support the message',
+                      'Forgetting to include a clear ending',
+                      'Publishing without checking product or brand details',
+                    ].map((text) => (
+                      <div className="blog-content__flag" key={text}>
+                        <span className="blog-content__flag-icon">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                          </svg>
+                        </span>
+                        <div>{text}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="blog-content__callout">
                     The best edit is not necessarily the most complicated one. It is the edit that communicates the intended message clearly.
                   </p>
                 </div>
 
+                {/* Section 9 */}
                 <div className="blog-content__section blog-content__section--highlight" id="social-theka-support">
                   <h2 className="blog-content__heading">How Social Theka Can Support Your Content Strategy</h2>
                   <p>
@@ -491,7 +509,8 @@ const VideoEditingAgency = () => {
                   </p>
                 </div>
 
-                <div className="blog-content__section" id="conclusion">
+                {/* Conclusion */}
+                <div className="blog-content__section blog-content__section--conclusion" id="conclusion">
                   <h2 className="blog-content__heading">Conclusion</h2>
                   <p>
                     Video is a flexible format for explaining products, introducing services, sharing knowledge and building brand familiarity. But effective video content requires more than recording footage. It needs a clear objective, thoughtful planning, strong storytelling and careful editing.
@@ -504,7 +523,7 @@ const VideoEditingAgency = () => {
                   </p>
                 </div>
 
-                {/* CTA Section */}
+                {/* CTA */}
                 <div className="blog-content__cta">
                   <div className="blog-content__cta-content">
                     <h3 className="blog-content__cta-title">Planning video content for your business?</h3>
@@ -524,43 +543,55 @@ const VideoEditingAgency = () => {
               </div>
 
               {/* Sidebar */}
-              <aside className="blog-content__sidebar">
-                <div className="blog-sidebar">
-                  <div className="blog-sidebar__section">
+              <aside className="blog-sidebar">
+                <div className="blog-sidebar__sticky">
+
+                  {/* Table of Contents */}
+                  <div className="blog-sidebar__card">
                     <h3 className="blog-sidebar__title">Table of Contents</h3>
                     <nav className="blog-sidebar__toc">
-                      <a href="#why-video-matters" className="blog-sidebar__toc-link">Why Video Content Matters</a>
+                      <a href="#why-video-matters" className="blog-sidebar__toc-link">Why Video Matters</a>
                       <a href="#professional-editing" className="blog-sidebar__toc-link">Professional Video Editing</a>
                       <a href="#types-of-videos" className="blog-sidebar__toc-link">Types of Videos</a>
                       <a href="#plan-video" className="blog-sidebar__toc-link">How to Plan a Video</a>
                       <a href="#editing-partner" className="blog-sidebar__toc-link">Choosing an Editing Partner</a>
-                      <a href="#video-social-seo" className="blog-sidebar__toc-link">Video, Social Media and SEO</a>
+                      <a href="#video-social-seo" className="blog-sidebar__toc-link">Video, Social and SEO</a>
                       <a href="#digital-marketing-skills" className="blog-sidebar__toc-link">Digital Marketing Skills</a>
-                      <a href="#common-mistakes" className="blog-sidebar__toc-link">Common Mistakes to Avoid</a>
+                      <a href="#common-mistakes" className="blog-sidebar__toc-link">Common Mistakes</a>
                       <a href="#social-theka-support" className="blog-sidebar__toc-link">Social Theka's Support</a>
                       <a href="#conclusion" className="blog-sidebar__toc-link">Conclusion</a>
                     </nav>
                   </div>
 
-                  <div className="blog-sidebar__section blog-sidebar__section--highlight">
-                    <h3 className="blog-sidebar__title">Need Video Editing Help?</h3>
-                    <p className="blog-sidebar__text">
-                      Get a free consultation to discuss your video content and brand storytelling needs.
-                    </p>
-                    <Link to="/contact" className="blog-sidebar__button">
-                      Contact Us
-                    </Link>
+                  {/* Key Takeaways */}
+                  <div className="blog-sidebar__card blog-sidebar__card--takeaways">
+                    <h3 className="blog-sidebar__title">Key Takeaways</h3>
+                    <ul className="blog-sidebar__list">
+                      <li>Give every video one clear objective</li>
+                      <li>Plan script and shots before recording</li>
+                      <li>Edit separate versions per platform</li>
+                      <li>Use captions and clean audio</li>
+                      <li>Review details before publishing</li>
+                    </ul>
                   </div>
+
+                  {/* CTA Card */}
+                  <div className="blog-sidebar__card blog-sidebar__card--cta">
+                    <h3 className="blog-sidebar__title">Need Video Editing Help?</h3>
+                    <p className="blog-sidebar__text">Get a free consultation on your video content needs.</p>
+                    <Link to="/contact" className="blog-sidebar__button">Contact Us</Link>
+                  </div>
+
                 </div>
               </aside>
 
             </div>
           </div>
         </section>
-
-        <Footer />
-        <ScrollToTop />
       </article>
+
+      <ScrollToTop />
+      <Footer />
     </>
   );
 };

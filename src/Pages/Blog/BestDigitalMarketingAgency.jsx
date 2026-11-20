@@ -108,7 +108,7 @@ const BestDigitalMarketingAgency = () => {
                   </p>
                 </div>
 
-                {/* Content Sections */}
+                {/* Section 1 */}
                 <div className="blog-content__section" id="what-is-digital-marketing">
                   <h2 className="blog-content__heading">What Is Digital Marketing?</h2>
                   <p>
@@ -120,11 +120,12 @@ const BestDigitalMarketingAgency = () => {
                   <p>
                     Different channels serve different roles. SEO can help people discover a website through search. Social media can build familiarity and engagement. Paid campaigns can support targeted reach. Content marketing can answer questions and demonstrate expertise.
                   </p>
-                  <p>
+                  <p className="blog-content__insight">
                     A good strategy selects channels according to the business's needs rather than trying to use every available platform.
                   </p>
                 </div>
 
+                {/* Section 2 */}
                 <div className="blog-content__section" id="connected-strategy">
                   <h2 className="blog-content__heading">Why Businesses Need a Connected Digital Marketing Strategy</h2>
                   <p>
@@ -175,6 +176,7 @@ const BestDigitalMarketingAgency = () => {
                   </div>
                 </div>
 
+                {/* Section 3 */}
                 <div className="blog-content__section" id="key-services">
                   <h2 className="blog-content__heading">Key Digital Marketing Services Businesses Should Understand</h2>
                   <p>
@@ -257,6 +259,7 @@ const BestDigitalMarketingAgency = () => {
                   </div>
                 </div>
 
+                {/* Section 4 */}
                 <div className="blog-content__section" id="build-strategy">
                   <h2 className="blog-content__heading">How to Build a Digital Marketing Strategy</h2>
                   <p>
@@ -266,9 +269,8 @@ const BestDigitalMarketingAgency = () => {
                   <div className="blog-content__subsection">
                     <h3 className="blog-content__subheading">Step 1: Define Business Goals</h3>
                     <p>
-                      Start by identifying what the business wants to achieve.
+                      Start by identifying what the business wants to achieve. Possible objectives include:
                     </p>
-                    <p>Possible objectives include:</p>
                     <ul className="blog-content__list">
                       <li>Increasing relevant website traffic</li>
                       <li>Generating qualified enquiries</li>
@@ -343,13 +345,11 @@ const BestDigitalMarketingAgency = () => {
                   </div>
                 </div>
 
+                {/* Section 5 */}
                 <div className="blog-content__section" id="integrated-approach">
                   <h2 className="blog-content__heading">Why an Integrated Agency Approach Can Be Useful</h2>
                   <p>
-                    When different marketing activities are handled without coordination, businesses may face inconsistent communication, duplicated effort and disconnected reporting.
-                  </p>
-                  <p>
-                    An integrated approach helps align the website, content, social media and advertising strategy.
+                    When different marketing activities are handled without coordination, businesses may face inconsistent communication, duplicated effort and disconnected reporting. An integrated approach helps align the website, content, social media and advertising strategy.
                   </p>
                   <p>
                     Businesses comparing the Best Digital Marketing Agency in Chandigarh should look for a team that understands how these services connect. The agency should be able to explain which activities are necessary, what each activity is expected to achieve and how progress will be evaluated.
@@ -357,18 +357,16 @@ const BestDigitalMarketingAgency = () => {
                   <p>
                     It is also important to understand the scope of work. Some businesses need ongoing SEO and social media management, while others may need a website redesign or a focused campaign for a specific service.
                   </p>
-                  <p>
+                  <p className="blog-content__callout">
                     A suitable strategy should be based on actual requirements rather than a fixed package that includes activities the business may not need.
                   </p>
                 </div>
 
+                {/* Section 6 */}
                 <div className="blog-content__section" id="seo-online-marketing">
                   <h2 className="blog-content__heading">The Role of SEO and Online Marketing Together</h2>
                   <p>
-                    SEO and other digital marketing activities can support each other.
-                  </p>
-                  <p>
-                    SEO helps users discover relevant website pages through organic search. Social media can distribute useful content and introduce the brand to new audiences. Paid advertising can provide additional reach for selected campaigns.
+                    SEO and other digital marketing activities can support each other. SEO helps users discover relevant website pages through organic search. Social media can distribute useful content and introduce the brand to new audiences. Paid advertising can provide additional reach for selected campaigns.
                   </p>
                   <p>
                     This is where Seo and Online Marketing Services in Chandigarh can become useful for businesses seeking a connected digital presence.
@@ -376,17 +374,18 @@ const BestDigitalMarketingAgency = () => {
                   <p>
                     For example, a company may publish an educational blog targeting a customer question. The blog can be optimised for search, shared through social media and used as a destination for a relevant paid campaign.
                   </p>
-                  <p>
+                  <p className="blog-content__insight">
                     The channels remain different, but they contribute to the same communication objective.
                   </p>
                 </div>
 
+                {/* Section 7 */}
                 <div className="blog-content__section" id="evaluate-agency">
                   <h2 className="blog-content__heading">How to Evaluate a Digital Marketing Agency</h2>
                   <p>
                     Before selecting an agency, businesses should ask practical questions.
                   </p>
-                  <ul className="blog-content__list">
+                  <ul className="blog-content__checklist">
                     <li>Does the agency understand the business and its audience?</li>
                     <li>Does it explain its strategy clearly?</li>
                     <li>Are the deliverables and timelines documented?</li>
@@ -396,11 +395,12 @@ const BestDigitalMarketingAgency = () => {
                     <li>Are advertising budgets and service fees explained separately?</li>
                     <li>Does the agency communicate limitations honestly?</li>
                   </ul>
-                  <p>
+                  <p className="blog-content__success">
                     A professional agency should set realistic expectations and be transparent about the factors that influence results.
                   </p>
                 </div>
 
+                {/* Section 8 */}
                 <div className="blog-content__section blog-content__section--highlight" id="social-theka-support">
                   <h2 className="blog-content__heading">How Social Theka Supports Digital Marketing</h2>
                   <p>
@@ -414,7 +414,8 @@ const BestDigitalMarketingAgency = () => {
                   </p>
                 </div>
 
-                <div className="blog-content__section" id="conclusion">
+                {/* Conclusion */}
+                <div className="blog-content__section blog-content__section--conclusion" id="conclusion">
                   <h2 className="blog-content__heading">Conclusion</h2>
                   <p>
                     Digital marketing works best when every activity has a purpose. SEO, social media, paid advertising, website development and content marketing should support a connected customer journey.
@@ -427,7 +428,7 @@ const BestDigitalMarketingAgency = () => {
                   </p>
                 </div>
 
-                {/* CTA Section */}
+                {/* CTA */}
                 <div className="blog-content__cta">
                   <div className="blog-content__cta-content">
                     <h3 className="blog-content__cta-title">Want to plan a connected digital marketing strategy?</h3>
@@ -447,14 +448,16 @@ const BestDigitalMarketingAgency = () => {
               </div>
 
               {/* Sidebar */}
-              <aside className="blog-content__sidebar">
-                <div className="blog-sidebar">
-                  <div className="blog-sidebar__section">
+              <aside className="blog-sidebar">
+                <div className="blog-sidebar__sticky">
+
+                  {/* Table of Contents */}
+                  <div className="blog-sidebar__card">
                     <h3 className="blog-sidebar__title">Table of Contents</h3>
                     <nav className="blog-sidebar__toc">
                       <a href="#what-is-digital-marketing" className="blog-sidebar__toc-link">What Is Digital Marketing?</a>
-                      <a href="#connected-strategy" className="blog-sidebar__toc-link">Why Businesses Need Connected Strategy</a>
-                      <a href="#key-services" className="blog-sidebar__toc-link">Key Digital Marketing Services</a>
+                      <a href="#connected-strategy" className="blog-sidebar__toc-link">Why a Connected Strategy</a>
+                      <a href="#key-services" className="blog-sidebar__toc-link">Key Services</a>
                       <a href="#build-strategy" className="blog-sidebar__toc-link">How to Build a Strategy</a>
                       <a href="#integrated-approach" className="blog-sidebar__toc-link">Integrated Agency Approach</a>
                       <a href="#seo-online-marketing" className="blog-sidebar__toc-link">SEO and Online Marketing</a>
@@ -464,25 +467,35 @@ const BestDigitalMarketingAgency = () => {
                     </nav>
                   </div>
 
-                  <div className="blog-sidebar__section blog-sidebar__section--highlight">
-                    <h3 className="blog-sidebar__title">Need Digital Marketing Help?</h3>
-                    <p className="blog-sidebar__text">
-                      Get a free consultation to discuss your digital marketing strategy and growth goals.
-                    </p>
-                    <Link to="/contact" className="blog-sidebar__button">
-                      Contact Us
-                    </Link>
+                  {/* Key Takeaways */}
+                  <div className="blog-sidebar__card blog-sidebar__card--takeaways">
+                    <h3 className="blog-sidebar__title">Key Takeaways</h3>
+                    <ul className="blog-sidebar__list">
+                      <li>Start with clear business goals</li>
+                      <li>Connect SEO, social, ads and website</li>
+                      <li>Choose channels your audience uses</li>
+                      <li>Track metrics tied to your objective</li>
+                      <li>Pick an agency that is transparent</li>
+                    </ul>
                   </div>
+
+                  {/* CTA Card */}
+                  <div className="blog-sidebar__card blog-sidebar__card--cta">
+                    <h3 className="blog-sidebar__title">Need Digital Marketing Help?</h3>
+                    <p className="blog-sidebar__text">Get a free consultation on your growth goals.</p>
+                    <Link to="/contact" className="blog-sidebar__button">Contact Us</Link>
+                  </div>
+
                 </div>
               </aside>
 
             </div>
           </div>
         </section>
-
-        <Footer />
-        <ScrollToTop />
       </article>
+
+      <ScrollToTop />
+      <Footer />
     </>
   );
 };
