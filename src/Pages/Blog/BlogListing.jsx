@@ -15,7 +15,7 @@ import VideoEditingImg from '../../assets/Chandigarh Video Editing Agency Banner
 import DigitalMarketingAgencyImg from '../../assets/Chandigarh Digital Growth Agency.png';
 import BestSocialMediaServicesImg from '../../assets/Best Social Media Marketing Services in Chandigarh for Brands.png';
 import BestSEOServicesImg from '../../assets/Best SEO Services in Chandigarh for Sustainable Business Growth.png';
-import WhatsAppSchedulingImg from '../../assets/WhatsAppSchedulingBlog.png';
+import WhatsAppSchedulingImg from '../../assets/WhatsAppschedulingBlog.png';
 
 const blogPosts = [
   {

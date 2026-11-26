@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Footer from '../../Component/Footer/Footer';
 import ScrollToTop from '../../Component/ScrollToTop';
 import './WhatsAppScheduledMessages.css';
-import WhatsAppImg from '../../assets/WhatsAppSchedulingBlog.png';
+import WhatsAppImg from '../../assets/WhatsAppschedulingBlog.png';
 
 /* Small icon helper (same stroke style as the Web Development page) */
 const Icon = ({ children, size = 24 }) => (
