@@ -391,7 +391,7 @@ const WhatsAppScheduledMessages = () => {
                     The digital marketing landscape changes rapidly. New platform features, evolving search behaviour and changing customer expectations require businesses to continuously adapt their strategies. At Social Theka, we help businesses develop marketing strategies tailored to their audience, industry and growth objectives.
                   </p>
                   <p>
-                    Whether you are searching for the <strong>Best Digital Marketing Agency in Chandigarh</strong> or a reliable <strong>Social Media Marketing Company in Chandigarh</strong>, our approach focuses on creative communication, strategic planning and meaningful digital growth. Our services include:
+                    Whether you are searching for the <Link to="/" className="blog-link"><strong>Best Digital Marketing Agency in Chandigarh</strong></Link> or a reliable <Link to="/" className="blog-link"><strong>Social Media Marketing Company in Chandigarh</strong></Link>, our approach focuses on creative communication, strategic planning and meaningful digital growth. Our services include:
                   </p>
 
                   <ul className="blog-content__list">
