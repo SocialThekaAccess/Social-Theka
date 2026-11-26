@@ -25,6 +25,7 @@ const BestSocialMediaServices = lazy(() => import('./Pages/Blog/BestSocialMediaS
 const BestWebsiteDevelopment = lazy(() => import('./Pages/Blog/BestWebsiteDevelopment'))
 const BestDigitalMarketingAgency = lazy(() => import('./Pages/Blog/BestDigitalMarketingAgency'))
 const VideoEditingAgency = lazy(() => import('./Pages/Blog/VideoEditingAgency'))
+const WhatsAppScheduledMessages = lazy(() => import('./Pages/Blog/WhatsAppScheduledMessages'))
 const NotFound = lazy(() => import('./Pages/NotFound/NotFound'))
 
 function ScrollToTopOnRouteChange() {
@@ -66,6 +67,7 @@ function App() {
           <Route path="/blog/best-website-development-chandigarh" element={<BestWebsiteDevelopment />} />
           <Route path="/blog/best-digital-marketing-agency-chandigarh" element={<BestDigitalMarketingAgency />} />
           <Route path="/blog/video-editing-agency-chandigarh" element={<VideoEditingAgency />} />
+          <Route path="/blog/whatsapp-scheduled-messages-2026" element={<WhatsAppScheduledMessages />} />
           {/* 404 Catch-all Route - Must be last */}
           <Route path="*" element={<NotFound />} />
         </Routes>

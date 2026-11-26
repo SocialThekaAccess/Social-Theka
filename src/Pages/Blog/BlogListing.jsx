@@ -15,8 +15,20 @@ import VideoEditingImg from '../../assets/Chandigarh Video Editing Agency Banner
 import DigitalMarketingAgencyImg from '../../assets/Chandigarh Digital Growth Agency.png';
 import BestSocialMediaServicesImg from '../../assets/Best Social Media Marketing Services in Chandigarh for Brands.png';
 import BestSEOServicesImg from '../../assets/Best SEO Services in Chandigarh for Sustainable Business Growth.png';
+import WhatsAppSchedulingImg from '../../assets/WhatsAppSchedulingBlog.png';
 
 const blogPosts = [
+  {
+    id: 13,
+    slug: 'whatsapp-scheduled-messages-2026',
+    title: 'WhatsApp Scheduled Messages Update 2026: What Chandigarh Businesses Should Know',
+    excerpt: 'Learn how WhatsApp\'s scheduled messages feature 2026 can help businesses in Chandigarh improve customer communication, appointment reminders and strategic follow-ups effectively.',
+    category: 'Digital Communication',
+    readTime: '12 min read',
+    date: 'November 26, 2026',
+    image: WhatsAppSchedulingImg,
+    tags: ['WhatsApp Marketing', 'Customer Communication', 'Digital Strategy']
+  },
   {
     id: 12,
     slug: 'video-editing-agency-chandigarh',
@@ -198,7 +210,6 @@ const BlogListing = () => {
                 <Link to={`/blog/${blogPosts[0].slug}`} className="blog-listing-featured__card">
                   <div className="blog-listing-featured__image">
                     <img src={blogPosts[0].image} alt={blogPosts[0].title} loading="lazy" />
-                    <div className="blog-listing-featured__badge">Featured</div>
                   </div>
                   <div className="blog-listing-featured__content">
                     <div className="blog-listing-featured__meta">
